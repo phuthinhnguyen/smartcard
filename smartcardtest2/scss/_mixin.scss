@@ -1,0 +1,80 @@
+@mixin loginbutton-color{
+    background: #a64bf4;
+    background: -webkit-linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background: -o-linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background: -moz-linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background: linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+}
+@mixin scrollbar ($width,$track-color,$thumb-color,$thumb-hover-color){
+    & ::-webkit-scrollbar {
+        width: $width;
+    }
+    & ::-webkit-scrollbar-track {
+        background: $track-color;
+    }
+    & ::-webkit-scrollbar-thumb {
+        background: $thumb-color;
+        border-radius: 5px;
+    }
+    & ::-webkit-scrollbar-thumb:hover {
+        background: $thumb-hover-color;
+    }
+}
+@mixin item-bottom{
+    height: 100px;
+    .item-bottom-color{
+        height: 55px;
+        position: relative;
+        width: 27px;
+        display: inline-block;
+        margin-right: 5px;
+        .color{
+            position: absolute;
+            bottom: 0;
+            a{
+                width: 27px;
+                height: 27px;
+                display: inline-block;
+                border-radius: 50%; 
+                transition: .15s;
+                &:hover{
+                    border: 4px solid white;
+                    outline: 1px solid black;
+                }
+            }
+        }
+        .tooltip-text{
+            position: absolute;
+            bottom: 40%;
+            left: -100%;
+            height: 0;
+            min-width: 90px;
+            transition: .2s ease-in-out;
+            font-size: 15px;
+            overflow: hidden;
+            span{
+                display: block;
+                margin: 0;
+                padding: 3px;
+                background-color: black;
+                color: white;
+                font-size: 14px;
+                border-radius: 5px;
+                box-shadow:  2px 4px 5px grey;
+                text-align: center;
+            }
+            i{
+                position: absolute;
+                left: 40%;  
+                top: 40%;
+            }
+        }
+        &:hover{
+            cursor: pointer;
+        }
+        &:hover .tooltip-text{
+            height: 90%;
+            bottom: 35%;
+        }
+    }
+}

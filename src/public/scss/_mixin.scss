@@ -1,0 +1,22 @@
+@mixin loginbutton-color{
+    background: #a64bf4;
+    background: -webkit-linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background: -o-linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background: -moz-linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background: linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+}
+@mixin scrollbar ($width,$track-color,$thumb-color,$thumb-hover-color){
+    & ::-webkit-scrollbar {
+        width: $width;
+    }
+    & ::-webkit-scrollbar-track {
+        background: $track-color;
+    }
+    & ::-webkit-scrollbar-thumb {
+        background: $thumb-color;
+        border-radius: 5px;
+    }
+    & ::-webkit-scrollbar-thumb:hover {
+        background: $thumb-hover-color;
+    }
+}
