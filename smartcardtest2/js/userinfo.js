@@ -89,7 +89,7 @@ function addlinkfunction(a){
         }
         return frag;
     }
-    var fragment = create(`<div id="container-showlink"><div class="link"><div class="linklogo"><img src="image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
+    var fragment = create(`<div id="container-showlink"><div class="link"><div class="linklogo"><img src="image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
     linkarea.insertBefore(fragment, linkarea.childNodes[linkarea.childElementCount]);
     $(".yesno").hide();
 
@@ -98,6 +98,17 @@ function addlinkfunction(a){
     var showFragment = create(`<a class="link" href='#' target="_blank"><img src="image/userinfo/${a.innerText.toLowerCase()}.png" alt=""><p>${name.value}</p></a>`);
     showLinkcontainer.insertBefore(showFragment, showLinkcontainer.childNodes[showLinkcontainer.childElementCount]);
     
+    // align tag p center depend on length of @yourtitle
+    let showlinkname = showLinkcontainer.childNodes[showLinkcontainer.childElementCount-1].childNodes[1];
+    if (name.value.length<10){
+        showlinkname.style.marginLeft="15px";
+    }
+    else if (name.value.length>=10 && name.value.length<18){
+        showlinkname.style.marginLeft="22px";
+    }
+    else showlinkname.style.marginLeft="45px";
+
+
     let title = document.querySelectorAll(".inputtitle");
     if (title[linkarea.childElementCount-1].value=="@yourtitle"){
         title[linkarea.childElementCount-1].style.color = "lightgray";
@@ -107,7 +118,12 @@ function addlinkfunction(a){
         title[linkarea.childElementCount-1].style.color = "black";
         title[linkarea.childElementCount-1].style.fontStyle = "normal";
     }
+    
     showanimation();
+}
+
+function linkoptionfocusout(){
+    console.log("sdf")
 }
 
 // click on trash icon
@@ -216,6 +232,15 @@ function inputtitlefocusout(a){
     const index = Array.from(linkarea.children).indexOf(a.parentElement.parentElement.parentElement.parentElement);
     let showlinkname = showLinkcontainer.childNodes[index].childNodes[1];
     showlinkname.innerText =a.value;
+    
+    // align tag p center depend on length of @yourtitle
+    if (a.value.length<10){
+        showlinkname.style.marginLeft="15px";
+    }
+    else if (a.value.length>=10 && a.value.length<18){
+        showlinkname.style.marginLeft="22px";
+    }
+    else showlinkname.style.marginLeft="45px";
 }
 
 // when user focus out input for link
@@ -263,6 +288,7 @@ function inputnamefocusout(a){
     }
     document.getElementById("name-show").innerText=a.value;
     z.style.display="inline";
+
     showanimation();
 }
 
@@ -330,7 +356,6 @@ function changecolortheme(a){
     wrapshow.style.backgroundColor=`${getcolor}`;
 }
 
-
 $(document).ready(function(){
     $("#cardid-icon").click(function name(params) {
        iconclick(this,$("#show-card-id"));
@@ -342,9 +367,30 @@ $(document).ready(function(){
         iconclick(this,$("#show-change-theme"));
     })
     $(".link-option").hide();
+
     $("#addlink-btn").click(function name(params) {
-        $(".link-option").slideToggle();
+        // if (linkoptionindex==true){
+            $(".link-option").slideDown();
+            
+            // if (linkoptionindex==true){
+            //     $(".link-option").slideToggle();
+            // }
+            $(".link-option").focus();
+        // }   
     })
+    let linkoptionindex=true
+    $(".link-option").children().click(function name(params) {
+       
+    })
+    $(".link-option, .link-option *").blur(function(e){
+        // if(!$(e.relatedTarget).is(".link-option, .link-option *")){
+            $(".link-option").slideUp();
+            // linkoptionindex=false;
+        // }
+        // if($(e.relatedTarget).is("#addlink-btn")){
+        //     console.log("sdfsdf")
+        // }
+    });
 });
 
 function submit_form(event,form){

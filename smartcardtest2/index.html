@@ -196,7 +196,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="link-option">
+						<div class="link-option" tabindex="-1">
 							<a onclick="addlinkfunction(this)">Facebook</a>
 							<a onclick="addlinkfunction(this)">Youtube</a>
 							<a onclick="addlinkfunction(this)">Instagram</a>
@@ -223,7 +223,7 @@
 										<input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
 									</div>
 									<i class="fas fa-pencil" onclick="editinputtitle(this)"></i>
-									<input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
+									<input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
 									<i class="fas fa-pencil" onclick="editinputlink(this)"></i>
 								</div>
 								<div class="linktrash">
