@@ -48,18 +48,168 @@ button:hover {
 
 nav {
   width: 100%;
-  height: 50px;
+  height: 70px;
+  display: flex;
+  top: 0;
+}
+nav .left {
+  width: 33%;
+  height: 100%;
+}
+nav .left a i {
+  margin-top: 30px;
+  margin-left: 50px;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+}
+nav .center {
+  width: 33%;
+}
+nav .right {
+  width: 33%;
+  height: 100%;
+  position: relative;
   display: flex;
   justify-content: flex-end;
-  position: relative;
-  margin-bottom: 20px;
 }
-nav i {
+nav .right .nav-icon {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .right .nav-icon:hover .tooltiptext {
+  visibility: visible;
+  animation: tooltiptext 0.5s;
+}
+@keyframes tooltiptext {
+  0% {
+    top: 130%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+nav .right .nav-icon .tooltiptext {
+  visibility: hidden;
+  font-family: "Jost";
+  font-size: 13px;
+  width: 60px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  margin-left: 0;
+}
+nav .right .nav-icon .tooltiptext:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+nav .right .nav-icon i {
+  margin: auto;
+  margin-top: 30px;
+  display: inline-block;
   font-size: 30px;
   cursor: pointer;
+}
+
+@keyframes shownavicon {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100px;
+  }
+}
+#show-card-id, #show-change-theme, #show-contact {
+  display: none;
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+}
+
+#show-change-theme {
+  margin-bottom: 30px;
+}
+#show-change-theme .item-bottom {
+  height: 100px;
+}
+#show-change-theme .item-bottom .item-bottom-color {
+  height: 55px;
+  position: relative;
+  width: 27px;
+  display: inline-block;
+  margin-right: 5px;
+}
+#show-change-theme .item-bottom .item-bottom-color .color {
   position: absolute;
-  right: 50px;
-  top: 30px;
+  bottom: 0;
+}
+#show-change-theme .item-bottom .item-bottom-color .color a {
+  width: 27px;
+  height: 27px;
+  display: inline-block;
+  border-radius: 50%;
+  transition: 0.15s;
+}
+#show-change-theme .item-bottom .item-bottom-color .color a:hover {
+  border: 4px solid white;
+  outline: 1px solid black;
+}
+#show-change-theme .item-bottom .item-bottom-color .tooltip-text {
+  position: absolute;
+  bottom: 40%;
+  left: -100%;
+  height: 0;
+  min-width: 90px;
+  transition: 0.2s ease-in-out;
+  font-size: 15px;
+  overflow: hidden;
+}
+#show-change-theme .item-bottom .item-bottom-color .tooltip-text span {
+  display: block;
+  margin: 0;
+  padding: 3px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 2px 4px 5px grey;
+  text-align: center;
+}
+#show-change-theme .item-bottom .item-bottom-color .tooltip-text i {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+}
+#show-change-theme .item-bottom .item-bottom-color:hover {
+  cursor: pointer;
+}
+#show-change-theme .item-bottom .item-bottom-color:hover .tooltip-text {
+  height: 90%;
+  bottom: 35%;
+}
+
+.logo {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+.logo img {
+  width: 200px;
+  height: 70px;
 }
 
 .content {
@@ -68,12 +218,10 @@ nav i {
 }
 .content .limiter {
   margin: auto;
-  margin-left: 250px;
-  margin-top: 150px;
-  margin-bottom: 200px;
 }
 .content .limiter .container-login100 {
   width: 100%;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -199,19 +347,23 @@ nav i {
   font-size: xx-large;
   font-weight: 500;
 }
+.content .limiter .container-login100 .wrap-login100 .login100-form .link-option:focus {
+  outline: none;
+}
 .content .show {
+  opacity: 0;
+  height: 0;
   position: fixed;
-  top: 50%;
+  top: 290px;
   left: 15%;
   border-radius: 50px;
   border: 10px solid black;
-  transform: translate(0, -50%);
   font-family: "Jost";
   overflow: hidden;
 }
 .content .show .wrap {
   overflow-y: scroll;
-  min-width: 250px;
+  width: 250px;
   height: 500px;
   padding: 20px;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
@@ -231,14 +383,15 @@ nav i {
   width: 100px;
   height: 100px;
 }
-.content .show .wrap .name {
+.content .show .wrap .showname {
   width: 100%;
   text-align: center;
   margin-top: 20px;
 }
-.content .show .wrap .name p {
+.content .show .wrap .showname p {
   color: black;
   font-size: 20px;
+  overflow-x: hidden;
 }
 .content .show .wrap #link-container {
   position: relative;
@@ -250,6 +403,7 @@ nav i {
   width: 100%;
   text-align: center;
   line-height: 45px;
+  height: 45px;
   position: relative;
   margin-top: 20px;
   display: flex;
@@ -257,6 +411,7 @@ nav i {
   align-items: center;
   text-decoration: none;
   transition: all 0.4s;
+  overflow: hidden;
 }
 .content .show .wrap #link-container .link:hover {
   cursor: pointer;
@@ -275,26 +430,11 @@ nav i {
   color: black;
   margin: 0;
   padding: 0;
-  margin-left: 20px;
   font-size: 14px;
-}
-
-footer {
-  width: 100%;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer p {
-  color: black;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-footer img {
-  width: 200px;
-  height: 70px;
+  height: 45px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @keyframes fadein {
@@ -324,21 +464,46 @@ footer img {
 }
 #container-showlink .link .linkinput {
   width: 80%;
+  position: relative;
+}
+#container-showlink .link .linkinput .linknametitle-wrap {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+}
+#container-showlink .link .linkinput .linknametitle-wrap #linknametitle {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container-showlink .link .linkinput .linknametitle-wrap input {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  color: lightgray;
+  font-style: italic;
 }
 #container-showlink .link .linkinput i {
   cursor: pointer;
-  top: 70px;
+  position: absolute;
+  right: 40px;
 }
-#container-showlink .link .linkinput input {
+#container-showlink .link .linkinput i:first-of-type {
+  top: 5px;
+}
+#container-showlink .link .linkinput i:last-of-type {
+  bottom: 6px;
+}
+#container-showlink .link .linkinput #link {
   margin-right: 10px;
-}
-#container-showlink .link .linkinput input:first-of-type {
-  font-size: 20px;
-  font-weight: 500;
-  color: black;
-}
-#container-showlink .link .linkinput input:last-of-type {
+  width: 80%;
   margin-top: 10px;
+  color: rgb(185, 185, 185);
+  font-style: italic;
 }
 #container-showlink .link .linktrash i {
   cursor: pointer;
@@ -384,9 +549,6 @@ footer img {
   .content .show {
     left: 12%;
   }
-  .content .limiter {
-    margin-left: 400px;
-  }
 }
 @media (max-width: 1200px) {
   .content .show {
@@ -396,9 +558,6 @@ footer img {
 @media (max-width: 1100px) {
   .content .show {
     left: 5%;
-  }
-  .content .limiter {
-    margin-left: 320px;
   }
 }
 @media (max-width: 991px) {
@@ -412,9 +571,9 @@ footer img {
     max-width: 300px;
     transform: translate(0);
     left: 0;
+    top: 0;
     margin: auto;
     order: 0;
-    margin-top: 30px;
   }
   .content .limiter {
     margin: auto;
@@ -424,17 +583,43 @@ footer img {
   .content .limiter .container-login100 .wrap-login100 {
     max-width: 600px;
   }
-  footer {
-    margin-top: 40px;
+  nav {
+    position: relative;
+    display: block;
+    text-align: center;
+  }
+  nav .left, nav .center {
+    display: none;
+  }
+  nav .right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .right i {
+    flex: 1;
+    margin: auto;
+  }
+}
+@media (max-width: 580px) {
+  #container-showlink .link .linkinput i {
+    right: 20px;
   }
 }
 @media (max-width: 700px) {
+  .content .limiter {
+    margin-bottom: 30px;
+  }
   .content .limiter .container-login100 {
     padding: 0 20px;
   }
   .content .limiter .container-login100 .wrap-login100 {
     max-width: 100%;
     padding: 30px;
+  }
+  #container-showlink .link .yesno {
+    right: -47px;
   }
 }
 @media (max-width: 500px) {
@@ -459,22 +644,40 @@ footer img {
   #container-showlink .link .linkinput {
     width: 100%;
   }
-  #container-showlink .link .linkinput input {
-    width: 90%;
+  #container-showlink .link .linkinput i {
+    right: 10px;
   }
-  #container-showlink .link .linkinput input:first-of-type {
+  #container-showlink .link .linkinput .linknametitle-wrap #linknametitle {
     font-size: 18px;
   }
-  #container-showlink .link .linkinput input:last-of-type {
-    font-size: 15px;
+  #container-showlink .link .linkinput .linknametitle-wrap #title {
+    font-size: 18px;
+  }
+  #container-showlink .link .linkinput #link {
+    font-size: 16px;
+  }
+  nav .right .nav-icon i {
+    margin-top: 0;
+    font-size: 27px;
+  }
+  .content .limiter .container-login100 .wrap-login100 .login100-form .name {
+    display: flex;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
   }
 }
 @media (max-width: 390px) {
   #container-showlink .link .linkinput {
     width: 100%;
   }
+  #container-showlink .link .linkinput .linknametitle-wrap #linknametitle {
+    display: none;
+  }
   #container-showlink .link .linkinput input {
     width: 85%;
+  }
+  #container-showlink .link .linkinput i {
+    right: 0;
   }
   #container-showlink .link .linklogo {
     right: 6%;
@@ -485,7 +688,7 @@ footer img {
     width: 100%;
   }
   #container-showlink .link .linkinput input {
-    width: 80%;
+    width: 100%;
   }
   #container-showlink .link .linkinput input:first-of-type {
     font-size: 15px;
@@ -493,11 +696,32 @@ footer img {
   #container-showlink .link .linkinput input:last-of-type {
     font-size: 12px;
   }
+  #container-showlink .link .linkinput h5 {
+    font-size: 15px;
+  }
+  .content {
+    margin-top: 0;
+  }
   .content .show {
     margin-left: 15px;
     margin-right: 15px;
   }
   .content .show .wrap {
-    min-width: 200px;
+    width: 200px;
+    margin: auto;
+  }
+  .logo {
+    margin-top: 40px;
+  }
+  .logo img {
+    width: 150px;
+    height: 50px;
+  }
+  #show-card-id, #show-change-theme, #show-contact {
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+  #show-change-theme {
+    height: 200px;
   }
 }

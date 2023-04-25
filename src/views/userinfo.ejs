@@ -14,19 +14,171 @@
 	<link rel="stylesheet" href="css/avatar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="js/jquery-3.6.4.js"></script>
-	<script src="js/userinfo.js"></script>
-	<script src="js/avatar.js"></script>
+	<script src="js/userinfo.js" ></script>
+	<script src="js/avatar.js" ></script>
 </head>
 <body style="background-image: url('image/signin/bg-01.jpg');">
 
 	<!-- nav -->
 	<nav>
-		<i onclick="window.location.href='/signin'" class="fas fa-sign-out-alt"></i>
+		<div class="left">
+			
+		</div>
+		<div class="center">
+		
+		</div>
+		<div class="right">
+			<div class="nav-icon">
+				<i class="fas fa-user" id="cardid-icon"></i><span class="tooltiptext">Card ID</span>
+			</div>
+			<div class="nav-icon">
+				<i class="fa fa-envelope" id="contact-icon"></i><span class="tooltiptext">Contact</span>
+			</div>
+			<div class="nav-icon">
+				<i class="far fa-images" id="change-theme-icon"></i><span class="tooltiptext">Theme</span>
+			</div>
+			<div class="nav-icon">
+				<i onclick="window.location.href='/signin'" class="fas fa-sign-out-alt"></i><span class="tooltiptext">Log out</span>
+			</div>
+		</div>
 	</nav>
-
+	<div id="show-card-id">
+		<h2>Card ID</h2>
+		<p>123456789</p>
+	</div>
+	<div id="show-contact">
+		<h2>Contact information</h2>
+		<p>We love to hear from you on our customer service, merchandise, website or any topics you want to share with us. Your comments and suggestions will be appreciated. Please complete the form below.</p>
+		<p>184 Main Rd E, St Albans Victoria 3021, Australia</p>
+		<p>1800-123-222 / 1900-1570-230</p>
+		<p>contact@company.com</p>
+		<p>Everyday 9:00-17:00</p>
+	</div>
+	<div id="show-change-theme">
+		<h2>Change theme color</h2>
+		<div class="item-bottom">
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background: linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Default</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color: #90A87B"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Green</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:#E4E0D4"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Beige</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color: white;border: 1px solid lightgray;"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>White</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:#8DB5D1"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Light Blue</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:#143F66"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Dark Blue</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:#C6AFC4"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Light Purple</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:#836A53"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Brown</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:black"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Black</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:grey"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Grey</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:#EADED9"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Light Pink</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:rgb(31, 53, 252)"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Blue</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:darkgoldenrod"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Dark Yellow</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+			<div class="item-bottom-color">
+				<div class="color">
+					<a onclick="changecolortheme(this)" style="background-color:rgb(143, 103, 43)"></a>
+				</div>
+				<div class="tooltip-text">
+					<span>Dark Brown</span><i class="fa-solid fa-caret-down"></i>
+				</div>
+			</div>
+		  
+		</div>
+	</div>
+	<div class="logo">
+		<img src="image/logo.png" alt="" id="logo">
+	</div>
+	
 	<!-- content -->
 	<div class="content">
-		<div class="limiter">
+		<div class="limiter" id="limiter">
 			<div class="container-login100" >
 				<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 					<form class="login100-form validate-form" onsubmit="submit_form(event,this)">
@@ -34,7 +186,7 @@
 							<img src="image/userinfo/avatar-1.png">
 						</div>
 						<div class="name">
-							<input id="name" readonly="true" value="@yourname" maxlength="30" onfocusout="inputnamefocusout(this)"></input><i class="fas fa-pencil" onclick="editname(this)"></i>
+							<input id="name" readonly="true" value="@yourname" maxlength="30" onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editname(this)"></i>
 						</div>
 						<div class="container-login100-form-btn" id="addlink-btn">
 							<div class="wrap-login100-form-btn">
@@ -44,7 +196,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="link-option">
+						<div class="link-option" tabindex="-1">
 							<a onclick="addlinkfunction(this)">Facebook</a>
 							<a onclick="addlinkfunction(this)">Youtube</a>
 							<a onclick="addlinkfunction(this)">Instagram</a>
@@ -66,10 +218,13 @@
 									<img src="image/userinfo/${a.innerText.toLowerCase()}.png">
 								</div>
 								<div class="linkinput">
-									<input readonly="true" value="${a.innerText} - ${name.value}" maxlength="40" size="22" onfocusout="inputtitlefocusout(this)"></input>
-									<i class="fas fa-pencil" onclick="edit(this)"></i><br>
-									<input readonly="true" value="http://${a.innerText.toLowerCase()}.com/yourname" size="30" onfocusout="inputlinkfocusout(this)"></input>
-									<i class="fas fa-pencil" onclick="edit(this)"></i>
+									<div class="linknametitle-wrap">
+										<h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5>
+										<input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
+									</div>
+									<i class="fas fa-pencil" onclick="editinputtitle(this)"></i>
+									<input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
+									<i class="fas fa-pencil" onclick="editinputlink(this)"></i>
 								</div>
 								<div class="linktrash">
 									<i class="fas fa-trash" onclick="clicktrash(this)"></i>
@@ -105,12 +260,12 @@
 			})
 		</script>
 	
-		<div class="show">
-			<div class="wrap">
+		<div class="show" id="show">
+			<div class="wrap" id="wrap">
 				<div class="avatar">
 					<img id="show-avatar" src="image/userinfo/avatar-1.png">
 				</div>
-				<div class="name">
+				<div class="showname">
 					<p id="name-show">@yourname</p>
 				</div>
 				<div id="link-container">
@@ -122,10 +277,5 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- footer -->
-	<footer>
-		<img src="image/logo.png">
-	</footer>
 </body>
 </html>
