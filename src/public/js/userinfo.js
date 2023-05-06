@@ -89,13 +89,13 @@ function addlinkfunction(a){
         }
         return frag;
     }
-    var fragment = create(`<div id="container-showlink"><div class="link"><div class="linklogo"><img src="image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
+    var fragment = create(`<div id="container-showlink"><div class="link"><div class="linklogo"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
     linkarea.insertBefore(fragment, linkarea.childNodes[linkarea.childElementCount]);
     $(".yesno").hide();
 
     // for showarea
     let showLinkcontainer = document.getElementById("link-container");
-    var showFragment = create(`<a class="link" href='#' target="_blank"><img src="image/userinfo/${a.innerText.toLowerCase()}.png" alt=""><p>${name.value}</p></a>`);
+    var showFragment = create(`<a class="link" href='#' target="_blank"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png" alt=""><p>${name.value}</p></a>`);
     showLinkcontainer.insertBefore(showFragment, showLinkcontainer.childNodes[showLinkcontainer.childElementCount]);
     
     // align tag p center depend on length of @yourtitle

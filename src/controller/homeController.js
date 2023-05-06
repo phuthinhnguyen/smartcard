@@ -4,8 +4,8 @@ import multer from "multer";
 
 let getHomepage = async(req,res) =>{
     const [rows, fields] = await pool.execute('SELECT * FROM `smartcard`'); 
-    // return res.render("index.ejs",{datacardid: rows});  
-    return res.render("userinfo.ejs");
+    return res.render("index.ejs",{datacardid: rows});  
+    // return res.render("userinfo.ejs")
 }
 
 let getDetailPage = async(req,res)=>{
@@ -71,17 +71,6 @@ let signin = async(req,res) =>{
     return res.render("signin.ejs",{datacardid: rows});  
 
 }
-
-// let checkFirsttap = async (req,res)=>{
-//     let cardId =req.params.cardid;
-//     let [card] = await pool.execute(`select * from users where id = ?`,[cardId]);
-//     if (user.username.length!=0){
-//         return res.render("username.ejs");
-//     }
-        // return res.render("signup.ejs");
-//     return res.send(JSON.stringify(card));
-
-// }
 
 
 module.exports = {
