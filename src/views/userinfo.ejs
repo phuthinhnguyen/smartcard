@@ -18,264 +18,313 @@
 	<script src="js/avatar.js" ></script>
 </head>
 <body style="background-image: url('image/signin/bg-01.jpg');">
-
-	<!-- nav -->
-	<nav>
-		<div class="left">
+	<div id="body">
+		<!-- nav -->
+		<nav>
+			<div class="left">
+				
+			</div>
+			<div class="center">
 			
+			</div>
+			<div class="right">
+				<div class="nav-icon">
+					<i class="fas fa-user" id="cardid-icon"></i><span class="tooltiptext">Card ID</span>
+				</div>
+				<div class="nav-icon">
+					<i class="fa fa-envelope" id="contact-icon"></i><span class="tooltiptext">Contact</span>
+				</div>
+				<div class="nav-icon">
+					<i class="far fa-images" id="change-theme-icon"></i><span class="tooltiptext">Theme</span>
+				</div>
+				<div class="nav-icon">
+					<i onclick="window.location.href='/signin'" class="fas fa-sign-out-alt"></i><span class="tooltiptext">Log out</span>
+				</div>
+			</div>
+		</nav>
+		<div id="show-card-id">
+			<h2>Card ID</h2>
+			<p>123456789</p>
 		</div>
-		<div class="center">
-		
+		<div id="show-contact">
+			<h2>Contact information</h2>
+			<p>We love to hear from you on our customer service, merchandise, website or any topics you want to share with us. Your comments and suggestions will be appreciated. Please complete the form below.</p>
+			<p>184 Main Rd E, St Albans Victoria 3021, Australia</p>
+			<p>1800-123-222 / 1900-1570-230</p>
+			<p>contact@company.com</p>
+			<p>Everyday 9:00-17:00</p>
 		</div>
-		<div class="right">
-			<div class="nav-icon">
-				<i class="fas fa-user" id="cardid-icon"></i><span class="tooltiptext">Card ID</span>
-			</div>
-			<div class="nav-icon">
-				<i class="fa fa-envelope" id="contact-icon"></i><span class="tooltiptext">Contact</span>
-			</div>
-			<div class="nav-icon">
-				<i class="far fa-images" id="change-theme-icon"></i><span class="tooltiptext">Theme</span>
-			</div>
-			<div class="nav-icon">
-				<i onclick="window.location.href='/signin'" class="fas fa-sign-out-alt"></i><span class="tooltiptext">Log out</span>
+		<div id="show-change-theme">
+			<h2>Change theme color</h2>
+			<div class="item-bottom">
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background: linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Default</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color: #90A87B"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Green</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:#E4E0D4"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Beige</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color: white;border: 1px solid lightgray;"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>White</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:#8DB5D1"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Light Blue</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:#143F66"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Dark Blue</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:#C6AFC4"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Light Purple</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:#836A53"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Brown</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:black"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Black</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:grey"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Grey</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:#EADED9"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Light Pink</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:rgb(31, 53, 252)"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Blue</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:darkgoldenrod"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Dark Yellow</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<div class="item-bottom-color">
+					<div class="color">
+						<a onclick="changecolortheme(this)" style="background-color:rgb(143, 103, 43)"></a>
+					</div>
+					<div class="tooltip-text">
+						<span>Dark Brown</span><i class="fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+			
 			</div>
 		</div>
-	</nav>
-	<div id="show-card-id">
-		<h2>Card ID</h2>
-		<p>123456789</p>
-	</div>
-	<div id="show-contact">
-		<h2>Contact information</h2>
-		<p>We love to hear from you on our customer service, merchandise, website or any topics you want to share with us. Your comments and suggestions will be appreciated. Please complete the form below.</p>
-		<p>184 Main Rd E, St Albans Victoria 3021, Australia</p>
-		<p>1800-123-222 / 1900-1570-230</p>
-		<p>contact@company.com</p>
-		<p>Everyday 9:00-17:00</p>
-	</div>
-	<div id="show-change-theme">
-		<h2>Change theme color</h2>
-		<div class="item-bottom">
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background: linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Default</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color: #90A87B"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Green</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:#E4E0D4"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Beige</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color: white;border: 1px solid lightgray;"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>White</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:#8DB5D1"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Light Blue</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:#143F66"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Dark Blue</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:#C6AFC4"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Light Purple</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:#836A53"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Brown</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:black"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Black</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:grey"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Grey</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:#EADED9"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Light Pink</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:rgb(31, 53, 252)"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Blue</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:darkgoldenrod"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Dark Yellow</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-			<div class="item-bottom-color">
-				<div class="color">
-					<a onclick="changecolortheme(this)" style="background-color:rgb(143, 103, 43)"></a>
-				</div>
-				<div class="tooltip-text">
-					<span>Dark Brown</span><i class="fa-solid fa-caret-down"></i>
-				</div>
-			</div>
-		  
+		<div class="logo">
+			<img src="image/logo.png" alt="" id="logo">
 		</div>
-	</div>
-	<div class="logo">
-		<img src="image/logo.png" alt="" id="logo">
-	</div>
 	
-	<!-- content -->
-	<div class="content">
-		<div class="limiter" id="limiter">
-			<div class="container-login100" >
-				<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-					<form class="login100-form validate-form" onsubmit="submit_form(event,this)">
-						<div class="avatar-upload">
-							<img src="image/userinfo/avatar-1.png">
-						</div>
-						<div class="name">
-							<input id="name" readonly="true" value="@yourname" maxlength="30" onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editname(this)"></i>
-						</div>
-						<div class="container-login100-form-btn" id="addlink-btn">
-							<div class="wrap-login100-form-btn">
-								<div class="login100-form-bgbtn"></div>
-								<div class="login100-form-btn">
-									<i class="far fa-plus"></i>Add link
-								</div>
+		<!-- content -->
+		<div class="content">
+			<div class="limiter" id="limiter">
+				<div class="container-login100" >
+					<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+						<form class="login100-form validate-form" onsubmit="submit_form(event,this)">
+							<div class="avatar-upload">
+								<img src="image/userinfo/avatar-1.png">
 							</div>
-						</div>
-						<div class="link-option" tabindex="-1">
-							<a onclick="addlinkfunction(this)">Facebook</a>
-							<a onclick="addlinkfunction(this)">Youtube</a>
-							<a onclick="addlinkfunction(this)">Instagram</a>
-							<a onclick="addlinkfunction(this)">TikTok</a>
-							<a onclick="addlinkfunction(this)">Zalo</a>
-							<a onclick="addlinkfunction(this)">Telegram</a>
-							<a onclick="addlinkfunction(this)">Skype</a>
-							<a onclick="addlinkfunction(this)">Twitter</a>
-							<a onclick="addlinkfunction(this)">Pinterest</a>
-							<a onclick="addlinkfunction(this)">Momo</a>
-							<a onclick="addlinkfunction(this)">Gmail</a>
-							<a onclick="addlinkfunction(this)">LinkedIn</a>
-							<a onclick="addlinkfunction(this)">WhatsApp</a>
-						</div>
-						<div id="link-area"></div>
-						<!-- <div id="container-showlink">
-							<div class="link">
-								<div class="linklogo">
-									<img src="image/userinfo/${a.innerText.toLowerCase()}.png">
-								</div>
-								<div class="linkinput">
-									<div class="linknametitle-wrap">
-										<h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5>
-										<input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
+							<div class="name">
+								<input id="name" readonly="true" value="@yourname" maxlength="30" onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editname(this)"></i>
+							</div>
+							<div class="container-login100-form-btn" id="addlink-btn">
+								<div class="wrap-login100-form-btn">
+									<div class="login100-form-bgbtn"></div>
+									<div class="login100-form-btn">
+										<i class="far fa-plus"></i>Add link
 									</div>
-									<i class="fas fa-pencil" onclick="editinputtitle(this)"></i>
-									<input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
-									<i class="fas fa-pencil" onclick="editinputlink(this)"></i>
-								</div>
-								<div class="linktrash">
-									<i class="fas fa-trash" onclick="clicktrash(this)"></i>
-								</div>
-								<div class="yesno">
-									<i class="fas fa-check" id="yes" onclick="removelink(this)"></i>
-									<i class="fas fa-times" id="no" onclick="clickno(this)"></i>
 								</div>
 							</div>
-						</div> -->
-						<div class="container-login100-form-btn">
-							<div class="wrap-login100-form-btn">
-								<div class="login100-form-bgbtn"></div>
-								<button class="login100-form-btn" type="submit">
-									Save
-								</button>
+							<div class="link-option" tabindex="-1">
+								<a onclick="addlinkfunction(this)">Facebook</a>
+								<a onclick="addlinkfunction(this)">Youtube</a>
+								<a onclick="addlinkfunction(this)">Instagram</a>
+								<a onclick="addlinkfunction(this)">TikTok</a>
+								<a onclick="addlinkfunction(this)">Zalo</a>
+								<a onclick="addlinkfunction(this)">Telegram</a>
+								<a onclick="addlinkfunction(this)">Skype</a>
+								<a onclick="addlinkfunction(this)">Twitter</a>
+								<a onclick="addlinkfunction(this)">Pinterest</a>
+								<a onclick="addlinkfunction(this)">Momo</a>
+								<a onclick="addlinkfunction(this)">Gmail</a>
+								<a onclick="addlinkfunction(this)">LinkedIn</a>
+								<a onclick="addlinkfunction(this)">WhatsApp</a>
 							</div>
-						</div>
-					</form>
+							<div id="link-area"></div>
+							<!-- <div id="container-showlink">
+								<div class="link">
+									<div class="linklogo">
+										<img src="image/userinfo/${a.innerText.toLowerCase()}.png">
+									</div>
+									<div class="linkinput">
+										<div class="linknametitle-wrap">
+											<h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5>
+											<input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
+										</div>
+										<i class="fas fa-pencil" onclick="editinputtitle(this)"></i>
+										<input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
+										<i class="fas fa-pencil" onclick="editinputlink(this)"></i>
+									</div>
+									<div class="linktrash">
+										<i class="fas fa-trash" onclick="clicktrash(this)"></i>
+									</div>
+									<div class="yesno">
+										<i class="fas fa-check" id="yes" onclick="removelink(this)"></i>
+										<i class="fas fa-times" id="no" onclick="clickno(this)"></i>
+									</div>
+								</div>
+							</div> -->
+							<div class="container-login100-form-btn">
+								<div class="wrap-login100-form-btn">
+									<div class="login100-form-bgbtn"></div>
+									<button class="login100-form-btn" type="submit">
+										Save
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+		
+			</div>
+			<script>
+				new window.AvatarUpload({
+					el: document.querySelector('.avatar-upload'),
+					uploadUrl: '',
+					uploadData: {
+						foo: 'bar',
+						bar: 'baz'
+					},
+					pretendUpload: true
+				})
+			</script>
+		
+			<div class="show" id="show">
+				<div class="wrap" id="wrap">
+					<div class="avatar">
+						<img id="show-avatar" src="image/userinfo/avatar-1.png">
+					</div>
+					<div class="showname">
+						<p id="name-show">@yourname</p>
+					</div>
+					<div id="link-container">
+					</div>
+					<!-- <a class="link" href='#' target="_blank">
+						<img src="image/userinfo/facebook.png" alt="">
+						<p>${name.value}</p>
+					</a> -->
 				</div>
 			</div>
-	 
 		</div>
-		<script>
-			new window.AvatarUpload({
-				el: document.querySelector('.avatar-upload'),
-				uploadUrl: '',
-				uploadData: {
-					foo: 'bar',
-					bar: 'baz'
-				},
-				pretendUpload: true
-			})
-		</script>
+	</div>
 	
-		<div class="show" id="show">
-			<div class="wrap" id="wrap">
-				<div class="avatar">
-					<img id="show-avatar" src="image/userinfo/avatar-1.png">
-				</div>
-				<div class="showname">
-					<p id="name-show">@yourname</p>
-				</div>
-				<div id="link-container">
-				</div>
-				<!-- <a class="link" href='#' target="_blank">
-					<img src="image/userinfo/facebook.png" alt="">
-					<p>${name.value}</p>
-				</a> -->
+	<!-- guides -->
+	<div id="guides">
+		<div id="welcome">
+			<p>Welcome to SMARTCARD</p>
+			<p>Let's take a tour to see some guides</p>
+			<div class="item">
+				<div onclick="skip()">Skip</div>
+				<div onclick="guidesgo()">Go</div>
 			</div>
 		</div>
+		<div id="uploadavatar">
+			<i class="far fa-hand-point-left"></i><p>Upload your avatar here</p>
+		</div>
+		<div id="uploadavatar-responsive">
+			<p>Upload your avatar here</p><i class="far fa-hand-point-right"></i>
+		</div>
+		<div id="changename">
+			<i class="far fa-hand-point-left"></i><p>Click here to edit your name</p>
+		</div>
+		<div id="changename-responsive">
+			<p>Click here to edit your name</p><i class="far fa-hand-point-right"></i>
+		</div>
+		<div onclick="nextoaddlink()" id="nexttoaddlink">Next&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+		<div id="addlink">
+			<i class="far fa-hand-point-left"></i><p>Click here to add your link</p>
+		</div>
+		<div id="addlink-responsive">
+			<p>Click here to add your link</p><i class="far fa-hand-point-down"></i>
+		</div>
+		<div onclick="nexttolinkcontainer()" id="nexttolinkcontainer">Next&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+		<div id="edittitle">
+			<i class="far fa-hand-point-left"></i><p>Click here to edit your title</p>
+		</div>
+		<div id="edittitle-responsive">
+			<p>Click here to edit your title</p><i class="far fa-hand-point-right"></i>
+		</div>
+		<div id="editlink-responsive">
+			<p>Click here to edit your link</p><i class="far fa-hand-point-right"></i>
+		</div>
+		<div id="editlink">
+			<i class="far fa-hand-point-left"></i><p>Click here to edit your link</p>
+		</div>
+		<div id="preview">
+			<p>Preview your info on phone</p><i class="far fa-hand-point-down"></i>
+		</div>
+		<div onclick="done()" id="done">Done&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
 	</div>
 </body>
 </html>

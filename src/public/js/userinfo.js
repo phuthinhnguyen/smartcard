@@ -369,30 +369,249 @@ $(document).ready(function(){
     $(".link-option").hide();
 
     $("#addlink-btn").click(function name(params) {
-        // if (linkoptionindex==true){
-            $(".link-option").slideDown();
-            
-            // if (linkoptionindex==true){
-            //     $(".link-option").slideToggle();
-            // }
-            $(".link-option").focus();
-        // }   
+            $(".link-option").slideToggle();  
     })
-    let linkoptionindex=true
-    $(".link-option").children().click(function name(params) {
-       
-    })
-    $(".link-option, .link-option *").blur(function(e){
-        // if(!$(e.relatedTarget).is(".link-option, .link-option *")){
-            $(".link-option").slideUp();
-            // linkoptionindex=false;
-        // }
-        // if($(e.relatedTarget).is("#addlink-btn")){
-        //     console.log("sdfsdf")
-        // }
+    $(document).click(function(event) {
+        if (!$(event.target).closest("#addlink-btn").length) {
+            $(".link-option").slideUp(); 
+        }
     });
+
 });
+
+function guides(){
+    if (window.innerWidth>991){
+        let body = document.getElementById("body");
+        let guides = document.getElementById("guides");
+        guides.animate([
+            { top: "100%"},
+            { opacity: "0.1"},
+            { opacity: "0.7"},
+            { opacity: "1"},
+          ], {
+            duration: 1000,
+          });
+    }
+    else skip();
+}
+
+setTimeout(guides,1);
+
+function skip(){
+    let body = document.getElementById("body");
+    body.style.opacity="1";
+    let guides = document.getElementById("guides");
+    guides.style.display="none";
+    let limiter = document.getElementById("limiter");
+    
+    limiter.animate([
+        { marginLeft: "20%"},
+        { marginLeft: "10%"},
+        { marginLeft: "2%"},
+        { marginLeft: "0%"},
+        { margin: "auto"}
+      ], {
+        duration: 2000,
+      });
+    limiter.style.margin="auto";
+}
+
+function guidesgo(){
+    let welcome = document.getElementById("welcome");
+    let body = document.getElementById("body");
+    let uploadavatar = document.getElementById("uploadavatar");
+    let uploadavatarresponsive = document.getElementById("uploadavatar-responsive");
+    let changename = document.getElementById("changename");
+    let changenameresponsive = document.getElementById("changename-responsive");
+    let nexttoaddlink = document.getElementById("nexttoaddlink");
+    welcome.style.display="none";
+    welcome.animate([
+        { top: "50%"},
+        { top: "100%"},
+      ], {
+        duration: 500,
+      });
+    body.animate([
+        { opacity: "0.1"},
+        { opacity: "0.8"},
+      ], {
+        duration: 500,
+      });
+    body.style.opacity="1";
+ 
+   
+    if (window.innerWidth>1300){
+        uploadavatar.animate([
+            { top: "0"},
+            { top: "50%"},
+            ], {
+            duration: 500,
+            });
+        uploadavatar.style.display="flex";  
+        changename.animate([
+            { top: "0"},
+            { top: "60%"},
+            ], {
+            duration: 1000,
+            });
+        changename.style.display="flex"; 
+    }
+    else{
+        uploadavatarresponsive.animate([
+            { top: "0"},
+            { top: "50%"},
+            ], {
+            duration: 500,
+            });
+        uploadavatarresponsive.style.display="flex";  
+        changenameresponsive.animate([
+            { top: "0"},
+            { top: "60%"},
+            ], {
+            duration: 1000,
+            });
+        changenameresponsive.style.display="flex"; 
+    }
+    
+    nexttoaddlink.animate([
+        { opacity: "0"},
+        { opacity: "0"},
+        { opacity: "0.9"},
+        ], {
+        duration: 1500,
+        });
+ 
+    nexttoaddlink.style.display="block";  
+}
+
+function nextoaddlink(){
+    let uploadavatar = document.getElementById("uploadavatar");
+    let uploadavatarresponsive = document.getElementById("uploadavatar-responsive");
+    let changename = document.getElementById("changename");
+    let changenameresponsive = document.getElementById("changename-responsive");
+    let nexttoaddlink = document.getElementById("nexttoaddlink");
+    let addlink = document.getElementById("addlink");
+    let addlinkresponsive = document.getElementById("addlink-responsive");
+    let nexttolinkcontainer = document.getElementById("nexttolinkcontainer");
+    uploadavatar.style.display="none";
+    uploadavatarresponsive.style.display="none";
+    changename.style.display="none";
+    changenameresponsive.style.display="none";
+    nexttoaddlink.style.display="none";
+    if (window.innerWidth>1400){
+        addlink.animate([
+            { top: "0"},
+            { top: "60%"},
+            ], {
+            duration: 1000,
+            });
+        addlink.style.display="flex";
+    }
+    else{
+        addlinkresponsive.animate([
+            { top: "0"},
+            { top: "60%"},
+            ], {
+            duration: 1000,
+            });
+        addlinkresponsive.style.display="block";
+    }
+    nexttolinkcontainer.animate([
+        { opacity: "0"},
+        { opacity: "0"},
+        { opacity: "0.9"},
+        ], {
+        duration: 1800,
+        }); 
+    nexttolinkcontainer.style.display="block";
+    $(".link-option").slideDown();
+}
+
+function nexttolinkcontainer(){
+    let linkoption = document.getElementsByClassName("link-option");
+    addlinkfunction(linkoption[0].children[0]); 
+    let addlink = document.getElementById("addlink");
+    let addlinkresponsive = document.getElementById("addlink-responsive");
+    let nexttolinkcontainer = document.getElementById("nexttolinkcontainer");
+    let edittitle = document.getElementById("edittitle");
+    let edittitleresponsive = document.getElementById("edittitle-responsive");
+    let editlink = document.getElementById("editlink");
+    let editlinkresponsive = document.getElementById("editlink-responsive");
+    let preview = document.getElementById("preview");
+    let done = document.getElementById("done");
+    addlink.style.display="none";
+    addlinkresponsive.style.display="none";
+    nexttolinkcontainer.style.display="none";
+    if (window.innerWidth>1500){
+        edittitle.animate([
+            { top: "0"},
+            { top: "77%"},
+            ], {
+            duration: 1000,
+            });
+        edittitle.style.display="flex";  
+        editlink.animate([
+            { top: "0"},
+            { top: "78%"},
+            ], {
+            duration: 1500,
+            });
+        editlink.style.display="flex";
+        preview.style.left="calc(15% + 130px)";   
+    }
+    else{
+        edittitleresponsive.animate([
+            { top: "0"},
+            { top: "77%"},
+            ], {
+            duration: 1000,
+            });
+        edittitleresponsive.style.display="flex";  
+        editlinkresponsive.animate([
+            { top: "0"},
+            { top: "78%"},
+            ], {
+            duration: 1500,
+            });
+        editlinkresponsive.style.display="flex";  
+        done.style.left="calc(50% - 100px)";
+        done.style.top="700px";  
+        if (window.innerWidth>1200){
+            preview.style.left="calc(15% + 100px)"; 
+        }
+        else if (window.innerWidth<=1200 && window.innerWidth>1100){
+            preview.style.left="calc(15% + 60px)"; 
+        }
+        else if (window.innerWidth<=1100){
+            preview.style.left="calc(15% + 30px)"; 
+        }
+   
+    }
+    preview.animate([
+        { top: "0"},
+        { top: "22%"},
+        ], {
+        duration: 1500,
+        });
+    preview.style.display="block"; 
+    done.animate([
+        { opacity: "0"},
+        { opacity: "0"},
+        { opacity: "0.9"},
+        ], {
+        duration: 1800,
+        }); 
+    done.style.display="block";
+  
+}
+
+function done(){
+    skip();
+    let yes = document.getElementById("yes");
+    removelink(yes);
+}
 
 function submit_form(event,form){
     event.preventDefault();
 }
+

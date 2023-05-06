@@ -43,7 +43,9 @@ button {
     }
 }
 
-
+#body{
+  opacity: 0;
+}
 // CSS nav
 nav{
   width: 100%;
@@ -517,6 +519,169 @@ nav{
 }
 
 
+// CSS guides
+#guides{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(19, 16, 16);
+  position: absolute;
+  top: 0;
+  opacity: 0.8;
+  z-index: 1000;
+  #welcome{
+    @include welcome;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+      &:first-of-type{
+        font-size: 27px;
+      }
+    }
+    .item{
+      width: 50%;
+      height: 50px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      div{
+        cursor: pointer;
+        padding: 10px;
+        &:hover{
+          color: gray;
+        }
+      }
+    }
+   
+  }
+  #uploadavatar,#changename,#addlink,#edittitle,#editlink,#preview,#edittitle-responsive,#editlink-responsive,#changename-responsive,#uploadavatar-responsive,#addlink-responsive{
+    font-size: 18px;
+    @include welcome;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+    width: 300px;
+    padding: 15px 0;
+    display: none;
+    p{
+      margin: 0;
+      padding: 0;
+    }
+    @keyframes handanimationtoleft {
+      0%{margin-left: 20px;}
+      100%{margin-left: 0;}
+    }
+    i{
+      margin-right: 20px;
+      font-size: 30px;
+      animation: handanimationtoleft 1s infinite;
+    }
+  }
+  #uploadavatar{
+    left: calc(50% + 230px);
+    top: 420px;
+    border-radius: 20px;
+  }
+  #uploadavatar-responsive{
+    left: calc(50% - 235px);
+    top: 420px;
+    border-radius: 20px;
+    i{
+      animation: handanimationtoright 1s infinite;
+      margin-left: 20px;
+    }
+  }
+  #changename{
+    left: calc(50% + 410px);
+    top: 540px;
+    border-radius: 20px;
+  }
+  #changename-responsive{
+    top: 540px;
+    border-radius: 20px;
+    i{
+      animation: handanimationtoright 1s infinite;
+      margin-left: 20px;
+    }
+    left: calc(50% + 65px);
+  }
+  #nexttoaddlink,#nexttolinkcontainer,#done{
+    @include welcome;
+    display: none;
+    left: 90%;
+    top: 45%;
+    width: 150px;
+    height: 60px;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: 0.6s;
+    font-size: 20px;
+    &:hover{
+      background-color: white;
+      color: black;
+    }
+  }
+  #addlink{
+    left: calc(50% + 460px);
+    top: 600px;
+    width: 400px;
+  }
+  #addlink-responsive{
+    left: calc(50% + 190px);
+    top: 520px;
+    width: 300px;
+    height: 100px;
+    i{
+      animation: handanimationtodown 1s infinite;
+    }
+  }
+  #edittitle{
+    left: calc(50% + 440px);
+    top: 675px;
+    height: 50px;
+  }
+  @keyframes handanimationtoright {
+    0%{margin-right: 20px;}
+    100%{margin-right: 0;}
+  }
+  #edittitle-responsive{
+    left: calc(50% + 170px);
+    top: 675px;
+    i{
+      margin-left: 20px;
+      animation: handanimationtoright 1s infinite;
+    }
+    height: 50px;
+  }
+  #editlink{
+    left: calc(50% + 440px);
+    top: 730px;
+    height: 45px;
+  }
+  #editlink-responsive{
+    left: calc(50% + 170px);
+    top: 730px;
+    i{
+      margin-left: 20px;
+      animation: handanimationtoright 1s infinite;
+    }
+    height: 45px;
+  }
+  @keyframes handanimationtodown {
+    0%{margin-top: 0;}
+    100%{margin-top: 10px;}
+  }
+  #preview{
+    top: 220px;
+    height: 100px;
+    i{
+      animation: handanimationtodown 1s infinite;
+    }
+  }
+}
+
 
 // Responsive
 @media (max-width: 1500px) {
@@ -524,10 +689,6 @@ nav{
     .show{
       left: 12%;
     }
-    .limiter{
-      // margin-left: 400px;
-    }
- 
   }
 } 
 @media (max-width: 1200px) {
@@ -541,6 +702,11 @@ nav{
   }
 }
 @media (max-width: 1100px) {
+  #guides{
+    #edittitle-responsive,#editlink-responsive{
+      left: calc(50% + 130px);
+    }
+  }
   .content{
     .show{
       left: 5%;
