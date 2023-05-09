@@ -5,14 +5,13 @@ const bcrypt = require('bcrypt');
 let getHomepage = async(req,res) =>{
     const [rows, fields] = await pool.execute('SELECT * FROM `smartcard`'); 
     return res.render("index.ejs",{datacardid: rows});  
-    // return res.render("userinfo.ejs")
+   
 }
 
 let cardId = async(req,res)=>{
     let cardid =req.params.cardid;
     const [user] = await pool.execute(`select * from smartcard where cardid = ?`,[cardid]);
-
-    if (user[0]["username"]=="" || user[0]["password"]=="" || user[0]["name"]=="" ){
+    if (user[0]["username"]=="" || user[0]["password"]=="" || user[0]["name1"]=="" ){
         return res.render("signup.ejs",{datauser: user});
     }
     else{
@@ -52,7 +51,7 @@ let processSignUp = async (req,res) => {
     let cardid =req.params.cardid;
     let {username, password, name} = req.body;
     const hash = bcrypt.hashSync(password, 10);
-    await pool.execute("update smartcard set username = ?, password = ?, name = ? where cardid = ?",[username,hash,name,cardid]);
+    await pool.execute("update smartcard set username = ?, password = ?, name1 = ? where cardid = ?",[username,hash,name,cardid]);
     return res.redirect("/signin");
 }
 
@@ -84,25 +83,27 @@ let userInfo = async(req,res) =>{
     // const [rows, fields] = await pool.execute('SELECT * FROM `smartcard`'); 
     // console.log(rows)
     // return res.render("signin.ejs",{datacardid: rows});  
-    return res.render("userinfo.ejs");
+    let cardid =req.params.cardid;
+    const [user] = await pool.execute(`select * from smartcard where cardid = ?`,[cardid]);
+    if (typeof user[0] != "undefined"){
+        return res.render("userinfo.ejs",{datauser: user});
+    }
+    else{
+        console.log("khong")
+    } 
 }
 
 let processLogin = async(req,res) =>{
     let username = req.body.username;
     let password = req.body.pass;
-    console.log(username)
-    console.log(password)
     const [user] = await pool.execute(`select * from smartcard where username = ?`,[username]);
-
     if (typeof user[0] != "undefined"){
         let cardid = user[0]["cardid"];
         if (bcrypt.compareSync(password, user[0]['password'])){
-            console.log("dung password")
-            res.render("userinfo.ejs");
+            return res.redirect(`/${cardid}/userinfo`);
         }
         else{
-            console.log("sai password")
-            res.redirect("/signin")
+            return res.redirect("/signin");
         }
     }
     else{

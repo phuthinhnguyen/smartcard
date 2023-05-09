@@ -44,7 +44,7 @@
 		</nav>
 		<div id="show-card-id">
 			<h2>Card ID</h2>
-			<p>123456789</p>
+			<p><%= datauser[0].cardid %></p>
 		</div>
 		<div id="show-contact">
 			<h2>Contact information</h2>
@@ -186,7 +186,7 @@
 								<img src="/image/userinfo/avatar-1.png">
 							</div>
 							<div class="name">
-								<input id="name" readonly="true" value="@yourname" maxlength="30" onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editname(this)"></i>
+								<input id="name" readonly="true" value="<%= datauser[0].name2 %>" maxlength="30" onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editname(this)"></i>
 							</div>
 							<div class="container-login100-form-btn" id="addlink-btn">
 								<div class="wrap-login100-form-btn">
@@ -282,6 +282,7 @@
 	<!-- guides -->
 	<div id="guides">
 		<div id="welcome">
+			<p>Hi <%= datauser[0].name1 %>,</p>
 			<p>Welcome to SMARTCARD</p>
 			<p>Let's take a tour to see some guides</p>
 			<div class="item">

@@ -30,13 +30,13 @@ let upload = multer({storage: storage, fileFilter:imageFilter});
 const initWebroute = (app) =>{
     route.get("/", homeController.getHomepage);
     route.get("/signin", homeController.signIn);
+    route.get("/:cardid/userinfo",homeController.userInfo);
     route.get("/:cardid", homeController.cardId);
     route.post("/:cardid/processsignup", homeController.processSignUp);
+    route.post("/processLogin",homeController.processLogin);
     // route.post("/create-new-user", homeController.createNewUser);
     // route.post("/delete-user", homeController.deleteUser);
     // route.get("/edit-user/:id", homeController.getEditPage);
-    route.post("/userinfo",homeController.userInfo);
-    route.post("/processLogin",homeController.processLogin);
     // route.get("/upload",homeController.getUploadFilePage);
     // route.post("/upload-profile-pic",upload.single("profile_pic"),homeController.handleUploadFile)
     return app.use("/",route)

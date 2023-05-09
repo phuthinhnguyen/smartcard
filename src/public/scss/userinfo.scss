@@ -534,8 +534,12 @@ nav{
     align-items: center;
     justify-content: center;
     p{
+      font-size: 16px;
       &:first-of-type{
-        font-size: 27px;
+        font-size: 26px;
+      }
+      &:last-of-type{
+        font-size: 16px;
       }
     }
     .item{

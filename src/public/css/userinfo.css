@@ -578,8 +578,14 @@ nav .right .nav-icon i {
   align-items: center;
   justify-content: center;
 }
+#guides #welcome p {
+  font-size: 16px;
+}
 #guides #welcome p:first-of-type {
-  font-size: 27px;
+  font-size: 26px;
+}
+#guides #welcome p:last-of-type {
+  font-size: 16px;
 }
 #guides #welcome .item {
   width: 50%;
