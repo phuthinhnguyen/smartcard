@@ -403,16 +403,43 @@ function skip(){
     let guides = document.getElementById("guides");
     guides.style.display="none";
     let limiter = document.getElementById("limiter");
-    
-    limiter.animate([
-        { marginLeft: "20%"},
-        { marginLeft: "10%"},
-        { marginLeft: "2%"},
-        { marginLeft: "0%"},
-        { margin: "auto"}
-      ], {
-        duration: 2000,
-      });
+    if (window.innerWidth>991){
+        limiter.animate([
+            { marginLeft: "20%"},
+            { marginLeft: "10%"},
+            { marginLeft: "2%"},
+            { marginLeft: "0%"},
+            { margin: "auto"}
+          ], {
+            duration: 2000,
+          });
+    }
+    else if (window.innerWidth<=991 && window.innerWidth>700){
+        limiter.animate([
+            // { marginLeft: "30%"},
+            // { marginLeft: "70%"},
+            { marginLeft: "25%"},
+            { marginLeft: "20%"},
+            { marginLeft: "15%"},
+            { margin: "auto"}
+          ], {
+            duration: 2000,
+          });    
+    }   
+    else {
+        limiter.animate([
+            // { marginLeft: "30%"},
+            // { marginLeft: "70%"},
+            // { marginLeft: "25%"},
+            // { marginLeft: "20%"},
+            { marginLeft: "5%"},
+            { marginLeft: "3%"},
+            { marginLeft: "1%"},
+            { margin: "auto"}
+          ], {
+            duration: 2000,
+          });  
+    }
     limiter.style.margin="auto";
 }
 
