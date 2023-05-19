@@ -1,5 +1,6 @@
 import pool  from "../configs/connectDB";
 import multer from "multer";
+import { submit_form } from "../public/js/userinfo";
 const bcrypt = require('bcrypt');
 
 let getHomepage = async(req,res) =>{
@@ -88,9 +89,11 @@ let userInfo = async(req,res) =>{
     if (typeof user[0] != "undefined"){
         return res.render("userinfo.ejs",{datauser: user});
     }
+    
     else{
         console.log("khong")
     } 
+    submit_form();
 }
 
 let processLogin = async(req,res) =>{

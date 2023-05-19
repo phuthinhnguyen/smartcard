@@ -640,5 +640,7 @@ function done(){
 
 function submit_form(event,form){
     event.preventDefault();
+    var name = document.getElementById("name").value;
+    return name
 }
-
+export {submit_form}
