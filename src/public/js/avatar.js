@@ -46,7 +46,7 @@
 		this.el = this.config.el;
 		this.renderInput();
 		this.bindInput();
-
+	
 		this.progressText = this.el.querySelector('span');
 		this.imageWrapper = this.el.querySelector('.avatar-upload__image-wrapper');
 		
@@ -70,7 +70,6 @@
 	AvatarUpload.prototype.renderInput = function() {
 		var imgEl = this.el.querySelector('img'),
 			img = imgEl.src;
-
 		var el = document.createElement('div');
 		el.className = 'avatar-upload__shell';
 
@@ -86,10 +85,8 @@
 				'<input type="file">',
 			'</div>',
 		].join('');
-
 		imgEl.parentNode.removeChild(imgEl);
 		this.el.appendChild(el);
-
 		return this;
 	};
 
@@ -116,7 +113,7 @@
 
 	AvatarUpload.prototype.displayUpload = function(event) {
 		var img = event.target.result;
-
+		document.getElementById("profile_pic").value=img;
 		this.uiUploadStart(img);
 
 	};
@@ -227,9 +224,9 @@
 		for (val in config.uploadData) {
 			formData.append(val, config.uploadData[val]);
 		}
-
 		xhr.open(config.uploadMethod, config.uploadUrl);
 		xhr.send(formData);
+	
 	};
 
 	return AvatarUpload;

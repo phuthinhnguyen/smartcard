@@ -7,6 +7,4 @@ https://stackoverflow.com/questions/23511792/attach-a-blob-to-an-input-of-type-f
 
 
 
-
-
 	

@@ -1,6 +1,5 @@
 import pool  from "../configs/connectDB";
 import multer from "multer";
-import { submit_form } from "../public/js/userinfo";
 const bcrypt = require('bcrypt');
 
 let getHomepage = async(req,res) =>{
@@ -60,18 +59,19 @@ let processSignUp = async (req,res) => {
 //     return res.render("uploadfile.ejs")
 // }
 
-
-// let handleUploadFile = async (req,res)=>{
-//     if (req.fileValidationError) {
-//         return res.send(req.fileValidationError);
-//     }
-//     else if (!req.file) {
-//         return res.send('Please select an image to upload');
-//     }
+let handleUploadFile = async (req,res)=>{
+    if (req.fileValidationError) {
+        return res.send(req.fileValidationError);
+    }
+    else if (!req.file) {
+        console.log(req.file)
+        return res.send('Please select an image to upload');
+    }
    
-//     // Display uploaded image for user validation
-//     res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
-// }
+    // Display uploaded image for user validation
+    res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
+}
+
 
 let signIn = async(req,res) =>{
     // const [rows, fields] = await pool.execute('SELECT * FROM `smartcard`'); 
@@ -89,11 +89,9 @@ let userInfo = async(req,res) =>{
     if (typeof user[0] != "undefined"){
         return res.render("userinfo.ejs",{datauser: user});
     }
-    
     else{
         console.log("khong")
     } 
-    submit_form();
 }
 
 let processLogin = async(req,res) =>{
@@ -114,6 +112,13 @@ let processLogin = async(req,res) =>{
     }
 }
 
+
+let userinfosave = async (req,res) => {
+    let cardid =req.params.cardid;
+    let profile_pic = req.body.profile_pic;
+    await pool.execute("update smartcard set avatar = ? where cardid = ?",[profile_pic,cardid]);
+}
+
 module.exports = {
-    getHomepage, cardId, userInfo, signIn, processLogin, processSignUp
+    getHomepage, cardId, userInfo, signIn, processLogin, processSignUp,handleUploadFile,userinfosave
 }

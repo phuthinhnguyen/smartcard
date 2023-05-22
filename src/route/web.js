@@ -34,11 +34,13 @@ const initWebroute = (app) =>{
     route.get("/:cardid", homeController.cardId);
     route.post("/:cardid/processsignup", homeController.processSignUp);
     route.post("/processLogin",homeController.processLogin);
+    route.post("/:cardid/userinfosave",homeController.userinfosave);
+    // route.post("/upload-profile-pic",upload.single("profile_pic"),homeController.handleUploadFile)
     // route.post("/create-new-user", homeController.createNewUser);
     // route.post("/delete-user", homeController.deleteUser);
     // route.get("/edit-user/:id", homeController.getEditPage);
     // route.get("/upload",homeController.getUploadFilePage);
-    // route.post("/upload-profile-pic",upload.single("profile_pic"),homeController.handleUploadFile)
+  
     return app.use("/",route)
 }
 export default initWebroute;

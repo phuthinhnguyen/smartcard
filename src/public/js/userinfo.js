@@ -640,7 +640,6 @@ function done(){
 
 function submit_form(event,form){
     event.preventDefault();
-    var name = document.getElementById("name").value;
-    return name
+    window.location.href="/upload-profile-pic";
 }
-export {submit_form}
+
