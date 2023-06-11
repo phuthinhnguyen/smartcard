@@ -64,7 +64,6 @@ let handleUploadFile = async (req,res)=>{
         return res.send(req.fileValidationError);
     }
     else if (!req.file) {
-        console.log(req.file)
         return res.send('Please select an image to upload');
     }
    

@@ -640,6 +640,12 @@ function done(){
 
 function submit_form(event,form){
     event.preventDefault();
-    window.location.href="/upload-profile-pic";
+    // window.location.href="/upload-profile-pic";
+    const data = document.getElementById("profile_pic").value
+    let file = new File([data], "img.jpg",{type:"image/jpeg", lastModified:new Date().getTime()});
+    let dataTransfer  = new DataTransfer();
+    dataTransfer.items.add(file);
+    // fileInput.files = dataTransfer.files;
+    document.getElementById("profile_pic").files = dataTransfer.files;
 }
 

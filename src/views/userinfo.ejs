@@ -181,11 +181,11 @@
 			<div class="limiter" id="limiter">
 				<div class="container-login100" >
 					<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-						<form class="login100-form validate-form" method="post" action="/<%= datauser[0].cardid %>/userinfosave">
+						<form class="login100-form validate-form" method="post" action="/upload-profile-pic" enctype="multipart/form-data">
 							<div class="avatar-upload">
 								<img src="<%= datauser[0].avatar %>" id="profile_pic">
 							</div>
-							<input type="text" id="profile_pic" name="profile_pic"/>
+							<input type="file" id="profile_pic" name="profile_pic"/>
 							<div class="name">
 								<input id="name" readonly="true" value="<%= datauser[0].name2 %>" maxlength="30" onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editname(this)"></i>
 							</div>
