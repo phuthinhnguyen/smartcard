@@ -4,10 +4,10 @@ import mysql from "mysql2/promise"
 console.log("Creating connection pool...")
 
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    database: 'nodejsbasic',
-    // password: 'password'
+    host: '151.106.124.151',
+    user: 'u670685794_phuthinhnguyen',
+    database: 'u670685794_smartcard',
+    password: 'Mainhi1407'
 })
 
 // // simple query
