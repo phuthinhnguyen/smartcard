@@ -122,7 +122,7 @@
 		let dataTransfer  = new DataTransfer();
 		dataTransfer.items.add(file);
 		fileInput.files = dataTransfer.files;
-		console.log(URL.createObjectURL(fileInput.files))
+
 	
 	
 		

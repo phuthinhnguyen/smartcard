@@ -61,15 +61,17 @@ let processSignUp = async (req,res) => {
 
 let handleUploadFile = async (req,res)=>{
     console.log(req.body)
+    let cardid =req.params.cardid;
     if (req.fileValidationError) {
         return res.send(req.fileValidationError);
     }
     else if (!req.file) {
         return res.send('Please select an image to upload');
     }
-   
-    // Display uploaded image for user validation
-    res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
+    const avatarsrc = `/image/${req.file.filename}`
+    await pool.execute("update smartcard set avatar = ? where cardid = ?",[avatarsrc,cardid]);
+    res.redirect(`/${cardid}/userinfo`);
+    // res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
 }
 
 

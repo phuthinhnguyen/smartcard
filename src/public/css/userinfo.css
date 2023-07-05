@@ -8,24 +8,29 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   font-family: "Jost";
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
-body ::-webkit-scrollbar, html ::-webkit-scrollbar {
+body ::-webkit-scrollbar,
+html ::-webkit-scrollbar {
   width: 5px;
 }
-body ::-webkit-scrollbar-track, html ::-webkit-scrollbar-track {
+body ::-webkit-scrollbar-track,
+html ::-webkit-scrollbar-track {
   background: transparent;
 }
-body ::-webkit-scrollbar-thumb, html ::-webkit-scrollbar-thumb {
+body ::-webkit-scrollbar-thumb,
+html ::-webkit-scrollbar-thumb {
   background: black;
   border-radius: 5px;
 }
-body ::-webkit-scrollbar-thumb:hover, html ::-webkit-scrollbar-thumb:hover {
+body ::-webkit-scrollbar-thumb:hover,
+html ::-webkit-scrollbar-thumb:hover {
   background: black;
 }
 
@@ -136,7 +141,9 @@ nav .right .nav-icon i {
     height: 100px;
   }
 }
-#show-card-id, #show-change-theme, #show-contact {
+#show-card-id,
+#show-change-theme,
+#show-contact {
   display: none;
   margin-top: 30px;
   width: 100%;
@@ -370,11 +377,14 @@ nav .right .nav-icon i {
   width: 250px;
   height: 500px;
   padding: 20px;
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
 }
 .content .show .wrap::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
+  display: none;
+  /* for Chrome, Safari, and Opera */
 }
 .content .show .wrap .avatar {
   width: 100px;
@@ -601,7 +611,17 @@ nav .right .nav-icon i {
 #guides #welcome .item div:hover {
   color: gray;
 }
-#guides #uploadavatar, #guides #changename, #guides #addlink, #guides #edittitle, #guides #editlink, #guides #preview, #guides #edittitle-responsive, #guides #editlink-responsive, #guides #changename-responsive, #guides #uploadavatar-responsive, #guides #addlink-responsive {
+#guides #uploadavatar,
+#guides #changename,
+#guides #addlink,
+#guides #edittitle,
+#guides #editlink,
+#guides #preview,
+#guides #edittitle-responsive,
+#guides #editlink-responsive,
+#guides #changename-responsive,
+#guides #uploadavatar-responsive,
+#guides #addlink-responsive {
   font-size: 18px;
   position: absolute;
   top: 50%;
@@ -627,7 +647,17 @@ nav .right .nav-icon i {
   padding: 15px 0;
   display: none;
 }
-#guides #uploadavatar p, #guides #changename p, #guides #addlink p, #guides #edittitle p, #guides #editlink p, #guides #preview p, #guides #edittitle-responsive p, #guides #editlink-responsive p, #guides #changename-responsive p, #guides #uploadavatar-responsive p, #guides #addlink-responsive p {
+#guides #uploadavatar p,
+#guides #changename p,
+#guides #addlink p,
+#guides #edittitle p,
+#guides #editlink p,
+#guides #preview p,
+#guides #edittitle-responsive p,
+#guides #editlink-responsive p,
+#guides #changename-responsive p,
+#guides #uploadavatar-responsive p,
+#guides #addlink-responsive p {
   margin: 0;
   padding: 0;
 }
@@ -639,7 +669,17 @@ nav .right .nav-icon i {
     margin-left: 0;
   }
 }
-#guides #uploadavatar i, #guides #changename i, #guides #addlink i, #guides #edittitle i, #guides #editlink i, #guides #preview i, #guides #edittitle-responsive i, #guides #editlink-responsive i, #guides #changename-responsive i, #guides #uploadavatar-responsive i, #guides #addlink-responsive i {
+#guides #uploadavatar i,
+#guides #changename i,
+#guides #addlink i,
+#guides #edittitle i,
+#guides #editlink i,
+#guides #preview i,
+#guides #edittitle-responsive i,
+#guides #editlink-responsive i,
+#guides #changename-responsive i,
+#guides #uploadavatar-responsive i,
+#guides #addlink-responsive i {
   margin-right: 20px;
   font-size: 30px;
   animation: handanimationtoleft 1s infinite;
@@ -672,7 +712,9 @@ nav .right .nav-icon i {
   animation: handanimationtoright 1s infinite;
   margin-left: 20px;
 }
-#guides #nexttoaddlink, #guides #nexttolinkcontainer, #guides #done {
+#guides #nexttoaddlink,
+#guides #nexttolinkcontainer,
+#guides #done {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -698,7 +740,9 @@ nav .right .nav-icon i {
   transition: 0.6s;
   font-size: 20px;
 }
-#guides #nexttoaddlink:hover, #guides #nexttolinkcontainer:hover, #guides #done:hover {
+#guides #nexttoaddlink:hover,
+#guides #nexttolinkcontainer:hover,
+#guides #done:hover {
   background-color: white;
   color: black;
 }
@@ -768,31 +812,27 @@ nav .right .nav-icon i {
   animation: handanimationtodown 1s infinite;
 }
 
-/* CSS avatar */
-.home-body-avatar {
-  position: absolute;
-  top: calc(65vh - 30px);
-  left: calc(50% - 110px);
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 1);
-}
 .parent {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 120px;
+  height: 120px;
   background: #ffffff;
   border-radius: 50%;
   border: 1px solid black;
   cursor: pointer;
+  margin: auto;
+  margin-top: 0;
   overflow: hidden;
 }
 .parent div {
   width: 100%;
   height: 100%;
 }
+.parent div img {
+  width: 100%;
+  height: 100%;
+}
+
 .file-upload {
   text-align: center;
   padding: 1.5rem;
@@ -809,11 +849,7 @@ nav .right .nav-icon i {
   right: 0;
   opacity: 0;
   cursor: pointer;
-
 }
-
-
-
 
 @media (max-width: 1500px) {
   .content .show {
@@ -826,7 +862,8 @@ nav .right .nav-icon i {
   }
 }
 @media (max-width: 1100px) {
-  #guides #edittitle-responsive, #guides #editlink-responsive {
+  #guides #edittitle-responsive,
+  #guides #editlink-responsive {
     left: calc(50% + 130px);
   }
   .content .show {
@@ -861,7 +898,8 @@ nav .right .nav-icon i {
     display: block;
     text-align: center;
   }
-  nav .left, nav .center {
+  nav .left,
+  nav .center {
     display: none;
   }
   nav .right {
@@ -990,7 +1028,9 @@ nav .right .nav-icon i {
     width: 150px;
     height: 50px;
   }
-  #show-card-id, #show-change-theme, #show-contact {
+  #show-card-id,
+  #show-change-theme,
+  #show-contact {
     margin-top: 0;
     margin-bottom: 100px;
   }

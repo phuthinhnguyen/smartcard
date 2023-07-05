@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Login V4</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="/image/favicon.ico"/>
+	<link rel="icon" type="image/png" href="/image/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="/css\bootstrap-5.0.2-dist\css/bootstrap.min.css">
 	<script src="/css\bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/font/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -12,20 +13,23 @@
 	<link rel="stylesheet" type="text/css" href="/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/css/userinfo.css">
 	<link rel="stylesheet" href="/css/avatar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="/js/jquery-3.6.4.js"></script>
-	<script src="/js/userinfo.js" ></script>
-	<script src="/js/avatar.js" ></script>
+	<script src="/js/userinfo.js"></script>
+	<script src="/js/avatar.js"></script>
 </head>
+
 <body style="background-image: url('/image/signin/bg-01.jpg');">
 	<div id="body">
 		<!-- nav -->
 		<nav>
 			<div class="left">
-				
+
 			</div>
 			<div class="center">
-			
+
 			</div>
 			<div class="right">
 				<div class="nav-icon">
@@ -38,17 +42,21 @@
 					<i class="far fa-images" id="change-theme-icon"></i><span class="tooltiptext">Theme</span>
 				</div>
 				<div class="nav-icon">
-					<i onclick="window.location.href='/signin'" class="fas fa-sign-out-alt"></i><span class="tooltiptext">Log out</span>
+					<i onclick="window.location.href='/signin'" class="fas fa-sign-out-alt"></i><span
+						class="tooltiptext">Log out</span>
 				</div>
 			</div>
 		</nav>
 		<div id="show-card-id">
 			<h2>Card ID</h2>
-			<p><%= datauser[0].cardid %></p>
+			<p>
+				<%= datauser[0].cardid %>
+			</p>
 		</div>
 		<div id="show-contact">
 			<h2>Contact information</h2>
-			<p>We love to hear from you on our customer service, merchandise, website or any topics you want to share with us. Your comments and suggestions will be appreciated. Please complete the form below.</p>
+			<p>We love to hear from you on our customer service, merchandise, website or any topics you want to share
+				with us. Your comments and suggestions will be appreciated. Please complete the form below.</p>
 			<p>184 Main Rd E, St Albans Victoria 3021, Australia</p>
 			<p>1800-123-222 / 1900-1570-230</p>
 			<p>contact@company.com</p>
@@ -59,7 +67,8 @@
 			<div class="item-bottom">
 				<div class="item-bottom-color">
 					<div class="color">
-						<a onclick="changecolortheme(this)" style="background: linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);"></a>
+						<a onclick="changecolortheme(this)"
+							style="background: linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);"></a>
 					</div>
 					<div class="tooltip-text">
 						<span>Default</span><i class="fa-solid fa-caret-down"></i>
@@ -83,7 +92,8 @@
 				</div>
 				<div class="item-bottom-color">
 					<div class="color">
-						<a onclick="changecolortheme(this)" style="background-color: white;border: 1px solid lightgray;"></a>
+						<a onclick="changecolortheme(this)"
+							style="background-color: white;border: 1px solid lightgray;"></a>
 					</div>
 					<div class="tooltip-text">
 						<span>White</span><i class="fa-solid fa-caret-down"></i>
@@ -169,38 +179,47 @@
 						<span>Dark Brown</span><i class="fa-solid fa-caret-down"></i>
 					</div>
 				</div>
-			
+
 			</div>
 		</div>
 		<div class="logo">
 			<img src="/image/logo.png" alt="" id="logo">
 		</div>
-	
+
 		<!-- content -->
 		<div class="content">
 			<div class="limiter" id="limiter">
-				<div class="container-login100" >
+				<div class="container-login100">
 					<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-						<form class="login100-form validate-form" method="post" action="/upload-profile-pic" enctype="multipart/form-data">
-							 <div class="home-body-avatar">
-              <div class="parent">
-                <div>
-                  <img alt="..." src="<%= datauser[0].avatar %>"/>
-                </div>
-                <div class="file-upload">
-                  <input type="file" id="profile_pic" name="profile_pic"></input>
-                </div>
-              </div>
-            </div>
-			<input type="text" name="textbody1" value="hehe"></input>
-			<input type="text" name="textbody2" value="hehe"></input>
-						<!-- <div class="avatar-upload">
+						<form class="login100-form validate-form" method="post" action="/<%= datauser[0].cardid %>/userinfo"
+							enctype="multipart/form-data">
+							<!-- <div class="home-body-avatar"> -->
+								<div class="parent">
+									<div>
+										<img alt="..." src="<%= datauser[0].avatar %>" id="avatarshow"/>
+									</div>
+									<div class="file-upload">
+										<input type="file" id="profile_pic" name="profile_pic" onchange="changeavatar()"></input>
+									</div>
+								</div>
+								<script>
+									function changeavatar(){
+										let file = document.getElementById("profile_pic").value;
+										let avatarshow = document.getElementById("avatarshow")
+										avatarshow.src=file;	
+									}
+								</script>
+							<!-- </div> -->
+							<input type="text" name="textbody1" value="hehe"></input>
+							<!-- <div class="avatar-upload">
 								<img src="<%= datauser[0].avatar %>" id="profile_pic">
 							</div>
 							<input type="file" id="profile_pic" name="profile_pic"/> -->
-							
+
 							<div class="name">
-								<input id="name" readonly="true" value="<%= datauser[0].name2 %>" maxlength="30" onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editname(this)"></i>
+								<input id="name" readonly="true" value="<%= datauser[0].name2 %>" maxlength="30"
+									onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i
+									class="fas fa-pencil" onclick="editname(this)"></i>
 							</div>
 							<div class="container-login100-form-btn" id="addlink-btn">
 								<div class="wrap-login100-form-btn">
@@ -260,9 +279,9 @@
 						</form>
 					</div>
 				</div>
-		
+
 			</div>
-			<script>
+			<!-- <script>
 				new window.AvatarUpload({
 					el: document.querySelector('.avatar-upload'),
 					uploadUrl: '',
@@ -272,12 +291,12 @@
 					},
 					pretendUpload: true
 				})
-			</script>
-		
+			</script> -->
+
 			<div class="show" id="show">
 				<div class="wrap" id="wrap">
 					<div class="avatar">
-						<img id="show-avatar" src="/image/userinfo/avatar-1.png">
+						<img id="show-avatar" src="/image/userinfo/avatar-1.png"/>
 					</div>
 					<div class="showname">
 						<p id="name-show">@yourname</p>
@@ -285,15 +304,15 @@
 					<div id="link-container">
 					</div>
 					<!-- <a class="link" href='#' target="_blank">
-						<img src="/image/userinfo/facebook.png" alt="">
+						<img src="/image/userinfo/facebook.png" alt=""/>
 						<p>${name.value}</p>
 					</a> -->
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	<!-- guides -->
+
+	// <!-- guides -->
 	<div id="guides">
 		<div id="welcome">
 			<p>Hi <%= datauser[0].name1 %>,</p>
@@ -305,27 +324,33 @@
 			</div>
 		</div>
 		<div id="uploadavatar">
-			<i class="far fa-hand-point-left"></i><p>Upload your avatar here</p>
+			<i class="far fa-hand-point-left"></i>
+			<p>Upload your avatar here</p>
 		</div>
 		<div id="uploadavatar-responsive">
 			<p>Upload your avatar here</p><i class="far fa-hand-point-right"></i>
 		</div>
 		<div id="changename">
-			<i class="far fa-hand-point-left"></i><p>Click here to edit your name</p>
+			<i class="far fa-hand-point-left"></i>
+			<p>Click here to edit your name</p>
 		</div>
 		<div id="changename-responsive">
 			<p>Click here to edit your name</p><i class="far fa-hand-point-right"></i>
 		</div>
-		<div onclick="nextoaddlink()" id="nexttoaddlink">Next&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+		<div onclick="nextoaddlink()" id="nexttoaddlink">Next&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i>
+		</div>
 		<div id="addlink">
-			<i class="far fa-hand-point-left"></i><p>Click here to add your link</p>
+			<i class="far fa-hand-point-left"></i>
+			<p>Click here to add your link</p>
 		</div>
 		<div id="addlink-responsive">
 			<p>Click here to add your link</p><i class="far fa-hand-point-down"></i>
 		</div>
-		<div onclick="nexttolinkcontainer()" id="nexttolinkcontainer">Next&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+		<div onclick="nexttolinkcontainer()" id="nexttolinkcontainer">Next&nbsp;&nbsp;<i
+				class="fas fa-chevron-circle-right"></i></div>
 		<div id="edittitle">
-			<i class="far fa-hand-point-left"></i><p>Click here to edit your title</p>
+			<i class="far fa-hand-point-left"></i>
+			<p>Click here to edit your title</p>
 		</div>
 		<div id="edittitle-responsive">
 			<p>Click here to edit your title</p><i class="far fa-hand-point-right"></i>
@@ -334,7 +359,8 @@
 			<p>Click here to edit your link</p><i class="far fa-hand-point-right"></i>
 		</div>
 		<div id="editlink">
-			<i class="far fa-hand-point-left"></i><p>Click here to edit your link</p>
+			<i class="far fa-hand-point-left"></i>
+			<p>Click here to edit your link</p>
 		</div>
 		<div id="preview">
 			<p>Preview your info on phone</p><i class="far fa-hand-point-down"></i>
@@ -342,4 +368,5 @@
 		<div onclick="done()" id="done">Done&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
 	</div>
 </body>
+
 </html>
