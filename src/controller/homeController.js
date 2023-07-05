@@ -60,6 +60,7 @@ let processSignUp = async (req,res) => {
 // }
 
 let handleUploadFile = async (req,res)=>{
+    console.log(req.body)
     if (req.fileValidationError) {
         return res.send(req.fileValidationError);
     }
