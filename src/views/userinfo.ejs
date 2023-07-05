@@ -182,10 +182,23 @@
 				<div class="container-login100" >
 					<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 						<form class="login100-form validate-form" method="post" action="/upload-profile-pic" enctype="multipart/form-data">
-							<div class="avatar-upload">
+							 <div class="home-body-avatar">
+              <div class="parent">
+                <div>
+                  <img alt="..." src="<%= datauser[0].avatar %>"/>
+                </div>
+                <div class="file-upload">
+                  <input type="file" id="profile_pic" name="profile_pic"></input>
+                </div>
+              </div>
+            </div>
+			<input type="text" name="textbody1" value="hehe"></input>
+			<input type="text" name="textbody2" value="hehe"></input>
+						<!-- <div class="avatar-upload">
 								<img src="<%= datauser[0].avatar %>" id="profile_pic">
 							</div>
-							<input type="file" id="profile_pic" name="profile_pic"/>
+							<input type="file" id="profile_pic" name="profile_pic"/> -->
+							
 							<div class="name">
 								<input id="name" readonly="true" value="<%= datauser[0].name2 %>" maxlength="30" onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editname(this)"></i>
 							</div>

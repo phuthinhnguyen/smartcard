@@ -768,6 +768,53 @@ nav .right .nav-icon i {
   animation: handanimationtodown 1s infinite;
 }
 
+/* CSS avatar */
+.home-body-avatar {
+  position: absolute;
+  top: calc(65vh - 30px);
+  left: calc(50% - 110px);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 1);
+}
+.parent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+  overflow: hidden;
+}
+.parent div {
+  width: 100%;
+  height: 100%;
+}
+.file-upload {
+  text-align: center;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+.file-upload input {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  cursor: pointer;
+
+}
+
+
+
+
 @media (max-width: 1500px) {
   .content .show {
     left: 12%;
