@@ -3,7 +3,7 @@ https://github.com/longnguyen28596/passport-local
 https://www.toptal.com/designers/htmlarrows/symbols/
 https://pqina.nl/blog/set-value-to-file-input/
 https://stackoverflow.com/questions/23511792/attach-a-blob-to-an-input-of-type-file-in-a-form
-
+https://stackoverflow.com/questions/18291503/add-a-json-object-to-req-body
 
 
 
