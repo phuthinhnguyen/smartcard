@@ -191,26 +191,27 @@
 			<div class="limiter" id="limiter">
 				<div class="container-login100">
 					<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-						<form class="login100-form validate-form" method="post" action="/<%= datauser[0].cardid %>/userinfo"
-							enctype="multipart/form-data">
+						<form class="login100-form validate-form" method="post"
+							action="/<%= datauser[0].cardid %>/userinfo" enctype="multipart/form-data">
 							<!-- <div class="home-body-avatar"> -->
-								<div class="parent">
-									<div>
-										<img alt="..." src="<%= datauser[0].avatar %>" id="avatarshow"/>
-									</div>
-									<div class="file-upload">
-										<input type="file" id="profile_pic" name="profile_pic" onchange="changeavatar()"></input>
-									</div>
+							<div class="parent">
+								<div>
+									<img alt="..." src="<%= datauser[0].avatar %>" id="avatarshow" />
 								</div>
-								<script>
-									function changeavatar(){
-										let file = document.getElementById("profile_pic").value;
-										let avatarshow = document.getElementById("avatarshow")
-										avatarshow.src=file;	
-									}
-								</script>
+								<div class="file-upload">
+									<input type="file" id="profile_pic" name="profile_pic"
+										onchange="changeavatar()"></input>
+								</div>
+							</div>
+							<script>
+								function changeavatar() {
+									let file = document.getElementById("profile_pic").value;
+									let avatarshow = document.getElementById("avatarshow")
+									avatarshow.src = file;
+								}
+							</script>
 							<!-- </div> -->
-							
+
 							<!-- <div class="avatar-upload">
 								<img src="<%= datauser[0].avatar %>" id="profile_pic">
 							</div>
@@ -245,7 +246,9 @@
 								<a onclick="addlinkfunction(this)">WhatsApp</a>
 							</div>
 							<div id="link-area"></div>
+					
 							<!-- <div id="container-showlink">
+								<input name="linktype" value="${a.innerText}"></input>
 								<div class="link">
 									<div class="linklogo">
 										<img src="/image/userinfo/${a.innerText.toLowerCase()}.png">
@@ -253,11 +256,19 @@
 									<div class="linkinput">
 										<div class="linknametitle-wrap">
 											<h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5>
-											<input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
+											<input id="title"
+												name="inputtitle" class="inputtitle" readonly="true"
+												value="${(name.value==" @yourname") ? "@yourtitle" : name.value}"
+												maxlength="40" size="18" onfocusout="inputtitlefocusout(this)"
+												onkeyup="inputKeyUp(event,this)"></input>
 										</div>
 										<i class="fas fa-pencil" onclick="editinputtitle(this)"></i>
-										<input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input>
-										<i class="fas fa-pencil" onclick="editinputlink(this)"></i>
+										<input
+											id="link" name="inputlink" readonly="true"
+											value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100"
+											size="39" onfocusout="inputlinkfocusout(this)"
+											onkeyup="inputKeyUp(event,this)"></input>
+											<i class="fas fa-pencil" onclick="editinputlink(this)"></i>
 									</div>
 									<div class="linktrash">
 										<i class="fas fa-trash" onclick="clicktrash(this)"></i>
@@ -296,7 +307,7 @@
 			<div class="show" id="show">
 				<div class="wrap" id="wrap">
 					<div class="avatar">
-						<img id="show-avatar" src="/image/userinfo/avatar-1.png"/>
+						<img id="show-avatar" src="/image/userinfo/avatar-1.png" />
 					</div>
 					<div class="showname">
 						<p id="name-show">@yourname</p>
