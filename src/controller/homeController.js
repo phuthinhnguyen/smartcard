@@ -108,19 +108,19 @@ let userInfo = async (req, res) => {
     `select * from smartcard where cardid = ?`,
     [cardid]
   );
-  // let data = {};
-  // data.cardid = user[0].cardid;  
-  // data.name1 = user[0].name1;  
-  // data.name2 = user[0].name2;  
-  // data.avatar = user[0].avatar;  
-  // if (user[0].link!="") {
-  //   var link = JSON.parse(user[0].link)
-  //   data.link=link;
-  // }
-  // else data.link=user[0].link;
-  // console.log(data)
+  let data = {};
+  data.cardid = user[0].cardid;  
+  data.name1 = user[0].name1;  
+  data.name2 = user[0].name2;  
+  data.avatar = user[0].avatar;  
+  if (user[0].link!="") {
+    var link = JSON.parse(user[0].link)
+    data.link=link;
+  }
+  else data.link=user[0].link;
+  console.log(data)
   if (typeof user[0] != "undefined") {
-    return res.render("userinfo.ejs", { datauser: user });
+    return res.render("userinfo.ejs", { datauser: data });
   } else {
     console.log("khong");
   }
