@@ -66,19 +66,27 @@ let processSignUp = async (req, res) => {
 // }
 
 let handleUploadFile = async (req, res) => {
-  console.log(req.body);
-  let link = req.body;
+  const link = JSON.stringify(req.body);
   let cardid = req.params.cardid;
-  if (req.fileValidationError) {
-    return res.send(req.fileValidationError);
-  } 
-  else if (!req.file) {
-    return res.send("Please select an image to upload");
+
+  // if (req.fileValidationError) {
+  //   return res.send(req.fileValidationError);
+  // }
+  // else if (!req.file) {
+  //   // return res.send("Please select an image to upload");
+  //   pass
+  // }
+  if (req.file){
+    const avatarsrc = `/image/${req.file.filename}`;
+    await pool.execute(
+      "update smartcard set avatar = ? where cardid = ?",
+      [avatarsrc, cardid]
+    );
   }
-  const avatarsrc = `/image/${req.file.filename}`;
+  console.log(link)
   await pool.execute(
-    "update smartcard set avatar = ?, link=? where cardid = ?",
-    [avatarsrc,link, cardid]
+    "update smartcard set link = ? where cardid = ?",
+    [link, cardid]
   );
   res.redirect(`/${cardid}/userinfo`);
   // res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
@@ -100,6 +108,17 @@ let userInfo = async (req, res) => {
     `select * from smartcard where cardid = ?`,
     [cardid]
   );
+  // let data = {};
+  // data.cardid = user[0].cardid;  
+  // data.name1 = user[0].name1;  
+  // data.name2 = user[0].name2;  
+  // data.avatar = user[0].avatar;  
+  // if (user[0].link!="") {
+  //   var link = JSON.parse(user[0].link)
+  //   data.link=link;
+  // }
+  // else data.link=user[0].link;
+  // console.log(data)
   if (typeof user[0] != "undefined") {
     return res.render("userinfo.ejs", { datauser: user });
   } else {
