@@ -50,7 +50,7 @@
 		<div id="show-card-id">
 			<h2>Card ID</h2>
 			<p>
-				<%= datauser[0].cardid %>
+				<%= datauser.cardid %>
 			</p>
 		</div>
 		<div id="show-contact">
@@ -192,11 +192,11 @@
 				<div class="container-login100">
 					<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 						<form class="login100-form validate-form" method="post"
-							action="/<%= datauser[0].cardid %>/userinfo" enctype="multipart/form-data">
+							action="/<%= datauser.cardid %>/userinfo" enctype="multipart/form-data">
 							<!-- <div class="home-body-avatar"> -->
 							<div class="parent">
 								<div>
-									<img alt="..." src="<%= datauser[0].avatar %>" id="avatarshow" />
+									<img alt="..." src="<%= datauser.avatar %>" id="avatarshow" />
 								</div>
 								<div class="file-upload">
 									<input type="file" id="profile_pic" name="profile_pic"
@@ -213,12 +213,12 @@
 							<!-- </div> -->
 
 							<!-- <div class="avatar-upload">
-								<img src="<%= datauser[0].avatar %>" id="profile_pic">
+								<img src="<%= datauser.avatar %>" id="profile_pic">
 							</div>
 							<input type="file" id="profile_pic" name="profile_pic"/> -->
 
 							<div class="name">
-								<input id="name" readonly="true" value="<%= datauser[0].name2 %>" maxlength="30"
+								<input id="name" readonly="true" value="<%= datauser.name2 %>" maxlength="30"
 									onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i
 									class="fas fa-pencil" onclick="editname(this)"></i>
 							</div>
@@ -245,8 +245,44 @@
 								<a onclick="addlinkfunction(this)">LinkedIn</a>
 								<a onclick="addlinkfunction(this)">WhatsApp</a>
 							</div>
-							<div id="link-area"></div>
-					
+							<div id="link-area">
+							<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
+           						<div id="container-showlink">
+									<input name="linktype" value="<%= datauser.link.linktype[i] %>"></input>
+									<div class="link">
+										<div class="linklogo">
+											<img src="/image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png">
+										</div>
+										<div class="linkinput">
+											<div class="linknametitle-wrap">
+												<h5 id="linknametitle"><%= datauser.link.linktype[i] %>&nbsp;-&nbsp;</h5>
+												<input id="title"
+													name="inputtitle" class="inputtitle" readonly="true"
+													value="<%= datauser.link.inputtitle[i] %>"
+													maxlength="40" size="18" onfocusout="inputtitlefocusout(this)"
+													onkeyup="inputKeyUp(event,this)"></input>
+											</div>
+											<i class="fas fa-pencil" onclick="editinputtitle(this)"></i>
+											<input
+												id="link" name="inputlink" readonly="true"
+												value="<%= datauser.link.inputlink[i] %>" maxlength="100"
+												size="39" onfocusout="inputlinkfocusout(this)"
+												onkeyup="inputKeyUp(event,this)"></input>
+												<i class="fas fa-pencil" onclick="editinputlink(this)"></i>
+										</div>
+										<div class="linktrash">
+											<i class="fas fa-trash" onclick="clicktrash(this)"></i>
+										</div>
+										<div class="yesno">
+											<i class="fas fa-check" id="yes" onclick="removelink(this)"></i>
+											<i class="fas fa-times" id="no" onclick="clickno(this)"></i>
+										</div>
+									</div>
+								</div>
+        				 <% } %>		
+							</div>
+							
+							
 							<!-- <div id="container-showlink">
 								<input name="linktype" value="${a.innerText}"></input>
 								<div class="link">
@@ -326,7 +362,7 @@
 	// <!-- guides -->
 	<div id="guides">
 		<div id="welcome">
-			<p>Hi <%= datauser[0].name1 %>,</p>
+			<p>Hi <%= datauser.name1 %>,</p>
 			<p>Welcome to SMARTCARD</p>
 			<p>Let's take a tour to see some guides</p>
 			<div class="item">
