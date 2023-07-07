@@ -142,7 +142,7 @@ function removelink(a){
     let linkarea = document.getElementById("link-area");
     const index = Array.from(linkarea.children).indexOf(a.parentElement.parentElement.parentElement);
     linkarea.removeChild(linkarea.childNodes[index]);
-
+    console.log(index)
     // for showarea
     let showLinkcontainer = document.getElementById("link-container");
     showLinkcontainer.removeChild(showLinkcontainer.childNodes[index]);

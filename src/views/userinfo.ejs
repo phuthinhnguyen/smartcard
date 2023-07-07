@@ -218,7 +218,7 @@
 							<input type="file" id="profile_pic" name="profile_pic"/> -->
 
 							<div class="name">
-								<input id="name" readonly="true" value="<%= datauser.name2 %>" maxlength="30"
+								<input id="name" readonly="true" value="<%= datauser.name2 %>" name="name2" maxlength="30"
 									onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i
 									class="fas fa-pencil" onclick="editname(this)"></i>
 							</div>
@@ -246,6 +246,7 @@
 								<a onclick="addlinkfunction(this)">WhatsApp</a>
 							</div>
 							<div id="link-area">
+								<% if (datauser.link!="") { %>
 							<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
            						<div id="container-showlink">
 									<input name="linktype" value="<%= datauser.link.linktype[i] %>"></input>
@@ -279,7 +280,8 @@
 										</div>
 									</div>
 								</div>
-        				 <% } %>		
+        				 <% } %>	
+						 <% } %>		
 							</div>
 							
 							

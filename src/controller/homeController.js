@@ -66,8 +66,14 @@ let processSignUp = async (req, res) => {
 // }
 
 let handleUploadFile = async (req, res) => {
-  const link = JSON.stringify(req.body);
   let cardid = req.params.cardid;
+  let name2 = req.body.name2;
+  delete req.body.name2;
+  let link = JSON.stringify(req.body);
+  if (link=="{}"){
+    link=""
+  }
+  console.log(link)
 
   // if (req.fileValidationError) {
   //   return res.send(req.fileValidationError);
@@ -83,10 +89,10 @@ let handleUploadFile = async (req, res) => {
       [avatarsrc, cardid]
     );
   }
-  console.log(link)
+
   await pool.execute(
-    "update smartcard set link = ? where cardid = ?",
-    [link, cardid]
+    "update smartcard set link = ?, name2 = ? where cardid = ?",
+    [link,name2, cardid]
   );
   res.redirect(`/${cardid}/userinfo`);
   // res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
@@ -115,7 +121,10 @@ let userInfo = async (req, res) => {
   data.avatar = user[0].avatar;  
   if (user[0].link!="") {
     var link = JSON.parse(user[0].link)
-    data.link=link;
+    if (typeof(link.linktype)=="string"){
+      data.link = {linktype:[link.linktype],inputtitle:[link.inputtitle],inputlink:[link.inputlink]}
+    }
+    else data.link=link;
   }
   else data.link=user[0].link;
   console.log(data)
