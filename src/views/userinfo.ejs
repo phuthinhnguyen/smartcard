@@ -249,7 +249,7 @@
 								<% if (datauser.link!="") { %>
 							<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
            						<div id="container-showlink">
-									<input name="linktype" value="<%= datauser.link.linktype[i] %>"></input>
+									<input name="linktype" type="hidden" value="<%= datauser.link.linktype[i] %>"></input>
 									<div class="link">
 										<div class="linklogo">
 											<img src="/image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png">
@@ -283,7 +283,6 @@
         				 <% } %>	
 						 <% } %>		
 							</div>
-							
 							
 							<!-- <div id="container-showlink">
 								<input name="linktype" value="${a.innerText}"></input>
@@ -345,23 +344,31 @@
 			<div class="show" id="show">
 				<div class="wrap" id="wrap">
 					<div class="avatar">
-						<img id="show-avatar" src="/image/userinfo/avatar-1.png" />
+						<img id="show-avatar" src="<%= datauser.avatar %>" />
 					</div>
 					<div class="showname">
-						<p id="name-show">@yourname</p>
+						<p id="name-show"><%= datauser.name2 %></p>
 					</div>
 					<div id="link-container">
+						<% if (datauser.link!="") { %>
+							<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
+           						<a class="link" href='<%= datauser.link.inputlink[i] %>' target="_blank">
+									<img src="/image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png" alt=""/>
+									<p><%= datauser.link.inputtitle[i] %></p>
+								</a>
+        				<% } %>	
+						<% } %>
 					</div>
 					<!-- <a class="link" href='#' target="_blank">
 						<img src="/image/userinfo/facebook.png" alt=""/>
-						<p>${name.value}</p>
+						<p>${name.value!="@yourname" ? name.value : "@yourtitle"}</p>
 					</a> -->
 				</div>
 			</div>
 		</div>
 	</div>
 
-	// <!-- guides -->
+	<!-- guides -->
 	<div id="guides">
 		<div id="welcome">
 			<p>Hi <%= datauser.name1 %>,</p>
