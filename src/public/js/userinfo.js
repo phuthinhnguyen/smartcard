@@ -90,7 +90,8 @@ function addlinkfunction(a){
         return frag;
     }
     var fragment = create(`<div id="container-showlink"><input name="linktype" value="${a.innerText}"></input><div class="link"><div class="linklogo"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" name="inputtitle" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" name="inputlink" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
-    linkarea.insertBefore(fragment, linkarea.childNodes[linkarea.childElementCount]);
+    // linkarea.insertBefore(fragment, linkarea.childNodes[linkarea.childElementCount]);
+    linkarea.appendChild(fragment)
     $(".yesno").hide();
 
     // for showarea
@@ -141,8 +142,9 @@ function removelink(a){
     // for linkarea
     let linkarea = document.getElementById("link-area");
     const index = Array.from(linkarea.children).indexOf(a.parentElement.parentElement.parentElement);
-    linkarea.removeChild(linkarea.childNodes[index]);
-    console.log(index)
+    // linkarea.removeChild(linkarea.childNodes[index]);
+    linkarea.removeChild(linkarea.children[index]);
+    
     // for showarea
     let showLinkcontainer = document.getElementById("link-container");
     showLinkcontainer.removeChild(showLinkcontainer.childNodes[index]);
@@ -158,7 +160,8 @@ function clickno(a){
 
 // click on edit icon for title
 function editinputtitle(a){
-    let z =a.previousElementSibling.childNodes[1];
+    // let z =a.previousElementSibling.childNodes[1];
+    let z =a.previousElementSibling.children[1];
     z.readOnly="";
     if (z.value=="@yourtitle"){
         z.value="";
@@ -246,8 +249,9 @@ function inputtitlefocusout(a){
 // when user focus out input for link
 function inputlinkfocusout(a){
     let z =a.nextElementSibling;
-    let linknametitle = a.previousElementSibling.previousElementSibling.childNodes[0];
-    console.log(linknametitle.innerText)
+    // let linknametitle = a.previousElementSibling.previousElementSibling.childNodes[0];
+    let linknametitle = a.previousElementSibling.previousElementSibling.children[0];
+  
     a.readOnly="true";
     z.style.display="inline";
     // for link
