@@ -1,3 +1,36 @@
+window.addEventListener('load', function () {
+   let name = document.getElementsByClassName("name")[0].children[0];
+    console.log(name)
+     if (name.value==""){
+        name.value="@yourname";
+    }
+    if (name.value=="@yourname"){
+        name.style.fontStyle="italic";
+        name.style.color="lightgray";
+    }
+    else{
+        name.style.fontStyle="normal";
+        name.style.color="black";
+    }      
+})
+// function focusoutfirstloading(){
+//     let name = document.getElementsByClassName("name");
+//     console.log(name.item())
+//       if (name.value==""){
+//         name.value="@yourname";
+//     }
+//     if (name.value=="@yourname"){
+//         name.style.fontStyle="italic";
+//         name.style.color="lightgray";
+//     }
+//     else{
+//         name.style.fontStyle="normal";
+//         name.style.color="black";
+//     }      
+// }
+
+
+
 let flagshowanimation = true;
 // animation when user inputs info
 function showanimation(){
