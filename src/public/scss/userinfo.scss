@@ -24,6 +24,8 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  min-height: 100vh;
+  padding-bottom: 50px;
 }
 
 input {
@@ -885,6 +887,36 @@ nav {
 
 
 // Responsive
+
+// @media (min-height: 650px) {
+//   .content {
+//     .show {
+//       top:20%;
+//     }
+//   }
+// }
+@media (min-height: 820px) {
+  .content {
+    .show {
+      top:290px;
+    }
+  }
+}
+@media (max-height: 819px) {
+  .content {
+    .show {
+      position: absolute;
+    }
+  }
+}
+// @media (max-height: 649px) {
+//   .content {
+//     .show {
+//       top:70px;
+//     }
+//   }
+// }
+
 @media (max-width: 1500px) {
   .content {
     .show {

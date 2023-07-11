@@ -16,6 +16,8 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
+    padding: 50px 0 10px 0;
 }
 
 input {
@@ -65,7 +67,10 @@ button {
     }
   }
   .link{
-    width: 50%;
+    // width: 50%;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
     margin-top: 50px;
     .wrap{
       width: 100%;
@@ -79,6 +84,7 @@ button {
       align-items: center;
       column-gap: 5px;
       transition: 0.6s;
+      margin-top: 30px;
       &:hover{
         background-color: white;
         p{
@@ -107,14 +113,15 @@ button {
 // CSS footer
 footer{
   width: 100%;
-  height: 200px;
+  bottom: 20px;
+  // height: 1200px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
   img{
-    width: 100px;
-    height: 50px;  
+    width: 150px;
+    height: 80px;  
   }
 }
 

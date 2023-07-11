@@ -15,6 +15,8 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  min-height: 100vh;
+  padding-bottom: 50px;
 }
 body ::-webkit-scrollbar,
 html ::-webkit-scrollbar {
@@ -851,6 +853,16 @@ nav .right .nav-icon i {
   cursor: pointer;
 }
 
+@media (min-height: 820px) {
+  .content .show {
+    top: 290px;
+  }
+}
+@media (max-height: 819px) {
+  .content .show {
+    position: absolute;
+  }
+}
 @media (max-width: 1500px) {
   .content .show {
     left: 12%;
