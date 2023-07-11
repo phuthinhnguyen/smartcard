@@ -13,6 +13,19 @@ let cardId = async (req, res) => {
     `select * from smartcard where cardid = ?`,
     [cardid]
   );
+   let data = {};
+  data.cardid = user[0].cardid;  
+  data.name1 = user[0].name1;  
+  data.name2 = user[0].name2;  
+  data.avatar = user[0].avatar;  
+  if (user[0].link!="") {
+    var link = JSON.parse(user[0].link)
+    if (typeof(link.linktype)=="string"){
+      data.link = {linktype:[link.linktype],inputtitle:[link.inputtitle],inputlink:[link.inputlink]}
+    }
+    else data.link=link;
+  }
+  else data.link=user[0].link;
   if (
     user[0]["username"] == "" ||
     user[0]["password"] == "" ||
@@ -20,7 +33,7 @@ let cardId = async (req, res) => {
   ) {
     return res.render("signup.ejs", { datauser: user });
   } else {
-    return res.render("usershow.ejs");
+    return res.render("usershow.ejs", {datauser:data});
   }
 };
 

@@ -5,9 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/usershow.css">
+	<title>Document</title>
 </head>
-<body>
-    user show
+<body style="background-image: url('image/signin/bg-01.jpg');">
+   <div class="content-show">
+		<div class="avatar">
+			<img src="image/userinfo/avatar-10.jpg" alt="">
+		</div>
+		<div class="name">
+			<p id="name"><%= datauser.name2 %></p>
+		</div>
+		<div class="link">
+		<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
+				<div class="wrap" onclick="openlink('<%= datauser.link.inputlink[i] %>')">
+				<img src="image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png" alt="">
+				<p id="link"><%= datauser.link.inputtitle[i] %></p>
+			</div>
+		<% } %>
+			
+			<script>
+				function openlink(link){
+					console.log(link)
+   		 			window.location.href = link;
+				}
+			
+			</script>
+		</div>
+	</div>
+	<footer>
+		<img src="image/logo.png" alt="">
+	</footer>
 </body>
 </html>
