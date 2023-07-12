@@ -93,15 +93,6 @@
 				</div>
 				<div class="item-bottom-color">
 					<div class="color">
-						<a onclick="changecolortheme(this)"
-							style="background-color: white;border: 1px solid lightgray;"></a>
-					</div>
-					<div class="tooltip-text">
-						<span>White</span><i class="fa-solid fa-caret-down"></i>
-					</div>
-				</div>
-				<div class="item-bottom-color">
-					<div class="color">
 						<a onclick="changecolortheme(this)" style="background-color:#8DB5D1"></a>
 					</div>
 					<div class="tooltip-text">
@@ -217,7 +208,7 @@
 								<img src="<%= datauser.avatar %>" id="profile_pic">
 							</div>
 							<input type="file" id="profile_pic" name="profile_pic"/> -->
-
+							<input name="colortheme" type="hidden" id="colortheme"></input>
 							<div class="name">
 								<input id="name" readonly="true" value="<%= datauser.name2 %>" name="name2" maxlength="30"
 									onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"/>
@@ -343,7 +334,7 @@
 			</script> -->
 
 			<div class="show" id="show">
-				<div class="wrap" id="wrap">
+				<div class="wrap" id="wrap" style="background-color: <%= datauser.colortheme %>;">
 					<div class="avatar">
 						<img id="show-avatar" src="<%= datauser.avatar %>" />
 					</div>

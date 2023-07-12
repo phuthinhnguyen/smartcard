@@ -407,6 +407,9 @@ function changecolortheme(a) {
     const getcolor = a.style.backgroundColor;
     let wrapshow = document.getElementById("wrap");
     wrapshow.style.backgroundColor = `${getcolor}`;
+    let colortheme = document.getElementById("colortheme");
+    colortheme.value=getcolor;
+    showanimation();
 }
 
 $(document).ready(function () {

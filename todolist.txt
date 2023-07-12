@@ -1,8 +1,8 @@
-login authentication
+login authentication	
 validate sign up
 avatar userinfo
 button save userinfo
 avatar usershow
-change theme
+change theme  		done
 viet language
 login, logout session

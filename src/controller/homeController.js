@@ -13,19 +13,26 @@ let cardId = async (req, res) => {
     `select * from smartcard where cardid = ?`,
     [cardid]
   );
-   let data = {};
-  data.cardid = user[0].cardid;  
-  data.name1 = user[0].name1;  
-  data.name2 = user[0].name2;  
-  data.avatar = user[0].avatar;  
-  if (user[0].link!="") {
-    var link = JSON.parse(user[0].link)
-    if (typeof(link.linktype)=="string"){
-      data.link = {linktype:[link.linktype],inputtitle:[link.inputtitle],inputlink:[link.inputlink]}
+  let data = {};
+  data.cardid = user[0].cardid;
+  data.name1 = user[0].name1;
+  data.name2 = user[0].name2;
+  data.avatar = user[0].avatar;
+  if (user[0].theme!="initial"){
+    if (user[0].theme=="rgb(234, 222, 217)" || user[0].theme=="rgb(198, 175, 196)" || user[0].theme=="rgb(228, 224, 212)"){
+      data.colortheme = `background-color: ${user[0].theme};color:black`;
     }
-    else data.link=link;
+    else  data.colortheme = `background-color: ${user[0].theme};color:white`;
   }
-  else data.link=user[0].link;
+  else data.colortheme = "background-image: url('image/signin/bg-01.jpg');color:white";
+  if (user[0].link != "") {
+    var link = JSON.parse(user[0].link)
+    if (typeof (link.linktype) == "string") {
+      data.link = { linktype: [link.linktype], inputtitle: [link.inputtitle], inputlink: [link.inputlink] }
+    }
+    else data.link = link;
+  }
+  else data.link = user[0].link;
   if (
     user[0]["username"] == "" ||
     user[0]["password"] == "" ||
@@ -33,7 +40,7 @@ let cardId = async (req, res) => {
   ) {
     return res.render("signup.ejs", { datauser: user });
   } else {
-    return res.render("usershow.ejs", {datauser:data});
+    return res.render("usershow.ejs", { datauser: data });
   }
 };
 
@@ -81,12 +88,12 @@ let processSignUp = async (req, res) => {
 let handleUploadFile = async (req, res) => {
   let cardid = req.params.cardid;
   let name2 = req.body.name2;
+  let colortheme = req.body.colortheme;
   delete req.body.name2;
   let link = JSON.stringify(req.body);
-  if (link=="{}"){
-    link=""
+  if (link == "{}") {
+    link = ""
   }
-  console.log(link)
 
   // if (req.fileValidationError) {
   //   return res.send(req.fileValidationError);
@@ -95,7 +102,7 @@ let handleUploadFile = async (req, res) => {
   //   // return res.send("Please select an image to upload");
   //   pass
   // }
-  if (req.file){
+  if (req.file) {
     const avatarsrc = `/image/${req.file.filename}`;
     await pool.execute(
       "update smartcard set avatar = ? where cardid = ?",
@@ -104,8 +111,8 @@ let handleUploadFile = async (req, res) => {
   }
 
   await pool.execute(
-    "update smartcard set link = ?, name2 = ? where cardid = ?",
-    [link,name2, cardid]
+    "update smartcard set link = ?, name2 = ?, theme = ? where cardid = ?",
+    [link, name2, colortheme, cardid]
   );
   res.redirect(`/${cardid}/userinfo`);
   // res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
@@ -128,18 +135,19 @@ let userInfo = async (req, res) => {
     [cardid]
   );
   let data = {};
-  data.cardid = user[0].cardid;  
-  data.name1 = user[0].name1;  
-  data.name2 = user[0].name2;  
-  data.avatar = user[0].avatar;  
-  if (user[0].link!="") {
+  data.cardid = user[0].cardid;
+  data.name1 = user[0].name1;
+  data.name2 = user[0].name2;
+  data.avatar = user[0].avatar;
+  data.colortheme = user[0].theme;
+  if (user[0].link != "") {
     var link = JSON.parse(user[0].link)
-    if (typeof(link.linktype)=="string"){
-      data.link = {linktype:[link.linktype],inputtitle:[link.inputtitle],inputlink:[link.inputlink]}
+    if (typeof (link.linktype) == "string") {
+      data.link = { linktype: [link.linktype], inputtitle: [link.inputtitle], inputlink: [link.inputlink] }
     }
-    else data.link=link;
+    else data.link = link;
   }
-  else data.link=user[0].link;
+  else data.link = user[0].link;
   console.log(data)
   if (typeof user[0] != "undefined") {
     return res.render("userinfo.ejs", { datauser: data });
@@ -167,14 +175,14 @@ let processLogin = async (req, res) => {
   }
 };
 
-let userinfosave = async (req, res) => {
-  let cardid = req.params.cardid;
-  let profile_pic = req.body.profile_pic;
-  await pool.execute("update smartcard set avatar = ? where cardid = ?", [
-    profile_pic,
-    cardid,
-  ]);
-};
+// let userinfosave = async (req, res) => {
+//   let cardid = req.params.cardid;
+//   let profile_pic = req.body.profile_pic;
+//   await pool.execute("update smartcard set avatar = ? where cardid = ?", [
+//     profile_pic,
+//     cardid,
+//   ]);
+// };
 
 module.exports = {
   getHomepage,
@@ -184,5 +192,5 @@ module.exports = {
   processLogin,
   processSignUp,
   handleUploadFile,
-  userinfosave,
+  // userinfosave,
 };
