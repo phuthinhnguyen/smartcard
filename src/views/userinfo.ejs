@@ -211,7 +211,7 @@
 							<input name="colortheme" type="hidden" id="colortheme"></input>
 							<div class="name">
 								<input id="name" readonly="true" value="<%= datauser.name2 %>" name="name2" maxlength="30"
-									onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"/>
+									onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"/>
 									<i class="fas fa-pencil" onclick="editname(this)"></i>
 							</div>
 							<div class="container-login100-form-btn" id="addlink-btn">
@@ -253,14 +253,14 @@
 													name="inputtitle" class="inputtitle" readonly="true"
 													value="<%= datauser.link.inputtitle[i] %>"
 													maxlength="40" size="18" onfocusout="inputtitlefocusout(this)"
-													onkeyup="inputKeyUp(event,this)"></input>
+													onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input>
 											</div>
 											<i class="fas fa-pencil" onclick="editinputtitle(this)"></i>
 											<input
 												id="link" name="inputlink" readonly="true"
 												value="<%= datauser.link.inputlink[i] %>" maxlength="100"
 												size="39" onfocusout="inputlinkfocusout(this)"
-												onkeyup="inputKeyUp(event,this)"></input>
+												onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input>
 												<i class="fas fa-pencil" onclick="editinputlink(this)"></i>
 										</div>
 										<div class="linktrash">
