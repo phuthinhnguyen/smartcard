@@ -2,7 +2,7 @@ login authentication
 validate sign up
 avatar userinfo
 button save userinfo    done
-avatar usershow
+avatar usershow         done
 change theme  		    done
 viet language
 login, logout session
