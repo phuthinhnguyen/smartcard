@@ -73,7 +73,7 @@ button:hover {
 .content-show .link {
   max-width: 800px;
   width: 100%;
-  padding: 20px;
+  padding: 25px;
   margin-top: 50px;
 }
 .content-show .link .wrap {
@@ -123,4 +123,10 @@ footer {
 footer img {
   width: 150px;
   height: 80px;
+}
+
+@media screen and (max-width: 500px) {
+  .content-show {
+    width: 100%;
+  }
 }

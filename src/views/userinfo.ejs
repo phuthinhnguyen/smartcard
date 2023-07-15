@@ -196,23 +196,25 @@
 								</div>
 							</div>
 							<script>
-								function changeavatar() {
-									let file = document.getElementById("profile_pic").value;
+								const toBase64 = file => new Promise((resolve, reject) => {
+									const reader = new FileReader();
+									reader.readAsDataURL(file);
+									reader.onload = () => resolve(reader.result);
+									reader.onerror = reject;
+								});
+								async function changeavatar() {
+									let file = document.getElementById("profile_pic").files[0]
 									let avatarshow = document.getElementById("avatarshow")
-									avatarshow.src = file;
+									const base64 = await toBase64(file);
+									avatarshow.src = base64;
 								}
 							</script>
-							<!-- </div> -->
-
-							<!-- <div class="avatar-upload">
-								<img src="<%= datauser.avatar %>" id="profile_pic">
-							</div>
-							<input type="file" id="profile_pic" name="profile_pic"/> -->
 							<input name="colortheme" type="hidden" id="colortheme" value="initial"></input>
 							<div class="name">
-								<input id="name" readonly="true" value="<%= datauser.name2 %>" name="name2" maxlength="30"
-									onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"/>
-									<i class="fas fa-pencil" onclick="editname(this)"></i>
+								<input id="name" readonly="true" value="<%= datauser.name2 %>" name="name2"
+									maxlength="30" onfocusout="inputnamefocusout(this)" onkeyup="inputKeyUp(event,this)"
+									onkeypress="return event.keyCode != 13;" />
+								<i class="fas fa-pencil" onclick="editname(this)"></i>
 							</div>
 							<div class="container-login100-form-btn" id="addlink-btn">
 								<div class="wrap-login100-form-btn">
@@ -238,44 +240,49 @@
 								<a onclick="addlinkfunction(this)">WhatsApp</a>
 							</div>
 							<div id="link-area">
-								<% if (datauser.link!="") { %>
-							<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
-           						<div id="container-showlink">
-									<input name="linktype" type="hidden" value="<%= datauser.link.linktype[i] %>"></input>
-									<div class="link">
-										<div class="linklogo">
-											<img src="/image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png">
-										</div>
-										<div class="linkinput">
-											<div class="linknametitle-wrap">
-												<h5 id="linknametitle"><%= datauser.link.linktype[i] %>&nbsp;-&nbsp;</h5>
-												<input id="title"
-													name="inputtitle" class="inputtitle" readonly="true"
-													value="<%= datauser.link.inputtitle[i] %>"
-													maxlength="40" size="18" onfocusout="inputtitlefocusout(this)"
-													onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input>
+								<% if (datauser.link!="" ) { %>
+									<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
+										<div id="container-showlink">
+											<input name="linktype" type="hidden"
+												value="<%= datauser.link.linktype[i] %>"></input>
+											<div class="link">
+												<div class="linklogo">
+													<img
+														src="/image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png">
+												</div>
+												<div class="linkinput">
+													<div class="linknametitle-wrap">
+														<h5 id="linknametitle">
+															<%= datauser.link.linktype[i] %>&nbsp;-&nbsp;
+														</h5>
+														<input id="title" name="inputtitle" class="inputtitle"
+															readonly="true" value="<%= datauser.link.inputtitle[i] %>"
+															maxlength="40" size="18"
+															onfocusout="inputtitlefocusout(this)"
+															onkeyup="inputKeyUp(event,this)"
+															onkeypress="return event.keyCode != 13;"></input>
+													</div>
+													<i class="fas fa-pencil" onclick="editinputtitle(this)"></i>
+													<input id="link" name="inputlink" readonly="true"
+														value="<%= datauser.link.inputlink[i] %>" maxlength="100"
+														size="39" onfocusout="inputlinkfocusout(this)"
+														onkeyup="inputKeyUp(event,this)"
+														onkeypress="return event.keyCode != 13;"></input>
+													<i class="fas fa-pencil" onclick="editinputlink(this)"></i>
+												</div>
+												<div class="linktrash">
+													<i class="fas fa-trash" onclick="clicktrash(this)"></i>
+												</div>
+												<div class="yesno">
+													<i class="fas fa-check" id="yes" onclick="removelink(this)"></i>
+													<i class="fas fa-times" id="no" onclick="clickno(this)"></i>
+												</div>
 											</div>
-											<i class="fas fa-pencil" onclick="editinputtitle(this)"></i>
-											<input
-												id="link" name="inputlink" readonly="true"
-												value="<%= datauser.link.inputlink[i] %>" maxlength="100"
-												size="39" onfocusout="inputlinkfocusout(this)"
-												onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input>
-												<i class="fas fa-pencil" onclick="editinputlink(this)"></i>
 										</div>
-										<div class="linktrash">
-											<i class="fas fa-trash" onclick="clicktrash(this)"></i>
-										</div>
-										<div class="yesno">
-											<i class="fas fa-check" id="yes" onclick="removelink(this)"></i>
-											<i class="fas fa-times" id="no" onclick="clickno(this)"></i>
-										</div>
-									</div>
-								</div>
-        				 <% } %>	
-						 <% } %>		
+										<% } %>
+											<% } %>
 							</div>
-							
+
 							<!-- <div id="container-showlink">
 								<input name="linktype" value="${a.innerText}"></input>
 								<div class="link">
@@ -339,17 +346,22 @@
 						<img id="show-avatar" src="<%= datauser.avatar %>" />
 					</div>
 					<div class="showname">
-						<p id="name-show"><%= datauser.name2 %></p>
+						<p id="name-show">
+							<%= datauser.name2 %>
+						</p>
 					</div>
 					<div id="link-container">
-						<% if (datauser.link!="") { %>
+						<% if (datauser.link!="" ) { %>
 							<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
-           						<a class="link" href='<%= datauser.link.inputlink[i] %>' target="_blank">
-									<img src="/image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png" alt=""/>
-									<p><%= datauser.link.inputtitle[i] %></p>
+								<a class="link" href='<%= datauser.link.inputlink[i] %>' target="_blank">
+									<img src="/image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png"
+										alt="" />
+									<p>
+										<%= datauser.link.inputtitle[i] %>
+									</p>
 								</a>
-        				<% } %>	
-						<% } %>
+								<% } %>
+									<% } %>
 					</div>
 					<!-- <a class="link" href='#' target="_blank">
 						<img src="/image/userinfo/facebook.png" alt=""/>
@@ -359,6 +371,7 @@
 			</div>
 		</div>
 	</div>
+
 
 	<!-- guides -->
 	<div id="guides">
@@ -415,6 +428,28 @@
 		</div>
 		<div onclick="done()" id="done">Done&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
 	</div>
-</body>
 
+
+
+</body>
+<!-- toast -->
+<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center toast-container-res"
+	style="position: fixed;top: 50%;right: 50%;transform: translate(50%,-50%);visibility: hidden;">
+	<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" data-bs-delay="1000">
+		<div class="toast-header d-flex justify-content-between" style="background: #a64bf4;">
+			<div>
+				<img src="/image/logo.png" class="rounded mr-2" alt="..."
+					style="width:20px;height: 20px;margin-right: 5px;">
+				<strong class="mr-auto" style="color: black;">SMARTCARD</strong>
+			</div>
+			<button type="button" class="btn-close ml-2 mb-1" data-bs-dismiss="toast" onclick="closetoast()"></button>
+		</div>
+		<div class="toast-body" style="font-size: 16px;">This link already exists</div>
+	</div>
+</div>
+<script>
+	function closetoast(){
+		document.getElementById("limiter").style.opacity="1";
+	}
+</script>
 </html>

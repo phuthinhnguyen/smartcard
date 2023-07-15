@@ -83,7 +83,7 @@ function showanimation() {
                 show.style.marginTop = "50px";
             }
             flagshowanimation = false;
-       
+
         }
 
     }
@@ -122,52 +122,68 @@ function showanimation() {
 
 // event when user click on link
 function addlinkfunction(a) {
-    // for linkarea
-    let linkarea = document.getElementById("link-area");
-    let name = document.getElementById("name");
-    function create(htmlStr) {
-        var frag = document.createDocumentFragment(),
-            temp = document.createElement('div');
-        temp.innerHTML = htmlStr;
-        while (temp.firstChild) {
-            frag.appendChild(temp.firstChild);
+
+    // check if link name exists in linkarea
+    let linkarray = []
+    let linknametitlewrap = document.querySelectorAll(".linknametitle-wrap")
+    for (item of linknametitlewrap) {
+        const linkname = item.children[0].innerText.replace("-", "").trim();
+        linkarray.push(linkname)
+    }
+    if (linkarray.indexOf(a.innerText) == -1) {
+        // for linkarea
+        let linkarea = document.getElementById("link-area");
+        let name = document.getElementById("name");
+        function create(htmlStr) {
+            var frag = document.createDocumentFragment(),
+                temp = document.createElement('div');
+            temp.innerHTML = htmlStr;
+            while (temp.firstChild) {
+                frag.appendChild(temp.firstChild);
+            }
+            return frag;
         }
-        return frag;
-    }
-    var fragment = create(`<div id="container-showlink"><input name="linktype" type="hidden" value="${a.innerText}"></input><div class="link"><div class="linklogo"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" name="inputtitle" class="inputtitle" readonly="true" value="${(name.value == "@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" name="inputlink" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
-    // linkarea.insertBefore(fragment, linkarea.childNodes[linkarea.childElementCount]);
-    linkarea.appendChild(fragment)
-    $(".yesno").hide();
+        var fragment = create(`<div id="container-showlink"><input name="linktype" type="hidden" value="${a.innerText}"></input><div class="link"><div class="linklogo"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" name="inputtitle" class="inputtitle" readonly="true" value="${(name.value == "@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" name="inputlink" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
+        // linkarea.insertBefore(fragment, linkarea.childNodes[linkarea.childElementCount]);
+        linkarea.appendChild(fragment)
+        $(".yesno").hide();
 
-    // for showarea
-    let showLinkcontainer = document.getElementById("link-container");
-    var showFragment = create(`<a class="link" href='#' target="_blank"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png" alt=""><p>${name.value != "@yourname" ? name.value : "@yourtitle"}</p></a>`);
-    // showLinkcontainer.insertBefore(showFragment, showLinkcontainer.childNodes[showLinkcontainer.childElementCount]);
-    showLinkcontainer.appendChild(showFragment)
+        // for showarea
+        let showLinkcontainer = document.getElementById("link-container");
+        var showFragment = create(`<a class="link" href='#' target="_blank"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png" alt=""><p>${name.value != "@yourname" ? name.value : "@yourtitle"}</p></a>`);
+        // showLinkcontainer.insertBefore(showFragment, showLinkcontainer.childNodes[showLinkcontainer.childElementCount]);
+        showLinkcontainer.appendChild(showFragment)
 
-    // align tag p center depend on length of @yourtitle
-    // let showlinkname = showLinkcontainer.childNodes[showLinkcontainer.childElementCount - 1].childNodes[1];
-    let showlinkname = showLinkcontainer.children[showLinkcontainer.childElementCount - 1].children[1];
-    if (name.value.length < 10) {
-        showlinkname.style.marginLeft = "15px";
-    }
-    else if (name.value.length >= 10 && name.value.length < 18) {
-        showlinkname.style.marginLeft = "22px";
-    }
-    else showlinkname.style.marginLeft = "45px";
+        // align tag p center depend on length of @yourtitle
+        // let showlinkname = showLinkcontainer.childNodes[showLinkcontainer.childElementCount - 1].childNodes[1];
+        let showlinkname = showLinkcontainer.children[showLinkcontainer.childElementCount - 1].children[1];
+        if (name.value.length < 10) {
+            showlinkname.style.marginLeft = "15px";
+        }
+        else if (name.value.length >= 10 && name.value.length < 18) {
+            showlinkname.style.marginLeft = "22px";
+        }
+        else showlinkname.style.marginLeft = "45px";
 
 
-    let title = document.querySelectorAll(".inputtitle");
-    if (title[linkarea.childElementCount - 1].value == "@yourtitle") {
-        title[linkarea.childElementCount - 1].style.color = "lightgray";
-        title[linkarea.childElementCount - 1].style.fontStyle = "italic";
+        let title = document.querySelectorAll(".inputtitle");
+        if (title[linkarea.childElementCount - 1].value == "@yourtitle") {
+            title[linkarea.childElementCount - 1].style.color = "lightgray";
+            title[linkarea.childElementCount - 1].style.fontStyle = "italic";
+        }
+        else {
+            title[linkarea.childElementCount - 1].style.color = "black";
+            title[linkarea.childElementCount - 1].style.fontStyle = "normal";
+        }
+
+        showanimation();
     }
     else {
-        title[linkarea.childElementCount - 1].style.color = "black";
-        title[linkarea.childElementCount - 1].style.fontStyle = "normal";
+        document.getElementById("limiter").style.opacity="0.3";
+        $('.toast-container-res').css("visibility", "visible");
+        $('.toast').toast("show")
+       
     }
-
-    showanimation();
 }
 
 // function linkoptionfocusout() {
@@ -194,7 +210,7 @@ function removelink(a) {
 
     // for showarea
     let showLinkcontainer = document.getElementById("link-container");
-    showLinkcontainer.removeChild(showLinkcontainer.childNodes[index]);
+    showLinkcontainer.removeChild(showLinkcontainer.children[index]);
 
     showanimation();
 }
@@ -407,7 +423,7 @@ function changecolortheme(a) {
     let wrapshow = document.getElementById("wrap");
     wrapshow.style.backgroundColor = `${getcolor}`;
     let colortheme = document.getElementById("colortheme");
-    colortheme.value=getcolor;
+    colortheme.value = getcolor;
     showanimation();
 }
 
@@ -695,7 +711,7 @@ function done() {
 
 function submit_form(event, form) {
     event.preventDefault();
-   
+
     // window.location.href="/upload-profile-pic";
     // const data = document.getElementById("profile_pic").value
     // let file = new File([data], "img.jpg", { type: "image/jpeg", lastModified: new Date().getTime() });

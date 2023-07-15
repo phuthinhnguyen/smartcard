@@ -223,6 +223,20 @@ iframe {
   position: relative;
   border-bottom: 2px solid #d9d9d9;
 }
+.limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 .wrap-input100-password {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 .wrap-input100-password #showhidepassword {
+  font-size: 14px;
+  cursor: pointer;
+  color: gray;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-style: italic;
+}
 .limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 .label-input100 {
   font-family: "Jost";
   font-size: 16px;
