@@ -228,7 +228,7 @@ iframe {
   justify-content: space-between;
   align-items: center;
 }
-.limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 .wrap-input100-password #showhidepassword {
+.limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 .wrap-input100-password .showhidepassword {
   font-size: 14px;
   cursor: pointer;
   color: gray;
@@ -401,12 +401,6 @@ iframe {
   opacity: 1;
 }
 
-@media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
-  }
-}
 /*//////////////////////////////////////////////////////////////////
 [ Social item ]*/
 .login100-social-item {

@@ -185,7 +185,7 @@ iframe {
               display: flex;
               justify-content: space-between;
               align-items: center;
-              #showhidepassword{
+              .showhidepassword{
                 font-size: 14px;
                 cursor: pointer;
                 color: gray;
@@ -396,12 +396,12 @@ iframe {
   opacity: 1;
 }
 
-@media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
-  }
-}
+// @media (max-width: 992px) {
+//   .alert-validate::before {
+//     visibility: visible;
+//     opacity: 1;
+//   }
+// }
 
 /*//////////////////////////////////////////////////////////////////
 [ Social item ]*/

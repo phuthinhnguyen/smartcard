@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="/font/iconic/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/css/signup.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
@@ -20,62 +21,84 @@
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 				<form class="login100-form validate-form" action="/<%= datauser[0].cardid %>/processsignup"
 					method="post">
-					<span class="login100-form-title p-b-49">
+
+					<!-- label -->
+					<span class="login100-form-title p-b-49" lang="en">
 						Hi! I'm SmartCard<br>
 						Join me now...
 					</span>
+					<span class="login100-form-title p-b-49" lang="vi">
+						Xin chào bạn đến với SmartCard
+					</span>
+
+					<!-- card id -->
 					<div class="wrap-input100 m-b-23">
-						<span class="label-input100">Card ID</span>
+						<span class="label-input100" lang="en">Card ID</span>
+						<span class="label-input100" lang="vi">ID Thẻ</span>
 						<input class="input100" type="text" name="cardid" placeholder="<%= datauser[0].cardid %>"
 							disabled>
 						<span class="focus-input100" data-symbol="&#10002;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate="Username is required">
-						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Type your username">
-						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					<!-- username -->
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Username is required" lang="en">
+						<span class="label-input100" lang="en">Username</span>
+						<input class="input100" type="text" name="username" placeholder="Type your username" lang="en">
+						<span class="focus-input100" data-symbol="&#xf206;" lang="en"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Tên đăng nhập bắt buộc điền" lang="vi">
+						<span class="label-input100" lang="vi">Tên đăng nhập</span>
+						<input class="input100" type="text" name="username" placeholder="Nhập tên đăng nhập" lang="vi">
+						<span class="focus-input100" data-symbol="&#xf206;" lang="vi"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
+					<!-- password -->
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Password is required" lang="en">
 						<div class="wrap-input100-password">
-							<span class="label-input100">Password</span>
-							<span id="showhidepassword" onclick="showpassword()">Show password</span>
+							<span class="label-input100" lang="en">Password</span>
+							<span class="showhidepassword" onclick="showpassword(0)" lang="en">Show password</span>
 						</div>
-						<input class="input100" type="password" name="password" id="password" placeholder="Type your password">
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
+						<input class="input100 password" type="password" name="password" placeholder="Type your password" lang="en">
+						<span class="focus-input100" data-symbol="&#xf190;" lang="en"></span>
 					</div>
-					<script>
-						function showpassword() {
-							const input = document.getElementById("password");
-							const showhidepassword = document.getElementById("showhidepassword");
-							if (input.getAttribute("type") === "password") {
-								input.setAttribute("type", "text");
-								showhidepassword.innerText = "Hide password";
-							} else {
-								input.setAttribute("type", "password");
-								showhidepassword.innerText = "Show password";
-							}
-						}
-					</script>
-
-					<div class="wrap-input100 validate-input" data-validate="Name is required">
-						<span class="label-input100">Name</span>
-						<input class="input100" type="text" name="name" placeholder="Type your name" id="name">
-						<span class="focus-input100" data-symbol="&#9787;"></span>
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Mật khẩu bắt buộc điền" lang="vi">
+						<div class="wrap-input100-password">
+							<span class="label-input100" lang="vi">Mật khẩu</span>
+							<span class="showhidepassword" onclick="showpassword(1)" lang="vi">Hiện mật khẩu</span>
+						</div>
+						<input class="input100 password" type="password" name="password" placeholder="Nhập mật khẩu" lang="vi">
+						<span class="focus-input100" data-symbol="&#xf190;" lang="vi"></span>
 					</div>
 
+					<!-- name -->
+					<div class="wrap-input100 validate-input" data-validate="Name is required" lang="en">
+						<span class="label-input100" lang="en">Name</span>
+						<input class="input100" type="text" name="name" placeholder="Type your name" id="name" lang="en">
+						<span class="focus-input100" data-symbol="&#9787;" lang="en"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Tên bắt buộc điền" lang="vi">
+						<span class="label-input100" lang="vi">Tên của bạn</span>
+						<input class="input100" type="text" name="name" placeholder="Nhập tên" id="name" lang="vi">
+						<span class="focus-input100" data-symbol="&#9787;" lang="vi"></span>
+					</div>
+
+					<!-- Already have an account? -->
 					<div class="text-right p-t-8 p-b-31">
 						<a href="/signin">
-							<i>Already have an account?</i>
+							<i lang="en">Already have an account?</i>
+							<i lang="vi">Đã có tài khoản?</i>
 						</a>
 					</div>
 
+					<!-- submit -->
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" lang="en">
 								Sign up
+							</button>
+							<button class="login100-form-btn" lang="vi">
+								Đăng ký
 							</button>
 						</div>
 					</div>
@@ -86,6 +109,8 @@
 
 	<script src="/js/jquery-3.6.4.js"></script>
 	<script src="/js/signup.js"></script>
+	<script src="/js/index.js"></script>
+	<script src="/js/language.js"></script>
 </body>
 
 </html>

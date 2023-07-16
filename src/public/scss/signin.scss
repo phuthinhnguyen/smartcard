@@ -2,9 +2,10 @@
 @import "_font";
 @import "_variable";
 @import "_mixin";
+
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-
 @font-face {
   font-family: "Jost";
   src: url('/font/Jost/Jost-VariableFont_wght.ttf'); 
@@ -13,7 +14,6 @@
   
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
-
 * {
 	margin: 0px; 
 	padding: 0px; 
@@ -137,6 +137,24 @@ iframe {
 .bg1 {background-color: #3b5998}
 .bg2 {background-color: #1da1f2}
 .bg3 {background-color: #ea4335}
+
+
+// CSS language
+.language{
+  height: 100px;
+  .btn-language{
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid black;
+    margin-right: 30px;
+    &:hover{
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
 
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
@@ -384,12 +402,12 @@ iframe {
   opacity: 1;
 }
 
-@media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
-  }
-}
+// @media (max-width: 992px) {
+//   .alert-validate::before {
+//     visibility: visible;
+//     opacity: 1;
+//   }
+// }
 
 /*//////////////////////////////////////////////////////////////////
 [ Social item ]*/

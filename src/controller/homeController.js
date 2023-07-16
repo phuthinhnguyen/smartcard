@@ -79,17 +79,19 @@ let cardId = async (req, res) => {
 let processSignUp = async (req, res) => {
   let cardid = req.params.cardid;
   let { username, password, name } = req.body;
-  const hash = bcrypt.hashSync(password, 10);
+
+  let usernamefilter = username.filter(item=>item!="")[0];
+  let passwordfilter = password.filter(item=>item!="")[0];
+  let namefilter = name.filter(item=>item!="")[0];
+ 
+  const hash = bcrypt.hashSync(passwordfilter, 10);
   await pool.execute(
     "update smartcard set username = ?, password = ?, name1 = ? where cardid = ?",
-    [username, hash, name, cardid]
+    [usernamefilter, hash, namefilter, cardid]
   );
   return res.redirect("/signin");
 };
 
-// let getUploadFilePage =async (req,res)=>{
-//     return res.render("uploadfile.ejs")
-// }
 
 let handleUploadFile = async (req, res) => {
   let cardid = req.params.cardid;
@@ -165,8 +167,9 @@ let userInfo = async (req, res) => {
 };
 
 let processLogin = async (req, res) => {
-  let username = req.body.username;
-  let password = req.body.pass;
+  let username = req.body.username.filter(item=>item!="")[0];
+  let password = req.body.pass.filter(item=>item!="")[0];
+
   const [user] = await pool.execute(
     `select * from smartcard where username = ?`,
     [username]

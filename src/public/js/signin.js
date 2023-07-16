@@ -1,4 +1,3 @@
-
 (function ($) {
     "use strict";
 
@@ -19,18 +18,18 @@
   
     /*==================================================================
     [ Validate ]*/
-    var input = $('.validate-input .input100');
-
     $('.validate-form').on('submit',function(){
         var check = true;
-
+        var input = $('.validate-input .input100').filter(function() {
+            return $(this).attr("lang") === localStorage["language"];
+          });
         for(var i=0; i<input.length; i++) {
             if(validate(input[i]) == false){
                 showValidate(input[i]);
                 check=false;
             }
         }
-
+        // if check return false, stop and don't do action on form
         return check;
     });
 

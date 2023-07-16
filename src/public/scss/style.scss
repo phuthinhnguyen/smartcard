@@ -1,0 +1,14 @@
+@import "_font";
+@import "_variable";
+@import "_mixin";
+
+
+// change language from lang attribute
+[lang=en] [lang=vi],
+[lang=vi] [lang=en]
+{
+    display: none !important;
+}
+
+
+

@@ -179,6 +179,21 @@ iframe {
   background-color: #ea4335;
 }
 
+.language {
+  height: 100px;
+}
+.language .btn-language {
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid black;
+  margin-right: 30px;
+}
+.language .btn-language:hover {
+  background-color: black;
+  color: white;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
 .limiter {
@@ -387,12 +402,6 @@ iframe {
   opacity: 1;
 }
 
-@media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
-  }
-}
 /*//////////////////////////////////////////////////////////////////
 [ Social item ]*/
 .login100-social-item {

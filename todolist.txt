@@ -7,3 +7,4 @@ avatar usershow         done
 change theme  		done
 viet language
 add 1 link		done
+forgot password
