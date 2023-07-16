@@ -1,11 +1,65 @@
+var yournametext, yourtitletext, yourlinktext
+if (localStorage["language"] == "en") {
+    yournametext = "@yourname"
+    yourtitletext = "@yourtitle"
+    yourlinktext = "@yourlink"
+}
+else if (localStorage["language"] == "vi") {
+    yournametext = "@tencuaban"
+    yourtitletext = "@tieude"
+    yourlinktext = "@link"
+}
+
+
 // style name, inputtitle, inputlink when first loading
 window.addEventListener('load', function () {
-    let name = document.getElementById("name")
-    let inputtitle = this.document.getElementsByClassName("inputtitle")
-    let inputlinkcontainer = this.document.getElementsByClassName("linkinput")
+    let name = document.getElementById("name");
+    let inputtitle = this.document.getElementsByClassName("inputtitle");
+    let inputlinkcontainer = this.document.getElementsByClassName("linkinput");
+    let showLinkcontainer = document.getElementById("link-container");
+    let showlink = showLinkcontainer.children;
+
+    if (localStorage["language"] == "en") {
+        if (name.value == "@tencuaban") {
+            name.value = "@yourname"
+        }
+        for (let item of inputtitle) {
+            if (item.value == "@tieude") {
+                item.value = "@yourtitle"
+            }
+        }
+        for (let item of inputlinkcontainer) {
+            item.children[2].value = item.children[2].value.replace("@link", "@yourlink")
+
+        }
+        for (let item of showlink) {
+            if (item.children[1].innerText == "@tieude") {
+                item.children[1].innerText = "@yourtitle"
+            }
+        }
+    }
+    else if (localStorage["language"] == "vi") {
+        if (name.value == "@yourname") {
+            name.value = "@tencuaban"
+        }
+        for (let item of inputtitle) {
+            if (item.value == "@yourtitle") {
+                item.value = "@tieude"
+            }
+        }
+        for (let item of inputlinkcontainer) {
+            item.children[2].value = item.children[2].value.replace("@yourlink", "@link")
+
+        }
+        for (let item of showlink) {
+            if (item.children[1].innerText == "@yourtitle") {
+                item.children[1].innerText = "@tieude"
+            }
+        }
+    }
 
     function focusoutfirstloading(input) {
-        if (input.value == "@yourname" || input.value == "@yourtitle" || input.value.includes("@yourlink")) {
+        if (input.value == yournametext || input.value == yourtitletext || input.value.includes(yourlinktext)) {
             input.style.fontStyle = "italic";
             input.style.color = "lightgray";
         }
@@ -14,7 +68,9 @@ window.addEventListener('load', function () {
             input.style.color = "black";
         }
     }
+
     focusoutfirstloading(name)
+
     for (let i = 0; i < inputtitle.length; i++) {
         focusoutfirstloading(inputtitle[i])
     }
@@ -24,8 +80,6 @@ window.addEventListener('load', function () {
     }
 
     // align tag p center depend on length of @yourtitle
-    let showLinkcontainer = document.getElementById("link-container");
-    let showlink = showLinkcontainer.children;
     for (i = 0; i < showlink.length; i++) {
         const showlinkname = showlink[i].children[1];
         if (inputtitle[i].value.length < 10) {
@@ -50,7 +104,7 @@ function showanimation() {
     let linkarea = document.getElementById("link-area");
 
     if (flagshowanimation == true) {
-        if ((name.value != "@yourname" && linkarea.children.length == 0) || (name.value == "@yourname" && linkarea.children.length > 0) || (name.value != "@yourname" && linkarea.children.length > 0)) {
+        if ((name.value != yournametext && linkarea.children.length == 0) || (name.value == yournametext && linkarea.children.length > 0) || (name.value != yournametext && linkarea.children.length > 0)) {
             if (window.innerWidth > 1500) {
                 animatein(limiter, show, 250);
 
@@ -87,7 +141,7 @@ function showanimation() {
         }
 
     }
-    if (name.value == "@yourname" && linkarea.children.length == 0 && flagshowanimation == false) {
+    if (name.value == yournametext && linkarea.children.length == 0 && flagshowanimation == false) {
         if (window.innerWidth > 1500) {
             animateout(limiter, show, 250, 600);
         }
@@ -143,14 +197,14 @@ function addlinkfunction(a) {
             }
             return frag;
         }
-        var fragment = create(`<div id="container-showlink"><input name="linktype" type="hidden" value="${a.innerText}"></input><div class="link"><div class="linklogo"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" name="inputtitle" class="inputtitle" readonly="true" value="${(name.value == "@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" name="inputlink" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
+        var fragment = create(`<div id="container-showlink"><input name="linktype" type="hidden" value="${a.innerText}"></input><div class="link"><div class="linklogo"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" name="inputtitle" class="inputtitle" readonly="true" value="${(name.value == yournametext) ? yourtitletext : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" name="inputlink" readonly="true" value="http://${a.innerText.toLowerCase()}.com/${yourlinktext}" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
         // linkarea.insertBefore(fragment, linkarea.childNodes[linkarea.childElementCount]);
         linkarea.appendChild(fragment)
         $(".yesno").hide();
 
         // for showarea
         let showLinkcontainer = document.getElementById("link-container");
-        var showFragment = create(`<a class="link" href='#' target="_blank"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png" alt=""><p>${name.value != "@yourname" ? name.value : "@yourtitle"}</p></a>`);
+        var showFragment = create(`<a class="link" href='#' target="_blank"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png" alt=""><p>${name.value != yournametext ? name.value : yourtitletext}</p></a>`);
         // showLinkcontainer.insertBefore(showFragment, showLinkcontainer.childNodes[showLinkcontainer.childElementCount]);
         showLinkcontainer.appendChild(showFragment)
 
@@ -167,7 +221,7 @@ function addlinkfunction(a) {
 
 
         let title = document.querySelectorAll(".inputtitle");
-        if (title[linkarea.childElementCount - 1].value == "@yourtitle") {
+        if (title[linkarea.childElementCount - 1].value == yourtitletext) {
             title[linkarea.childElementCount - 1].style.color = "lightgray";
             title[linkarea.childElementCount - 1].style.fontStyle = "italic";
         }
@@ -226,7 +280,7 @@ function editinputtitle(a) {
     // let z =a.previousElementSibling.childNodes[1];
     let z = a.previousElementSibling.children[1];
     z.readOnly = "";
-    if (z.value == "@yourtitle") {
+    if (z.value == yourtitletext) {
         z.value = "";
     }
     z.setSelectionRange(z.value.length, z.value.length);
@@ -238,7 +292,7 @@ function editinputtitle(a) {
 function editinputlink(a) {
     let z = a.previousElementSibling;
     z.readOnly = "";
-    if (z.value.indexOf("@yourlink") > 0) {
+    if (z.value.indexOf(yourlinktext) > 0) {
         z.value = "";
     }
     z.setSelectionRange(z.value.length, z.value.length);
@@ -251,7 +305,7 @@ function editinputlink(a) {
 function editname(a) {
     let z = a.previousElementSibling;
     z.readOnly = "";
-    if (z.value == "@yourname") {
+    if (z.value == yournametext) {
         z.value = "";
     }
     z.setSelectionRange(z.value.length, z.value.length);
@@ -282,9 +336,9 @@ function inputtitlefocusout(a) {
     z.style.display = "inline";
     // for title
     if (a.value == "") {
-        a.value = "@yourtitle";
+        a.value = yourtitletext;
     }
-    if (a.value == "@yourtitle") {
+    if (a.value == yourtitletext) {
         a.style.color = "lightgray";
         a.style.fontStyle = "italic";
     }
@@ -319,10 +373,10 @@ function inputlinkfocusout(a) {
     z.style.display = "inline";
     // for link
     if (a.value == "") {
-        a.value = `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/@yourlink`;
+        a.value = `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/${yourlinktext}`;
     }
 
-    if (a.value == `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/@yourlink`) {
+    if (a.value == `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/${yourlinktext}`) {
         a.style.color = "rgb(185, 185, 185)";
         a.style.fontStyle = "italic";
     }
@@ -344,9 +398,9 @@ function inputnamefocusout(a) {
     let z = a.nextElementSibling;
     a.readOnly = "true";
     if (a.value == "") {
-        a.value = "@yourname";
+        a.value = yournametext;
     }
-    if (a.value == "@yourname") {
+    if (a.value == yournametext) {
         a.style.fontStyle = "italic";
         a.style.color = "lightgray";
     }
