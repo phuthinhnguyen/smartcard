@@ -1,10 +1,10 @@
 login authentication
 login, logout session	
 validate sign up	done
-avatar userinfo		done
+avatar userinfo		
 button save userinfo    done
 avatar usershow         done
 change theme  		done
-viet language
+viet language		done
 add 1 link		done
 forgot password
