@@ -10,6 +10,8 @@ else if (localStorage["language"] == "vi") {
     yourlinktext = "@link"
 }
 
+// show or hide guides according to window width
+setTimeout(guides, 2);
 
 // style name, inputtitle, inputlink when first loading
 window.addEventListener('load', function () {
@@ -520,7 +522,6 @@ function guides() {
     else skip();
 }
 
-setTimeout(guides, 1);
 
 function skip() {
     let body = document.getElementById("body");

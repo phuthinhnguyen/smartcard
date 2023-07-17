@@ -8,3 +8,7 @@ change theme  		done
 viet language		done
 add 1 link		done
 forgot password
+
+
+*Fix error "<pre>Error: EROFS: read-only file system..." when upload avatar
+https://stackoverflow.com/questions/75538982/error-erofs-read-only-file-system-open-filename-when-uploading-an-image-to

@@ -12,7 +12,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   font-family: "Jost";
 }
@@ -38,7 +39,12 @@ a:hover {
 }
 
 /*---------------------------------------------*/
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0px;
 }
 
@@ -50,7 +56,8 @@ p {
   margin: 0px;
 }
 
-ul, li {
+ul,
+li {
   margin: 0px;
   list-style-type: none;
 }
@@ -189,13 +196,25 @@ iframe {
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 15px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.limiter .container-login100 .logo {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.limiter .container-login100 .logo img {
+  width: 200px;
+  height: 70px;
 }
 .limiter .container-login100 .wrap-login100 {
   width: 500px;
@@ -203,12 +222,12 @@ iframe {
   border-radius: 10px;
   overflow: hidden;
   /*------------------------------------------------------------------
-  [ Form ]*/
+    [ Form ]*/
 }
 .limiter .container-login100 .wrap-login100 .login100-form {
   width: 100%;
   /*------------------------------------------------------------------
-  [ Input ]*/
+    [ Input ]*/
 }
 .limiter .container-login100 .wrap-login100 .login100-form .login100-form-title {
   display: block;
@@ -217,6 +236,7 @@ iframe {
   color: #333333;
   line-height: 1.2;
   text-align: center;
+  margin-top: -20px;
 }
 .limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 {
   width: 100%;
@@ -421,6 +441,15 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ Responsive ]*/
+@media (max-width: 991px) {
+  .limiter .container-login100 {
+    padding-top: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    -moz-column-gap: 500px;
+         column-gap: 500px;
+  }
+}
 @media (max-width: 576px) {
   .wrap-login100 {
     padding-left: 15px;
