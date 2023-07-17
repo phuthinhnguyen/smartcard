@@ -97,8 +97,10 @@ let handleUploadFile = async (req, res) => {
   let cardid = req.params.cardid;
   let name2 = req.body.name2;
   let colortheme = req.body.colortheme;
+  let train = req.body.train;
   delete req.body.name2;
   delete req.body.colortheme;
+  delete req.body.train;
   let link = JSON.stringify(req.body);
   if (link == "{}") {
     link = "";
@@ -120,8 +122,8 @@ let handleUploadFile = async (req, res) => {
   }
 
   await pool.execute(
-    "update smartcard set link = ?, name2 = ?, theme = ? where cardid = ?",
-    [link, name2, colortheme, cardid]
+    "update smartcard set link = ?, name2 = ?, theme = ?, train = ? where cardid = ?",
+    [link, name2, colortheme, train, cardid]
   );
   res.redirect(`/${cardid}/userinfo`);
   // res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
@@ -143,12 +145,14 @@ let userInfo = async (req, res) => {
     `select * from smartcard where cardid = ?`,
     [cardid]
   );
+ 
   let data = {};
   data.cardid = user[0].cardid;
   data.name1 = user[0].name1;
   data.name2 = user[0].name2;
   data.avatar = user[0].avatar;
   data.colortheme = user[0].theme;
+  data.train = user[0].train;
   if (user[0].link != "") {
     var link = JSON.parse(user[0].link);
     if (typeof link.linktype == "string") {

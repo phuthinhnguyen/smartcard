@@ -10,8 +10,6 @@ else if (localStorage["language"] == "vi") {
     yourlinktext = "@link"
 }
 
-// show or hide guides according to window width
-setTimeout(guides, 2);
 
 // style name, inputtitle, inputlink when first loading
 window.addEventListener('load', function () {
@@ -20,7 +18,15 @@ window.addEventListener('load', function () {
     let inputlinkcontainer = this.document.getElementsByClassName("linkinput");
     let showLinkcontainer = document.getElementById("link-container");
     let showlink = showLinkcontainer.children;
-
+    let train = document.getElementById("train").value;
+    
+    // check if train is notyet (new account), show guides
+    if (train=="done"){
+        skip();
+    }
+    else if (train=="notyet"){
+        guides();
+    }
     if (localStorage["language"] == "en") {
         if (name.value == "@tencuaban") {
             name.value = "@yourname"
@@ -95,7 +101,6 @@ window.addEventListener('load', function () {
 
     // showanimation()
 })
-
 
 let flagshowanimation = true;
 // animation when user inputs info
@@ -529,6 +534,9 @@ function skip() {
     let guides = document.getElementById("guides");
     guides.style.display = "none";
     let limiter = document.getElementById("limiter");
+    let train = document.getElementById("train")
+    train.value="done";
+
     if (window.innerWidth > 991) {
         limiter.animate([
             { marginLeft: "20%" },
@@ -577,6 +585,7 @@ function guidesgo() {
     let changename = document.getElementById("changename");
     let changenameresponsive = document.getElementById("changename-responsive");
     let nexttoaddlink = document.getElementById("nexttoaddlink");
+
     welcome.style.display = "none";
     welcome.animate([
         { top: "50%" },
@@ -766,7 +775,7 @@ function done() {
 
 function submit_form(event, form) {
     event.preventDefault();
-
+   
     // window.location.href="/upload-profile-pic";
     // const data = document.getElementById("profile_pic").value
     // let file = new File([data], "img.jpg", { type: "image/jpeg", lastModified: new Date().getTime() });
