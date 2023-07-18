@@ -47,8 +47,9 @@
 					<span class="tooltiptext" lang="vi">Theme</span>
 				</div>
 				<div class="nav-icon">
-					<i onclick="window.location.href='/signin'" class="fas fa-sign-out-alt"></i><span class="tooltiptext" lang="en">Log out</span>
-					<span class="tooltiptext" lang="vi">Đăng xuất</span>
+					<i onclick="window.location.href='/signin'" class="fas fa-sign-out-alt"></i><span
+						class="tooltiptext" lang="en">Log out</span>
+					<span class="tooltiptext" lang="vi">Thoát</span>
 				</div>
 			</div>
 		</nav>
@@ -62,10 +63,12 @@
 		<div id="show-contact">
 			<h2 lang="en">Contact information</h2>
 			<h2 lang="vi">Thông tin liên hệ</h2>
-			<p lang="en">We love to hear from you on our customer service, merchandise, website or any topics you want to share
+			<p lang="en">We love to hear from you on our customer service, merchandise, website or any topics you want
+				to share
 				with us. Your comments and suggestions will be appreciated. Please refer to the information below:</p>
 			<!-- <p>184 Main Rd E, St Albans Victoria 3021, Australia</p> -->
-			<p lang="vi">Smartcard rất hân hạnh nhận được góp ý từ các bạn. Vui lòng theo dõi thông tin liên hệ bên dưới:</p>
+			<p lang="vi">Smartcard rất hân hạnh nhận được góp ý từ các bạn. Vui lòng theo dõi thông tin liên hệ bên
+				dưới:</p>
 			<p lang="en">smartcard.com</p>
 			<p lang="vi">smartcard.com</p>
 			<p lang="en">Mobile: 0937 43 93 40</p>
@@ -396,81 +399,80 @@
 	<!-- guides -->
 	<div id="guides">
 		<div id="welcome">
-			<p lang="=en">Hi <%= datauser.name1 %>,</p>
-			<p lang="=vi">Xin chào <%= datauser.name1 %>,</p>
+			<p lang="en">Hi <%= datauser.name1 %>,</p>
+			<p lang="vi">Xin chào <%= datauser.name1 %>,</p>
 			<p lang="en">Welcome to SMARTCARD</p>
 			<p lang="vi">Tôi là SMARTCARD</p>
 			<p lang="en">Let's take a tour to see some guides</p>
-			<p lang="vi">Tham khảo một vài bước hướng dẫn</p>
+			<p lang="vi">Mời bạn xem một vài hướng dẫn trước khi bắt đầu</p>
 			<div class="item">
 				<div onclick="skip()" lang="en">Skip</div>
 				<div onclick="skip()" lang="vi">Bỏ qua</div>
-				<div onclick="guidesgo()" lang="en">Go</div>
-				<div onclick="guidesgo()" lang="vi">Đi</div>
+				<div onclick="guidesgo(0)" lang="en">Go</div>
+				<div onclick="guidesgo(1)" lang="vi">Đi</div>
 			</div>
 		</div>
 		<div id="uploadavatar">
 			<i class="far fa-hand-point-left"></i>
 			<p lang="en">Upload your avatar here</p>
-			<p lang="vi">Tải ảnh đại diện</p>
+			<p lang="vi">Tải ảnh đại diện ở đây</p>
 		</div>
 		<div id="uploadavatar-responsive">
 			<p lang="en">Upload your avatar here</p>
-			<p lang="vi">Tải ảnh đại diện</p>
+			<p lang="vi">Tải ảnh đại diện ở đây</p>
 			<i class="far fa-hand-point-right"></i>
 		</div>
 		<div id="changename">
 			<i class="far fa-hand-point-left"></i>
 			<p lang="en">Click here to edit your name</p>
-			<p lang="vi">Thay đổi tên</p>
+			<p lang="vi">Thay đổi tên ở đây</p>
 		</div>
 		<div id="changename-responsive">
 			<p lang="en">Click here to edit your name</p>
-			<p lang="vi">Thay đổi tên</p>
+			<p lang="vi">Thay đổi tên ở đây</p>
 			<i class="far fa-hand-point-right"></i>
 		</div>
-		<div onclick="nextoaddlink()" id="nexttoaddlink" lang="en">Next&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i>
-			<div onclick="nextoaddlink()" id="nexttoaddlink" lang="vi">Tiếp&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i>
-		</div>
+		<div onclick="nextoaddlink(0)" id="nexttoaddlink" class="nexttoaddlink" lang="en">Next&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+		<div onclick="nextoaddlink(1)" id="nexttoaddlink" class="nexttoaddlink" lang="vi">Tiếp&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
 		<div id="addlink">
 			<i class="far fa-hand-point-left"></i>
 			<p lang="en">Click here to add your link</p>
-			<p lang="vi">Tạo link</p>
+			<p lang="vi">Tạo link ở đây</p>
 		</div>
 		<div id="addlink-responsive">
 			<p lang="en">Click here to add your link</p>
-			<p lang="vi">Tạo link</p>
+			<p lang="vi">Tạo thông tin link ở đây</p>
 			<i class="far fa-hand-point-down"></i>
 		</div>
-		<div onclick="nexttolinkcontainer()" id="nexttolinkcontainer">Next&nbsp;&nbsp;<i
-				class="fas fa-chevron-circle-right"></i></div>
+		<div onclick="nexttolinkcontainer(0)" id="nexttolinkcontainer" class="nexttolinkcontainer" lang="en">Next&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+		<div onclick="nexttolinkcontainer(1)" id="nexttolinkcontainer" class="nexttolinkcontainer" lang="vi">Tiếp&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
 		<div id="edittitle">
 			<i class="far fa-hand-point-left"></i>
 			<p lang="en">Click here to edit your title</p>
-			<p lang="vi">Tạo tiêu đề</p>
+			<p lang="vi">Tạo tiêu đề ở đây</p>
 		</div>
 		<div id="edittitle-responsive">
 			<p lang="en">Click here to edit your title</p>
-			<p lang="vi">Tạo tiêu đề</p>
+			<p lang="vi">Tạo tiêu đề ở đây</p>
 			<i class="far fa-hand-point-right"></i>
 		</div>
 		<div id="editlink-responsive">
 			<p lang="en">Click here to edit your link</p>
-			<p lang="vi">Tạo link</p>
+			<p lang="vi">Tạo liên kết ở đây</p>
 			<i class="far fa-hand-point-right"></i>
 		</div>
 		<div id="editlink">
 			<i class="far fa-hand-point-left"></i>
 			<p lang="en">Click here to edit your link</p>
-			<p lang="vi">Tạo link</p>
+			<p lang="vi">Tạo liên kết ở đây</p>
 		</div>
 		<div id="preview">
 			<p lang="en">Preview your info shown on phone</p>
 			<p lang="vi">Xem trước hiển thị trên điện thoại</p>
 			<i class="far fa-hand-point-down"></i>
 		</div>
-		<div onclick="done()" id="done" lang="en">Done&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
-		<div onclick="done()" id="done" lang="vi">Kết thúc&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+		<div onclick="done()" id="done" lang="en" class="done">Done&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+		<div onclick="done()" id="done" lang="vi" class="done">Kết thúc&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
 	</div>
 
 
@@ -479,7 +481,8 @@
 <!-- toast -->
 <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center toast-container-res"
 	style="position: fixed;top: 50%;right: 50%;transform: translate(50%,-50%);visibility: hidden;">
-	<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" data-bs-delay="1000">
+	<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false"
+		data-bs-delay="1000">
 		<div class="toast-header d-flex justify-content-between" style="background: #a64bf4;">
 			<div>
 				<img src="/image/logo.png" class="rounded mr-2" alt="..."
@@ -492,8 +495,9 @@
 	</div>
 </div>
 <script>
-	function closetoast(){
-		document.getElementById("limiter").style.opacity="1";
+	function closetoast() {
+		document.getElementById("limiter").style.opacity = "1";
 	}
 </script>
+
 </html>

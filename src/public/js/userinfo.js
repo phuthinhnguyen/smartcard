@@ -577,14 +577,14 @@ function skip() {
     limiter.style.margin = "auto";
 }
 
-function guidesgo() {
+function guidesgo(num) {
     let welcome = document.getElementById("welcome");
     let body = document.getElementById("body");
     let uploadavatar = document.getElementById("uploadavatar");
     let uploadavatarresponsive = document.getElementById("uploadavatar-responsive");
     let changename = document.getElementById("changename");
     let changenameresponsive = document.getElementById("changename-responsive");
-    let nexttoaddlink = document.getElementById("nexttoaddlink");
+    let nexttoaddlink = document.getElementsByClassName("nexttoaddlink")[num];
 
     welcome.style.display = "none";
     welcome.animate([
@@ -646,15 +646,16 @@ function guidesgo() {
     nexttoaddlink.style.display = "block";
 }
 
-function nextoaddlink() {
+function nextoaddlink(num) {
     let uploadavatar = document.getElementById("uploadavatar");
     let uploadavatarresponsive = document.getElementById("uploadavatar-responsive");
     let changename = document.getElementById("changename");
     let changenameresponsive = document.getElementById("changename-responsive");
-    let nexttoaddlink = document.getElementById("nexttoaddlink");
     let addlink = document.getElementById("addlink");
     let addlinkresponsive = document.getElementById("addlink-responsive");
-    let nexttolinkcontainer = document.getElementById("nexttolinkcontainer");
+    let nexttolinkcontainer = document.getElementsByClassName("nexttolinkcontainer")[num];
+    let nexttoaddlink = document.getElementsByClassName("nexttoaddlink")[num];
+
     uploadavatar.style.display = "none";
     uploadavatarresponsive.style.display = "none";
     changename.style.display = "none";
@@ -689,18 +690,19 @@ function nextoaddlink() {
     $(".link-option").slideDown();
 }
 
-function nexttolinkcontainer() {
+function nexttolinkcontainer(num) {
     let linkoption = document.getElementsByClassName("link-option");
     addlinkfunction(linkoption[0].children[0]);
     let addlink = document.getElementById("addlink");
     let addlinkresponsive = document.getElementById("addlink-responsive");
-    let nexttolinkcontainer = document.getElementById("nexttolinkcontainer");
     let edittitle = document.getElementById("edittitle");
     let edittitleresponsive = document.getElementById("edittitle-responsive");
     let editlink = document.getElementById("editlink");
     let editlinkresponsive = document.getElementById("editlink-responsive");
     let preview = document.getElementById("preview");
-    let done = document.getElementById("done");
+    let done = document.getElementsByClassName("done")[num];
+    let nexttolinkcontainer = document.getElementsByClassName("nexttolinkcontainer")[num];
+
     addlink.style.display = "none";
     addlinkresponsive.style.display = "none";
     nexttolinkcontainer.style.display = "none";

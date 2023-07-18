@@ -46,7 +46,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  // margin-top: 40px;
   .avatar{
     width: 150px;
     height: 150px;
@@ -69,7 +69,8 @@ button {
     max-width: 800px;
     width: 100%;
     padding: 25px;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 40px;
     .wrap{
       width: 100%;
       border: 1px solid white;

@@ -50,7 +50,6 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
 }
 .content-show .avatar {
   width: 150px;
@@ -74,7 +73,8 @@ button:hover {
   max-width: 800px;
   width: 100%;
   padding: 25px;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 .content-show .link .wrap {
   width: 100%;
