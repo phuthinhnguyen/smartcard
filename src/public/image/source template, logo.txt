@@ -1,3 +1,4 @@
+*login form template
 https://colorlib.com/wp/html5-and-css3-login-forms/
 https://github.com/longnguyen28596/passport-local
 https://www.toptal.com/designers/htmlarrows/symbols/
@@ -6,5 +7,8 @@ https://stackoverflow.com/questions/23511792/attach-a-blob-to-an-input-of-type-f
 https://stackoverflow.com/questions/18291503/add-a-json-object-to-req-body
 
 
+*logo
+Simple,geometric, iconic logo of ""Rise To Greatness" is an inspiring channel dedicated to Motivation and Self-development. ", white vector, on black background
+the logo with only textitle of "smartcard" text, 4k, black vector, white back ground
 
-	
+https://www.vistaprint.com/logomaker/gallery 	
