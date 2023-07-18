@@ -60,8 +60,8 @@
 			</p>
 		</div>
 		<div id="show-contact">
-			<h2 lang=en>Contact information</h2>
-			<h2 lang=vi>Thông tin liên hệ</h2>
+			<h2 lang="en">Contact information</h2>
+			<h2 lang="vi">Thông tin liên hệ</h2>
 			<p lang="en">We love to hear from you on our customer service, merchandise, website or any topics you want to share
 				with us. Your comments and suggestions will be appreciated. Please refer to the information below:</p>
 			<!-- <p>184 Main Rd E, St Albans Victoria 3021, Australia</p> -->
@@ -396,57 +396,81 @@
 	<!-- guides -->
 	<div id="guides">
 		<div id="welcome">
-			<p>Hi <%= datauser.name1 %>,</p>
-			<p>Welcome to SMARTCARD</p>
-			<p>Let's take a tour to see some guides</p>
+			<p lang="=en">Hi <%= datauser.name1 %>,</p>
+			<p lang="=vi">Xin chào <%= datauser.name1 %>,</p>
+			<p lang="en">Welcome to SMARTCARD</p>
+			<p lang="vi">Tôi là SMARTCARD</p>
+			<p lang="en">Let's take a tour to see some guides</p>
+			<p lang="vi">Tham khảo một vài bước hướng dẫn</p>
 			<div class="item">
-				<div onclick="skip()">Skip</div>
-				<div onclick="guidesgo()">Go</div>
+				<div onclick="skip()" lang="en">Skip</div>
+				<div onclick="skip()" lang="vi">Bỏ qua</div>
+				<div onclick="guidesgo()" lang="en">Go</div>
+				<div onclick="guidesgo()" lang="vi">Đi</div>
 			</div>
 		</div>
 		<div id="uploadavatar">
 			<i class="far fa-hand-point-left"></i>
-			<p>Upload your avatar here</p>
+			<p lang="en">Upload your avatar here</p>
+			<p lang="vi">Tải ảnh đại diện</p>
 		</div>
 		<div id="uploadavatar-responsive">
-			<p>Upload your avatar here</p><i class="far fa-hand-point-right"></i>
+			<p lang="en">Upload your avatar here</p>
+			<p lang="vi">Tải ảnh đại diện</p>
+			<i class="far fa-hand-point-right"></i>
 		</div>
 		<div id="changename">
 			<i class="far fa-hand-point-left"></i>
-			<p>Click here to edit your name</p>
+			<p lang="en">Click here to edit your name</p>
+			<p lang="vi">Thay đổi tên</p>
 		</div>
 		<div id="changename-responsive">
-			<p>Click here to edit your name</p><i class="far fa-hand-point-right"></i>
+			<p lang="en">Click here to edit your name</p>
+			<p lang="vi">Thay đổi tên</p>
+			<i class="far fa-hand-point-right"></i>
 		</div>
-		<div onclick="nextoaddlink()" id="nexttoaddlink">Next&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i>
+		<div onclick="nextoaddlink()" id="nexttoaddlink" lang="en">Next&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i>
+			<div onclick="nextoaddlink()" id="nexttoaddlink" lang="vi">Tiếp&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i>
 		</div>
 		<div id="addlink">
 			<i class="far fa-hand-point-left"></i>
-			<p>Click here to add your link</p>
+			<p lang="en">Click here to add your link</p>
+			<p lang="vi">Tạo link</p>
 		</div>
 		<div id="addlink-responsive">
-			<p>Click here to add your link</p><i class="far fa-hand-point-down"></i>
+			<p lang="en">Click here to add your link</p>
+			<p lang="vi">Tạo link</p>
+			<i class="far fa-hand-point-down"></i>
 		</div>
 		<div onclick="nexttolinkcontainer()" id="nexttolinkcontainer">Next&nbsp;&nbsp;<i
 				class="fas fa-chevron-circle-right"></i></div>
 		<div id="edittitle">
 			<i class="far fa-hand-point-left"></i>
-			<p>Click here to edit your title</p>
+			<p lang="en">Click here to edit your title</p>
+			<p lang="vi">Tạo tiêu đề</p>
 		</div>
 		<div id="edittitle-responsive">
-			<p>Click here to edit your title</p><i class="far fa-hand-point-right"></i>
+			<p lang="en">Click here to edit your title</p>
+			<p lang="vi">Tạo tiêu đề</p>
+			<i class="far fa-hand-point-right"></i>
 		</div>
 		<div id="editlink-responsive">
-			<p>Click here to edit your link</p><i class="far fa-hand-point-right"></i>
+			<p lang="en">Click here to edit your link</p>
+			<p lang="vi">Tạo link</p>
+			<i class="far fa-hand-point-right"></i>
 		</div>
 		<div id="editlink">
 			<i class="far fa-hand-point-left"></i>
-			<p>Click here to edit your link</p>
+			<p lang="en">Click here to edit your link</p>
+			<p lang="vi">Tạo link</p>
 		</div>
 		<div id="preview">
-			<p>Preview your info shown on phone</p><i class="far fa-hand-point-down"></i>
+			<p lang="en">Preview your info shown on phone</p>
+			<p lang="vi">Xem trước hiển thị trên điện thoại</p>
+			<i class="far fa-hand-point-down"></i>
 		</div>
-		<div onclick="done()" id="done">Done&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+		<div onclick="done()" id="done" lang="en">Done&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+		<div onclick="done()" id="done" lang="vi">Kết thúc&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
 	</div>
 
 
