@@ -32,7 +32,7 @@ body {
 	width: 100%;
 	/* height: calc(var(--index) * 10); */
 	height: calc(var(--index) * 4);
-	background-image: url(../img/ground2.png);
+	background-image: url(../parallax-scrolling/img/ground2.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
