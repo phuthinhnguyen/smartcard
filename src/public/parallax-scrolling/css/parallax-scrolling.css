@@ -22,17 +22,17 @@ body {
 	font-family: raleway_f, sans-serif;
 	line-height: 1.55;
 }
-.main-header {
+.main-header-responsive {
 	position: relative;
 }
-.main-header::after {
+.main-header-responsive::after {
 	content: '';
 	position: absolute;
 	z-index: 100;
 	width: 100%;
 	/* height: calc(var(--index) * 10); */
 	height: calc(var(--index) * 4);
-	background-image: url(../parallax-scrolling/img/ground2.png);
+	background-image: url(/parallax-scrolling/img/ground2.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
