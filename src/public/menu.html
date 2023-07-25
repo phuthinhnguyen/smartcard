@@ -1,0 +1,69 @@
+<nav>
+    <div class="nav-wrap">
+        <div class="left">
+            <ul>
+                <li>
+                    <a id="home">Home<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                </li>
+
+                <li>
+                    <a id="about">About<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                </li>
+
+                <li>
+                    <a id="products">Products<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a id="userguides">User guides<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a id="reviews">Reviews<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a id="contact">Contact<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- <div class="center">
+            <img src="img/logo-transparent-png.png" alt="" onclick="window.location.href='index.html'">
+        </div> -->
+        <div class="right">
+           <a href="">Log in</a>
+           <img src="/creativeScroll/img/vi.svg" alt="" style="width: 25px;height: 25px;margin-left: 20px;" onclick="vi()">
+           <img src="/creativeScroll/img/us.svg" alt="" onclick="eng()">
+        </div>
+    </div>
+</nav>
+<script>
+    $("#home").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".home").offset().top
+        }, 600);
+    })
+    $("#about").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".about").offset().top
+        }, 600);
+    })
+    $("#products").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".products").offset().top
+        }, 600);
+    })
+    $("#userguides").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".userguides").offset().top
+        }, 600);
+    })
+    $("#reviews").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".reviews").offset().top
+        }, 600);
+    })
+    $("#contact").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".contact").offset().top
+        }, 600);
+    })
+</script>

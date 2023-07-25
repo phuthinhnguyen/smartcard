@@ -5,30 +5,18 @@
 }
 :root {
 	--index: calc(1vw + 1vh);
-	--color-header: #f4efec;
-	--color-text: #cdc6c3;
+	/* --color-header: #f4efec;
+	--color-text: #cdc6c3; */
 	--gallery-gap: calc(var(--index) * 7.5)
 }
-@font-face {
-	font-family: raleway-c;
-	src: url(../fonts/raleway-regular.woff2);
-}
-@font-face {
-	font-family: outfit-c;
-	src: url(../fonts/outfit-regular.woff2);
-}
-h1, h2, h3, h4, h5, h6 {
-	font-family: outfit-c;
-}
-/* will-change */
-.content, .hero, .main-header, .gallery > * {
+
+.container-content, .hero, .main-header, .gallery > * {
 	will-change: transform;
 }
 body {
-	background-image: url(/creativeScroll/img/bg-01.jpg);
+	background-image: url(../img/bg-01.jpg);
 	background-size: 50px;
 	color: #fafafa;
-	font-family: raleway-c;
 	overflow-x: hidden;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -39,15 +27,15 @@ body {
 	width: calc(var(--index) * 32);
 	position: absolute;
 	/* left: 47vw; */
-	left: 40vw;
+	left: 45vw;
 	/* top: 22vh; */
-	top: 15vh;
+	top: 5vh;
 	z-index: -1;
 }
 .main-header {
 	height: 100vh;
 }
-.container {
+.container-content {
 	/* padding: 0 7vw; */
 	padding: 0 5vw;
 }
@@ -55,7 +43,7 @@ body {
 	font-size: calc(var(--index) * 8);
 	position: absolute;
 	width: min-content;
-	bottom: 12vh;
+	bottom: 35vh;
 	line-height: .9;
 }
 .gallery {
@@ -74,34 +62,35 @@ body {
 	max-height: 180vh;
 	border-radius: 8px;
 }
+
 .gallery__left {
-	margin-top: calc(var(--gallery-gap) * 1.75);
+	/* margin-top: calc(var(--gallery-gap) * 1.75); */
+	margin-top: calc(var(--gallery-gap) * 1.50);
 }
 .gallery__right .gallery__item {
 	margin: 0;
 	margin-top: var(--gallery-gap);
 }
 .text-block {
-	color: var(--color-text);
+	/* color: var(--color-text); */
 	position: relative;
 }
 .text-block__h {
-	font-size: 2rem;
-	line-height: 2.4rem;
-	color: var(--color-header);
+	/* color: var(--color-header); */
 	margin-bottom: 1.5rem;
+	font-family: "AdamGorry";
+	/* font-size: 25px; */
+	font-size: calc(var(--index) * 1.1);
+	line-height: 1.75;
+	font-weight: 600;
+	letter-spacing: 1px;
 }
 .text-block__p {
 	line-height: 1.75;
+	/* font-size: 20px; */
+	font-size: calc(var(--index) * 0.8);
+	font-family: "Mali";
+	font-weight: 400;
 }
 
-@media screen and (max-width:991px) {
-	#wrapper{
-		display: none;
-	}
-}
-@media screen and (min-width:992px) {
-	#wrapper-responsive{
-		display: none;
-	}
-}
+

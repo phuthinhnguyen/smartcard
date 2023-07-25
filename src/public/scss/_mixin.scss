@@ -96,3 +96,41 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@mixin title{
+    font-family: $fontAdamGorry;
+    // font-size: 30px;
+    font-size: calc(var(--index) * 1.2);
+	line-height: 1.75;
+	font-weight: 600;
+	letter-spacing: 2px;
+    color: $title-color;
+}
+
+@mixin text{
+    line-height: 1.75;
+    // font-size: 20px;
+    font-size: calc(var(--index) * 0.75);
+    font-family: $fontMali;
+    font-weight: 400;
+    color: $text-color;
+}
+@mixin button{
+    height: 50px;
+    width: 200px;
+    border-radius: 8px;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    font-family: $fontAdamGorry;
+    letter-spacing: 2px;
+    font-weight: 900;
+    color: white;
+    transition: 0.3s;
+    background-color: black;
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+
+

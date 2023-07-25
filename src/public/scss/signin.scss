@@ -22,13 +22,13 @@
 
 body, html {
 	height: 100%;
-	@include font($fontJost);
+	@include font($fontMali);
 }
 
 
 /*---------------------------------------------*/
 a {
-	@include font($fontJost);
+	@include font($fontMali);
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -53,7 +53,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	@include font($fontJost);
+	@include font($fontMali);
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -120,14 +120,14 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  @include font($fontJost);
+  @include font($fontMali);
   font-size: 14px;
   line-height: 1.5;
   color: #666666;
 }
   
 .txt2 {
-  @include font($fontJost);
+  @include font($fontMali);
   font-size: 14px;
   line-height: 1.5;
   color: #333333;
@@ -190,8 +190,9 @@ iframe {
           width: 100%;
           .login100-form-title {
             display: block;
-            @include font($fontJost);
-            font-size: 39px;
+            @include title;
+            @include font($fontAdamGorry);
+            font-size: 30px;
             color: #333333;
             line-height: 1.2;
             text-align: center;
@@ -203,14 +204,14 @@ iframe {
             position: relative;
             border-bottom: 2px solid #d9d9d9;
             .label-input100 {
-              @include font($fontJost);
+              @include font($fontMali);
               font-size: 16px;
               color: #333333;
               line-height: 1.5;
               padding-left: 7px;
             }
             .input100 {
-              @include font($fontJost);
+              @include font($fontMali);
               font-size: 16px;
               color: #333333;
               line-height: 1.2;
@@ -328,7 +329,7 @@ iframe {
       transition: all 0.4s;
     }
     .login100-form-btn {
-      @include font($fontJost);
+      @include font($fontMali);
       font-size: 16px;
       color: #fff;
       line-height: 1.2;
@@ -369,7 +370,7 @@ iframe {
   right: 2px;
   pointer-events: none;
 
-  @include font($fontJost);
+  @include font($fontMali);
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;

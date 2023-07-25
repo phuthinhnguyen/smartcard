@@ -28,7 +28,7 @@ let cardId = async (req, res) => {
     } else data.colortheme = `background-color: ${user[0].theme};color:white`;
   } else
     data.colortheme =
-      "background-image: url('image/signin/bg-01.jpg');color:white";
+      "background-image: url('image/index/bg-01.jpg');color:white";
   if (user[0].link != "") {
     var link = JSON.parse(user[0].link);
     if (typeof link.linktype == "string") {

@@ -18,7 +18,7 @@
 
 body,
 html {
-  @include font($fontJost);
+ @include font($fontMali);
   @include scrollbar(5px, transparent, black, black);
   background-position: center;
   background-repeat: no-repeat;
@@ -52,7 +52,7 @@ button {
 }
 
 // CSS nav
-nav {
+.menu-control {
   width: 100%;
   height: 70px;
   display: flex;
@@ -115,7 +115,7 @@ nav {
 
       .tooltiptext {
         visibility: hidden;
-        @include font($fontJost);
+       @include font($fontMali);
         font-size: 13px;
         width: 60px;
         background-color: black;
@@ -194,8 +194,8 @@ nav {
   margin-bottom: 10px;
 
   img {
-    width: 200px;
-    height: 70px;
+    width: 250px;
+    height: 200px;
   }
 }
 
@@ -256,13 +256,16 @@ nav {
             align-items: center;
 
             input {
-              font-size: 22px;
-              font-weight: 500;
+              // font-size: 22px;
+              // font-weight: 500;
               text-align: center;
               margin-left: 20px;
               width: 100%;
               color: lightgray;
               font-style: italic;
+              @include font($fontAdamGorry);
+              @include title;
+              font-size: 25px;
             }
 
             i {
@@ -313,7 +316,7 @@ nav {
               }
 
               .login100-form-btn {
-                @include font($fontJost);
+               @include font($fontMali);
                 font-size: 16px;
                 color: #fff;
                 line-height: 1.2;
@@ -331,7 +334,7 @@ nav {
                 cursor: pointer;
 
                 i {
-                  @include font($fontJost);
+                 @include font($fontMali);
                   font-size: 25px;
                   margin-right: 15px;
                   margin-top: -5px;
@@ -353,7 +356,7 @@ nav {
               display: block;
               padding: 10px;
               text-align: center;
-              @include font($fontJost);
+             @include font($fontMali);
               font-size: 15px;
               user-select: none;
               cursor: pointer;
@@ -384,7 +387,7 @@ nav {
     border-radius: 50px;
     border: 10px solid black;
     // transform: translate(0,-50%);
-    @include font($fontJost);
+   @include font($fontMali);
     overflow: hidden;
     // animation: fadein 3s;
 
@@ -422,9 +425,12 @@ nav {
         margin-top: 20px;
 
         p {
+          // font-size: 20px;
+          overflow-x: hidden;
+          @include font($fontAdamGorry);
+          @include title;
           color: black;
           font-size: 20px;
-          overflow-x: hidden;
         }
       }
 
@@ -494,7 +500,7 @@ nav {
 
 #container-showlink {
   width: 100%;
-  @include font($fontJost);
+ @include font($fontMali);
   margin-top: 33px;
   border: 1px solid lightgray;
   padding: 20px;
@@ -525,11 +531,12 @@ nav {
           display: flex;
           justify-content: center;
           align-items: center;
+          font-size: 16px;
         }
 
         input {
           width: 100%;
-          font-size: 20px;
+          font-size: 16px;
           font-weight: 500;
           color: lightgray;
           font-style: italic;
@@ -556,6 +563,7 @@ nav {
         margin-top: 10px;
         color: rgb(185, 185, 185);
         font-style: italic;
+        font-size: 14px;
       }
     }
 
@@ -635,7 +643,7 @@ nav {
       }
 
       &:last-of-type {
-        font-size: 16px;
+        font-size: 15px;
       }
     }
 
@@ -669,7 +677,7 @@ nav {
   #changename-responsive,
   #uploadavatar-responsive,
   #addlink-responsive {
-    font-size: 18px;
+    font-size: 16px;
     @include welcome;
     display: flex;
     justify-content: center;
@@ -985,7 +993,7 @@ nav {
     }
   }
 
-  nav {
+  .menu-control {
     position: relative;
 
     .left,
@@ -1079,22 +1087,22 @@ nav {
 
         .linknametitle-wrap {
           #linknametitle {
-            font-size: 18px;
+            font-size: 16px;
           }
 
           #title {
-            font-size: 18px;
+            font-size: 16px;
           }
         }
 
         #link {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }
   }
 
-  nav {
+  .menu-control {
     .right {
       .nav-icon {
         i {

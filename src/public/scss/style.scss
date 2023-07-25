@@ -10,5 +10,414 @@
     display: none !important;
 }
 
+@font-face {
+	font-family: "AdamGorry";
+	src: url(../font/SVN-Adam-Gorry.ttf);
+}
 
+html{
+    @include scrollbar(8px,lightgray,black,black);
+}
+
+// a{
+//     text-decoration: none;
+//     color: var(--text);
+// }
+// button{
+//     height: 50px;
+//     width: 200px;
+//     border-radius: 8px;
+//     border: none;
+//     user-select: none;
+//     cursor: pointer;
+//     font-family: $fontAdamGorry;
+//     letter-spacing: 2px;
+//     font-weight: 900;
+//     color: white;
+//     transition: 0.3s;
+//     background-color: black;
+//     &:hover{
+//         transform: scale(1.05);
+//     }
+// }
+
+
+// CSS menu
+@keyframes navsticky {
+    0%{opacity: 0;transform: translate3d(0,-20px,0);}
+    100%{opacity: 1;transform: none;}
+}
+
+.nav-sticky{
+    display: block;
+    animation: navsticky 0.5s;
+    transition: transform 0.4s;
+}
+nav{
+    position: sticky;
+    top: 0;
+    display: none;
+    z-index: 2;
+    background-color: rgba(0,0,0,.5);
+    .nav-wrap{
+        height: 70px;
+        padding: 0 80px;
+        max-width: 1680px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: calc(var(--index) * 0.75);
+        font-weight: 900;
+        // color: var(--text);
+        color: $title-color;
+        // text-shadow: 0 0 15px #9d822b;
+        font-family: $fontAdamGorry;
+        .left{
+            ul{
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            li{
+                float: left;
+                margin-left: 60px;
+                position: relative;
+                >a{
+                    cursor: pointer;
+                    user-select: none;
+                    &:hover{
+                        color: white;
+                    }
+                }
+            }
+            li:first-child{
+                margin-left: 0;
+            }
+        }
+       
+        // .center{
+        //    img{
+        //     width: 80px;
+        //     height: 70px;
+        //     cursor: pointer;
+        //    }
+        // }
+
+        .right{
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+            a{
+                text-decoration: none;
+                color: $title-color;
+                &:hover{
+                    color: white;
+                }
+            } 
+            img{
+                width: 22px;
+                height: 22px;
+                cursor: pointer;
+            }
+            
+        }
+    }
+}
+
+
+// CSS content-item: about, products, userguides, reviews, contact
+.title-header{
+    margin-bottom: 0;
+    text-align: center;
+    padding-top: 150px;
+    @include title;
+}
+.container-content{
+    padding-top: 0;
+    .content-wrap{
+        padding: 0;
+        margin-top: 50px;
+        margin-bottom: 0;
+        .content-left{
+            margin-top: 50px;
+            .content-left-item{
+                margin-bottom: 0;
+                p{
+                    @include text;
+                }
+            }
+        }
+        .content-right{
+            margin: 0;
+            padding: 0;
+            .content-right-item{
+                margin-bottom: 0;
+                margin-top: 40px;
+                p{
+                    @include text;
+                }
+            }
+        }
+    }
+}
+
+
+
+// CSS home
+.button-explore{
+    position: absolute;
+	bottom: 25vh;
+    @include button;
+}
+.main-title{
+    transition: 0.6s;
+	cursor: pointer;
+    &:hover{
+        letter-spacing: 20px;
+    }
+}
+.home-image{
+	width: calc(var(--index) * 42);
+	position: absolute;
+	left: -15vw;
+	top: 5vh;
+	z-index: -1;
+    transform: rotate(-40deg);
+}
+.text-block__h{
+    color: $title-color;
+}
+.text-block__p{
+    color: $text-home-color;
+}
+
+// CSS about
+.content-left-item, .content-right-item{
+    margin-top: 0;
+    p{
+        margin-bottom: 50px;
+    }
+    img{
+        width: 100%;
+        height: auto;
+        // max-height: 300px;
+        margin-bottom: 50px;
+        border-radius: 8px;
+    }
+}
+
+// CSS userguides
+.content-userguides{
+    .contactus-content-item{
+        width: 100%;
+        p{
+            span{
+                font-weight: 600;
+                text-align: left;
+                color: $title-color;
+                text-decoration: underline;
+            }
+        }
+    }
+    // .content-right-item{
+    //     margin-top: 0;
+    // }
+}
+
+
+// CSS reviews
+.content-wrap-reviews{
+    .gallery__left{
+        margin-top: 80px;
+        .gallery__item-reviews{
+            margin-bottom: 0;
+            max-width: 100%;
+            // margin-bottom: var(--gallery-gap);
+            border-radius: 8px;
+            .carousel-item-wrap{
+                // display: flex;
+                // justify-content: space-evenly;
+                margin-top: 0;
+                width: 100%;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                justify-content: center;
+                column-gap: 50px;
+                padding: 0 50px;
+                .item{
+                    max-width: 304px;
+                    max-height: 70vh;
+                    // height: 500px;
+                    // display: flex;
+                    // flex-direction: column;
+                    // justify-content: flex-start;
+                    padding: 30px;
+                    text-align: center;
+                    box-shadow: 0px 10px 30px 0px rgba(226, 226, 226, 0.2);
+                    div{
+                        width: 129px;
+                        height: 129px;
+                        position: relative;
+                        margin: auto;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            margin: auto;
+                        }
+                        // .quote{
+                        //     position: absolute;
+                        //     right: 0;
+                        //     bottom: 0;
+                        //     width: 51px;
+                        //     height: 51px;
+                        // }
+                    }
+                    
+                    p{
+                        height: 300px;
+                        font-family: $fontMali;
+                        color: $text-color;
+                        margin-top: 20px;
+                        font-size: calc(var(--index) * 0.6);
+                    }
+                    // a{
+                    //     width: 9px;
+                    //     height: 9px;
+                    //     background-color: black;
+                    //     margin: auto;
+                    //     border-radius: 50%;
+                    // }
+                    h6{
+                        font-family: $fontAdamGorry;
+                        font-weight: bold;
+                        color: $title-color;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// CSS contact
+.contactus-content-item{
+    flex: 1;
+    h2{
+        @include title;
+        font-size: calc(var(--index) * 0.8);
+        margin-bottom: 20px;
+    }
+    p{
+        // color: var(--text);
+        // font-size: 216px;
+        font-size: calc(var(--index) * 0.7);
+        line-height: 6px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-top: 20px;
+        @include button;
+    }
+    input{
+        width: 100%;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+        padding-left: 20px;
+        font-family: $fontMali;
+        outline: none;
+        &:focus{
+            border: 3px solid black;
+        }
+    }
+    textarea{
+        margin-top: 20px;
+        width: 100%;
+        padding: 20px;
+        resize: none;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+        font-family: $fontMali;
+        outline: none;
+        font-size: calc(var(--index) * 0.7);
+        &:focus{
+            border: 3px solid black;
+        }
+    }
+    .input-name-mail{
+        display: flex;
+        justify-content: space-between;
+        input{
+            width: 48%;
+            font-size: calc(var(--index) * 0.7);
+        }
+    }
+    >input{
+        margin-top: 20px;
+        font-size: calc(var(--index) * 0.7);
+    }
+    // &:last-of-type{
+    //     padding: 0 30px;
+       
+    // }
+}
+
+
+
+// CSS footer
+.footer{
+    margin-top: 100px;
+    max-height: 400px;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+// CSS scrolltop
+#scrolltop{
+    img{
+        width: 48px;
+        height: 48px;
+    }
+    &:hover{
+        cursor: pointer;
+      }
+}
+.scrolltop-show{
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    animation: navsticky 0.8s;
+    transition: transform 0.4s;
+}
+
+
+// Responsive
+@media screen and (max-width:1800px) {
+	.content-wrap-reviews{
+        .gallery__left{
+            .gallery__item-reviews{
+                .carousel-item-wrap{
+                    .item{
+                        max-height: 80vh;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:991px) {
+	#wrapper{
+		display: none;
+	}
+}
+@media screen and (min-width:992px) {
+	#wrapper-responsive{
+		display: none;
+	}
+}
 

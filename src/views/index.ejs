@@ -12,8 +12,16 @@
   <script src="/creativeScroll/libs/gsap/gsap.min.js" defer></script>
   <script src="/creativeScroll/libs/gsap/ScrollTrigger.min.js" defer></script>
   <script src="/creativeScroll/libs/gsap/ScrollSmoother.min.js" defer></script>
+
+  <link rel="stylesheet" href="/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <script src="/css/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>	
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="/creativeScroll/css/creativeScroll.css" />
+  <script src="/js/jquery-3.6.4.js"></script>
+  <script src="/js/HTMLImporter.js"></script>
+  <script src="/js/language.js"></script>
   <script src="/creativeScroll/js/creativeScroll.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&family=Noto+Serif:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/parallax-scrolling/css/parallax-scrolling.css" />
   <script src="/parallax-scrolling/libs/gsap/gsap.min.js" defer></script>
@@ -25,35 +33,50 @@
 
 <body>
 
+	<!-- main -->
 	<div class="wrapper" id="wrapper">
+		<!-- menu -->
+		<script>HTMLImporter.import("menu.html");</script>
+
+		<!-- content -->
 		<div class="content">
-			<header class="hero-section">
-				<img data-speed="0.6" class="hero" src="/creativeScroll/img/logo-transparent-png.png" alt="Alt" />
-				<div class="container">
+
+			<!-- home -->
+			<header class="hero-section home">
+				<img data-speed="0.6" class="hero" src="/image/index/logo.png" alt="Alt" />
+			
+				<div class="container-content">
 					<div data-speed="0.75" class="main-header">
-						<h1 class="main-title">smart card</h1>
+						<!-- <h1 class="main-title">smart card</h1> -->
+						<img class="home-image" src="/image/index/home-1.png" alt="">
+						<button class="button-explore">Explore now</button>
 					</div>
 				</div>
 			</header>
-
+			<script>
+				$(".button-explore").click(function name(params) {
+					$('html').animate({
+						scrollTop: $(".gallery__item").offset().top
+					}, 600);
+				})
+			</script>
 			<div class="portfolio">
-				<div class="container">
+				<div class="container-content">
 					<main class="gallery">
-						<div data-speed=".9" class="gallery__left">
-							<img class="gallery__item" src="/creativeScroll/img/work/creativeScroll-1.jpg" alt="Alt" />
-							<img class="gallery__item" src="/creativeScroll/img/work/creativeScroll-2.jpg" alt="Alt" />
+						<div data-speed="0.9" class="gallery__left">
+							<img class="gallery__item" src="/image/index/work/creativeScroll-1.jpg" alt="Alt" />
+							<img class="gallery__item" src="/image/index/work/creativeScroll-2.jpg" alt="Alt" />
 
 							<div class="text-block gallery__item">
 								<h2 class="text-block__h">
 									Creative floating scroll with amazing parallax effect
 								</h2>
 								<p class="text-block__p">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor amount scrolling.
+									Chào mừng bạn đến với chúng tôi. Hi vọng bạn có một trải nghiệm tuyệt vời ở đây.
 								</p>
 							</div>
 
-							<img class="gallery__item" src="/creativeScroll/img/work/creativeScroll-6.jpg" alt="Alt" />
+							<img class="gallery__item" src="/image/index/work/creativeScroll-6.jpg" alt="Alt" />
 						</div>
 
 						<div data-speed="1.1" class="gallery__right">
@@ -62,21 +85,264 @@
 									Creative floating scroll with amazing parallax effect
 								</h2>
 								<p class="text-block__p">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor amount scrolling.
+									Chào mừng bạn đến với chúng tôi. Hi vọng bạn có một trải nghiệm tuyệt vời ở đây.
 								</p>
 							</div>
 
-							<img class="gallery__item" src="/creativeScroll/img/work/creativeScroll-4.jpg" alt="Alt" />
-							<img class="gallery__item" src="/creativeScroll/img/work/creativeScroll-5.jpg" alt="Alt" />
-							<img class="gallery__item" src="/creativeScroll/img/work/creativeScroll-3.jpg" alt="Alt" />
+							<img class="gallery__item" src="/image/index/work/creativeScroll-4.jpg" alt="Alt" />
+							<img class="gallery__item" src="/image/index/work/creativeScroll-5.jpg" alt="Alt" />
+							<img class="gallery__item" src="/image/index/work/creativeScroll-3.jpg" alt="Alt" />
 						</div>
 					</main>
 				</div>
 			</div>
+
+			<!-- about -->
+			<h2 class="title-header about">VỀ SMARTCARD</h2>
+			<div class="portfolio">
+				<div class="container-content">
+					<main class="gallery content-wrap">
+						<div data-speed="1.05" class="gallery__left content-left">
+							<div class="contactus-content-item gallery__item content-left-item" style="max-height: 200px;">
+								<p>SMARTCARD là loại thẻ thông minh bên trong có tích hợp chip NFC - một loại chip hỗ trợ cho các thiết bị giao tiếp gần, có khả năng lưu trữ và xử lý thông tin.</p>
+							</div>
+							<div class="contactus-content-item gallery__item content-left-item" style="margin-bottom: 30px;">
+								<img src="/image/index/about-2.jpg" alt="">
+							</div>
+							<div class="contactus-content-item gallery__item content-left-item">
+								<p>Vói kích thước nhỏ gọn gần bằng chiếc thẻ tín dụng, bạn có thể mang theo và sử dụng SMARTCARD ở bất kỳ đâu.</p>
+							</div>
+						</div>
+						<div data-speed="1.1" class="gallery__right content-right">
+							<div class="contactus-content-item gallery__item content-right-item">
+								<img src="/image/index/about-1.jpg" alt="">
+							</div>
+							<div class="contactus-content-item gallery__item content-right-item" style="margin-bottom: 30px;">
+								<p>SMARTCARD đóng vai trò truyền thông tin/dữ liệu trong thẻ tới thiết bị nhận chỉ bằng một thao tác giao tiếp gần. Từ đó, người sở hữu thẻ có thể dễ dàng chia sẻ thông tin của mình cho người nhận.</p>
+							</div>
+							<div class="contactus-content-item gallery__item content-right-item">
+								<img src="/image/index/about-3.jpg" alt="" style="margin-bottom: 0;">
+							</div>
+						</div>
+					</main>
+				</div>
+			</div>
+
+
+			<!-- products -->
+			<h2 class="title-header products">SẢN PHẨM</h2>
+			<div class="portfolio">
+				<div class="container-content">
+					<main class="gallery content-wrap">
+						<div data-speed="1" class="gallery__left content-left">
+							<div class="contactus-content-item gallery__item content-left-item">
+								<p>SMARTCARD is an intelligent card that can help you to share information related in social media personal page, phone... to everyone just by tapping.</p>
+							</div>
+							
+						</div>
+						<div data-speed="1" class="gallery__right content-right">
+							<div class="contactus-content-item gallery__item content-right-item">
+								<p>SMARTCARD is an intelligent card that can help you to share information related in social media personal page, phone... to everyone just by tapping.</p>
+							</div>
+						</div>
+					</main>
+				</div>
+			</div>
+
+
+			<!-- userguides -->
+			<h2 class="title-header userguides">USERGUIDES</h2>
+			<div class="portfolio">
+				<div class="container-content">
+					<main class="gallery content-wrap">
+						<div data-speed="1" class="gallery__left content-left content-userguides">
+							<div class="contactus-content-item gallery__item content-left-item">
+								<p><span>Bước 1:</span> Đặt thẻ gần vùng đọc NFC trên điện thoại hoặc thiết bị hỗ trợ NFC của bạn. Thiết bị của bạn sẽ tự động xác nhận và chuyển hướng đến trang đăng ký.(*)</p>
+							</div>
+							<div class="contactus-content-item gallery__item content-left-item">
+								<p><span>Bước 2:</span> Đăng ký tài khoản. Sau khi đăng ký thành công, bạn sẽ được chuyển hướng đến trang đăng nhập.</p>
+							</div>
+							<div class="contactus-content-item gallery__item content-left-item" style="margin-bottom: 30px;">
+								<img lang="en" src="/image/index/userguides-en-1.JPG" alt="">
+								<img lang="vi" src="/image/index/userguides-vi-1.JPG" alt="">
+							</div>
+							<div class="contactus-content-item gallery__item content-left-item">
+								<p><span>Bước 3:</span> Đăng nhập.</p>
+							</div>
+							<div class="contactus-content-item gallery__item content-left-item" style="margin-bottom: 30px;">
+								<img lang="en" src="/image/index/userguides-en-2.JPG" alt="">
+								<img lang="vi" src="/image/index/userguides-vi-2.JPG" alt="">
+							</div>
+						</div>
+						<div data-speed="1" class="gallery__right content-right content-userguides">
+							<div class="contactus-content-item gallery__item content-right-item">
+								<p><span>Bước 4:</span> Đăng nhập thành công vào trang User Control, bạn có thể thiết lập các thông tin của thẻ.</p>
+							</div>
+							<div class="contactus-content-item gallery__item content-left-item" style="margin-bottom: 30px;">
+								<img lang="en" src="/image/index/userguides-en-3.JPG" alt="">
+								<img lang="vi" src="/image/index/userguides-vi-3.JPG" alt="">
+							</div>
+							<div class="contactus-content-item gallery__item content-right-item">
+								<p><span>Bước 5:</span> Hoàn tất kích hoạt thẻ thành công.</p>
+							</div>
+						</div>
+					</main>
+				</div>
+			</div>
+	
+
+			<!-- reviews -->
+			<h2 class="title-header reviews">REVIEWS</h2>
+			<div class="portfolio">
+				<div class="container-content">
+					<main class="content-wrap-reviews">
+						<!-- <div data-speed="1" class="gallery__left content-left">
+							<div class="contactus-content-item gallery__item content-left-item">
+								<p>SMARTCARD is an intelligent card that can help you to share information related in social media personal page, phone... to everyone just by tapping.</p>
+							</div>
+							
+						</div>
+						<div data-speed="1" class="gallery__right content-right">
+							<div class="contactus-content-item gallery__item content-right-item">
+								<p>SMARTCARD is an intelligent card that can help you to share information related in social media personal page, phone... to everyone just by tapping.</p>
+							</div>
+						</div> -->
+						<div data-speed="1" class="gallery__left">
+							<div class="gallery__item gallery__item-reviews">
+								<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+									<div class="carousel-inner">
+									  <div class="carousel-item active">
+										<div class="carousel-item-wrap">
+											<div class="item">
+												<div>
+													<img src="/image/index/reviews-4.png" alt="">
+							
+												</div>
+												<p>Great to deal with in setting up my business license along with ongoing business questions and accounting. Highly recommend them to anyone looking to operate a business in Vietnam.</p>
+												<h6>Aaron Moore</h6>
+												<p>Founder of AGile Farms</p>
+											</div>
+											<div class="item">
+												<div>
+													<img src="/image/index/reviews-5.png" alt="">
+													
+												</div>
+												<p>Everything from H.S is OK.
+													<br>See you again.
+												</p>
+												<h6>Chioma Okeke</h6>
+												<p>Customer form Graz</p>
+											</div>
+											<div class="item" id="reviews-res">
+												<div>
+													<img src="/image/index/reviews-6.png" alt="">
+													
+												</div>
+												<p>Good service.
+													<br>Hope to see you again.</p>
+												<h6>Minh Quan Nguyen</h6>
+												<p>Senior Software Engineer in Inspire Ventures</p>
+											</div>
+										</div>
+									  </div>
+									  <div class="carousel-item">
+										<div class="carousel-item-wrap">
+											<div class="item">
+												<div>
+													<img src="/image/index/reviews-1.svg" alt="">
+											
+												</div>
+												<p>Enthusiastic advice, low cost, diverse services. H.S is the best choice for who want to start business.</p>
+												<h6>Peony Osh</h6>
+												<p>Customer from Singapore</p>
+											</div>
+											<div class="item">
+												<div>
+													<img src="/image/index/reviews-2.svg" alt="">
+												
+												</div>
+												<p>Reliable and efficient service from "H.S". Do not hesitate to entrust them with the establishment of your company or further support of your business in Vietnam.</p>
+												<h6>Lucy Brod</h6>
+												<p>Customer</p>
+											</div>
+											<div class="item" id="reviews-res">
+												<div>
+													<img src="/image/index/reviews-3.png" alt="">
+											
+												</div>
+												<p>Working with H.S was a pleasure. Not only did they complete the job as promised within the exact time, but they also went above and beyond to make sure that my needs were met even after the contract was fulfilled.</p>
+												<h6>Nicholas Trampe</h6>
+												<p>Customer</p>
+											</div>
+										</div>
+									  </div>
+									</div>
+									<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+									  <span class="carousel-control-prev-icon" aria-hidden="true"><img style="width: 50px;" src="/image/index/arrowleft.svg" alt=""></span>
+									  <span class="visually-hidden">Previous</span>
+									</button>
+									<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+										<span class="carousel-control-next-icon" aria-hidden="true"><img style="width: 50px;" src="/image/index/arrowright.svg" alt=""></span>
+									  <span class="visually-hidden">Next</span>
+									</button>
+								  </div>
+							</div>
+						</div>
+					</main>
+				</div>
+			</div>
+		
+
+			<!-- contact -->
+			<h2 class="title-header contact">CONTACT</h2>
+			<div class="portfolio">
+				<div class="container-content">
+					<main class="gallery content-wrap">
+						<div data-speed="1" class="gallery__left content-left">
+							<div class="contactus-content-item gallery__item content-left-item">
+								<h2>Contact information</h2>
+								<p>We love to hear from you on our customer service, merchandise, website or any topics you want
+									to share
+									with us. Your comments and suggestions will be appreciated. Please refer to the information below:</p>
+								<p>smartcard.com</p>
+								<p>Mobile/Zalo: 0937 43 93 40</p>
+								<p>contact@smartcard.com</p>
+								<p>Everyday 8:00-19:00</p>
+							</div>
+						</div>
+
+						<div data-speed="1" class="gallery__right content-right">
+							<div class="contactus-content-item gallery__item content-right-item">
+								<h2>Drop a question</h2>
+								<div class="input-name-mail">
+									<input placeholder="Your name"></input>
+									<input placeholder="Your mail"></input>
+								</div>
+								<input type="text" placeholder="Phone number">
+								<textarea name="" id="" cols="30" rows="4" placeholder="What's on your mind?"></textarea>
+								<button>Submit</button>
+							</div>
+						</div>
+					</main>
+				</div>
+			</div>
+
+			<!-- footer -->
+			<div class="footer">
+				<img src="/image/index/creativeScroll-hero.png" alt="">
+			</div>
 		</div>
+
+		
+		<!-- scrolltop -->
+		<div id="scrolltop">
+			<img src="/image/index/totop.png" alt="">
+		</div>
+	
 	</div>
 
+
+	<!-- main-responsive -->
 	<div class="wrapper" id="wrapper-responsive">
 		<div class="content">
 			<header class="main-header-responsive">
@@ -105,7 +371,31 @@
 			</article>
 		</div>
 	</div>
+	
 
+	<!-- #scroll to top -->
+	<script>
+        $("#scrolltop").click(function name(params) {
+            $("html").animate({scrollTop:0});
+        })
+        window.onscroll=function(){scrolltop()};
+        function scrolltop(){
+            if ((document.body.scrollTop>1000) || (document.documentElement.scrollTop>1000)){
+            $("#scrolltop").addClass("scrolltop-show");
+            $("nav").addClass('nav-sticky');
+            }
+            else {
+                $("#scrolltop").removeClass("scrolltop-show");
+                $("nav").removeClass('nav-sticky');
+            };
+        }
+		// $("p").each( function () {
+		// 	var $this = $(this);
+		// 	if (parseInt($this.css("fontSize")) < 20) {
+		// 		$this.css({ "font-size": "20px" });   
+		// 	}
+		// });
+    </script>
 </body>
 
 </html>

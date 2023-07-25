@@ -1,9 +1,5 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-@font-face {
-  font-family: "Jost";
-  src: url("/font/Jost/Jost-VariableFont_wght.ttf");
-}
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 * {
@@ -15,12 +11,10 @@
 body,
 html {
   height: 100%;
-  font-family: "Jost";
 }
 
 /*---------------------------------------------*/
 a {
-  font-family: "Jost";
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
@@ -49,7 +43,6 @@ h6 {
 }
 
 p {
-  font-family: "Jost";
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
@@ -160,14 +153,12 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: "Jost";
   font-size: 14px;
   line-height: 1.5;
   color: #666666;
 }
 
 .txt2 {
-  font-family: "Jost";
   font-size: 14px;
   line-height: 1.5;
   color: #333333;
@@ -213,8 +204,8 @@ iframe {
   margin-bottom: 50px;
 }
 .limiter .container-login100 .logo img {
-  width: 200px;
-  height: 70px;
+  width: 400px;
+  height: 300px;
 }
 .limiter .container-login100 .wrap-login100 {
   width: 500px;
@@ -230,9 +221,14 @@ iframe {
     [ Input ]*/
 }
 .limiter .container-login100 .wrap-login100 .login100-form .login100-form-title {
+  font-family: "AdamGorry";
+  font-size: calc(var(--index) * 1.2);
+  line-height: 1.75;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(231, 229, 229);
   display: block;
-  font-family: "Jost";
-  font-size: 39px;
+  font-size: 30px;
   color: #333333;
   line-height: 1.2;
   text-align: center;
@@ -258,14 +254,17 @@ iframe {
   font-style: italic;
 }
 .limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 .label-input100 {
-  font-family: "Jost";
+  font-family: "Mali";
   font-size: 16px;
   color: #333333;
   line-height: 1.5;
   padding-left: 7px;
 }
+.limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 .showhidepassword {
+  font-family: "Mali";
+}
 .limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 .input100 {
-  font-family: "Jost";
+  font-family: "Mali";
   font-size: 16px;
   color: #333333;
   line-height: 1.2;
@@ -309,6 +308,9 @@ iframe {
   height: 2px;
   background: #7f7f7f;
   transition: all 0.4s;
+}
+.limiter .container-login100 .wrap-login100 .login100-form .haveanaccount {
+  font-family: "Mali";
 }
 
 .input100:focus + .focus-input100::before {
@@ -363,7 +365,7 @@ iframe {
   transition: all 0.4s;
 }
 .container-login100-form-btn .wrap-login100-form-btn .login100-form-btn {
-  font-family: "Jost";
+  font-family: "Mali";
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
@@ -394,7 +396,7 @@ iframe {
   transform: translateY(50%);
   right: 2px;
   pointer-events: none;
-  font-family: "Jost";
+  font-family: "Mali";
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;

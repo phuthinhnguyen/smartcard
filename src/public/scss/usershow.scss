@@ -11,7 +11,7 @@
 }
 
 body, html {
-    @include font($fontJost);
+    @include font($fontMali);
     @include scrollbar(5px,transparent,black,black);
     background-position: center;
     background-repeat: no-repeat;
@@ -61,7 +61,9 @@ button {
     margin-top: 40px;
     p{
       font-size: 30px;
-      @include font($fontJost);
+      @include font($fontAdamGorry);
+      @include title;
+      font-size: 30px;
       text-align: center;
     }
   }
@@ -117,8 +119,8 @@ footer{
   align-items: center;
   margin-top: 50px;
   img{
-    width: 150px;
-    height: 80px;  
+    width: 250px;
+    height: 200px;  
   }
 }
 

@@ -2,3 +2,387 @@
 [lang=vi] [lang=en] {
   display: none !important;
 }
+
+@font-face {
+  font-family: "AdamGorry";
+  src: url(../font/SVN-Adam-Gorry.ttf);
+}
+html ::-webkit-scrollbar {
+  width: 8px;
+}
+html ::-webkit-scrollbar-track {
+  background: lightgray;
+}
+html ::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 5px;
+}
+html ::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+@keyframes navsticky {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.nav-sticky {
+  display: block;
+  animation: navsticky 0.5s;
+  transition: transform 0.4s;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  display: none;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+nav .nav-wrap {
+  height: 70px;
+  padding: 0 80px;
+  max-width: 1680px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: calc(var(--index) * 0.75);
+  font-weight: 900;
+  color: rgb(231, 229, 229);
+  font-family: "AdamGorry";
+}
+nav .nav-wrap .left ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+nav .nav-wrap .left li {
+  float: left;
+  margin-left: 60px;
+  position: relative;
+}
+nav .nav-wrap .left li > a {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+nav .nav-wrap .left li > a:hover {
+  color: white;
+}
+nav .nav-wrap .left li:first-child {
+  margin-left: 0;
+}
+nav .nav-wrap .right {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+nav .nav-wrap .right a {
+  text-decoration: none;
+  color: rgb(231, 229, 229);
+}
+nav .nav-wrap .right a:hover {
+  color: white;
+}
+nav .nav-wrap .right img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.title-header {
+  margin-bottom: 0;
+  text-align: center;
+  padding-top: 150px;
+  font-family: "AdamGorry";
+  font-size: calc(var(--index) * 1.2);
+  line-height: 1.75;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(231, 229, 229);
+}
+
+.container-content {
+  padding-top: 0;
+}
+.container-content .content-wrap {
+  padding: 0;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+.container-content .content-wrap .content-left {
+  margin-top: 50px;
+}
+.container-content .content-wrap .content-left .content-left-item {
+  margin-bottom: 0;
+}
+.container-content .content-wrap .content-left .content-left-item p {
+  line-height: 1.75;
+  font-size: calc(var(--index) * 0.75);
+  font-family: "Mali";
+  font-weight: 400;
+  color: rgb(228, 227, 227);
+}
+.container-content .content-wrap .content-right {
+  margin: 0;
+  padding: 0;
+}
+.container-content .content-wrap .content-right .content-right-item {
+  margin-bottom: 0;
+  margin-top: 40px;
+}
+.container-content .content-wrap .content-right .content-right-item p {
+  line-height: 1.75;
+  font-size: calc(var(--index) * 0.75);
+  font-family: "Mali";
+  font-weight: 400;
+  color: rgb(228, 227, 227);
+}
+
+.button-explore {
+  position: absolute;
+  bottom: 25vh;
+  height: 50px;
+  width: 200px;
+  border-radius: 8px;
+  border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  font-family: "AdamGorry";
+  letter-spacing: 2px;
+  font-weight: 900;
+  color: white;
+  transition: 0.3s;
+  background-color: black;
+}
+.button-explore:hover {
+  transform: scale(1.05);
+}
+
+.main-title {
+  transition: 0.6s;
+  cursor: pointer;
+}
+.main-title:hover {
+  letter-spacing: 20px;
+}
+
+.home-image {
+  width: calc(var(--index) * 42);
+  position: absolute;
+  left: -15vw;
+  top: 5vh;
+  z-index: -1;
+  transform: rotate(-40deg);
+}
+
+.text-block__h {
+  color: rgb(231, 229, 229);
+}
+
+.text-block__p {
+  color: #cdc6c3;
+}
+
+.content-left-item, .content-right-item {
+  margin-top: 0;
+}
+.content-left-item p, .content-right-item p {
+  margin-bottom: 50px;
+}
+.content-left-item img, .content-right-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  border-radius: 8px;
+}
+
+.content-userguides .contactus-content-item {
+  width: 100%;
+}
+.content-userguides .contactus-content-item p span {
+  font-weight: 600;
+  text-align: left;
+  color: rgb(231, 229, 229);
+  text-decoration: underline;
+}
+
+.content-wrap-reviews .gallery__left {
+  margin-top: 80px;
+}
+.content-wrap-reviews .gallery__left .gallery__item-reviews {
+  margin-bottom: 0;
+  max-width: 100%;
+  border-radius: 8px;
+}
+.content-wrap-reviews .gallery__left .gallery__item-reviews .carousel-item-wrap {
+  margin-top: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  padding: 0 50px;
+}
+.content-wrap-reviews .gallery__left .gallery__item-reviews .carousel-item-wrap .item {
+  max-width: 304px;
+  max-height: 70vh;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0px 10px 30px 0px rgba(226, 226, 226, 0.2);
+}
+.content-wrap-reviews .gallery__left .gallery__item-reviews .carousel-item-wrap .item div {
+  width: 129px;
+  height: 129px;
+  position: relative;
+  margin: auto;
+}
+.content-wrap-reviews .gallery__left .gallery__item-reviews .carousel-item-wrap .item div img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.content-wrap-reviews .gallery__left .gallery__item-reviews .carousel-item-wrap .item p {
+  height: 300px;
+  font-family: "Mali";
+  color: rgb(228, 227, 227);
+  margin-top: 20px;
+  font-size: calc(var(--index) * 0.6);
+}
+.content-wrap-reviews .gallery__left .gallery__item-reviews .carousel-item-wrap .item h6 {
+  font-family: "AdamGorry";
+  font-weight: bold;
+  color: rgb(231, 229, 229);
+  margin-top: 20px;
+}
+
+.contactus-content-item {
+  flex: 1;
+}
+.contactus-content-item h2 {
+  font-family: "AdamGorry";
+  font-size: calc(var(--index) * 1.2);
+  line-height: 1.75;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(231, 229, 229);
+  font-size: calc(var(--index) * 0.8);
+  margin-bottom: 20px;
+}
+.contactus-content-item p {
+  font-size: calc(var(--index) * 0.7);
+  line-height: 6px;
+  margin-bottom: 10px;
+}
+.contactus-content-item button {
+  margin-top: 20px;
+  height: 50px;
+  width: 200px;
+  border-radius: 8px;
+  border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  font-family: "AdamGorry";
+  letter-spacing: 2px;
+  font-weight: 900;
+  color: white;
+  transition: 0.3s;
+  background-color: black;
+}
+.contactus-content-item button:hover {
+  transform: scale(1.05);
+}
+.contactus-content-item input {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding-left: 20px;
+  font-family: "Mali";
+  outline: none;
+}
+.contactus-content-item input:focus {
+  border: 3px solid black;
+}
+.contactus-content-item textarea {
+  margin-top: 20px;
+  width: 100%;
+  padding: 20px;
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  font-family: "Mali";
+  outline: none;
+  font-size: calc(var(--index) * 0.7);
+}
+.contactus-content-item textarea:focus {
+  border: 3px solid black;
+}
+.contactus-content-item .input-name-mail {
+  display: flex;
+  justify-content: space-between;
+}
+.contactus-content-item .input-name-mail input {
+  width: 48%;
+  font-size: calc(var(--index) * 0.7);
+}
+.contactus-content-item > input {
+  margin-top: 20px;
+  font-size: calc(var(--index) * 0.7);
+}
+
+.footer {
+  margin-top: 100px;
+  max-height: 400px;
+}
+.footer img {
+  width: 100%;
+  height: auto;
+}
+
+#scrolltop img {
+  width: 48px;
+  height: 48px;
+}
+#scrolltop:hover {
+  cursor: pointer;
+}
+
+.scrolltop-show {
+  position: fixed;
+  bottom: 60px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  animation: navsticky 0.8s;
+  transition: transform 0.4s;
+}
+
+@media screen and (max-width: 1800px) {
+  .content-wrap-reviews .gallery__left .gallery__item-reviews .carousel-item-wrap .item {
+    max-height: 80vh;
+  }
+}
+@media screen and (max-width: 991px) {
+  #wrapper {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  #wrapper-responsive {
+    display: none;
+  }
+}
