@@ -1,8 +1,7 @@
 @import "_font";
 @import "_variable";
 @import "_mixin";
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
+
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -222,8 +221,8 @@ iframe {
       margin-top: 50px;
       margin-bottom: 50px;
       img {
-        width: 400px;
-        height: 300px;
+        width: 500px;
+        height: 100px;
       }
     }
 
@@ -240,6 +239,10 @@ iframe {
 
         .login100-form-title {
           @include title;
+          @include font($fontSegoeUI);
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 30px;
           display: block;
           font-size: 30px;
           color: #333333;
@@ -270,17 +273,17 @@ iframe {
           }
 
           .label-input100 {
-            @include font($fontMali);
+            @include font($fontSegoeUI);
             font-size: 16px;
             color: #333333;
             line-height: 1.5;
             padding-left: 7px;
           }
           .showhidepassword{
-            @include font($fontMali);
+            @include font($fontSegoeUI);
           }
           .input100 {
-            @include font($fontMali);
+            @include font($fontSegoeUI);
             font-size: 16px;
             color: #333333;
             line-height: 1.2;
@@ -340,7 +343,7 @@ iframe {
         }
 
         .haveanaccount{
-          @include font($fontMali);
+          @include font($fontSegoeUI);
         }
       }
 
@@ -410,7 +413,7 @@ iframe {
     }
 
     .login100-form-btn {
-      @include font($fontMali);
+      @include font($fontSegoeUI);
       font-size: 16px;
       color: #fff;
       line-height: 1.2;
@@ -452,7 +455,7 @@ iframe {
   right: 2px;
   pointer-events: none;
 
-  @include font($fontMali);
+  @include font($fontSegoeUI);
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
@@ -532,9 +535,49 @@ iframe {
   }
 }
 
+@media (max-width: 700px) {
+  .limiter{
+    .container-login100{
+      .logo{
+        img{
+          width: 400px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}
+
+
 @media (max-width: 576px) {
   .wrap-login100 {
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  .limiter{
+    .container-login100{
+      .logo{
+        img{
+          width: 300px;
+          height: 60px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .limiter{
+    .container-login100{
+      .logo{
+        img{
+          width: 270px;
+          height: 50px;
+        }
+      }
+    }
   }
 }

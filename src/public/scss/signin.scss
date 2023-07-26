@@ -3,14 +3,6 @@
 @import "_variable";
 @import "_mixin";
 
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-@font-face {
-  font-family: "Jost";
-  src: url('/font/Jost/Jost-VariableFont_wght.ttf'); 
-}
-
   
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -22,13 +14,13 @@
 
 body, html {
 	height: 100%;
-	@include font($fontMali);
+	@include font($fontSegoeUI);
 }
 
 
 /*---------------------------------------------*/
 a {
-	@include font($fontMali);
+	@include font($fontSegoeUI);
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -53,7 +45,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	@include font($fontMali);
+	@include font($fontSegoeUI);
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -120,14 +112,14 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  @include font($fontMali);
+  @include font($fontSegoeUI);
   font-size: 14px;
   line-height: 1.5;
   color: #666666;
 }
   
 .txt2 {
-  @include font($fontMali);
+  @include font($fontSegoeUI);
   font-size: 14px;
   line-height: 1.5;
   color: #333333;
@@ -191,7 +183,9 @@ iframe {
           .login100-form-title {
             display: block;
             @include title;
-            @include font($fontAdamGorry);
+            @include font($fontSegoeUI);
+            text-transform: uppercase;
+            font-weight: 700;
             font-size: 30px;
             color: #333333;
             line-height: 1.2;
@@ -204,14 +198,14 @@ iframe {
             position: relative;
             border-bottom: 2px solid #d9d9d9;
             .label-input100 {
-              @include font($fontMali);
+              @include font($fontSegoeUI);
               font-size: 16px;
               color: #333333;
               line-height: 1.5;
               padding-left: 7px;
             }
             .input100 {
-              @include font($fontMali);
+              @include font($fontSegoeUI);
               font-size: 16px;
               color: #333333;
               line-height: 1.2;
@@ -269,6 +263,12 @@ iframe {
         }
         
 
+      }
+      .logo{
+        img{
+          width: 500px;
+          height: 100px;
+        }
       }
     }
 }
@@ -329,7 +329,7 @@ iframe {
       transition: all 0.4s;
     }
     .login100-form-btn {
-      @include font($fontMali);
+      @include font($fontSegoeUI);
       font-size: 16px;
       color: #fff;
       line-height: 1.2;
@@ -370,7 +370,7 @@ iframe {
   right: 2px;
   pointer-events: none;
 
-  @include font($fontMali);
+  @include font($fontSegoeUI);
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
@@ -441,11 +441,24 @@ iframe {
 @media (max-width: 991px) {
   .limiter{
     .container-login100{
-      padding-top: 0;
+      padding-top: 50px;
       flex-wrap: wrap;
       flex-direction: row;
       align-items: flex-start;
       column-gap: 500px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .limiter{
+    .container-login100{
+      .logo{
+        img{
+          width: 400px;
+          height: 80px;
+        }
+      }
     }
   }
 }
@@ -457,3 +470,29 @@ iframe {
   }
 } 
 
+
+@media (max-width: 450px) {
+  .limiter{
+    .container-login100{
+      .logo{
+        img{
+          width: 300px;
+          height: 60px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .limiter{
+    .container-login100{
+      .logo{
+        img{
+          width: 270px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}

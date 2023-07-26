@@ -29,7 +29,7 @@ body {
 	/* left: 47vw; */
 	left: 45vw;
 	/* top: 22vh; */
-	top: 5vh;
+	top: 30vh;
 	z-index: -1;
 }
 .main-header {
@@ -88,8 +88,8 @@ body {
 .text-block__p {
 	line-height: 1.75;
 	/* font-size: 20px; */
-	font-size: calc(var(--index) * 0.8);
-	font-family: "Mali";
+	font-size: calc(var(--index) * 0.72);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-weight: 400;
 }
 

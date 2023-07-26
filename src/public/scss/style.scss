@@ -19,28 +19,6 @@ html{
     @include scrollbar(8px,lightgray,black,black);
 }
 
-// a{
-//     text-decoration: none;
-//     color: var(--text);
-// }
-// button{
-//     height: 50px;
-//     width: 200px;
-//     border-radius: 8px;
-//     border: none;
-//     user-select: none;
-//     cursor: pointer;
-//     font-family: $fontAdamGorry;
-//     letter-spacing: 2px;
-//     font-weight: 900;
-//     color: white;
-//     transition: 0.3s;
-//     background-color: black;
-//     &:hover{
-//         transform: scale(1.05);
-//     }
-// }
-
 
 // CSS menu
 @keyframes navsticky {
@@ -69,9 +47,7 @@ nav{
         align-items: center;
         font-size: calc(var(--index) * 0.75);
         font-weight: 900;
-        // color: var(--text);
         color: $title-color;
-        // text-shadow: 0 0 15px #9d822b;
         font-family: $fontAdamGorry;
         .left{
             ul{
@@ -96,14 +72,6 @@ nav{
             }
         }
        
-        // .center{
-        //    img{
-        //     width: 80px;
-        //     height: 70px;
-        //     cursor: pointer;
-        //    }
-        // }
-
         .right{
             display: flex;
             align-items: center;
@@ -160,6 +128,96 @@ nav{
             }
         }
     }
+    .main-header{
+        // .image-gallery-template-container{
+        //     display: flex;
+        //     flex-wrap: wrap;
+        //     justify-content: center;
+        //     padding: 40px;
+        //     width: 100%;
+        //     background-color: lightgoldenrodyellow;
+        //     column-gap: 30px;
+        // }
+        .portfolio-item {
+            position: absolute;
+            // max-width: 100%;
+            // margin-bottom: 15px;
+            text-align: center;
+        }
+        .portfolio-item1 {
+            bottom:45vh;
+            transform: rotate(-20deg);
+            z-index: 1;
+        }
+        .portfolio-item2 {
+            bottom:40vh;
+            left: 10vh;
+            // transform: rotate(15deg);
+        }
+        .portfolio-item3 {
+            bottom:35vh;
+            left: 15vh;
+            // transform: rotate(-20deg);
+        }
+        .foto img {
+            display: block;
+            width: 100%;
+            cursor: pointer;
+        }
+        .foto div {
+            background: #ffffff;
+            display: inline-block;
+            margin: 0 auto 5% auto;
+            padding: 10px 10px 5px;
+            text-align: center;
+            text-decoration: none;
+            -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+            -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+            -webkit-transition: all .20s linear;
+            -moz-transition: all .20s linear;
+            transition: all .20s linear;
+            z-index: 0;
+            position: relative;
+        }
+        .foto div:after {
+            color: #333;
+            font-size: 25px;
+            content: attr(title);
+            position: relative;
+            top: 15px;
+        }
+        .foto div:hover {
+            -webkit-transform: scale(1.01);
+            -moz-transform: scale(1.01);
+            transform: scale(1.01);
+            z-index: 10;
+            -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+            -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+        }
+        .project-title-settings {
+            margin-top: 5%;
+            // font: 18px/24px 'opensans-bold', sans-serif;
+            font-family: $fontSegoeUI;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: black;
+            text-align: center;
+        }
+        .project-date {
+            font-size: 16px;
+            font-family: $fontSegoeUI;
+            padding: 8px 15px 2px 15px;
+            position: relative;
+            z-index: -500;
+            border-top: 5px solid #696969;
+            border-radius: 0 0 5px 5px;
+            background-color: #696969;
+            color: white;
+        }
+    }
 }
 
 
@@ -207,16 +265,193 @@ nav{
     }
 }
 
+
+// CSS products
+.filters-container{
+    // background-color: black;
+    margin: auto;
+    margin-top: 40px;
+    padding: 0 50px;
+    height: 800px;
+    .filters-wrap{
+        .active{
+            // color: #fff;
+            // background: #f42f2c;
+            color: black;
+            background: white;
+        }
+        list-style-type: none;
+        position: relative;
+        width: 100%;
+        // background: #fff;
+        background-color: rgba(0,0,0,.5);
+        color: $text-color;
+        @include font($fontSegoeUI);
+        border-radius: 10px;
+        box-shadow: 0px 10px 30px 0px rgba(153,153,153,0.2);
+        display: table;
+        text-align: center;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        li{
+            font-family: $fontSegoeUI;
+            color: $text-color;
+            display: table-cell;
+            padding: 40px 0px;
+            max-width: 184px;
+            cursor: pointer;
+            position: relative;
+            font-size: 15px;
+            font-weight: 500;
+            // color: black;
+        }
+    }
+    .filters-content{
+        text-align: left;
+        color: #777;
+        font-family: $fontSegoeUI;
+        margin-top: 50px;
+        height: 700px;
+        box-shadow: 0px 10px 30px 0px rgba(226, 226, 226, 0.2);
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+            position: relative;
+            height: 600px;
+            .all{
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                flex: 0 0 50%;
+                max-width: 50%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                .single-menu{
+                    // background: #fff;
+                    border-radius: 10px;
+                    padding: 30px;
+                    margin-top: 20px;
+                    // .title-wrap{
+                    //     display: flex !important;
+                    //     justify-content: space-between !important;
+                    //     margin-bottom: 20px;
+                    //     h4{
+                    //         font-weight: 600;
+                    //         font-size: 18px;
+                    //         line-height: 1.2em !important;
+                    //         &:first-of-type{
+                    //             color: #222;
+                    //         }
+                    //         &:last-of-type{
+                    //             color: #f42f2c;
+                    //         }
+                    //     }
+                    // }
+                    // p{
+                    //     color: #777;
+                    //     font-size: 14px;
+                    //     font-weight: 300;
+                    //     max-width: 392px;
+                    // }
+                    .portfolio-item {
+                        // max-width: 100%;
+                        // margin-bottom: 15px;
+                        text-align: center;
+                    }
+                    .portfolio-item1 {
+                        bottom:45vh;
+                        transform: rotate(-20deg);
+                    }
+                    .portfolio-item2 {
+                        bottom:40vh;
+                        left: 10vh;
+                        // transform: rotate(15deg);
+                    }
+                    .portfolio-item3 {
+                        bottom:35vh;
+                        left: 15vh;
+                        // transform: rotate(-20deg);
+                    }
+                    .foto img {
+                        display: block;
+                        width: 100%;
+                        max-width: 250px;
+                        max-height: 150px;
+                        cursor: pointer;
+                    }
+                    .foto div {
+                        background: #ffffff;
+                        display: inline-block;
+                        margin: 0 auto 5% auto;
+                        padding: 10px 10px 5px;
+                        text-align: center;
+                        text-decoration: none;
+                        -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+                        -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+                        -webkit-transition: all .20s linear;
+                        -moz-transition: all .20s linear;
+                        transition: all .20s linear;
+                        z-index: 0;
+                        position: relative;
+                    }
+                    .foto div:after {
+                        color: #333;
+                        font-size: 25px;
+                        content: attr(title);
+                        position: relative;
+                        top: 15px;
+                    }
+                    .foto div:hover {
+                        -webkit-transform: scale(1.01);
+                        -moz-transform: scale(1.01);
+                        transform: scale(1.01);
+                        z-index: 10;
+                        -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+                        -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+                    }
+                    .project-title-settings {
+                        margin-top: 5%;
+                        font: 18px/24px 'opensans-bold', sans-serif;
+                        text-transform: uppercase;
+                        letter-spacing: 3px;
+                        color: black;
+                        text-align: center;
+                    }
+                    .project-date {
+                        font-size: 16px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 8px 15px 2px 15px;
+                        position: relative;
+                        z-index: -500;
+                        border-top: 5px solid #696969;
+                        border-radius: 0 0 5px 5px;
+                        background-color: #696969;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 // CSS userguides
 .content-userguides{
     .contactus-content-item{
         width: 100%;
-        p{
+        p{  
             span{
                 font-weight: 600;
                 text-align: left;
                 color: $title-color;
-                text-decoration: underline;
+                font-style: italic;
+                font-size: calc(var(--index) * 0.7);
             }
         }
     }
@@ -276,7 +511,7 @@ nav{
                     
                     p{
                         height: 300px;
-                        font-family: $fontMali;
+                        font-family: $fontSegoeUI;
                         color: $text-color;
                         margin-top: 20px;
                         font-size: calc(var(--index) * 0.6);
@@ -311,7 +546,7 @@ nav{
     p{
         // color: var(--text);
         // font-size: 216px;
-        font-size: calc(var(--index) * 0.7);
+        // font-size: calc(var(--index) * 0.7);
         line-height: 6px;
         margin-bottom: 10px;
     }
@@ -325,7 +560,7 @@ nav{
         border-radius: 5px;
         border: 1px solid lightgray;
         padding-left: 20px;
-        font-family: $fontMali;
+        font-family: $fontSegoeUI;
         outline: none;
         &:focus{
             border: 3px solid black;
@@ -338,9 +573,9 @@ nav{
         resize: none;
         border-radius: 5px;
         border: 1px solid lightgray;
-        font-family: $fontMali;
+        font-family: $fontSegoeUI;
         outline: none;
-        font-size: calc(var(--index) * 0.7);
+        font-size: calc(var(--index) * 0.55);
         &:focus{
             border: 3px solid black;
         }
@@ -350,12 +585,12 @@ nav{
         justify-content: space-between;
         input{
             width: 48%;
-            font-size: calc(var(--index) * 0.7);
+            font-size: calc(var(--index) * 0.55);
         }
     }
     >input{
         margin-top: 20px;
-        font-size: calc(var(--index) * 0.7);
+        font-size: calc(var(--index) * 0.55);
     }
     // &:last-of-type{
     //     padding: 0 30px;
@@ -410,12 +645,12 @@ nav{
         }
     }
 }
-@media screen and (max-width:991px) {
+@media screen and (max-width:1299px) {
 	#wrapper{
 		display: none;
 	}
 }
-@media screen and (min-width:992px) {
+@media screen and (min-width:1300px) {
 	#wrapper-responsive{
 		display: none;
 	}

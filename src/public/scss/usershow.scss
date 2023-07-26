@@ -11,7 +11,7 @@
 }
 
 body, html {
-    @include font($fontMali);
+    @include font($fontSegoeUI);
     @include scrollbar(5px,transparent,black,black);
     background-position: center;
     background-repeat: no-repeat;
@@ -60,9 +60,9 @@ button {
   .name{
     margin-top: 40px;
     p{
-      font-size: 30px;
-      @include font($fontAdamGorry);
-      @include title;
+      @include font($fontSegoeUI);
+      // text-transform: uppercase;
+      font-weight: 600;
       font-size: 30px;
       text-align: center;
     }
@@ -119,8 +119,8 @@ footer{
   align-items: center;
   margin-top: 50px;
   img{
-    width: 250px;
-    height: 200px;  
+    width: 200px;
+    height: 50px;  
   }
 }
 

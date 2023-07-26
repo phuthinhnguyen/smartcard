@@ -21,7 +21,7 @@
   <script src="/js/HTMLImporter.js"></script>
   <script src="/js/language.js"></script>
   <script src="/creativeScroll/js/creativeScroll.js" defer></script>
-  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&family=Noto+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/parallax-scrolling/css/parallax-scrolling.css" />
   <script src="/parallax-scrolling/libs/gsap/gsap.min.js" defer></script>
@@ -48,7 +48,43 @@
 				<div class="container-content">
 					<div data-speed="0.75" class="main-header">
 						<!-- <h1 class="main-title">smart card</h1> -->
-						<img class="home-image" src="/image/index/home-1.png" alt="">
+						<!-- <img class="home-image" src="/image/index/home-1.png" alt=""> -->
+						<span class="portfolio-item d-block portfolio-item1">
+							<div class="foto">
+								<div>
+									<img src="/image/index/p1.jpg" alt="projectImages" height="230" />
+									<span class="project-date">2023</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										3D OBJECT VIEWER
+									</p>
+								</div>
+							</div>
+						</span>
+						<span class="portfolio-item d-block portfolio-item2">
+							<div class="foto">
+								<div>
+									<img src="/image/index/p2.jpg" alt="projectImages" height="230" />
+									<span class="project-date">2023</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										PHOTOGRAPHY
+									</p>
+								</div>
+							</div>
+						</span>
+						<span class="portfolio-item d-block portfolio-item3">
+							<div class="foto">
+								<div>
+									<img src="/image/index/p3.jpg" alt="projectImages" height="230" />
+									<span class="project-date">2023</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										3D OBJECT VIEWER
+									</p>
+								</div>
+							</div>
+						</span>
 						<button class="button-explore">Explore now</button>
 					</div>
 				</div>
@@ -104,13 +140,13 @@
 					<main class="gallery content-wrap">
 						<div data-speed="1.05" class="gallery__left content-left">
 							<div class="contactus-content-item gallery__item content-left-item" style="max-height: 200px;">
-								<p>SMARTCARD là loại thẻ thông minh bên trong có tích hợp chip NFC - một loại chip hỗ trợ cho các thiết bị giao tiếp gần, có khả năng lưu trữ và xử lý thông tin.</p>
+								<p><span style="font-weight: 800;">SMARTCARD</span> là loại thẻ thông minh bên trong có tích hợp chip NFC - một loại chip hỗ trợ cho các thiết bị giao tiếp gần, có khả năng lưu trữ và xử lý thông tin.</p>
 							</div>
 							<div class="contactus-content-item gallery__item content-left-item" style="margin-bottom: 30px;">
 								<img src="/image/index/about-2.jpg" alt="">
 							</div>
 							<div class="contactus-content-item gallery__item content-left-item">
-								<p>Vói kích thước nhỏ gọn gần bằng chiếc thẻ tín dụng, bạn có thể mang theo và sử dụng SMARTCARD ở bất kỳ đâu.</p>
+								<p>Vói kích thước nhỏ gọn gần bằng chiếc thẻ tín dụng, bạn có thể mang theo và sử dụng <span style="font-weight: 800;">SMARTCARD</span> ở bất kỳ đâu.</p>
 							</div>
 						</div>
 						<div data-speed="1.1" class="gallery__right content-right">
@@ -118,7 +154,7 @@
 								<img src="/image/index/about-1.jpg" alt="">
 							</div>
 							<div class="contactus-content-item gallery__item content-right-item" style="margin-bottom: 30px;">
-								<p>SMARTCARD đóng vai trò truyền thông tin/dữ liệu trong thẻ tới thiết bị nhận chỉ bằng một thao tác giao tiếp gần. Từ đó, người sở hữu thẻ có thể dễ dàng chia sẻ thông tin của mình cho người nhận.</p>
+								<p><span style="font-weight: 800;">SMARTCARD</span> đóng vai trò truyền thông tin/dữ liệu trong thẻ tới thiết bị nhận chỉ bằng một thao tác giao tiếp gần. Từ đó, người sở hữu thẻ có thể dễ dàng chia sẻ thông tin của mình cho người nhận.</p>
 							</div>
 							<div class="contactus-content-item gallery__item content-right-item">
 								<img src="/image/index/about-3.jpg" alt="" style="margin-bottom: 0;">
@@ -133,21 +169,145 @@
 			<h2 class="title-header products">SẢN PHẨM</h2>
 			<div class="portfolio">
 				<div class="container-content">
-					<main class="gallery content-wrap">
-						<div data-speed="1" class="gallery__left content-left">
-							<div class="contactus-content-item gallery__item content-left-item">
-								<p>SMARTCARD is an intelligent card that can help you to share information related in social media personal page, phone... to everyone just by tapping.</p>
-							</div>
-							
-						</div>
-						<div data-speed="1" class="gallery__right content-right">
-							<div class="contactus-content-item gallery__item content-right-item">
-								<p>SMARTCARD is an intelligent card that can help you to share information related in social media personal page, phone... to everyone just by tapping.</p>
+					<main class="content-wrap-reviews">
+						<div data-speed="1" class="gallery__left">
+							<div class="gallery__item gallery__item-reviews">
+								<div class="filters-container" id="menu">
+									<ul class="filters-wrap filters col-lg-12 no-padding">
+										<li class="active" data-filter="*">All Menu</li>
+										<li data-filter=".breakfast" class="">Breakfast</li>
+										<li data-filter=".lunch" class="">Lunch</li>
+										<li data-filter=".dinner" class="">Dinner</li>
+										<li data-filter=".budget-meal" class="">Budget Meal</li>
+										<li data-filter=".buffet" class="">Buffet</li>
+									</ul>
+									<div class="filters-content">
+										<div class="row grid">
+											<div class="col-md-6 all breakfast" style="position: absolute; left: 0%; top: 0px;">
+												<div class="single-menu">
+													<span class="portfolio-item d-block portfolio-item1">
+														<div class="foto">
+															<div>
+																<img src="/image/index/p1.jpg" alt="projectImages" height="230" />
+																<span class="project-date">2023</span>
+																<br />
+																<p class="project-title-settings mt-3">
+																	3D OBJECT VIEWER
+																</p>
+															</div>
+														</div>
+													</span>
+												</div>
+											</div>
+											<div class="col-md-6 all dinner" style="position: absolute; left: 50%; top: 0px;">
+												<div class="single-menu">
+													<span class="portfolio-item d-block portfolio-item1">
+														<div class="foto">
+															<div>
+																<img src="/image/index/p1.jpg" alt="projectImages" height="230" />
+																<span class="project-date">2023</span>
+																<br />
+																<p class="project-title-settings mt-3">
+																	3D OBJECT VIEWER
+																</p>
+															</div>
+														</div>
+													</span>
+												</div>
+											</div>
+											<div class="col-md-6 all budget-meal" style="position: absolute; left: 0%; top: 185px;">
+												<div class="single-menu">
+													<span class="portfolio-item d-block portfolio-item1">
+														<div class="foto">
+															<div>
+																<img src="/image/index/p1.jpg" alt="projectImages" height="230" />
+																<span class="project-date">2023</span>
+																<br />
+																<p class="project-title-settings mt-3">
+																	3D OBJECT VIEWER
+																</p>
+															</div>
+														</div>
+													</span>
+												</div>
+											</div>
+											<div class="col-md-6 all breakfast" style="position: absolute; left: 50%; top: 185px;">
+												<div class="single-menu">
+													<span class="portfolio-item d-block portfolio-item1">
+														<div class="foto">
+															<div>
+																<img src="/image/index/p1.jpg" alt="projectImages" height="230" />
+																<span class="project-date">2023</span>
+																<br />
+																<p class="project-title-settings mt-3">
+																	3D OBJECT VIEWER
+																</p>
+															</div>
+														</div>
+													</span>
+												</div>
+											</div>
+											<div class="col-md-6 all lunch" style="position: absolute; left: 0%; top: 370px;">
+												<div class="single-menu">
+													<span class="portfolio-item d-block portfolio-item1">
+														<div class="foto">
+															<div>
+																<img src="/image/index/p1.jpg" alt="projectImages" height="230" />
+																<span class="project-date">2023</span>
+																<br />
+																<p class="project-title-settings mt-3">
+																	3D OBJECT VIEWER
+																</p>
+															</div>
+														</div>
+													</span>
+												</div>
+											</div>
+											<div class="col-md-6 all buffet" style="position: absolute; left: 50%; top: 370px;">
+												<div class="single-menu">
+													<span class="portfolio-item d-block portfolio-item1">
+														<div class="foto">
+															<div>
+																<img src="/image/index/p1.jpg" alt="projectImages" height="230" />
+																<span class="project-date">2023</span>
+																<br />
+																<p class="project-title-settings mt-3">
+																	Nguyễn phú Thịnh
+																</p>
+															</div>
+														</div>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</main>
 				</div>
 			</div>
+			<script src="/js/isotope.pkgd.min.js"></script>
+			<script>
+				$('.filters li').click(function () {
+					$('.filters li').removeClass('active');
+					$(this).addClass('active');
+					var data = $(this).attr('data-filter');
+					$grid.isotope({
+						filter: data
+					})
+				});
+	
+				if (document.getElementById("menu") || document.getElementById("gallery")) {
+					var $grid = $(".grid").isotope({
+						itemSelector: ".all",
+						percentPosition: true,
+						masonry: {
+							columnWidth: ".all"
+						}
+					})
+				};
+			</script>
 
 
 			<!-- userguides -->

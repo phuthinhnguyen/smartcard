@@ -1,10 +1,4 @@
 /*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-@font-face {
-  font-family: "Jost";
-  src: url("/font/Jost/Jost-VariableFont_wght.ttf");
-}
-/*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 * {
   margin: 0px;
@@ -14,12 +8,12 @@
 
 body, html {
   height: 100%;
-  font-family: "Mali";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*---------------------------------------------*/
 a {
-  font-family: "Mali";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
@@ -43,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  font-family: "Mali";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
@@ -153,14 +147,14 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: "Mali";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #666666;
 }
 
 .txt2 {
-  font-family: "Mali";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #333333;
@@ -236,7 +230,9 @@ iframe {
   font-weight: 600;
   letter-spacing: 2px;
   color: rgb(231, 229, 229);
-  font-family: "AdamGorry";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
   font-size: 30px;
   color: #333333;
   line-height: 1.2;
@@ -248,14 +244,14 @@ iframe {
   border-bottom: 2px solid #d9d9d9;
 }
 .limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 .label-input100 {
-  font-family: "Mali";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   color: #333333;
   line-height: 1.5;
   padding-left: 7px;
 }
 .limiter .container-login100 .wrap-login100 .login100-form .wrap-input100 .input100 {
-  font-family: "Mali";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   color: #333333;
   line-height: 1.2;
@@ -299,6 +295,10 @@ iframe {
   height: 2px;
   background: #7f7f7f;
   transition: all 0.4s;
+}
+.limiter .container-login100 .logo img {
+  width: 500px;
+  height: 100px;
 }
 
 .input100:focus + .focus-input100::before {
@@ -353,7 +353,7 @@ iframe {
   transition: all 0.4s;
 }
 .container-login100-form-btn .wrap-login100-form-btn .login100-form-btn {
-  font-family: "Mali";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
@@ -384,7 +384,7 @@ iframe {
   transform: translateY(50%);
   right: 2px;
   pointer-events: none;
-  font-family: "Mali";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
@@ -433,7 +433,7 @@ iframe {
 [ Responsive ]*/
 @media (max-width: 991px) {
   .limiter .container-login100 {
-    padding-top: 0;
+    padding-top: 50px;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-start;
@@ -441,9 +441,27 @@ iframe {
          column-gap: 500px;
   }
 }
+@media (max-width: 700px) {
+  .limiter .container-login100 .logo img {
+    width: 400px;
+    height: 80px;
+  }
+}
 @media (max-width: 576px) {
   .wrap-login100 {
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+@media (max-width: 450px) {
+  .limiter .container-login100 .logo img {
+    width: 300px;
+    height: 60px;
+  }
+}
+@media (max-width: 350px) {
+  .limiter .container-login100 .logo img {
+    width: 270px;
+    height: 50px;
   }
 }

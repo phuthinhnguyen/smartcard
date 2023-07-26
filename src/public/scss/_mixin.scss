@@ -110,8 +110,8 @@
 @mixin text{
     line-height: 1.75;
     // font-size: 20px;
-    font-size: calc(var(--index) * 0.75);
-    font-family: $fontMali;
+    font-size: calc(var(--index) * 0.72);
+    font-family: $fontSegoeUI;
     font-weight: 400;
     color: $text-color;
 }

@@ -18,7 +18,7 @@
 
 body,
 html {
- @include font($fontMali);
+ @include font($fontSegoeUI);
   @include scrollbar(5px, transparent, black, black);
   background-position: center;
   background-repeat: no-repeat;
@@ -115,7 +115,7 @@ button {
 
       .tooltiptext {
         visibility: hidden;
-       @include font($fontMali);
+       @include font($fontSegoeUI);
         font-size: 13px;
         width: 60px;
         background-color: black;
@@ -191,18 +191,17 @@ button {
 .logo {
   text-align: center;
   margin-top: 100px;
-  margin-bottom: 10px;
-
+  margin-bottom: 50px;
   img {
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 50px;
   }
 }
 
 // CSS content
 .content {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 200px;
 
   .limiter {
     margin: auto;
@@ -263,9 +262,9 @@ button {
               width: 100%;
               color: lightgray;
               font-style: italic;
-              @include font($fontAdamGorry);
-              @include title;
-              font-size: 25px;
+              @include font($fontSegoeUI);
+              font-weight: 600;
+              font-size: 26px;
             }
 
             i {
@@ -316,7 +315,7 @@ button {
               }
 
               .login100-form-btn {
-               @include font($fontMali);
+               @include font($fontSegoeUI);
                 font-size: 16px;
                 color: #fff;
                 line-height: 1.2;
@@ -334,7 +333,7 @@ button {
                 cursor: pointer;
 
                 i {
-                 @include font($fontMali);
+                 @include font($fontSegoeUI);
                   font-size: 25px;
                   margin-right: 15px;
                   margin-top: -5px;
@@ -356,7 +355,7 @@ button {
               display: block;
               padding: 10px;
               text-align: center;
-             @include font($fontMali);
+             @include font($fontSegoeUI);
               font-size: 15px;
               user-select: none;
               cursor: pointer;
@@ -387,7 +386,7 @@ button {
     border-radius: 50px;
     border: 10px solid black;
     // transform: translate(0,-50%);
-   @include font($fontMali);
+   @include font($fontSegoeUI);
     overflow: hidden;
     // animation: fadein 3s;
 
@@ -427,9 +426,9 @@ button {
         p {
           // font-size: 20px;
           overflow-x: hidden;
-          @include font($fontAdamGorry);
-          @include title;
+          @include font($fontSegoeUI);
           color: black;
+          font-weight: 600;
           font-size: 20px;
         }
       }
@@ -473,7 +472,7 @@ button {
             color: black;
             margin: 0;
             padding: 0;
-            font-size: 14px;
+            font-size: 13px;
             height: 45px;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -500,7 +499,7 @@ button {
 
 #container-showlink {
   width: 100%;
- @include font($fontMali);
+ @include font($fontSegoeUI);
   margin-top: 33px;
   border: 1px solid lightgray;
   padding: 20px;
@@ -561,7 +560,7 @@ button {
         margin-right: 10px;
         width: 80%;
         margin-top: 10px;
-        color: rgb(185, 185, 185);
+        color: lightgray;
         font-style: italic;
         font-size: 14px;
       }
@@ -968,7 +967,7 @@ button {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
-
+    margin-top: 50px;
     .show {
       position: relative;
       max-width: 300px;
