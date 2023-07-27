@@ -444,6 +444,11 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ Responsive ]*/
+@media (max-width: 1030px) {
+  .limiter .container-login100 .wrap-login100 .login100-form .login100-form-title {
+    font-size: 21px;
+  }
+}
 @media (max-width: 991px) {
   .limiter .container-login100 {
     padding-top: 0;
