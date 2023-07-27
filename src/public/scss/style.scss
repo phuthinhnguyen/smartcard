@@ -13,6 +13,7 @@
     font-family: "AdamGorry";
     src: url(../font/SVN-Adam-Gorry.ttf);
 }
+
 @font-face {
     font-family: "SourceSerif4";
     src: url(../font/SourceSerif4-ExtraLight.otf);
@@ -266,6 +267,7 @@ nav {
     .container-1 {
         @include typing-text-container;
         width: 250px;
+
         .typed {
             @include typing-text;
             animation: typing 1s steps(40, end) forwards, blinking 1s infinite, backspace 1s steps(40, end) 3s forwards;
@@ -275,6 +277,7 @@ nav {
     .container-2 {
         @include typing-text-container;
         width: 250px;
+
         .typed {
             @include typing-text;
             animation: typing 1s steps(40, end) 5s forwards, blinking 1s infinite, backspace 1s steps(40, end) 8s forwards;
@@ -284,6 +287,7 @@ nav {
     .container-3 {
         @include typing-text-container;
         width: 350px;
+
         .typed {
             @include typing-text;
             animation: typing 1s steps(40, end) 10s forwards, blinking 1s infinite, backspace 1s steps(40, end) 13s forwards;
@@ -326,6 +330,7 @@ nav {
 
     .container-content {
         .main-header {
+
             // .main-title{
             //     transition: 0.6s;
             // 	cursor: pointer;
@@ -481,8 +486,8 @@ nav {
                 width: 100%;
                 padding-right: 15px;
                 padding-left: 15px;
-                flex: 0 0 50%;
-                max-width: 50%;
+                flex: 0 0 25%;
+                max-width: 25%;
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -529,13 +534,13 @@ nav {
                     .portfolio-item2 {
                         bottom: 40vh;
                         left: 10vh;
-                        // transform: rotate(15deg);
+                        transform: rotate(15deg);
                     }
 
                     .portfolio-item3 {
                         bottom: 35vh;
                         left: 15vh;
-                        // transform: rotate(-20deg);
+                        transform: rotate(-20deg);
                     }
 
                     .foto img {
@@ -583,7 +588,8 @@ nav {
 
                     .project-title-settings {
                         margin-top: 5%;
-                        font: 18px/24px 'opensans-bold', sans-serif;
+                        font-family: $fontSegoeUI;
+                        font-weight: 600;
                         text-transform: uppercase;
                         letter-spacing: 3px;
                         color: black;
