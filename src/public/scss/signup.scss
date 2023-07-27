@@ -239,11 +239,11 @@ iframe {
 
         .login100-form-title {
           @include title;
-          @include font($fontSourceSerif4);
+          @include font($fontSegoeUI);
           text-transform: uppercase;
-          font-weight: 800;
+          font-weight: 400;
           display: block;
-          font-size: 26px;
+          font-size: 25px;
           color: #333333;
           line-height: 1.2;
           text-align: center;
