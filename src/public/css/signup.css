@@ -225,12 +225,11 @@ iframe {
   font-weight: 600;
   letter-spacing: 2px;
   color: rgb(231, 229, 229);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "SourceSerif4";
   text-transform: uppercase;
-  font-weight: 700;
-  font-size: 30px;
+  font-weight: 800;
   display: block;
-  font-size: 30px;
+  font-size: 26px;
   color: #333333;
   line-height: 1.2;
   text-align: center;

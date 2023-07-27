@@ -132,5 +132,28 @@
         transform: scale(1.05);
     }
 }
-
+@mixin typing-text-container{
+    @include text;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    position: absolute;
+    right: 7%;
+    top: 70vh;
+    // text-transform: uppercase;
+    // font-family: 'Source Serif 4', serif;
+    // font-style: italic;
+    // font-size: 25px;
+    // font-weight: 400;
+    font-family: $fontSourceSerif4;
+    text-transform: capitalize;
+    font-size: 23px;
+    letter-spacing: 0.3px;
+}
+@mixin  typing-text{
+    overflow: hidden;
+    white-space: nowrap;
+    // border-right: 2px solid;
+    width: 0;
+}
 
