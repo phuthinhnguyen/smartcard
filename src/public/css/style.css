@@ -231,7 +231,7 @@ nav .nav-wrap .right img {
   top: 70vh;
   font-family: "SourceSerif4";
   text-transform: capitalize;
-  font-size: 23px;
+  font-size: 20px;
   letter-spacing: 0.3px;
   width: 250px;
 }
@@ -239,7 +239,7 @@ nav .nav-wrap .right img {
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  animation: typing 1s steps(40, end) forwards, blinking 1s infinite, backspace 1s steps(40, end) 3s forwards;
+  animation: typing 1s steps(40, end) 2s forwards, blinking 1s infinite, backspace 1s steps(40, end) 5s forwards;
 }
 .home .container-2 {
   line-height: 1.75;
@@ -255,15 +255,15 @@ nav .nav-wrap .right img {
   top: 70vh;
   font-family: "SourceSerif4";
   text-transform: capitalize;
-  font-size: 23px;
+  font-size: 20px;
   letter-spacing: 0.3px;
-  width: 250px;
+  width: 350px;
 }
 .home .container-2 .typed {
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  animation: typing 1s steps(40, end) 5s forwards, blinking 1s infinite, backspace 1s steps(40, end) 8s forwards;
+  animation: typing 1s steps(40, end) 7s forwards, blinking 1s infinite, backspace 1s steps(40, end) 10s forwards;
 }
 .home .container-3 {
   line-height: 1.75;
@@ -279,15 +279,39 @@ nav .nav-wrap .right img {
   top: 70vh;
   font-family: "SourceSerif4";
   text-transform: capitalize;
-  font-size: 23px;
+  font-size: 20px;
   letter-spacing: 0.3px;
-  width: 350px;
+  width: 320px;
 }
 .home .container-3 .typed {
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  animation: typing 1s steps(40, end) 10s forwards, blinking 1s infinite, backspace 1s steps(40, end) 13s forwards;
+  animation: typing 1s steps(40, end) 12s forwards, blinking 1s infinite, backspace 1s steps(40, end) 15s forwards;
+}
+.home .container-4 {
+  line-height: 1.75;
+  font-size: calc(var(--index) * 0.72);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  color: rgb(228, 227, 227);
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  position: absolute;
+  right: 7%;
+  top: 70vh;
+  font-family: "SourceSerif4";
+  text-transform: capitalize;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  width: 360px;
+}
+.home .container-4 .typed {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 1s steps(40, end) 17s forwards, blinking 1s infinite, backspace 1s steps(40, end) 20s forwards;
 }
 @keyframes typing {
   from {
@@ -609,6 +633,30 @@ nav .nav-wrap .right img {
 .contactus-content-item p {
   line-height: 6px;
   margin-bottom: 10px;
+}
+.contactus-content-item p a {
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 14px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 12px;
+  margin-top: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.contactus-content-item p a i {
+  transition: 0.4s;
+}
+.contactus-content-item p a:hover {
+  color: #9F78FF;
+}
+.contactus-content-item p a:hover i {
+  transform: rotateY(180deg);
+  color: black;
 }
 .contactus-content-item button {
   margin-top: 20px;

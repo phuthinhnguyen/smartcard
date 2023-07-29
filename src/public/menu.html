@@ -3,24 +3,30 @@
         <div class="left">
             <ul>
                 <li>
-                    <a id="home">Home<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                    <a lang="en" id="home-en">Home</a>
+                    <a lang="vi" id="home-vi">Trang chủ</a>
                 </li>
 
                 <li>
-                    <a id="about">About<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                    <a lang="en" id="about-en">About</a>
+                    <a lang="vi" id="about-vi">Về SMARTCARD</a>
                 </li>
 
                 <li>
-                    <a id="products">Products<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                    <a lang="en" id="products-en">Products</a>
+                    <a lang="vi" id="products-vi">Sản phẩm</a>
                 </li>
                 <li>
-                    <a id="userguides">User guides<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                    <a lang="en" id="userguides-en">User guides</a>
+                    <a lang="vi" id="userguides-vi">Hướng dẫn</a>
                 </li>
                 <li>
-                    <a id="reviews">Reviews<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                    <a lang="en" id="reviews-en">Reviews</a>
+                    <a lang="vi" id="reviews-vi">Đánh giá</a>
                 </li>
                 <li>
-                    <a id="contact">Contact<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                    <a lang="en" id="contact-en">Contact</a>
+                    <a lang="vi" id="contact-vi">Liên hệ</a>
                 </li>
             </ul>
         </div>
@@ -36,34 +42,59 @@
     </div>
 </nav>
 <script>
-    $("#home").click(function name(params) {
+    $("#home-en, #home-vi").click(function name(params) {
         $('html').animate({
             scrollTop: $(".home").offset().top
         }, 600);
     })
-    $("#about").click(function name(params) {
+    $("#about-en").click(function name(params) {
         $('html').animate({
-            scrollTop: $(".about").offset().top
+            scrollTop: $(".about-en").offset().top
         }, 600);
     })
-    $("#products").click(function name(params) {
+    $("#about-vi").click(function name(params) {
         $('html').animate({
-            scrollTop: $(".products").offset().top
+            scrollTop: $(".about-vi").offset().top
         }, 600);
     })
-    $("#userguides").click(function name(params) {
+    $("#products-en").click(function name(params) {
         $('html').animate({
-            scrollTop: $(".userguides").offset().top
+            scrollTop: $(".products-en").offset().top
         }, 600);
     })
-    $("#reviews").click(function name(params) {
+    $("#products-vi").click(function name(params) {
         $('html').animate({
-            scrollTop: $(".reviews").offset().top
+            scrollTop: $(".products-vi").offset().top
         }, 600);
     })
-    $("#contact").click(function name(params) {
+    $("#userguides-en").click(function name(params) {
         $('html').animate({
-            scrollTop: $(".contact").offset().top
+            scrollTop: $(".userguides-en").offset().top
+        }, 600);
+    })
+    $("#userguides-vi").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".userguides-vi").offset().top
+        }, 600);
+    })
+    $("#reviews-en").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".reviews-en").offset().top
+        }, 600);
+    })
+    $("#reviews-vi").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".reviews-vi").offset().top
+        }, 600);
+    })
+    $("#contact-en").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".contact-en").offset().top
+        }, 600);
+    })
+    $("#contact-vi").click(function name(params) {
+        $('html').animate({
+            scrollTop: $(".contact-vi").offset().top
         }, 600);
     })
 </script>

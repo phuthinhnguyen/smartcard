@@ -270,30 +270,39 @@ nav {
 
         .typed {
             @include typing-text;
-            animation: typing 1s steps(40, end) forwards, blinking 1s infinite, backspace 1s steps(40, end) 3s forwards;
+            animation: typing 1s steps(40, end) 2s forwards, blinking 1s infinite, backspace 1s steps(40, end) 5s forwards;
         }
     }
 
     .container-2 {
         @include typing-text-container;
-        width: 250px;
+        width: 350px;
 
         .typed {
             @include typing-text;
-            animation: typing 1s steps(40, end) 5s forwards, blinking 1s infinite, backspace 1s steps(40, end) 8s forwards;
+            animation: typing 1s steps(40, end) 7s forwards, blinking 1s infinite, backspace 1s steps(40, end) 10s forwards;
         }
     }
 
     .container-3 {
         @include typing-text-container;
-        width: 350px;
+        width: 320px;
 
         .typed {
             @include typing-text;
-            animation: typing 1s steps(40, end) 10s forwards, blinking 1s infinite, backspace 1s steps(40, end) 13s forwards;
+            animation: typing 1s steps(40, end) 12s forwards, blinking 1s infinite, backspace 1s steps(40, end) 15s forwards;
         }
     }
 
+    .container-4 {
+        @include typing-text-container;
+        width: 360px;
+
+        .typed {
+            @include typing-text;
+            animation: typing 1s steps(40, end) 17s forwards, blinking 1s infinite, backspace 1s steps(40, end) 20s forwards;
+        }
+    }
     @keyframes typing {
         from {
             width: 0;
@@ -733,6 +742,30 @@ nav {
         // font-size: calc(var(--index) * 0.7);
         line-height: 6px;
         margin-bottom: 10px;
+        a{
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 14px;
+            line-height: 40px;
+            display: inline-block;
+            text-align: center;
+            margin-right: 12px;
+            margin-top: 10px;
+            border: 1px solid white;
+            cursor: pointer;
+            i{
+                transition: .4s;
+            }
+            &:hover{
+                color: #9F78FF;
+                i{
+                    transform: rotateY(180deg);
+                    color: black;
+                }
+            }
+        }
     }
 
     button {
