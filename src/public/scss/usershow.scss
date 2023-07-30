@@ -104,11 +104,9 @@ button {
       transition: .5s;
       &:hover {
         background-color: white;
-        color: black;
-
-      }
-      i{
-        color: inherit;
+        i{
+          color: black;
+        }
       }
     }
   }

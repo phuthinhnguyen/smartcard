@@ -109,10 +109,9 @@ button:hover {
 }
 .content-show .action button:hover {
   background-color: white;
-  color: black;
 }
-.content-show .action button i {
-  color: inherit;
+.content-show .action button:hover i {
+  color: black;
 }
 .content-show .link {
   max-width: 800px;
