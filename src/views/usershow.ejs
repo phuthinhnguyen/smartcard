@@ -26,9 +26,19 @@
       </div>
       <div class="action">
         <!-- <button onclick="redirectToContact()">Save contact</button> -->
-        <button onclick="addNewContact()">Save contact</button>
+        <button onclick="redirectToNewContact()">Save contact</button>
         <button id="generatePdfBtn">Download Info</button>
-		<input type="text" id="contactInput" style="display:none">
+		<form action="tel:" method="post">
+			<!-- Input fields for contact information -->
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+			<br>
+			<label for="phone">Phone:</label>
+			<input type="tel" id="phone" name="phone" required pattern="[0-9+]+" placeholder="e.g., +1234567890">
+		  
+			<!-- Submit button to initiate the call with the contact information -->
+			<button type="submit">Add New Contact</button>
+		  </form>
       </div>
       <script>
         function redirectToContact() {
@@ -47,29 +57,7 @@
         
 			// window.open("content://com.android.contacts/contacts/42");
         }
-		function addNewContact() {
-  // Prompt the user to enter the contact details
-  var name = prompt("Enter the contact name:");
-  var phone = prompt("Enter the contact phone number:");
-
-  // Create a new contact object
-  var contact = new Object();
-  contact.name = name;
-  contact.phone = phone;
-
-  // Convert the contact object to a vCard format
-  var vCardData = "BEGIN:VCARD\nVERSION:3.0\nFN:" + contact.name + "\nTEL:" + contact.phone + "\nEND:VCARD";
-
-  // Set the vCard data as the value of the invisible input field
-  var contactInput = document.getElementById("contactInput");
-  contactInput.value = vCardData;
-
-  // Trigger the contact save process by creating a temporary link and simulating a click
-  var link = document.createElement("a");
-  link.href = "data:text/vcard;charset=utf-8," + encodeURIComponent(vCardData);
-  link.download = "contact.vcf"; // File name for the contact
-  link.click();
-}
+		
       </script>
       <script>
         const generatePdfBtn = document.getElementById("generatePdfBtn");
