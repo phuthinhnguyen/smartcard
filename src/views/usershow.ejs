@@ -35,15 +35,34 @@
           	window.location.href = `tel:${phoneNumber}`;
         }
 		function redirectToNewContact() {
-            const newContact = {
-                name: "Thinh",
-                phone: "0937439340",
-                email: "phuthinhnguyen1101@gmail.com",
-            };
+            // const newContact = {
+            //     name: "Thinh",
+            //     phone: "0937439340",
+            //     email: "phuthinhnguyen1101@gmail.com",
+            // };
 
-            const queryString = Object.keys(newContact).map(key => `${key}=${encodeURIComponent(newContact[key])}`).join('&');
-            const uri = `contacts:new?${queryString}`;
-            window.location.href = uri;
+            // const queryString = Object.keys(newContact).map(key => `${key}=${encodeURIComponent(newContact[key])}`).join('&');
+            // const uri = `contacts:new?${queryString}`;
+            // window.location.href = uri;
+
+
+
+  if ('contacts' in navigator) {
+    const contact = navigator.contacts.create();
+    contact.name = new ContactName({ formatted: "sdf" });
+    contact.phoneNumbers = [new ContactField('mobile', "0937439340")];
+
+    contact.save(
+      () => {
+        alert('Contact added successfully.');
+      },
+      (error) => {
+        alert(`Failed to add contact: ${error.message}`);
+      }
+    );
+  } else {
+    alert('The Contacts API is not supported in this browser.');
+  }
         }
       </script>
       <script>
