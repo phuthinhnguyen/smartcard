@@ -1,110 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="css/util.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/usershow.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&family=Noto+Serif:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <title>Document</title>
-  </head>
 
-  <body style="<%= datauser.colortheme %>" id="color">
-    <div class="content-show">
-      <div class="avatar">
-        <img src="<%= datauser.avatar %>" alt="" />
-      </div>
-      <div class="name">
-        <p id="name"><%= datauser.name2 %></p>
-      </div>
-      <div class="action">
-        <!-- <button onclick="redirectToContact()">Save contact</button> -->
-        <button onclick="redirectToNewContact()">Save contact</button>
-        <button id="generatePdfBtn">Download Info</button>
-		<form action="tel:" method="post">
-			<!-- Input fields for contact information -->
-			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" required>
-			<br>
-			<label for="phone">Phone:</label>
-			<input type="tel" id="phone" name="phone" required pattern="[0-9+]+" placeholder="e.g., +1234567890">
-		  
-			<!-- Submit button to initiate the call with the contact information -->
-			<button type="submit">Add New Contact</button>
-		  </form>
-      </div>
-      <script>
-        function redirectToContact() {
-          	const phoneNumber = "0937439340";
-          	window.location.href = `tel:${phoneNumber}`;
-        }
-		function redirectToNewContact() {
-            const newContact = {
-                name: "Thinh",
-                phone: "0937439340",
-                email: "phuthinhnguyen1101@gmail.com",
-            };
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/util.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/usershow.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="/font/font-awesome-4.7.0/css/font-awesome.min.css" />
+</head>
 
-            const queryString = Object.keys(newContact).map(key => `${key}=${encodeURIComponent(newContact[key])}`).join('&');
-            const uri = `contacts:new?${queryString}`;
-        
-			// window.open("content://com.android.contacts/contacts/42");
-        }
-		
-      </script>
-      <script>
-        const generatePdfBtn = document.getElementById("generatePdfBtn");
+<body style="<%= datauser.colortheme %>" id="color">
+	<div class="content-show">
+		<div class="avatar">
+			<img src="<%= datauser.avatar %>" alt="" />
+		</div>
+		<div class="name">
+			<p id="name">
+				<%= datauser.name2 %>
+			</p>
+		</div>
+		<p class="bio">Hiep si bong toi hehe</p>
+		<div class="action">
+			<!-- <button onclick="redirectToContact()">Save contact</button> -->
+			<button onclick="call()"><i class="fa fa-phone fa-2x"></i></button>
+			<button onclick="email()"><i class="fa fa-envelope fa-2x"></i></button>
+		</div>
+		<script>
+			let icon = document.querySelectorAll(".fa")
+			for (let item of icon){
+				item.style.color = document.body.style.color;
+			}
+			function call() {
+				const phoneNumber = "0937439340";
+				window.location.href = `tel:${phoneNumber}`;
+			}
+			// function redirectToNewContact() {
+			//     const newContact = {
+			//         name: "Thinh",
+			//         phone: "0937439340",
+			//         email: "phuthinhnguyen1101@gmail.com",
+			//     };
 
-        generatePdfBtn.addEventListener("click", () => {
-          // Create a new PDF document
-          const doc = new jsPDF();
+			//     const queryString = Object.keys(newContact).map(key => `${key}=${encodeURIComponent(newContact[key])}`).join('&');
+			//     const uri = `contacts:new?${queryString}`;
 
-          // Add content to the PDF
-          doc.text("Hello, this is a generated PDF!", 105, 40);
+			// 	window.location.href="tel:new";
+			// }
+			function email() {
+				const email = "phuthinhnguyen1101@gmail.com";
+				window.location.href = `mailto:${email}`;
+			}
+		</script>
+		<h2>CONNECT</h2>
+		<div class="link">
+			<% if (datauser.link!="" ) { %>
+				<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
+					<div class="wrap" onclick="openlink('<%= datauser.link.inputlink[i] %>')">
+						<img src="image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png" alt="" />
+						<p id="link">
+							<%= datauser.link.inputtitle[i] %>
+						</p>
+					</div>
+					<% } %>
+						<% } %>
+							<script>
+								function openlink(link) {
+									window.open(link);
+								}
+							</script>
+		</div>
+	</div>
+	<footer>
+		<img src="image/index/logo.png" alt="" />
+	</footer>
+</body>
 
-          // Save the PDF as a data URL
-          const pdfBytes = doc.output("datauristring");
-
-          // Trigger the download of the generated PDF
-          const a = document.createElement("a");
-          a.href = pdfBytes;
-          a.download = "generated.pdf";
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-        });
-      </script>
-
-      <div class="link">
-        <% if (datauser.link!="" ) { %> <% for(let i=0; i <
-        datauser.link.linktype.length; i++) { %>
-        <div
-          class="wrap"
-          onclick="openlink('<%= datauser.link.inputlink[i] %>')"
-        >
-          <img
-            src="image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png"
-            alt=""
-          />
-          <p id="link"><%= datauser.link.inputtitle[i] %></p>
-        </div>
-        <% } %> <% } %>
-        <script>
-          function openlink(link) {
-            window.open(link);
-          }
-        </script>
-      </div>
-    </div>
-    <footer>
-      <img src="image/index/logo.png" alt="" />
-    </footer>
-  </body>
 </html>
