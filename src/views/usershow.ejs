@@ -25,18 +25,25 @@
         <p id="name"><%= datauser.name2 %></p>
       </div>
       <div class="action">
-        <button onclick="redirectToContact()">Save contact</button>
-        <!-- <button
-          onclick="window.open('content:\\com.android.contacts/contacts');"
-        >
-          Save contact
-        </button> -->
+        <!-- <button onclick="redirectToContact()">Save contact</button> -->
+        <button onclick="redirectToNewContact()">Save contact</button>
         <button id="generatePdfBtn">Download Info</button>
       </div>
       <script>
         function redirectToContact() {
-          const phoneNumber = "0937439340";
-          window.location.href = `tel:${phoneNumber}`;
+          	const phoneNumber = "0937439340";
+          	window.location.href = `tel:${phoneNumber}`;
+        }
+		function redirectToNewContact() {
+            const newContact = {
+                name: "Thinh",
+                phone: "0937439340",
+                email: "phuthinhnguyen1101@gmail.com",
+            };
+
+            const queryString = Object.keys(newContact).map(key => `${key}=${encodeURIComponent(newContact[key])}`).join('&');
+            const uri = `contacts:new?${queryString}`;
+            window.location.href = uri;
         }
       </script>
       <script>
