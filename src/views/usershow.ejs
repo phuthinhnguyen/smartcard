@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/usershow.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="/font/font-awesome-4.7.0/css/font-awesome.min.css" />
+	<script src="/js/jquery-3.6.4.js"></script>
 </head>
 
 <body style="<%= datauser.colortheme %>" id="color">
@@ -26,17 +27,17 @@
 		</div>
 		<p class="bio">Hiep si bong toi hehe</p>
 		<div class="action">
-			<!-- <button onclick="redirectToContact()">Save contact</button> -->
-			<button onclick="call()"><i class="fa fa-phone fa-2x"></i></button>
+			<button onclick="call()">
+				<i class="fa fa-phone fa-2x"></i>
+			</button>
 			<button onclick="email()"><i class="fa fa-envelope fa-2x"></i></button>
 		</div>
 		<script>
-			let icon = document.querySelectorAll(".fa")
-			for (let item of icon){
-				item.style.color = document.body.style.color;
-			}
+			$(".action")
+				.children("button")
+				.css({ color: document.body.style.color });
 			function call() {
-				const phoneNumber = "sdfs";
+				const phoneNumber = "";
 				window.location.href = `tel:${phoneNumber}`;
 			}
 			// function redirectToNewContact() {
@@ -52,7 +53,7 @@
 			// 	window.location.href="tel:new";
 			// }
 			function email() {
-				const email = "sdf";
+				const email = "";
 				window.location.href = `mailto:${email}`;
 			}
 		</script>
