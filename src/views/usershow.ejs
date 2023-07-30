@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/usershow.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&family=Noto+Serif:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/usershow.css">
-	<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&family=Noto+Serif:wght@400;500;600&display=swap" rel="stylesheet">
-	<title>Document</title>
-</head>
-
-<body style="<%= datauser.colortheme %>" id="color">
-	<div class="content-show">
-		<div class="avatar">
-			<img src="<%= datauser.avatar %>" alt="">
-		</div>
-		<div class="name">
-			<p id="name">
-				<%= datauser.name2 %>
-			</p>
-		</div>
-		<div class="link">
-			<% if (datauser.link!="" ) { %>
-				<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
-					<div class="wrap" onclick="openlink('<%= datauser.link.inputlink[i] %>')">
-						<img src="image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png" alt="">
-						<p id="link">
-							<%= datauser.link.inputtitle[i] %>
-						</p>
-					</div>
-				<% } %>
-			<% } %>
-			<script>
-				function openlink(link) {
-					window.open(link);
-				}
-			</script>
-		</div>
-	</div>
-	<footer>
-		<img src="image/index/logo.png" alt="">
-	</footer>
-</body>
+  <body style="<%= datauser.colortheme %>" id="color">
+    <div class="content-show">
+      <div class="avatar">
+        <img src="<%= datauser.avatar %>" alt="" />
+      </div>
+      <div class="name">
+        <p id="name"><%= datauser.name2 %></p>
+      </div>
+      <div class="action">
+        <!-- <button onclick="window.open('tel:+84937439340');">Save contact</button> -->
+		<button onclick="window.open('tel:\\NewContact');">Save contact</button>
+        <button onclick="download()">Download Info</button>
+      </div>
+      <script>
+        function download() {
+          var a = document.createElement("a");
+          a.style = "display: none";
+          a.href = "/image/pitch-deck-kopply.pdf";
+          a.download = "<%= datauser.name2 %>"+ "-info.pdf";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }
+      </script>
+      <div class="link">
+        <% if (datauser.link!="" ) { %> <% for(let i=0; i <
+        datauser.link.linktype.length; i++) { %>
+        <div
+          class="wrap"
+          onclick="openlink('<%= datauser.link.inputlink[i] %>')"
+        >
+          <img
+            src="image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png"
+            alt=""
+          />
+          <p id="link"><%= datauser.link.inputtitle[i] %></p>
+        </div>
+        <% } %> <% } %>
+        <script>
+          function openlink(link) {
+            window.open(link);
+          }
+        </script>
+      </div>
+    </div>
+    <footer>
+      <img src="image/index/logo.png" alt="" />
+    </footer>
+  </body>
 </html>

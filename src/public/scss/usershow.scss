@@ -1,65 +1,71 @@
-
 @import "_font";
 @import "_variable";
 @import "_mixin";
 
 // Restyle
 * {
-	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-body, html {
-    @include font($fontSegoeUI);
-    @include scrollbar(5px,transparent,black,black);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    padding: 50px 0 10px 0;
+body,
+html {
+  @include font($fontSegoeUI);
+  @include scrollbar(5px, transparent, black, black);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 50px 0 10px 0;
 }
 
 input {
-	outline: none;
-	border: none;
-    &:focus{
-        border-color: transparent !important;
-    }
+  outline: none;
+  border: none;
+
+  &:focus {
+    border-color: transparent !important;
+  }
 }
 
 button {
-	outline: none !important;
-	border: none;
-	background: transparent;
-    &:hover{
-        cursor: pointer;
-    }
+  outline: none !important;
+  border: none;
+  background: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 
 // CSS content-show
-.content-show{
+.content-show {
   width: 80%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   // margin-top: 40px;
-  .avatar{
+  .avatar {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    img{
+
+    img {
       width: 100%;
       height: 100%;
     }
   }
-  .name{
+
+  .name {
     margin-top: 40px;
-    p{
+
+    p {
       @include font($fontSegoeUI);
       // text-transform: uppercase;
       font-weight: 500;
@@ -67,17 +73,46 @@ button {
       text-align: center;
     }
   }
-  .link{
+
+  .action {
+    margin: auto;
+    width: 400px;
+    margin-top: 30px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    button {
+      width: 200px;
+      height: 50px;
+      border-radius: 10px;
+      font-family: $fontSegoeUI;
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+      font-size: 14px;
+      transition: .5s;
+      &:hover {
+        background-color: white;
+        color: black;
+
+      }
+    }
+  }
+
+  .link {
     max-width: 800px;
     width: 100%;
     padding: 25px;
     margin-top: 20px;
     margin-bottom: 40px;
-    .wrap{
+
+    .wrap {
       width: 100%;
       border: 1px solid white;
       border-radius: 50px;
-      cursor: pointer; 
+      cursor: pointer;
       height: 55px;
       line-height: 55px;
       display: flex;
@@ -86,19 +121,23 @@ button {
       column-gap: 5px;
       transition: 0.6s;
       margin-top: 30px;
-      &:hover{
+
+      &:hover {
         background-color: white;
-        p{
+
+        p {
           color: black;
         }
       }
-      img{
+
+      img {
         width: 45px;
         height: 45px;
         border-radius: 50%;
         margin-left: 5px;
       }
-      p{
+
+      p {
         width: 100%;
         text-align: center;
         margin: 0;
@@ -111,23 +150,22 @@ button {
 }
 
 // CSS footer
-footer{
+footer {
   width: 100%;
   bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  img{
+
+  img {
     width: 200px;
-    height: 50px;  
+    height: 50px;
   }
 }
 
-@media screen and (max-width:500px){
-    .content-show{
-      width: 100%;
-    }
+@media screen and (max-width:500px) {
+  .content-show {
+    width: 100%;
+  }
 }
-
-

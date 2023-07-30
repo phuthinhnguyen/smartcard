@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,17 +13,21 @@ body, html {
   min-height: 100vh;
   padding: 50px 0 10px 0;
 }
-body ::-webkit-scrollbar, html ::-webkit-scrollbar {
+body ::-webkit-scrollbar,
+html ::-webkit-scrollbar {
   width: 5px;
 }
-body ::-webkit-scrollbar-track, html ::-webkit-scrollbar-track {
+body ::-webkit-scrollbar-track,
+html ::-webkit-scrollbar-track {
   background: transparent;
 }
-body ::-webkit-scrollbar-thumb, html ::-webkit-scrollbar-thumb {
+body ::-webkit-scrollbar-thumb,
+html ::-webkit-scrollbar-thumb {
   background: black;
   border-radius: 5px;
 }
-body ::-webkit-scrollbar-thumb:hover, html ::-webkit-scrollbar-thumb:hover {
+body ::-webkit-scrollbar-thumb:hover,
+html ::-webkit-scrollbar-thumb:hover {
   background: black;
 }
 
@@ -69,6 +74,32 @@ button:hover {
   font-weight: 500;
   font-size: 30px;
   text-align: center;
+}
+.content-show .action {
+  margin: auto;
+  width: 400px;
+  margin-top: 30px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.content-show .action button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  font-size: 14px;
+  transition: 0.5s;
+}
+.content-show .action button:hover {
+  background-color: white;
+  color: black;
 }
 .content-show .link {
   max-width: 800px;
