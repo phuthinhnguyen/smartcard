@@ -372,6 +372,26 @@
 							<%= datauser.name2 %>
 						</p>
 					</div>
+					<p class="bio">Hiep si bong toi hehe</p>
+					<div class="action">
+						<button onclick="call()">
+							<i class="fa fa-phone"></i>
+						</button>
+						<button onclick="email()"><i class="fa fa-envelope"></i></button>
+					</div>
+					<script>
+						$(".action")
+							.children("button")
+							.css({ color: document.body.style.color });
+						function call() {
+							const phoneNumber = "";
+							window.location.href = `tel:${phoneNumber}`;
+						}
+						function email() {
+							const email = "";
+							window.location.href = `mailto:${email}`;
+						}
+					</script>
 					<div id="link-container">
 						<% if (datauser.link!="" ) { %>
 							<% for(let i=0; i < datauser.link.linktype.length; i++) { %>

@@ -421,7 +421,7 @@ button {
       .showname {
         width: 100%;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 5px;
 
         p {
           // font-size: 20px;
@@ -430,6 +430,40 @@ button {
           color: black;
           font-weight: 600;
           font-size: 20px;
+        }
+      }
+      .bio{
+        font-size: 14px;
+        margin: auto;
+        text-align: center;
+        margin-top: -15px;
+      }
+      .action {
+        margin: auto;
+        margin-top: 15px;
+        margin-bottom: 40px;
+        padding: 0 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+        color: inherit;
+        button {
+          width: 200px;
+          max-width: 160px;
+          height: 35px;
+          border-radius: 10px;
+          font-family: $fontSegoeUI;
+          background-color: transparent;
+          border: 1px solid white;
+          font-size: 14px;
+          transition: .5s;
+          &:hover {
+            background-color: white;
+            i{
+              color: black;
+            }
+          }
         }
       }
 
