@@ -18,6 +18,7 @@ let cardId = async (req, res) => {
   data.name1 = user[0].name1;
   data.name2 = user[0].name2;
   data.avatar = user[0].avatar;
+  data.bio = user[0].bio;
   if (user[0].theme != "initial") {
     if (
       user[0].theme == "rgb(234, 222, 217)" ||
@@ -97,9 +98,11 @@ let handleUploadFile = async (req, res) => {
   let name2 = req.body.name2;
   let colortheme = req.body.colortheme;
   let train = req.body.train;
+  let bio = req.body.bio;
   delete req.body.name2;
   delete req.body.colortheme;
   delete req.body.train;
+  delete req.body.bio;
   let link = JSON.stringify(req.body);
   if (link == "{}") {
     link = "";
@@ -121,8 +124,8 @@ let handleUploadFile = async (req, res) => {
   }
 
   await pool.execute(
-    "update smartcard set link = ?, name2 = ?, theme = ?, train = ? where cardid = ?",
-    [link, name2, colortheme, train, cardid]
+    "update smartcard set link = ?, name2 = ?, theme = ?, train = ?, bio = ? where cardid = ?",
+    [link, name2, colortheme, train, bio, cardid]
   );
   res.redirect(`/${cardid}/userinfo`);
   // res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
@@ -152,6 +155,7 @@ let userInfo = async (req, res) => {
   data.avatar = user[0].avatar;
   data.colortheme = user[0].theme;
   data.train = user[0].train;
+  data.bio = user[0].bio;
   if (user[0].link != "") {
     var link = JSON.parse(user[0].link);
     if (typeof link.linktype == "string") {
@@ -197,7 +201,6 @@ let processLogin = async (req, res) => {
 //     cardid,
 //   ]);
 // };
-
 
 module.exports = {
   getHomepage,

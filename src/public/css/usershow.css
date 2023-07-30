@@ -78,6 +78,7 @@ button:hover {
 .content-show .bio {
   font-size: 17px;
   margin-top: 10px;
+  font-style: italic;
 }
 .content-show h2 {
   text-align: center;

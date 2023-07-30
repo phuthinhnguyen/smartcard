@@ -3,17 +3,20 @@ if (localStorage["language"] == "en") {
     yournametext = "@yourname"
     yourtitletext = "@yourtitle"
     yourlinktext = "@yourlink"
+    yourbiotext = "@yourbio"
 }
 else if (localStorage["language"] == "vi") {
     yournametext = "@tencuaban"
     yourtitletext = "@tieude"
     yourlinktext = "@link"
+    yourbiotext = "@mota"
 }
 
 
 // style name, inputtitle, inputlink when first loading
 window.addEventListener('load', function () {
     let name = document.getElementById("name");
+    let bio = document.getElementById("bio");
     let inputtitle = this.document.getElementsByClassName("inputtitle");
     let inputlinkcontainer = this.document.getElementsByClassName("linkinput");
     let showLinkcontainer = document.getElementById("link-container");
@@ -30,6 +33,9 @@ window.addEventListener('load', function () {
     if (localStorage["language"] == "en") {
         if (name.value == "@tencuaban") {
             name.value = "@yourname"
+        }
+        if (bio.value == "@mota") {
+            bio.value = "@yourbio"
         }
         for (let item of inputtitle) {
             if (item.value == "@tieude") {
@@ -50,6 +56,9 @@ window.addEventListener('load', function () {
         if (name.value == "@yourname") {
             name.value = "@tencuaban"
         }
+        if (bio.value == "@yourbio") {
+            bio.value = "@mota"
+        }
         for (let item of inputtitle) {
             if (item.value == "@yourtitle") {
                 item.value = "@tieude"
@@ -67,7 +76,7 @@ window.addEventListener('load', function () {
     }
 
     function focusoutfirstloading(input) {
-        if (input.value == yournametext || input.value == yourtitletext || input.value.includes(yourlinktext)) {
+        if (input.value == yournametext || input.value == yourbiotext || input.value == yourtitletext || input.value.includes(yourlinktext)) {
             input.style.fontStyle = "italic";
             input.style.color = "lightgray";
         }
@@ -78,6 +87,7 @@ window.addEventListener('load', function () {
     }
 
     focusoutfirstloading(name)
+    focusoutfirstloading(bio)
 
     for (let i = 0; i < inputtitle.length; i++) {
         focusoutfirstloading(inputtitle[i])
@@ -318,8 +328,20 @@ function editname(a) {
     z.setSelectionRange(z.value.length, z.value.length);
     z.focus();
     a.style.display = "none";
-
 }
+
+// click on edit icon for bio
+function editbio(a) {
+    let z = a.previousElementSibling;
+    z.readOnly = "";
+    if (z.value == yourbiotext) {
+        z.value = "";
+    }
+    z.setSelectionRange(z.value.length, z.value.length);
+    z.focus();
+    a.style.display = "none";
+}
+
 // event when user input then hit Enter
 function inputKeyUp(e, a) {
     e.which = e.which || e.keyCode;
@@ -332,6 +354,9 @@ function inputKeyUp(e, a) {
         }
         else if (a.id == "link") {
             inputlinkfocusout(a);
+        }
+        else if (a.id == "bio") {
+            inputbiofocusout(a);
         }
     }
 }
@@ -421,6 +446,26 @@ function inputnamefocusout(a) {
     showanimation();
 }
 
+// when user focus out input for bio
+function inputbiofocusout(a) {
+    let z = a.nextElementSibling;
+    a.readOnly = "true";
+    if (a.value == "") {
+        a.value = yourbiotext;
+    }
+    if (a.value == yourbiotext) {
+        a.style.fontStyle = "italic";
+        a.style.color = "lightgray";
+    }
+    else {
+        a.style.fontStyle = "normal";
+        a.style.color = "black";
+    }
+    document.getElementById("bio-show").innerText = a.value;
+    z.style.display = "inline";
+
+    showanimation();
+}
 
 function animatein(a, b, marginleft) {
     // let logo = document.getElementById("logo");

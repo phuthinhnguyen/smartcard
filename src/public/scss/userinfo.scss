@@ -247,7 +247,7 @@ button {
             }
           }
 
-          .name {
+          .name,.bio {
             margin-top: 30px;
             width: 100%;
             display: flex;
@@ -432,11 +432,12 @@ button {
           font-size: 20px;
         }
       }
-      .bio{
+      .showbio{
         font-size: 14px;
         margin: auto;
         text-align: center;
         margin-top: -15px;
+        font-style: italic;
       }
       .action {
         margin: auto;
@@ -451,7 +452,7 @@ button {
         button {
           width: 200px;
           max-width: 160px;
-          height: 35px;
+          height: 37px;
           border-radius: 10px;
           font-family: $fontSegoeUI;
           background-color: transparent;
@@ -1151,7 +1152,7 @@ button {
       .container-login100 {
         .wrap-login100 {
           .login100-form {
-            .name {
+            .name,.bio {
               display: flex;
               column-gap: 10px;
             }

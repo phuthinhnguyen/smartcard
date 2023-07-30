@@ -262,14 +262,14 @@ button:hover {
   width: 150px;
   height: 150px;
 }
-.content .limiter .container-login100 .wrap-login100 .login100-form .name {
+.content .limiter .container-login100 .wrap-login100 .login100-form .name, .content .limiter .container-login100 .wrap-login100 .login100-form .bio {
   margin-top: 30px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.content .limiter .container-login100 .wrap-login100 .login100-form .name input {
+.content .limiter .container-login100 .wrap-login100 .login100-form .name input, .content .limiter .container-login100 .wrap-login100 .login100-form .bio input {
   text-align: center;
   margin-left: 20px;
   width: 100%;
@@ -279,7 +279,7 @@ button:hover {
   font-weight: 600;
   font-size: 26px;
 }
-.content .limiter .container-login100 .wrap-login100 .login100-form .name i {
+.content .limiter .container-login100 .wrap-login100 .login100-form .name i, .content .limiter .container-login100 .wrap-login100 .login100-form .bio i {
   cursor: pointer;
 }
 .content .limiter .container-login100 .wrap-login100 .login100-form .container-login100-form-btn {
@@ -412,11 +412,12 @@ button:hover {
   font-weight: 600;
   font-size: 20px;
 }
-.content .show .wrap .bio {
+.content .show .wrap .showbio {
   font-size: 14px;
   margin: auto;
   text-align: center;
   margin-top: -15px;
+  font-style: italic;
 }
 .content .show .wrap .action {
   margin: auto;
@@ -433,7 +434,7 @@ button:hover {
 .content .show .wrap .action button {
   width: 200px;
   max-width: 160px;
-  height: 35px;
+  height: 37px;
   border-radius: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: transparent;
@@ -1024,7 +1025,7 @@ button:hover {
     margin-top: 0;
     font-size: 27px;
   }
-  .content .limiter .container-login100 .wrap-login100 .login100-form .name {
+  .content .limiter .container-login100 .wrap-login100 .login100-form .name, .content .limiter .container-login100 .wrap-login100 .login100-form .bio {
     display: flex;
     -moz-column-gap: 10px;
          column-gap: 10px;

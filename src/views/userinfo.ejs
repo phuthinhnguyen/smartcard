@@ -232,6 +232,12 @@
 									onkeypress="return event.keyCode != 13;" />
 								<i class="fas fa-pencil" onclick="editname(this)"></i>
 							</div>
+							<div class="bio" style="margin-top: 5px">
+								<input id="bio" readonly="true" value="<%= datauser.bio %>" name="bio"
+									maxlength="40" onfocusout="inputbiofocusout(this)" onkeyup="inputKeyUp(event,this)"
+									onkeypress="return event.keyCode != 13;" style="font-size: 18px;font-weight: 400;"/>
+								<i class="fas fa-pencil" onclick="editbio(this)"></i>
+							</div>
 							<div class="container-login100-form-btn" id="addlink-btn">
 								<div class="wrap-login100-form-btn">
 									<div class="login100-form-bgbtn"></div>
@@ -372,7 +378,7 @@
 							<%= datauser.name2 %>
 						</p>
 					</div>
-					<p class="bio">Hiep si bong toi hehe</p>
+					<p class="showbio" id="bio-show"><%= datauser.bio %></p>
 					<div class="action">
 						<button onclick="call()">
 							<i class="fa fa-phone"></i>
