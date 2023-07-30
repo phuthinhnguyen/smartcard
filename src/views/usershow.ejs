@@ -25,18 +25,35 @@
       </div>
       <div class="action">
         <!-- <button onclick="window.open('tel:+84937439340');">Save contact</button> -->
-		<button onclick="window.open('content:\\com.android.contacts/contacts');">Save contact</button>
+        <button
+          onclick="window.open('content:\\com.android.contacts/contacts');"
+        >
+          Save contact
+        </button>
         <button onclick="download()">Download Info</button>
       </div>
       <script>
         function download() {
-          var a = document.createElement("a");
-          a.style = "display: none";
-          a.href = "/image/pitch-deck-kopply.pdf";
-          a.download = "<%= datauser.name2 %>"+ "-info.pdf";
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
+          //   var a = document.createElement("a");
+          //   a.style = "display: none";
+          //   a.href = "/image/pitch-deck-kopply.pdf";
+          //   a.download = "<%= datauser.name2 %>"+ "-info.pdf";
+          //   document.body.appendChild(a);
+          //   a.click();
+          //   document.body.removeChild(a);
+          const pdfFileURL = "/image/pitch-deck-kopply.pdf";
+
+          // Create a temporary anchor element
+          const tempLink = document.createElement("a");
+          tempLink.href = pdfFileURL;
+          tempLink.setAttribute("download", "downloaded_file.pdf");
+
+          // Append the anchor to the body and trigger the click event
+          document.body.appendChild(tempLink);
+          tempLink.click();
+
+          // Clean up after the download is initiated
+          document.body.removeChild(tempLink);
         }
       </script>
       <div class="link">
