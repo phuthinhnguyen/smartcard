@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&family=Noto+Serif:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <title>Document</title>
   </head>
 
@@ -24,38 +25,43 @@
         <p id="name"><%= datauser.name2 %></p>
       </div>
       <div class="action">
-        <!-- <button onclick="window.open('tel:+84937439340');">Save contact</button> -->
-        <button
+        <button onclick="redirectToContact()">Save contact</button>
+        <!-- <button
           onclick="window.open('content:\\com.android.contacts/contacts');"
         >
           Save contact
-        </button>
-        <button onclick="download()">Download Info</button>
+        </button> -->
+        <button id="generatePdfBtn">Download Info</button>
       </div>
       <script>
-        function download() {
-          //   var a = document.createElement("a");
-          //   a.style = "display: none";
-          //   a.href = "/image/pitch-deck-kopply.pdf";
-          //   a.download = "<%= datauser.name2 %>"+ "-info.pdf";
-          //   document.body.appendChild(a);
-          //   a.click();
-          //   document.body.removeChild(a);
-          const pdfFileURL = "/image/pitch-deck-kopply.pdf";
-
-          // Create a temporary anchor element
-          const tempLink = document.createElement("a");
-          tempLink.href = pdfFileURL;
-          tempLink.setAttribute("download", "downloaded_file.pdf");
-
-          // Append the anchor to the body and trigger the click event
-          document.body.appendChild(tempLink);
-          tempLink.click();
-
-          // Clean up after the download is initiated
-          document.body.removeChild(tempLink);
+        function redirectToContact() {
+          const phoneNumber = "0937439340";
+          window.location.href = `tel:${phoneNumber}`;
         }
       </script>
+      <script>
+        const generatePdfBtn = document.getElementById("generatePdfBtn");
+
+        generatePdfBtn.addEventListener("click", () => {
+          // Create a new PDF document
+          const doc = new jsPDF();
+
+          // Add content to the PDF
+          doc.text("Hello, this is a generated PDF!", 105, 40);
+
+          // Save the PDF as a data URL
+          const pdfBytes = doc.output("datauristring");
+
+          // Trigger the download of the generated PDF
+          const a = document.createElement("a");
+          a.href = pdfBytes;
+          a.download = "generated.pdf";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        });
+      </script>
+
       <div class="link">
         <% if (datauser.link!="" ) { %> <% for(let i=0; i <
         datauser.link.linktype.length; i++) { %>
