@@ -37,7 +37,7 @@
 				.children("button")
 				.css({ color: document.body.style.color });
 			function call() {
-				const phoneNumber = "";
+				const phoneNumber = "<%= datauser.phone %>";
 				window.location.href = `tel:${phoneNumber}`;
 			}
 			// function redirectToNewContact() {
@@ -53,7 +53,7 @@
 			// 	window.location.href="tel:new";
 			// }
 			function email() {
-				const email = "";
+				const email = "<%= datauser.email %>";
 				window.location.href = `mailto:${email}`;
 			}
 		</script>
