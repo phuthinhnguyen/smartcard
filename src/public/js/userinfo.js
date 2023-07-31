@@ -4,12 +4,16 @@ if (localStorage["language"] == "en") {
     yourtitletext = "@yourtitle"
     yourlinktext = "@yourlink"
     yourbiotext = "@yourbio"
+    yourphonetext = "@yourphone"
+    youremailtext = "@youremail"
 }
 else if (localStorage["language"] == "vi") {
     yournametext = "@tencuaban"
     yourtitletext = "@tieude"
     yourlinktext = "@link"
     yourbiotext = "@mota"
+    yourphonetext = "@sodienthoai"
+    youremailtext = "@email"
 }
 
 
@@ -17,12 +21,13 @@ else if (localStorage["language"] == "vi") {
 window.addEventListener('load', function () {
     let name = document.getElementById("name");
     let bio = document.getElementById("bio");
+    let phone = document.getElementById("showcardid-phone");
+    let email = document.getElementById("showcardid-email");
     let inputtitle = this.document.getElementsByClassName("inputtitle");
     let inputlinkcontainer = this.document.getElementsByClassName("linkinput");
     let showLinkcontainer = document.getElementById("link-container");
     let showlink = showLinkcontainer.children;
     let train = document.getElementById("train").value;
-    
     // check if train is notyet (new account), show guides
     if (train=="done"){
         skip();
@@ -36,6 +41,12 @@ window.addEventListener('load', function () {
         }
         if (bio.value == "@mota") {
             bio.value = "@yourbio"
+        }
+        if (phone.value == "@sodienthoai") {
+            phone.value = "@yourphone"
+        }
+        if (email.value == "@email") {
+            email.value = "@youremail"
         }
         for (let item of inputtitle) {
             if (item.value == "@tieude") {
@@ -59,6 +70,12 @@ window.addEventListener('load', function () {
         if (bio.value == "@yourbio") {
             bio.value = "@mota"
         }
+        if (phone.value == "@yourphone") {
+            phone.value = "@sodienthoai"
+        }
+        if (email.value == "@youremail") {
+            email.value = "@email"
+        }
         for (let item of inputtitle) {
             if (item.value == "@yourtitle") {
                 item.value = "@tieude"
@@ -74,7 +91,7 @@ window.addEventListener('load', function () {
             }
         }
     }
-
+   
     function focusoutfirstloading(input) {
         if (input.value == yournametext || input.value == yourbiotext || input.value == yourtitletext || input.value.includes(yourlinktext)) {
             input.style.fontStyle = "italic";
@@ -465,6 +482,24 @@ function inputbiofocusout(a) {
     z.style.display = "inline";
 
     showanimation();
+}
+
+function changephone(){
+    let phone = document.getElementById("phone");
+    let showcardidphone =document.getElementById("showcardid-phone");
+    if (showcardidphone.value == ""){
+        showcardidphone.value = yourphonetext;
+    }
+    phone.value=showcardidphone.value; 
+}
+
+function changeemail(){
+    let email = document.getElementById("email");
+    let showcardidemail =document.getElementById("showcardid-email");
+    if (showcardidemail.value == ""){
+        showcardidemail.value = youremailtext;
+    }
+    email.value=showcardidemail.value;
 }
 
 function animatein(a, b, marginleft) {

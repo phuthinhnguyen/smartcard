@@ -36,8 +36,8 @@
 			</div>
 			<div class="right">
 				<div class="nav-icon">
-					<i class="fas fa-user" id="cardid-icon"></i><span class="tooltiptext" lang="en">Card ID</span>
-					<span class="tooltiptext" lang="vi">ID Thẻ</span>
+					<i class="fas fa-user" id="cardid-icon"></i><span class="tooltiptext" lang="en">Card</span>
+					<span class="tooltiptext" lang="vi">Thẻ</span>
 				</div>
 				<div class="nav-icon">
 					<i class="fa fa-envelope" id="contact-icon"></i><span class="tooltiptext" lang="en">Contact</span>
@@ -55,11 +55,25 @@
 			</div>
 		</div>
 		<div id="show-card-id">
-			<h2 lang="en">Card ID</h2>
-			<h2 lang="vi">ID Thẻ</h2>
-			<p>
-				<%= datauser.cardid %>
-			</p>
+			<div class="showcardid-wrap">
+				<div class="showcardid-item">
+					<h2 lang="en">Card ID</h2>
+					<h2 lang="vi">ID Thẻ</h2>
+					<p>
+						<%= datauser.cardid %>
+					</p>
+				</div>
+				<div class="showcardid-item">
+					<h2 lang="en">Phone</h2>
+					<h2 lang="vi">Điện thoại</h2>
+					<input type="tel" value="<%= datauser.phone %>" size="15" id="showcardid-phone" onchange="changephone()">
+				</div>
+				<div class="showcardid-item">
+					<h2 lang="en">E-mail</h2>
+					<h2 lang="vi">E-mail</h2>
+					<input type="text" value="<%= datauser.email %>" size="40" id="showcardid-email" onchange="changeemail()">
+				</div>
+			</div>
 		</div>
 		<div id="show-contact">
 			<h2 lang="en">Contact information</h2>
@@ -224,6 +238,8 @@
 									avatarshow.src = base64;
 								}
 							</script>
+							<input type="hidden" value="<%= datauser.phone %>" size="15" name="phone" id="phone">
+							<input type="hidden" value="<%= datauser.email %>" size="40" name="email" id="email">
 							<input name="colortheme" type="hidden" id="colortheme" value="initial"></input>
 							<input name="train" type="hidden" value="<%= datauser.train %>" id="train"></input>
 							<div class="name">

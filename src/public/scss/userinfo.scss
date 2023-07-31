@@ -177,7 +177,24 @@ button {
   padding: 0 30px;
 
 }
-
+.showcardid-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  // column-gap: 20px;
+  .showcardid-item{
+    height: 90px;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
+    input{
+      background-color: transparent;
+      text-align: center;
+    }
+  }
+ 
+}
 #show-change-theme {
   .item-bottom {
     @include item-bottom;
@@ -801,13 +818,13 @@ button {
 
   #addlink {
     left: calc(50% + 460px);
-    top: 600px;
+    top: 635px;
     width: 400px;
   }
 
   #addlink-responsive {
     left: calc(50% + 190px);
-    top: 520px;
+    top: 550px;
     width: 300px;
     height: 100px;
 
@@ -818,7 +835,7 @@ button {
 
   #edittitle {
     left: calc(50% + 440px);
-    top: 675px;
+    top: 715px;
     height: 50px;
   }
 
@@ -834,7 +851,7 @@ button {
 
   #edittitle-responsive {
     left: calc(50% + 170px);
-    top: 675px;
+    top: 715px;
 
     i {
       margin-left: 20px;
@@ -846,13 +863,13 @@ button {
 
   #editlink {
     left: calc(50% + 440px);
-    top: 730px;
+    top: 770px;
     height: 45px;
   }
 
   #editlink-responsive {
     left: calc(50% + 170px);
-    top: 730px;
+    top: 765px;
 
     i {
       margin-left: 20px;

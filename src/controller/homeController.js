@@ -19,6 +19,8 @@ let cardId = async (req, res) => {
   data.name2 = user[0].name2;
   data.avatar = user[0].avatar;
   data.bio = user[0].bio;
+  data.phone = user[0].phone;
+  data.email = user[0].email;
   if (user[0].theme != "initial") {
     if (
       user[0].theme == "rgb(234, 222, 217)" ||
@@ -99,10 +101,14 @@ let handleUploadFile = async (req, res) => {
   let colortheme = req.body.colortheme;
   let train = req.body.train;
   let bio = req.body.bio;
+  let phone = req.body.phone;
+  let email = req.body.email;
   delete req.body.name2;
   delete req.body.colortheme;
   delete req.body.train;
   delete req.body.bio;
+  delete req.body.phone;
+  delete req.body.email;
   let link = JSON.stringify(req.body);
   if (link == "{}") {
     link = "";
@@ -124,8 +130,8 @@ let handleUploadFile = async (req, res) => {
   }
 
   await pool.execute(
-    "update smartcard set link = ?, name2 = ?, theme = ?, train = ?, bio = ? where cardid = ?",
-    [link, name2, colortheme, train, bio, cardid]
+    "update smartcard set link = ?, name2 = ?, theme = ?, train = ?, bio = ?, phone = ?, email = ? where cardid = ?",
+    [link, name2, colortheme, train, bio, phone, email, cardid]
   );
   res.redirect(`/${cardid}/userinfo`);
   // res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
@@ -156,6 +162,8 @@ let userInfo = async (req, res) => {
   data.colortheme = user[0].theme;
   data.train = user[0].train;
   data.bio = user[0].bio;
+  data.phone = user[0].phone;
+  data.email = user[0].email;
   if (user[0].link != "") {
     var link = JSON.parse(user[0].link);
     if (typeof link.linktype == "string") {
