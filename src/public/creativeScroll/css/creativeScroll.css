@@ -14,7 +14,7 @@
 	will-change: transform;
 }
 body {
-	background-image: url(../img/bg-01.jpg);
+	background-image: url(../../image/index/bg-01.jpg);
 	background-size: 50px;
 	color: #fafafa;
 	overflow-x: hidden;

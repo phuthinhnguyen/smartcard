@@ -177,21 +177,22 @@ nav {
         }
 
         .portfolio-item1 {
-            bottom: 45vh;
-            transform: rotate(-20deg);
+            bottom: 55vh;
+            transform: rotate(-30deg);
             z-index: 1;
         }
 
         .portfolio-item2 {
-            bottom: 40vh;
+            bottom: 45vh;
             left: 10vh;
             // transform: rotate(15deg);
+            z-index: 2;
         }
 
         .portfolio-item3 {
-            bottom: 35vh;
+            bottom: 30vh;
             left: 15vh;
-            // transform: rotate(-20deg);
+            transform: rotate(30deg);
         }
 
         .foto img {
@@ -201,20 +202,22 @@ nav {
         }
 
         .foto div {
-            background: #ffffff;
-            display: inline-block;
-            margin: 0 auto 5% auto;
-            padding: 10px 10px 5px;
-            text-align: center;
-            text-decoration: none;
-            -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-            -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-            -webkit-transition: all .20s linear;
-            -moz-transition: all .20s linear;
-            transition: all .20s linear;
-            z-index: 0;
-            position: relative;
+            // background: #ffffff;
+            // display: inline-block;
+            // margin: 0 auto 5% auto;
+            // padding: 10px 10px 5px;
+            // text-align: center;
+            // text-decoration: none;
+            // -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+            // -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+            // box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+            // -webkit-transition: all .20s linear;
+            // -moz-transition: all .20s linear;
+            // transition: all .20s linear;
+            // z-index: 0;
+            // position: relative;
+            border-radius: 20px;
+            transition: .4s;
         }
 
         .foto div:after {
@@ -357,14 +360,55 @@ nav {
             // }
             .button-explore {
                 position: absolute;
-                bottom: 25vh;
+                bottom: 20vh;
                 left: 5vh;
                 @include button;
             }
         }
+      
     }
 }
-
+.gallery__item-home{
+    display: flex;
+    img{
+        width: 70%;
+        height: auto;
+        transition: .4s;
+        cursor: pointer;
+        &:last-of-type{
+            margin-left: -40%;
+        }
+        &:hover{
+            -webkit-transform: scale(1.4);
+            -moz-transform: scale(1.4);
+            transform: scale(1.4);
+            z-index: 10;
+        }
+    }
+    .gallery__item-home-sticker-front{
+        transform: scale(70%);
+    }
+    .gallery__item-home-sticker-back{
+        transform: scale(70%);
+        margin-left: -30%;
+    }
+    .gallery__item-home-home14-front{
+        transform: rotate(45deg);
+        z-index: 1;
+    }
+    .gallery__item-home-home14-back{
+        transform: rotate(-35deg);
+        margin-left: -35%
+    }
+    .gallery__item-home-home13-front{
+        transform: rotate(-45deg);
+        z-index: 1;
+    }
+    .gallery__item-home-home13-back{
+        transform: rotate(15deg);
+        margin-left: -35%;
+    }
+}
 .modal {
     display: none;
     position: fixed;
@@ -378,11 +422,13 @@ nav {
     background-color: rgba(0, 0, 0, 0.9);
 
     .modalImage {
-        margin: auto;
-        display: block;
         width: 50%;
-        height: 60%;
+        height: 50%;
         max-width: 700px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
 
     .close {
@@ -466,7 +512,7 @@ nav {
             color: $text-color;
             display: table-cell;
             padding: 40px 0px;
-            max-width: 184px;
+            width: 20%;
             cursor: pointer;
             position: relative;
             font-size: 15px;
