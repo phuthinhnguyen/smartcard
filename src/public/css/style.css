@@ -762,6 +762,124 @@ nav .nav-wrap .right img {
   height: auto;
 }
 
+.layers__caption {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.layers__title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-responsive {
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+  padding: 40px 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  position: sticky;
+  top: 0;
+  display: none;
+  z-index: 2;
+}
+.nav-responsive .left .menu-responsive a {
+  color: rgb(228, 227, 227);
+}
+.nav-responsive .left .menu-responsive a i {
+  font-size: 30px;
+}
+.nav-responsive .left .offcanvas-header {
+  padding: 0;
+}
+.nav-responsive .left .offcanvas-header .menu-responsive-wrap {
+  padding-top: 50px;
+  height: 100vh;
+  width: 100%;
+  background-image: url(../image/index/bg-01.jpg);
+}
+.nav-responsive .left .offcanvas-header .menu-responsive-wrap ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  row-gap: 30px;
+}
+.nav-responsive .left .offcanvas-header .menu-responsive-wrap li {
+  display: block;
+  color: rgb(228, 227, 227);
+  font-size: calc(var(--index) * 1.2);
+  font-weight: 900;
+  color: rgb(231, 229, 229);
+  font-family: "AdamGorry";
+}
+.nav-responsive .left .offcanvas-header .menu-responsive-wrap li > a {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.nav-responsive .left .offcanvas-header .menu-responsive-wrap li > a:hover {
+  color: white;
+}
+.nav-responsive .left .offcanvas-header .menu-responsive-wrap li img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.nav-responsive .left .offcanvas-header .menu-responsive-wrap li:first-child {
+  margin-left: 0;
+}
+.nav-responsive .center img {
+  width: 220px;
+  height: 40px;
+}
+.nav-responsive .right a {
+  font-size: calc(var(--index) * 1.2);
+  font-weight: 900;
+  color: rgb(231, 229, 229);
+  font-family: "AdamGorry";
+  text-decoration: none;
+}
+
+.main-header-responsive {
+  background-image: url("/parallax-scrolling/img/dungeon2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 10vh 10vh 10vh;
+}
+.main-header-responsive .layer__header-content {
+  z-index: 1;
+  transform: translate3d(0, calc(var(--scrollTop) / 7), 0);
+  transition: var(--transition);
+  will-change: transform;
+  font-weight: 900;
+  color: var(--text);
+}
+.main-header-responsive .layer__header-content .main-article__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header-responsive .layer__header-content .main-article__content .item .text-block__p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.main-header-responsive .layer__header-content h2 {
+  font-family: "AdamGorry";
+  font-size: calc(var(--index) * 1.2);
+  line-height: 1.75;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(231, 229, 229);
+}
+
 #scrolltop img {
   width: 48px;
   height: 48px;
@@ -793,5 +911,15 @@ nav .nav-wrap .right img {
 @media screen and (min-width: 1367px) {
   #wrapper-responsive {
     display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  .main-header-responsive {
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-header-responsive .main-article__content {
+    flex-direction: column;
   }
 }

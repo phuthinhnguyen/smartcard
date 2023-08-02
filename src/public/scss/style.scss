@@ -883,6 +883,135 @@ nav {
     }
 }
 
+// CSS home-responsive
+.layers__caption{
+    font-family: $fontSegoeUI;
+}
+.layers__title{
+    font-family: $fontSegoeUI;
+}
+.nav-responsive{
+    justify-content: space-between;
+    align-items:center ;
+    width: 100vw;
+    height: 50px;
+    padding: 40px 50px;
+    background-color: rgba(0, 0, 0, .5);
+    column-gap: 40px;
+    position: sticky;
+    top: 0;
+    display: none;
+    z-index: 2;
+    .left{
+        .menu-responsive{
+            a{
+                color: $text-color;
+                i{
+                    font-size: 30px;
+                }
+            }
+        }
+        .offcanvas-header{
+            padding: 0;
+            .menu-responsive-wrap{
+                padding-top: 50px;
+                height: 100vh;
+                width: 100%;
+                background-image: url(../image/index/bg-01.jpg);
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    row-gap: 30px;
+                }
+    
+                li {
+                    display: block;
+                    color: $text-color;
+                    font-size: calc(var(--index) * 1.2);
+                    font-weight: 900;
+                    color: $title-color;
+                    font-family: $fontAdamGorry;
+                    >a {
+                        cursor: pointer;
+                        user-select: none;
+    
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                    img{
+                        width: 32px;
+                        height: 32px;
+                        cursor: pointer;
+                    }
+                }
+    
+                li:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .center{
+        img{
+            width: 220px;
+            height: 40px;
+        }
+    }
+    .right{
+        a{
+            font-size: calc(var(--index) * 1.2);
+            font-weight: 900;
+            color: $title-color;
+            font-family: $fontAdamGorry;
+            text-decoration: none;
+        }
+    }
+}
+.main-header-responsive{
+    background-image: url('/parallax-scrolling/img/dungeon2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 10vh 10vh 10vh;
+    .layer__header-content {
+        z-index: 1;
+        transform: translate3d(0, calc(var(--scrollTop) / 7), 0);
+        transition: var(--transition);
+        will-change: transform;
+        font-weight: 900;
+        color: var(--text);
+        // text-shadow: 0 0 15px #9d822b;
+        .main-article__content{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .item{
+                .text-block__p{
+                    font-family: $fontSegoeUI;
+                }
+
+            }
+        }
+        h2{
+            @include title;
+          
+        }
+    }
+}
+
+
+
+
+
+
 // CSS scrolltop
 #scrolltop {
     img {
@@ -930,5 +1059,17 @@ nav {
 @media screen and (min-width:1367px) {
     #wrapper-responsive {
         display: none;
+    }
+}
+@media screen and (max-width:992px) {
+    .main-header-responsive {
+        padding: 0 40px;
+    }
+}
+@media screen and (max-width:768px) {
+    .main-header-responsive {
+        .main-article__content{
+            flex-direction: column;
+        }
     }
 }

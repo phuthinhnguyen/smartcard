@@ -706,22 +706,102 @@
 
 	<!-- main-responsive -->
 	<div class="wrapper" id="wrapper-responsive">
+
+		<!-- menu-responsive -->
+		<script>HTMLImporter.import("menu-responsive.html");</script>
+
+		<!-- content-responsive -->
 		<div class="content">
-			<header class="main-header-responsive">
+
+			<!-- home-responsive -->
+			<header class="main-header home">
 				<div class="layers">
 					<div class="layer__header">
-						<div class="layers__caption">Welcome to Parallax</div>
-						<div class="layers__title">Fairy Forest</div>
+						<div class="layers__caption">Welcome to</div>
+						<div class="layers__title">SMARTCARD</div>
 					</div>
 					<div class="layer layers__base"
 						style="background-image: url('/parallax-scrolling/img/layer-base2.png');"></div>
-					<!-- <div class="layer layers__middle" style="background-image: url(/parallax-scrolling/img/layer-middle2.png);"></div> -->
 					<div class="layer layers__front"
 						style="background-image: url('/parallax-scrolling/img/layer-front2.png');"></div>
 				</div>
 			</header>
 
-			<article class="main-article" style="background-image: url('/parallax-scrolling/img/dungeon2.jpg')">
+			<header class="main-header-responsive">
+				<div class="layer__header-content">
+					<div class="main-article__content">
+						<div class="item">
+							<img class="gallery__item" src="/image/index/home-11.png" alt="Alt" />
+							<div class="text-block gallery__item">
+								<h2 class="text-block__h" lang="en">
+									NEW TRENDS WITH OUTSTANDING FEATURES
+								</h2>
+								<h2 class="text-block__h" lang="vi">
+									XU HƯỚNG MỚI VỚI CÁC TÍNH NĂNG VƯỢT TRỘI
+								</h2>
+								<p class="text-block__p" lang="en">
+									Many templates for choices. Simple and user-friendly setup interface. Share
+									information with just one tap.
+								</p>
+								<p class="text-block__p" lang="vi">
+									Thiết kế thẻ đa dạng, nhiều lựa chọn. Giao diện cài đặt đơn giản, dễ sử dụng. Chia
+									sẻ thông tin chỉ với một lần chạm.
+								</p>
+							</div>
+						</div>
+	
+						<div class="item">
+							<div class="text-block gallery__item">
+								<h2 class="text-block__h" lang="en">
+									SMARTCARD - DIGITAL BUSINESS CARD PLATFORM
+								</h2>
+								<h2 class="text-block__h" lang="vi">
+									SMARTCARD - NỀN TẢNG DANH THIẾP KĨ THUẬT SỐ
+								</h2>
+								<p class="text-block__p" lang="en">
+									Welcome to us. Hope you have a fantastic experience with SMARTCARD.
+								</p>
+								<p class="text-block__p" lang="vi">
+									Chào mừng bạn đến với chúng tôi. Hi vọng bạn có một trải nghiệm tuyệt vời với
+									SMARTCARD.
+								</p>
+							</div>
+							<div class="gallery__item gallery__item-home">
+								<img src="/image/index/home-12-front.png" alt="Alt" />
+								<img src="/image/index/home-12-back.png" alt="Alt" />
+							</div>
+							
+						</div>
+					</div>
+				</div>	
+			</header>
+			<header class="main-header-responsive" style="height: 100vh;">
+				<div class="layer__header-content">
+					<div class="main-article__content" style="height: 100vh;">
+						<div class="item">
+							<div class="gallery__item gallery__item-home">
+								<img class="gallery__item-home-home13-front" src="/image/index/home-13-front.png" alt="Alt"/>
+								<img class="gallery__item-home-home13-back" src="/image/index/home-13-back.png" alt="Alt"/>
+							</div>
+						</div>
+	
+						<div class="item">
+							<div class="gallery__item gallery__item-home">
+								<img class="gallery__item-home-home14-front" src="/image/index/home-14-front.png" alt="Alt"/>
+								<img class="gallery__item-home-home14-back" src="/image/index/home-14-back.png" alt="Alt"/>
+							</div>
+							<div class="gallery__item gallery__item-home">
+								<img class="gallery__item-home-sticker-front" src="/image/index/sticker-front.png" alt="Alt" />
+								<img class="gallery__item-home-sticker-back" src="/image/index/sticker-back.png" alt="Alt"/>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</header>
+			
+			
+			<article class="main-article" style="background-image: url('/parallax-scrolling/img/dungeon2.jpg');">
 				<div class="main-article__content">
 					<h2 class="main-article__header">To be continued</h2>
 					<p class="main-article__paragraph">
@@ -733,6 +813,8 @@
 				</div>
 				<div class="copy">© WebDesign Master</div>
 			</article>
+			
+			
 		</div>
 	</div>
 
@@ -744,21 +826,19 @@
 		})
 		window.onscroll = function () { scrolltop() };
 		function scrolltop() {
-			if ((document.body.scrollTop > 1000) || (document.documentElement.scrollTop > 1000)) {
+			if ((document.body.scrollTop > 100) || (document.documentElement.scrollTop > 100)) {
 				$("#scrolltop").addClass("scrolltop-show");
 				$("nav").addClass('nav-sticky');
+				$(".nav-responsive")[0].style.display = "flex";
+			
 			}
 			else {
 				$("#scrolltop").removeClass("scrolltop-show");
 				$("nav").removeClass('nav-sticky');
+				$(".nav-responsive")[0].style.display = "none";
 			};
 		}
-		// $("p").each( function () {
-		// 	var $this = $(this);
-		// 	if (parseInt($this.css("fontSize")) < 20) {
-		// 		$this.css({ "font-size": "20px" });
-		// 	}
-		// });
+	
 	</script>
 </body>
 
