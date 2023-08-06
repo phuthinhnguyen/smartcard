@@ -211,6 +211,40 @@ nav .nav-wrap .right img {
   color: white;
 }
 
+.home .home-wave {
+  position: absolute;
+  top: 90vh;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("/image/index/home-wave.png");
+  background-size: 1000px 100px;
+  filter: opacity(0.4);
+}
+.home #home-wave1 {
+  z-index: 2;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+.home #home-wave2 {
+  z-index: 1;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+.home #home-wave3 {
+  z-index: 2;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+.home #home-wave4 {
+  z-index: 1;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
 .home .container-1 {
   line-height: 1.75;
   font-size: calc(var(--index) * 0.72);
@@ -886,13 +920,62 @@ nav .nav-wrap .right img {
   font-size: calc(var(--index) * 0.55);
 }
 
-.footer {
-  margin-top: 100px;
-  max-height: 400px;
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
 }
-.footer img {
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+.footer {
+  margin-top: 150px;
+  height: 100px;
   width: 100%;
-  height: auto;
+  background-color: rgba(71, 157, 232, 0.4);
+  position: relative;
+}
+.footer .wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("/image/index/footer-wave.png");
+  background-size: 1000px 100px;
+  filter: opacity(0.2);
+}
+.footer #wave1 {
+  z-index: 2;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+.footer #wave2 {
+  z-index: 1;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+.footer #wave3 {
+  z-index: 2;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+.footer #wave4 {
+  z-index: 1;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
 }
 
 .layers__caption {

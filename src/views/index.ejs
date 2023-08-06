@@ -44,6 +44,12 @@
 
 			<!-- home -->
 			<header class="hero-section home">
+				<div id="home-waves">
+					<div class="home-wave" id="home-wave1"></div>
+					<div class="home-wave" id="home-wave2"></div>
+					<div class="home-wave" id="home-wave3"></div>
+					<div class="home-wave" id="home-wave4"></div>
+				</div>
 				<img data-speed="0.6" class="hero" src="/image/index/logo.png" alt="Alt" />
 				<div data-speed="0.6" class="container-1">
 					<p lang="en" class="typed">Digital business card</p>
@@ -110,10 +116,12 @@
 					item.addEventListener("click", event => {
 						modalEle.style.display = "block";
 						modalImage.src = event.target.src;
+						$("#home-waves").hide();
 					});
 				});
 				document.querySelector(".close").addEventListener("click", () => {
 					modalEle.style.display = "none";
+					$("#home-waves").show();
 				});
 			</script>
 			<div class="portfolio">
@@ -892,9 +900,17 @@
 
 			<!-- footer -->
 			<div class="footer">
-				<img src="/image/index/creativeScroll-hero.png" alt="">
+				<!-- <div class="footer-text" lang="en">Thank you for using our services. See you again.</div>
+				<div class="footer-text" lang="vi">Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi. Hẹn gặp lại.</div> -->
+				<div class="waves">
+					<div class="wave" id="wave1"></div>
+					<div class="wave" id="wave2"></div>
+					<div class="wave" id="wave3"></div>
+					<div class="wave" id="wave4"></div>
+				  </div>
 			</div>
-			
+			<!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+			<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
 		</div>
 
 
@@ -907,7 +923,7 @@
 			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000">
 				<div class="toast-header d-flex justify-content-between" style="background: url('/image/index/bg-01.jpg');background-position: center;background-size: cover;">
 				<div>
-					<img src="/image/index/logo.png" class="rounded mr-2" alt="..." style="width:20px;height: 20px;margin-right: 5px;">
+					<img src="/image/favicon.ico" class="rounded mr-2" alt="..." style="width:20px;height: 20px;margin-right: 5px;">
 					<strong class="mr-auto" style="color: white;">SMARTCARD</strong>
 				</div>
 				<button type="button" class="btn-close ml-2 mb-1" data-bs-dismiss="toast"></button>
@@ -1047,6 +1063,13 @@
 		})
 		window.onscroll = function () { scrolltop() };
 		function scrolltop() {
+			if ((document.body.scrollTop > 0) || (document.documentElement.scrollTop > 0)){
+				$("#home-waves").hide();
+			}
+			else{
+				$("#home-waves").show();
+			}
+
 			if ((document.body.scrollTop > 100) || (document.documentElement.scrollTop > 100)) {
 				$("#scrolltop").addClass("scrolltop-show");
 				$("nav").addClass('nav-sticky');
