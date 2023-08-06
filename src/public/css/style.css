@@ -580,20 +580,18 @@ nav .nav-wrap .right img {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: rgb(228, 227, 227);
+  color: white;
   text-align: center;
   pointer-events: none;
 }
 .product .filters-container .filters-content .row .all .single-menu .project-date {
-  font-size: 16px;
+  font-size: 17px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 8px 15px 2px 15px;
   position: relative;
   z-index: -500;
-  border-top: 5px solid #696969;
+  padding: 10px 30px 8px 30px;
   border-radius: 0 0 5px 5px;
-  background-color: black;
-  color: white;
+  color: rgb(228, 227, 227);
 }
 .product .product-item-show {
   display: none;
@@ -602,8 +600,18 @@ nav .nav-wrap .right img {
   left: 0;
   top: 0;
   width: 100%;
-  height: 600px;
+  height: 100vh;
   background-color: transparent;
+}
+@keyframes productitemshow {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
 }
 .product .product-item-show .product-item-show-wrap {
   margin: auto;
@@ -617,12 +625,14 @@ nav .nav-wrap .right img {
   text-align: center;
   background-image: url("/image/index/bg-01.jpg");
   position: relative;
-  box-shadow: 0 100px 200px rgba(0, 0, 0, 0.7);
+  border: 0.5px solid white;
+  box-shadow: 0 100px 300px rgba(0, 0, 0, 0.7);
+  animation: productitemshow 0.6s;
 }
 .product .product-item-show .product-item-show-wrap .product-item-show-left {
   width: 50%;
   position: relative;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 .product .product-item-show .product-item-show-wrap .product-item-show-left .product-item-show-left-item img {
   width: 100%;
@@ -652,7 +662,7 @@ nav .nav-wrap .right img {
   transition: 0.6s;
 }
 .product .product-item-show .product-item-show-wrap .product-item-show-left a:first-of-type {
-  left: 0;
+  left: 10px;
 }
 .product .product-item-show .product-item-show-wrap .product-item-show-left a:last-of-type {
   right: -25px;
@@ -712,6 +722,7 @@ nav .nav-wrap .right img {
   top: 30%;
   left: 50%;
   border: 1px solid white;
+  display: none;
 }
 
 .content-userguides .contactus-content-item {
@@ -1012,8 +1023,8 @@ nav .nav-wrap .right img {
 
 .scrolltop-show {
   position: fixed;
-  bottom: 60px;
-  right: 30px;
+  bottom: 100px;
+  right: 50px;
   width: 60px;
   height: 60px;
   animation: navsticky 0.8s;

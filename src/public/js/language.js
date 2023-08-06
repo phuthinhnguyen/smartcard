@@ -1,4 +1,7 @@
 
+if (localStorage.getItem("language") == null){
+    localStorage["language"]="vi";
+}
 $(':root').attr('lang', localStorage["language"]);
 function eng() {
     localStorage["language"] = "en";

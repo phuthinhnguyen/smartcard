@@ -604,6 +604,7 @@ nav {
                         .foto img {
                             display: block;
                             width: 100%;
+                            // height: 100px;
                             max-width: 250px;
                             max-height: 150px;
                             pointer-events: none;
@@ -652,22 +653,22 @@ nav {
                             text-transform: uppercase;
                             letter-spacing: 3px;
                             // color: black;
-                            color: $text-color;
+                            color: white;
                             text-align: center;
                             pointer-events: none; 
                         }
     
                         .project-date {
-                            font-size: 16px;
+                            font-size: 17px;
                             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                            padding: 8px 15px 2px 15px;
                             position: relative;
                             z-index: -500;
-                            border-top: 5px solid #696969;
+                            padding: 10px 30px 8px 30px;
                             border-radius: 0 0 5px 5px;
-                            // background-color: #696969;
-                            background-color: black;
-                            color: white;
+                            // -webkit-box-shadow: 0 3px 2px rgba(226, 226, 226, .2);
+                            // -moz-box-shadow: 0 3px 2px rgba(226, 226, 226, .2);
+                            // box-shadow: 0 3px 2px rgba(226, 226, 226, .2);
+                            color: $text-color;
                         }
                     }
                 }
@@ -681,10 +682,19 @@ nav {
         left: 0;
         top: 0;
         width: 100%;
-        height: 600px;
-        // overflow: auto;
-        // background-color: rgba(0, 0, 0, 0.9);
+        height: 100vh;
         background-color: transparent;
+        @keyframes productitemshow {
+            0% {
+                opacity: 0;
+                scale: 0;
+            }
+        
+            100% {
+                opacity: 1;
+                scale: 1;
+            }
+        }
         .product-item-show-wrap {
             margin: auto;
             display: flex;
@@ -694,18 +704,18 @@ nav {
             width: 800px;
             height: 600px;
             color: white;
-            // padding-left: 10px;
             text-align: center;
             background-image: url('/image/index/bg-01.jpg');
-            // background-color: black;
             position: relative;
-            -webkit-box-shadow: 0 100px 200px rgba(0, 0, 0, .7);
-            -moz-box-shadow: 0 100px 200px rgba(0, 0, 0, .7);
-            box-shadow: 0 100px 200px rgba(0, 0, 0, .7);
+            border: 0.5px solid white;
+            -webkit-box-shadow: 0 100px 300px rgba(0, 0, 0, .7);
+            -moz-box-shadow: 0 100px 300px rgba(0, 0, 0, .7);
+            box-shadow: 0 100px 300px rgba(0, 0, 0, .7);
+            animation: productitemshow .6s;
             .product-item-show-left {
                 width: 50%;
                 position: relative;
-                padding-left: 20px;
+                padding-left: 40px;
                 .product-item-show-left-item {
                     img {
                         width: 100%;
@@ -738,7 +748,7 @@ nav {
                     line-height: 50px;
                     transition: .6s;
                     &:first-of-type{
-                        left: 0;
+                        left: 10px;
                     }
                     &:last-of-type{
                         right: -25px;
@@ -802,6 +812,7 @@ nav {
             top: 30%;
             left: 50%;
             border: 1px solid white;
+            display: none;
         }
     }
 }
@@ -1164,8 +1175,8 @@ nav {
 
 .scrolltop-show {
     position: fixed;
-    bottom: 60px;
-    right: 30px;
+    bottom: 100px;
+    right: 50px;
     width: 60px;
     height: 60px;
     animation: navsticky 0.8s;
