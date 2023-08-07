@@ -1180,6 +1180,9 @@ nav .nav-wrap .right img {
     align-items: center;
     justify-content: flex-start;
   }
+  .main-article__content .about-item {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 600px) {
   .nav-responsive {

@@ -68,9 +68,9 @@
   },
   "scripts": {
     "dev": "nodemon --exec babel-node src/sever.js",
-
-    "start": "babel-node src/sever.js",
     "start": "node src/server.js",
+    "start": "babel-node src/sever.js",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
