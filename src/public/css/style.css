@@ -1083,6 +1083,13 @@ nav .nav-wrap .right img {
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
+.main-article__content .home-item p {
+  line-height: 1.75;
+  font-size: calc(var(--index) * 0.72);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  color: rgb(228, 227, 227);
+}
 .main-article__content .about-item {
   width: 50%;
   display: flex;
@@ -1133,6 +1140,30 @@ nav .nav-wrap .right img {
 @media screen and (min-width: 1367px) {
   #wrapper-responsive {
     display: none;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .title-header-responsive {
+    font-family: "AdamGorry";
+    font-size: calc(var(--index) * 1.6);
+    line-height: 1.75;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgb(231, 229, 229);
+  }
+  .main-article__content .home-item p {
+    line-height: 1.75;
+    font-size: calc(var(--index) * 1);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    color: rgb(228, 227, 227);
+  }
+  .main-article__content .about-item p {
+    line-height: 1.75;
+    font-size: calc(var(--index) * 1);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    color: rgb(228, 227, 227);
   }
 }
 @media screen and (max-width: 992px) {

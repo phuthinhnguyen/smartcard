@@ -115,6 +115,23 @@
     font-weight: 400;
     color: $text-color;
 }
+@mixin title-responsive{
+    font-family: $fontAdamGorry;
+    // font-size: 30px;
+    font-size: calc(var(--index) * 1.6);
+	line-height: 1.75;
+	font-weight: 600;
+	letter-spacing: 2px;
+    color: $title-color;
+}
+@mixin text-responsive{
+    line-height: 1.75;
+    // font-size: 20px;
+    font-size: calc(var(--index) * 1);
+    font-family: $fontSegoeUI;
+    font-weight: 400;
+    color: $text-color;
+}
 @mixin button{
     height: 50px;
     width: 200px;
