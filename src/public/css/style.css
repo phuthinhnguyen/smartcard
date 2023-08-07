@@ -1063,37 +1063,43 @@ nav .nav-wrap .right img {
   text-decoration: none;
 }
 
-.main-header-responsive {
-  background-image: url("/parallax-scrolling/img/dungeon2.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 0 10vh 10vh 10vh;
-}
-.main-header-responsive .layer__header-content {
-  z-index: 1;
-  transform: translate3d(0, calc(var(--scrollTop) / 7), 0);
-  transition: var(--transition);
-  will-change: transform;
-  font-weight: 900;
-  color: var(--text);
-}
-.main-header-responsive .layer__header-content .main-article__content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.main-header-responsive .layer__header-content .main-article__content .item .text-block__p {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-.main-header-responsive .layer__header-content h2 {
+.title-header-responsive {
+  margin-top: 50px;
+  margin-bottom: 50px;
   font-family: "AdamGorry";
   font-size: calc(var(--index) * 1.2);
   line-height: 1.75;
   font-weight: 600;
   letter-spacing: 2px;
   color: rgb(231, 229, 229);
+}
+
+.main-article__content {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 20px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.main-article__content .about-item {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-article__content .about-item img {
+  width: 100%;
+  height: auto;
+}
+.main-article__content .about-item p {
+  line-height: 1.75;
+  font-size: calc(var(--index) * 0.72);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  color: rgb(228, 227, 227);
 }
 
 #scrolltop img {
@@ -1134,8 +1140,51 @@ nav .nav-wrap .right img {
     padding: 0 40px;
   }
 }
-@media screen and (max-width: 768px) {
-  .main-header-responsive .main-article__content {
+@media screen and (max-width: 600px) {
+  .title-header-responsive {
+    margin-bottom: 10px;
+  }
+  .main-article__content {
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav-responsive {
+    padding: 30px 20px;
+  }
+  .nav-responsive .left .menu-responsive a i {
+    font-size: 25px;
+  }
+  .nav-responsive .center img {
+    width: 140px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .nav-responsive .left .menu-responsive a i {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .nav-responsive {
+    padding: 20px;
+  }
+  .nav-responsive .center img {
+    width: 100px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 280px) {
+  .nav-responsive {
+    padding: 20px;
+  }
+  .nav-responsive .left .menu-responsive a i {
+    font-size: 18px;
+  }
+  .nav-responsive .center img {
+    width: 90px;
+    height: 20px;
   }
 }
