@@ -1009,7 +1009,7 @@
 			</article>
 
 			<!-- about-responsive -->
-			<article class="main-article" style="background-image: url('/parallax-scrolling/img/dungeon2.jpg');">
+			<article class="main-article about-res" style="background-image: url('/parallax-scrolling/img/dungeon2.jpg');">
 				<h2 lang="en" class="title-header-responsive about-en">ABOUT SMARTCARD</h2>
 				<h2 lang="vi" class="title-header-responsive about-vi">VỀ SMARTCARD</h2>
 				<div class="main-article__content">
@@ -1057,6 +1057,463 @@
 			</article>
 
 
+			<!-- products-responsive -->
+			<article class="main-article products-res" style="background-image: url('/parallax-scrolling/img/dungeon2.jpg');">
+				<h2 lang="en" class="title-header-responsive about-en">PRODUCT</h2>
+				<h2 lang="vi" class="title-header-responsive about-vi">SẢN PHẨM</h2>
+				<div class="main-article__content">
+
+					<div class="products-item">
+						<div class="item">
+							<div class="foto">
+								<div>
+									<img src="/image/index/home-6.png" alt="projectImages" height="230" />
+									<span class="project-date">STA-01</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										69.000 VND
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="foto">
+								<div>
+									<img src="/image/index/home-16-front.png" alt="projectImages" height="230" />
+									<span class="project-date">PRE-01</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										119.000 VND
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="foto">
+								<div>
+									<img src="/image/index/home-7-front.png" alt="projectImages" height="230" />
+									<span class="project-date">VIP-01</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										229.000 VND
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="foto">
+								<div>
+									<img src="/image/index/home-8-front.png" alt="projectImages" height="230" />
+									<span class="project-date">VIP-02</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										229.000 VND
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="foto">
+								<div>
+									<img src="/image/index/home-9-front.png" alt="projectImages" height="230" />
+									<span class="project-date">VIP-03</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										229.000 VND
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="foto">
+								<div>
+									<img src="/image/index/home-10-front.png" alt="projectImages" height="230" />
+									<span class="project-date">VIP-04</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										229.000 VND
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="foto">
+								<div>
+									<img src="/image/index/home-18-front.png" alt="projectImages" height="230" />
+									<span class="project-date">VIP-05</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										229.000 VND
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="foto">
+								<div>
+									<img src="/image/index/sticker-front.png" alt="projectImages" height="230" />
+									<span class="project-date">STICKER</span>
+									<br />
+									<p class="project-title-settings mt-3">
+										39.000 VND
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- show product when user click on product item -->
+					<div class="product-item-show" id="product-item-show-res">
+						<div class="product-item-show-wrap">
+							<div class="product-item-show-left">
+								<div class="product-item-show-left-item">
+									<img src="/image/index/home-12-front.png" alt="" id="left-show-img-res" width="200"
+										height="200">
+								</div>
+								<a id="left-show-arrowleft-res"><i class="fa fa-angle-left"></i></a>
+								<a id="left-show-arrowright-res"><i class="fa fa-angle-right"></i></a>
+							</div>
+							<div class="product-item-show-right">
+								<h2 id="product-name-res"></h2>
+								<div class="product-detail">
+									<p lang="en">Material: PVC</p>
+									<p lang="vi">Chất liệu: PVC</p>
+									<p lang="en">Size: <span id="product-size-res-en">80x50</span>mm</p>
+									<p lang="vi">Kích thước: <span id="product-size-res-vi">80x50</span>mm</p>
+									<p lang="en">Chip: Ntag215</p>
+									<p lang="vi">Chip: Ntag215</p>
+									<p lang="en">Storage capacity: 504 bytes</p>
+									<p lang="vi">Dung lượng ghi: 504 byte</p>
+									<p lang="en">Operating distance: 1 to 5cm</p>
+									<p lang="vi">Khoảng cách hoạt động: 1 đến 5cm</p>
+									<p lang="en">Data storage: >10 years</p>
+									<p lang="vi">Lưu trữ dữ liệu: >10 năm</p>
+									<p lang="en">Read count: 100,000 times</p>
+									<p lang="vi">Số lần đọc: 100,000 lần</p>
+								</div>
+							</div>
+							<span class="product-close-res">×</span>
+						</div>
+
+						<div id="myresult" class="img-zoom-result"></div>
+					</div>
+				</div>
+			</article>
+			<script>
+				let productitemshowres = document.getElementById("product-item-show-res")
+				let leftshowimgres = document.querySelector("#left-show-img-res");
+				let productnameres = document.getElementById("product-name-res")
+				Array.from(document.querySelectorAll(".products-item .item")).forEach(item => {
+					item.addEventListener("click", event => {
+						productitemshowres.style.display = "block";
+						productnameres.innerText = event.target.children[1].innerText;
+						leftshowimgres.src = event.target.children[0].src;
+						if (productnameres.innerText == "STICKER") {
+							document.getElementById("product-size-res-en").innerText = "25x25"
+							document.getElementById("product-size-res-vi").innerText = "25x25"
+						}
+						else {
+							document.getElementById("product-size-res-en").innerText = "80x50"
+							document.getElementById("product-size-res-vi").innerText = "80x50"
+						}
+						// if (event.target.src = "undefined") {
+						// 	leftshowimg.src = event.target.children[0].src;
+						// }
+						// else {
+						// 	leftshowimg.src = event.target.src;
+						// }
+					});
+				});
+				document.querySelector(".product-close-res").addEventListener("click", () => {
+					productitemshowres.style.display = "none";
+				});
+
+				//  funtion arrowleft and arrowright click
+				let arrowrightres = document.getElementById("left-show-arrowright-res");
+				arrowrightres.addEventListener("click", function name(params) {
+					leftshowimgres.src = leftshowimgres.src.replace("front", "back")
+
+				})
+				let arrowleftres = document.getElementById("left-show-arrowleft-res");
+				arrowleftres.addEventListener("click", function name(params) {
+					leftshowimgres.src = leftshowimgres.src.replace("back", "front")
+
+				})
+			</script>
+
+			<!-- userguides-responsive -->
+			<article class="main-article userguides-res" style="background-image: url('/parallax-scrolling/img/dungeon2.jpg');">
+				<h2 lang="en" class="title-header-responsive about-en">USERGUIDES</h2>
+				<h2 lang="vi" class="title-header-responsive about-vi">HƯỚNG DẪN</h2>
+				<div class="main-article__content" style="display: block;max-width: 1200px;">
+
+					<div class="userguides-item">
+
+						<p lang="en"><span>Step 1:</span> Place the card near the NFC reader region on your
+							phone or NFC-enabled device. Your device will automatically connect and redirect to
+							the registration page. Or you can directly access the following link:
+							https://smartcard.online/{cardid} with {cardid} printed on the box. (*)</p>
+						<p lang="vi"><span>Bước 1:</span> Đặt thẻ gần vùng đọc NFC trên điện thoại hoặc thiết bị
+							hỗ trợ NFC của bạn. Thiết bị của bạn sẽ tự động kết nối và chuyển hướng đến trang
+							đăng ký. Hoặc bạn có thể trực tiếp vào đường dẫn sau:
+							https://smartcard.online/{cardid} với {cardid} được in trên hộp. (*)</p>
+
+						<p lang="en"><span>Step 2:</span> Register an account. After successfully registering,
+							you will be redirected to the login page.</p>
+						<p lang="vi"><span>Bước 2:</span> Đăng ký tài khoản. Sau khi đăng ký thành công, bạn sẽ
+							được chuyển hướng đến trang đăng nhập.</p>
+						<img lang="en" src="/image/index/userguides-en-1.JPG" alt="">
+						<img lang="vi" src="/image/index/userguides-vi-1.JPG" alt="">
+						<p lang="en"><span>Step 3:</span> Login.</p>
+						<p lang="vi"><span>Bước 3:</span> Đăng nhập.</p>
+						<img lang="en" src="/image/index/userguides-en-2.JPG" alt="">
+						<img lang="vi" src="/image/index/userguides-vi-2.JPG" alt="">
+					</div>
+
+					<div class="userguides-item">
+
+						<p lang="en"><span>Step 4:</span> After successfully logging in to the User Control
+							page, you can set up card information.</p>
+						<p lang="vi"><span>Bước 4:</span> Đăng nhập thành công vào trang User Control, bạn có
+							thể thiết lập các thông tin của thẻ.</p>
+						<img lang="en" src="/image/index/userguides-en-3.JPG" alt="">
+						<img lang="vi" src="/image/index/userguides-vi-3.JPG" alt="">
+						<p lang="en"><span>Step 5:</span> Activation of the card is successfully completed.</p>
+						<p lang="vi"><span>Bước 5:</span> Hoàn tất kích hoạt thẻ thành công.</p>
+						<p lang="en"><span>(*)</span> How to check if your phone supports NFC? Go to
+							<span>Settings</span> > Select <span>Connections</span> > If you see <span>NFC (or
+								NFC and payment)</span>, then your phone supports NFC.
+						</p>
+						<p lang="vi"><span>(*)</span> Cách kiểm tra điện thoại có hỗ trợ NFC hay không? Vào
+							<span>Cài đặt</span> > Chọn <span>Kết nối</span> > Nếu thấy có <span>NFC (hoặc NFC
+								và thanh toán)</span> thì điện thoại bạn có hỗ trợ NFC.
+						</p>
+						<p lang="en">The phone models that support NFC are:</p>
+						<p lang="vi">Các dòng điện thoại hỗ trợ NFC:</p>
+						<p lang="en"> &nbsp;- For iPhone: All iPhone models starting from iPhone 6 are supported
+							with NFC.</p>
+						<p lang="vi"> &nbsp;- Đối với iPhone: Các mẫu iPhone kể từ iPhone 6 đều được hỗ trợ NFC.
+						</p>
+						<p lang="en"> &nbsp;- For Android: NFC is not compatible with phones running Android 3
+							operating system.</p>
+						<p lang="vi"> &nbsp;- Đối với Android: NFC không tương thích trên điện thoại chạy hệ
+							điều hành Android 3.</p>
+					</div>
+				</div>
+			</article>
+
+
+			<!-- reviews-responsive -->
+			<article class="main-article reviews-res" style="background-image: url('/parallax-scrolling/img/dungeon2.jpg');">
+				<h2 lang="en" class="title-header-responsive about-en">REVIEWS</h2>
+				<h2 lang="vi" class="title-header-responsive about-vi">ĐÁNH GIÁ</h2>
+				<div class="main-article__content" style="display: block;">
+
+					<div class="reviews-item">
+						<div id="carouselExampleControls-res" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<div class="carousel-item-wrap">
+										<div class="item">
+											<div>
+												<img src="/image/index/reviews-1.svg" alt="">
+
+											</div>
+											<p lang="en">Very convenient and cost-saving compared to paper
+												business cards. They are also beautiful and sophisticated.</p>
+											<p lang="vi">Rất tiện lợi, tiết kiệm so với card visit giấy. Đẹp và
+												sang nữa.</p>
+											<h6 lang="en">Phi Linh Tran</h6>
+											<h6 lang="vi">Phi Linh Tran</h6>
+											<!-- <p lang="en">Customer</p> -->
+											<!-- <p lang="vi">Khách hàng</p> -->
+										</div>
+										<div class="item">
+											<div>
+												<img src="/image/index/reviews-4.png" alt="">
+
+											</div>
+											<p lang="en">The product is high-tech yet affordable, making it very
+												reasonable and practical.</p>
+											<p lang="vi">Sản phẩm mang tính chất công nghệ cao mà lại rẻ, rất
+												hợp lý.</p>
+											<h6 lang="en">Tung Lam</h6>
+											<h6 lang="vi">Tung Lam</h6>
+											<!-- <p lang="en">Customer</p>
+											<p lang="vi">Khách hàng</p> -->
+										</div>
+										<div class="item" id="reviews-res">
+											<div>
+												<img src="/image/index/reviews-6.png" alt="">
+
+											</div>
+											<p lang="en">Great service. Long-term warranty. See you again.
+											</p>
+											<p lang="vi">Dịch vụ tốt. Bảo hành thời gian lâu. Hẹn gặp lai.
+											</p>
+											<h6 lang="en">Minh Quan Nguyen</h6>
+											<h6 lang="vi">Minh Quan Nguyen</h6>
+											<!-- <p lang="en">Customer</p>
+											<p lang="vi">Khách hàng</p> -->
+										</div>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<div class="carousel-item-wrap">
+										<div class="item">
+											<div>
+												<img src="/image/index/reviews-1.svg" alt="">
+
+											</div>
+											<p lang="en">The first-time experience with the product and service
+												appears simple, yet remarkably advanced in technology. Thank
+												you!</p>
+											<p lang="vi">Lần đầu tiên trải nghiệm sản phẩm và dịch vụ nhìn đơn
+												giản nhưng rất ư là công nghệ. Cảm ơn shop!</p>
+											<h6 lang="en">Phuong Pham</h6>
+											<h6 lang="vi">Phuong Pham</h6>
+											<!-- <p lang="en">Customer</p>
+											<p lang="vi">Khách hàng</p> -->
+										</div>
+										<div class="item">
+											<div>
+												<img src="/image/index/reviews-2.svg" alt="">
+
+											</div>
+											<p lang="en">Beautiful print quality. The card is small, compact,
+												and easy to use. Extremely satisfactory for a smart business
+												card.</p>
+											<p lang="vi">Chất lượng in đẹp. Thẻ nhỏ, gọn, dễ dàng sử dụng. Quá
+												ổn áp cho một chiếc danh thiếp thông minh.</p>
+											<h6 lang="en">Ly Ly Tran</h6>
+											<h6 lang="vi">Ly Ly Tran</h6>
+											<!-- <p lang="en">Customer</p>
+											<p lang="vi">Khách hàng</p> -->
+										</div>
+										<div class="item" id="reviews-res">
+											<div>
+												<img src="/image/index/reviews-3.png" alt="">
+
+											</div>
+											<p lang="en">Beautiful and high-quality card at a discounted price.
+												Thank you shop!</p>
+											<p lang="vi">Thẻ đẹp chất lượng, giá ưu đãi. Cảm ơn shop nhé.</p>
+											<h6 lang="en">Huy Nguyen</h6>
+											<h6 lang="vi">Huy Nguyen</h6>
+											<!-- <p lang="en">Customer</p>
+											<p lang="vi">Khách hàng</p> -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<button class="carousel-control-prev" type="button"
+								data-bs-target="#carouselExampleControls-res" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"><img style="width: 50px;"
+										src="/image/index/arrowleft.svg" alt=""></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button"
+								data-bs-target="#carouselExampleControls-res" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"><img style="width: 50px;"
+										src="/image/index/arrowright.svg" alt=""></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>
+
+					</div>
+
+
+				</div>
+			</article>
+
+
+			<!-- contact-responsive -->
+			<article class="main-article contact-res"
+				style="background-image: url('/parallax-scrolling/img/dungeon2.jpg');justify-content: flex-start;">
+				<h2 lang="en" class="title-header-responsive about-en">CONTACT</h2>
+				<h2 lang="vi" class="title-header-responsive about-vi">LIÊN HỆ</h2>
+				<div class="main-article__content" style="align-items: flex-start;row-gap: 30px;">
+
+					<div class="contact-item">
+
+						<h2 lang="en">Contact information</h2>
+						<h2 lang="vi">Thông tin liên hệ</h2>
+						<p lang="en">We love to hear from you on our customer service, merchandise, website or
+							any topics you want
+							to share with us. Your comments and suggestions will be appreciated. Please refer to
+							the information below:</p>
+						<p lang="vi">Smartcard rất hân hạnh nhận được góp ý từ các bạn. Vui lòng theo dõi thông
+							tin liên hệ bên
+							dưới:</p>
+						<p lang="en"><a><i class="fa fa-internet-explorer"></i></a>smartcard.com</p>
+						<p lang="vi"><a><i class="fa fa-internet-explorer"></i></a>smartcard.com</p>
+						<p lang="en"><a><i class="fa fa-phone"></i></a>Mobile/Zalo: 0937 43 93 40</p>
+						<p lang="vi"><a><i class="fa fa-phone"></i></a>Di động/Zalo: 0937 43 93 40</p>
+						<p lang="en"><a><i class="fa fa-envelope"></i></a>contact@smartcard.com</p>
+						<p lang="vi"><a><i class="fa fa-envelope"></i></a>contact@smartcard.com</p>
+						<p lang="en"><a><i class="fa fa-clock-o"></i></a>Everyday 8:00-19:00</p>
+						<p lang="vi"><a><i class="fa fa-clock-o"></i></a>Mỗi ngày từ 8:00-19:00</p>
+					</div>
+
+					<div class="contact-item">
+
+						<h2 lang="en">Make an order</h2>
+						<h2 lang="vi">Đặt hàng</h2>
+						<div class="input-name-mail">
+							<input lang="en" id="contact-name-res-en" placeholder="Your name"></input>
+							<input lang="vi" id="contact-name-res-vi" placeholder="Tên"></input>
+							<input lang="en" id="contact-email-res-en" placeholder="Your mail"></input>
+							<input lang="vi" id="contact-email-res-vi" placeholder="Địa chỉ e-mail"></input>
+						</div>
+						<input lang="en" type="text" id="contact-phone-res-en" placeholder="Phone number">
+						<input lang="vi" type="text" id="contact-phone-res-vi" placeholder="Số điện thoại">
+						<textarea lang="en" name="" id="contact-message-res-en" cols="30" rows="4"
+							placeholder="What's on your content?"></textarea>
+						<textarea lang="vi" name="" id="contact-message-res-vi" cols="30" rows="4"
+							placeholder="Nội dung/ý kiến"></textarea>
+						<button lang="en" onclick="submitres(); return false">Submit</button>
+						<button lang="vi" onclick="submitres(); return false">Gửi</button>
+					</div>
+				</div>
+			</article>
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
+			<script>
+				function submitres() {
+					if (localStorage["language"] == "en") {
+						var nameres = document.getElementById("contact-name-res-en");
+						var emailres = document.getElementById("contact-email-res-en");
+						var phoneres = document.getElementById("contact-phone-res-en");
+						var messageres = document.getElementById("contact-message-res-en");
+					}
+					else if (localStorage["language"] == "vi") {
+						var nameres = document.getElementById("contact-name-res-vi");
+						var emailres = document.getElementById("contact-email-res-vi");
+						var phoneres = document.getElementById("contact-phone-res-vi");
+						var messageres = document.getElementById("contact-message-res-vi");
+					}
+					if (phoneres.value != "" || emailres.value != "") {
+						Email.send({
+							Host: "smtp.elasticemail.com",
+							Username: "phuthinhnguyen1101@gmail.com",
+							Password: "D96B9CC46BD97B138DCF21F8F5B78F2FED08",
+							To: 'hungga35610@gmail.com',
+							From: "phuthinhnguyen1101@gmail.com",
+							Subject: "Đặt hàng",
+							Body: `[From: ${nameres.value}, ${emailres.value}, ${phoneres.value}]<br>${messageres.value}`
+						}).then(messageres => {
+							if (messageres == "OK") {
+								$('.toast').toast("show")
+							}
+						})
+						nameres.value = "";
+						emailres.value = "";
+						phoneres.value = "";
+						messageres.value = "";
+					}
+				}
+			</script>
+
+
+			<!-- 
 			<article class="main-article" style="background-image: url('/parallax-scrolling/img/dungeon2.jpg');">
 				<div class="main-article__content">
 					<h2 class="main-article__header">To be continued</h2>
@@ -1068,7 +1525,7 @@
 					</p>
 				</div>
 				<div class="copy">© WebDesign Master</div>
-			</article>
+			</article> -->
 
 
 		</div>

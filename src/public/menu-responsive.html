@@ -5,6 +5,9 @@
         </div>
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
             <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
                 <div class="menu-responsive-wrap">
                     <ul>
                         <li>
@@ -40,6 +43,42 @@
                     </ul>
                 </div>
             </div>
+            <!-- <div class="offcanvas-header">
+                <div class="menu-responsive-wrap">
+                    <ul>
+                        <li>
+                            <a lang="en" id="home-en">Home</a>
+                            <a lang="vi" id="home-vi">Trang chủ</a>
+                        </li>
+        
+                        <li>
+                            <a lang="en" id="about-en">About</a>
+                            <a lang="vi" id="about-vi">Về SMARTCARD</a>
+                        </li>
+        
+                        <li>
+                            <a lang="en" id="products-en">Products</a>
+                            <a lang="vi" id="products-vi">Sản phẩm</a>
+                        </li>
+                        <li>
+                            <a lang="en" id="userguides-en">User guides</a>
+                            <a lang="vi" id="userguides-vi">Hướng dẫn</a>
+                        </li>
+                        <li>
+                            <a lang="en" id="reviews-en">Reviews</a>
+                            <a lang="vi" id="reviews-vi">Đánh giá</a>
+                        </li>
+                        <li>
+                            <a lang="en" id="contact-en">Contact</a>
+                            <a lang="vi" id="contact-vi">Liên hệ</a>
+                        </li>
+                        <li>
+                            <img src="/image/index/vi.svg" alt="" style="width: 35px;height: 35px;margin-right: 20px;" onclick="vi()">
+                            <img src="/image/index/us.svg" alt="" onclick="eng()">
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
         </div>
     </div>
     <div class="center">
@@ -58,27 +97,27 @@
     })
     $("#about-en, #about-vi").click(function name(params) {
         $('html').animate({
-            scrollTop: $(".about").offset().top
+            scrollTop: $(".about-res").offset().top-70
         }, 600);
     })
     $("#products-en, #products-vi").click(function name(params) {
         $('html').animate({
-            scrollTop: $(".products").offset().top
+            scrollTop: $(".products-res").offset().top-70
         }, 600);
     })
     $("#userguides-en, #userguides-vi").click(function name(params) {
         $('html').animate({
-            scrollTop: $(".userguides").offset().top
+            scrollTop: $(".userguides-res").offset().top-70
         }, 600);
     })
     $("#reviews-en, #reviews-vi").click(function name(params) {
         $('html').animate({
-            scrollTop: $(".reviews").offset().top
+            scrollTop: $(".reviews-res").offset().top-70
         }, 600);
     })
     $("#contact-en, #contact-vi").click(function name(params) {
         $('html').animate({
-            scrollTop: $(".contact").offset().top
+            scrollTop: $(".contact-res").offset().top-70
         }, 600);
     })
 </script>
