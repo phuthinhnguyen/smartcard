@@ -7,8 +7,13 @@ avatar usershow         done
 change theme  		done
 viet language		done
 add 1 link		done
-forgot password
+forgot password	
+change password	
 
 
 *Fix error "<pre>Error: EROFS: read-only file system..." when upload avatar
 https://stackoverflow.com/questions/75538982/error-erofs-read-only-file-system-open-filename-when-uploading-an-image-to
+
+
+*login auth session
+https://stackoverflow.com/questions/7990890/how-to-implement-login-auth-in-node-js
