@@ -1,5 +1,5 @@
-login authentication
-login, logout session	
+login authentication    done
+login, logout session	done
 validate sign up	done
 avatar userinfo		
 button save userinfo    done

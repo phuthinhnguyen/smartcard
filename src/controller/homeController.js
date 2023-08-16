@@ -1,6 +1,8 @@
+import { redirect } from "statuses";
 import pool from "../configs/connectDB";
 import multer from "multer";
 const bcrypt = require("bcrypt");
+var session = require('express-session')
 
 let getHomepage = async (req, res) => {
   const [rows, fields] = await pool.execute("SELECT * FROM `smartcard`");
@@ -181,6 +183,12 @@ let userInfo = async (req, res) => {
   }
 };
 
+
+function isAuthenticated (req, res, next) {
+  if (req.session.user) next()
+  else res.redirect('/signin')
+}
+
 let processLogin = async (req, res) => {
   let username = req.body.username.filter((item) => item != "")[0];
   let password = req.body.pass.filter((item) => item != "")[0];
@@ -192,8 +200,20 @@ let processLogin = async (req, res) => {
   if (typeof user[0] != "undefined") {
     let cardid = user[0]["cardid"];
     if (bcrypt.compareSync(password, user[0]["password"])) {
-      return res.redirect(`/${cardid}/userinfo`);
-    } else {
+      req.session.regenerate(function (err) {
+        if (err) next(err)
+        // store user information in session, typically a user id
+        req.session.user =cardid;
+        // save the session before redirection to ensure page
+        // load does not happen before session is saved
+        req.session.save(function (err) {
+          if (err) return next(err)
+          res.redirect(`/${cardid}/userinfo`);
+        })
+      })
+    } 
+    else 
+    {
       return res.redirect("/signin");
     }
   } else {
@@ -209,7 +229,18 @@ let processLogin = async (req, res) => {
 //     cardid,
 //   ]);
 // };
-
+let logout = async (req, res) => {
+  req.session.user = null
+  req.session.save(function (err) {
+    if (err) next(err)
+    // regenerate the session, which is good practice to help
+    // guard against forms of session fixation
+    req.session.regenerate(function (err) {
+      if (err) next(err)
+      res.redirect('/signin')
+    })
+  })
+};
 module.exports = {
   getHomepage,
   cardId,
@@ -218,5 +249,6 @@ module.exports = {
   processLogin,
   processSignUp,
   handleUploadFile,
-  // userinfosave,
+  isAuthenticated,
+  logout
 };
