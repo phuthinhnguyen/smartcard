@@ -4,6 +4,17 @@ import multer from "multer";
 const bcrypt = require("bcrypt");
 var session = require('express-session')
 
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'phuthinhnguyen1101@gmail.com',
+    pass: 'yzrwxkwmjwvyxxwm'
+  }
+});
+
+
 let getHomepage = async (req, res) => {
   const [rows, fields] = await pool.execute("SELECT * FROM `smartcard`");
   return res.render("index.ejs", { datacardid: rows });
@@ -145,6 +156,12 @@ let signIn = async (req, res) => {
   // return res.render("signin.ejs",{datacardid: rows});
   return res.render("signin.ejs");
 };
+let forgotPassword = async (req, res) => {
+  // const [rows, fields] = await pool.execute('SELECT * FROM `smartcard`');
+  // console.log(rows)
+  // return res.render("signin.ejs",{datacardid: rows});
+  return res.render("forgotpassword.ejs");
+};
 
 let userInfo = async (req, res) => {
   // const [rows, fields] = await pool.execute('SELECT * FROM `smartcard`');
@@ -220,7 +237,65 @@ let processLogin = async (req, res) => {
     console.log("username khong ton tai");
   }
 };
+const generatePassword = (length, chars) => {
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return password;
+};
+const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const integers = "123456789";
+const exCharacters = "!@#$%&*";
+const createPassword = (length, hasNumbers, hasSymbols) => {
+  let chars = alpha;
+  if (hasNumbers) {
+    chars += integers;
+  }
+  if (hasSymbols) {
+    chars += exCharacters;
+  }
+  return generatePassword(length, chars);
+};
+let processForgotPassword = async (req, res) => {
+  let cardidinput = req.body.cardid.filter((item) => item != "")[0];
+  let emailinput = req.body.email.filter((item) => item != "")[0];
 
+  const [user] = await pool.execute(
+    `select * from smartcard where cardid = ?`,
+    [cardidinput]
+  );
+  if (typeof user[0] != "undefined") {
+    let email = user[0]["email"];
+    if (email==emailinput){
+      const passwordresult= createPassword(8, 123456789, "!@#$%&*");
+      var mailOptions = {
+        from: 'phuthinhnguyen1101@gmail.com',
+        to: emailinput,
+        subject: 'Get Reset Password from SMARTCARD',
+        // text: 'That was easy!'
+        html: `<h1>Hi, I am SMARTCARD</h1><p>Your reset password is ${passwordresult}</p>`
+      };
+      transporter.sendMail(mailOptions, async(error, info)=>{
+        if (error) {
+          console.log(error);
+        } 
+        else {
+          console.log('Email sent: ' + info.response);
+          await pool.execute(
+            "update smartcard set password = ? where cardid = ?",
+            [passwordresult, cardidinput]
+          );
+          res.redirect("/signin")
+          
+        }
+      });
+      
+    }
+    else console.log("Card ID hoac email khong dung")
+  }
+  else console.log("Card ID hoac email khong dung")
+};
 // let userinfosave = async (req, res) => {
 //   let cardid = req.params.cardid;
 //   let profile_pic = req.body.profile_pic;
@@ -250,5 +325,7 @@ module.exports = {
   processSignUp,
   handleUploadFile,
   isAuthenticated,
-  logout
+  logout,
+  forgotPassword,
+  processForgotPassword,
 };
