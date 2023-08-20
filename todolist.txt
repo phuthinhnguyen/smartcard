@@ -7,8 +7,8 @@ avatar usershow         done
 change theme  		done
 viet language		done
 add 1 link		done
-forgot password	
-change password	
+forgot password		done
+change password		done
 
 
 *Fix error "<pre>Error: EROFS: read-only file system..." when upload avatar
