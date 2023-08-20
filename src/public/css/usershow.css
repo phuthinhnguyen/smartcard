@@ -175,10 +175,11 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  margin-bottom: 20px;
 }
 footer img {
-  width: 200px;
-  height: 50px;
+  width: 210px;
+  height: 40px;
 }
 
 @media screen and (max-width: 500px) {

@@ -201,8 +201,8 @@ button {
   margin-bottom: 50px;
 
   img {
-    width: 200px;
-    height: 50px;
+    width: 210px;
+    height: 40px;
   }
 }
 
@@ -1179,8 +1179,16 @@ button {
       }
     }
   }
-}
+  .toast-container-res{
+    width: 290px;
+  }
 
+}
+@media (max-width: 320px) {
+  .toast-container-res{
+    width: 260px;
+  }
+}
 @media (max-width: 300px) {
   #container-showlink {
     .link {

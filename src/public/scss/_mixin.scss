@@ -191,7 +191,11 @@
     animation: messagesshow .7s;
     z-index: 2;
     .messages-show-header{
-        background: #a64bf4;
+        // background: #a64bf4;
+        background-image: url("../image/index/bg-01.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 40px;
         display: flex;
         justify-content: space-between;
