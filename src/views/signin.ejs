@@ -20,6 +20,33 @@
 </head>
 
 <body>
+	<!-- toast -->
+	<% if (messages!="") { %>
+		<div class="messages-show">
+			<div class="messages-show-header">
+				<div>
+					<img src="/image/favicon.ico" class="rounded mr-2" alt="..."
+						style="width:20px;height: 20px;margin-right: 5px;">
+					<strong class="mr-auto" style="color: black;font-weight: 500;">SMARTCARD</strong>
+				</div>
+				<button type="button" class="btn-close ml-2 mb-1" data-bs-dismiss="toast" onclick="closepopup()"></button>
+			</div>
+			<div class="messages-show-body">
+				<p lang="en"><%= messages[0] %></p>
+				<p lang="vi"><%= messages[1] %></p>
+			</div>
+		</div>
+	
+		<% } else{ %> 	
+		<div class="messages-hide"></div>
+	<% } %>
+	<script>
+		function closepopup(){
+			document.getElementsByClassName("messages-show")[0].classList.add('messages-hide');
+		}
+	</script>
+
+	<!-- content -->
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('/image/index/bg-01.jpg');">
 			<div class="logo">

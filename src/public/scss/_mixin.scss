@@ -173,4 +173,45 @@
     // border-right: 2px solid;
     width: 0;
 }
+@keyframes messagesshow {
+    0%{
+        opacity: 0;
+        right: -100px;
+    }
+    100%{
+        opacity: 1;
+        right: 50px;
+    }
+}
+@mixin messages-show{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 350px;
+    animation: messagesshow .7s;
+    z-index: 2;
+    .messages-show-header{
+        background: #a64bf4;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+    }
+    .messages-show-body{
+        height: 50px;
+        background-color: white;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        font-family: $fontSegoeUI;
+        p{
+            font-size: 15px;
+            color: black;
+        }
+    }
+}
+@mixin messages-hide{
+    display: none;
+}
 

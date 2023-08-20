@@ -5,6 +5,7 @@ import initWebroute from "./route/web";
 import initAPIRoute from "./route/api"
 // import connection from "./configs/connectDB";
 var session = require('express-session')
+const flash = require('connect-flash')
 require("dotenv").config();
 
 const app = express();
@@ -18,7 +19,9 @@ app.use(session({
     resave: false,
     saveUninitialized: true
   }))
-  
+app.use(flash());
+
+
 // setup view engine
 configViewEngine(app);
 

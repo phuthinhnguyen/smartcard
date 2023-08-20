@@ -1,111 +1,166 @@
-
 @import "_font";
 @import "_variable";
 @import "_mixin";
 
-  
+
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 * {
-	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-body, html {
-	height: 100%;
-	@include font($fontSegoeUI);
+body,
+html {
+  height: 100%;
+  @include font($fontSegoeUI);
 }
 
 
 /*---------------------------------------------*/
 a {
-	@include font($fontSegoeUI);
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    &:focus{
-        outline: none !important;
-    }
-    &:hover{
-        text-decoration: none;
-        color: #a64bf4;
-    }
+  @include font($fontSegoeUI);
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+
+  &:focus {
+    outline: none !important;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: #a64bf4;
+  }
 }
 
 
 /*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
 }
 
 p {
-	@include font($fontSegoeUI);
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
+  @include font($fontSegoeUI);
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
 }
 
-ul, li {
-	margin: 0px;
-	list-style-type: none;
+ul,
+li {
+  margin: 0px;
+  list-style-type: none;
 }
 
 /*---------------------------------------------*/
 input {
-	outline: none;
-	border: none;
-    &:focus{
-        border-color: transparent !important;
-    }
+  outline: none;
+  border: none;
+
+  &:focus {
+    border-color: transparent !important;
+  }
 }
 
 textarea {
   outline: none;
   border: none;
-  &:focus{
+
+  &:focus {
     border-color: transparent !important;
+  }
 }
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
 }
 
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; }
-input:focus::-moz-placeholder { color:transparent; }
-input:focus:-ms-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder {
+  color: transparent;
+}
 
-textarea:focus::-webkit-input-placeholder { color:transparent; }
-textarea:focus:-moz-placeholder { color:transparent; }
-textarea:focus::-moz-placeholder { color:transparent; }
-textarea:focus:-ms-input-placeholder { color:transparent; }
+input:focus::-moz-placeholder {
+  color: transparent;
+}
 
-input::-webkit-input-placeholder { color: #adadad;}
-input:-moz-placeholder { color: #adadad;}
-input::-moz-placeholder { color: #adadad;}
-input:-ms-input-placeholder { color: #adadad;}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
 
-textarea::-webkit-input-placeholder { color: #adadad;}
-textarea:-moz-placeholder { color: #adadad;}
-textarea::-moz-placeholder { color: #adadad;}
-textarea:-ms-input-placeholder { color: #adadad;}
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+textarea:focus:-moz-placeholder {
+  color: transparent;
+}
+
+textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+
+textarea:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+input::-webkit-input-placeholder {
+  color: #adadad;
+}
+
+input:-moz-placeholder {
+  color: #adadad;
+}
+
+input::-moz-placeholder {
+  color: #adadad;
+}
+
+input:-ms-input-placeholder {
+  color: #adadad;
+}
+
+textarea::-webkit-input-placeholder {
+  color: #adadad;
+}
+
+textarea:-moz-placeholder {
+  color: #adadad;
+}
+
+textarea::-moz-placeholder {
+  color: #adadad;
+}
+
+textarea:-ms-input-placeholder {
+  color: #adadad;
+}
 
 /*---------------------------------------------*/
 button {
-	outline: none !important;
-	border: none;
-	background: transparent;
-    &:hover{
-        cursor: pointer;
-    }
+  outline: none !important;
+  border: none;
+  background: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 iframe {
-	border: none !important;
+  border: none !important;
 }
 
 
@@ -117,7 +172,7 @@ iframe {
   line-height: 1.5;
   color: #666666;
 }
-  
+
 .txt2 {
   @include font($fontSegoeUI);
   font-size: 14px;
@@ -126,25 +181,43 @@ iframe {
   text-transform: uppercase;
 }
 
-.bg1 {background-color: #3b5998}
-.bg2 {background-color: #1da1f2}
-.bg3 {background-color: #ea4335}
+.bg1 {
+  background-color: #3b5998
+}
+
+.bg2 {
+  background-color: #1da1f2
+}
+
+.bg3 {
+  background-color: #ea4335
+}
 
 
 // CSS language
-.language{
-  height: 100px;
-  .btn-language{
-    width: 100px;
-    height: 50px;
-    padding: 10px;
-    border: 1px solid black;
-    margin-right: 30px;
-    &:hover{
-      background-color: black;
-      color: white;
-    }
-  }
+// .language{
+//   height: 100px;
+//   .btn-language{
+//     width: 100px;
+//     height: 50px;
+//     padding: 10px;
+//     border: 1px solid black;
+//     margin-right: 30px;
+//     &:hover{
+//       background-color: black;
+//       color: white;
+//     }
+//   }
+// }
+
+
+// CSS messages
+.messages-show {
+  @include messages-show;
+}
+
+.messages-hide {
+  @include messages-hide;
 }
 
 
@@ -153,138 +226,150 @@ iframe {
 .limiter {
   width: 100%;
   margin: 0 auto;
-    .container-login100 {
-      width: 100%;
-      min-height: 100vh;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-      padding: 15px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      .wrap-login100 {
-        width: 500px;
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        /*------------------------------------------------------------------
+
+  .container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .wrap-login100 {
+      width: 500px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+
+      /*------------------------------------------------------------------
         [ Form ]*/
-        .login100-form {
+      .login100-form {
+        width: 100%;
+
+        .login100-form-title {
+          display: block;
+          @include title;
+          @include font($fontSegoeUI);
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 25px;
+          color: #333333;
+          line-height: 1.2;
+          text-align: center;
+        }
+
+        /*------------------------------------------------------------------
+          [ Input ]*/
+        .wrap-input100 {
           width: 100%;
-          .login100-form-title {
-            display: block;
-            @include title;
+          position: relative;
+          border-bottom: 2px solid #d9d9d9;
+
+          .label-input100 {
             @include font($fontSegoeUI);
-            text-transform: uppercase;
-            font-weight: 400;
-            font-size: 25px;
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.5;
+            padding-left: 7px;
+          }
+
+          .input100 {
+            @include font($fontSegoeUI);
+            font-size: 16px;
             color: #333333;
             line-height: 1.2;
-            text-align: center;
-          }
-          /*------------------------------------------------------------------
-          [ Input ]*/
-          .wrap-input100 {
-            width: 100%;
-            position: relative;
-            border-bottom: 2px solid #d9d9d9;
-            .label-input100 {
-              @include font($fontSegoeUI);
-              font-size: 16px;
-              color: #333333;
-              line-height: 1.5;
-              padding-left: 7px;
-            }
-            .input100 {
-              @include font($fontSegoeUI);
-              font-size: 16px;
-              color: #333333;
-              line-height: 1.2;
-            
-              display: block;
-              width: 100%;
-              height: 55px;
-              background: transparent;
-              padding: 0 7px 0 43px;
-            }
-            .focus-input100 {
-              position: absolute;
-              display: block;
-              width: 100%;
-              height: 100%;
-              top: 0;
-              left: 0;
-              pointer-events: none;
-              &::after{
-                content: attr(data-symbol);
-                font-family: Material-Design-Iconic-Font;
-                color: #adadad;
-                font-size: 22px;
-                display: -webkit-box;
-                display: -webkit-flex;
-                display: -moz-box;
-                display: -ms-flexbox;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                height: calc(100% - 20px);
-                bottom: 0;
-                left: 0;
-                padding-left: 13px;
-                padding-top: 3px;
-              }
-              ::before{
-                content: "";
-                display: block;
-                position: absolute;
-                bottom: -2px;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background: #7f7f7f;
-                -webkit-transition: all 0.4s;
-                -o-transition: all 0.4s;
-                -moz-transition: all 0.4s;
-                transition: all 0.4s;
-              }
-            }
-            
-          }
-        }
-        
 
-      }
-      .logo{
-        img{
-          width: 500px;
-          height: 100px;
+            display: block;
+            width: 100%;
+            height: 55px;
+            background: transparent;
+            padding: 0 7px 0 43px;
+          }
+
+          .focus-input100 {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+
+            &::after {
+              content: attr(data-symbol);
+              font-family: Material-Design-Iconic-Font;
+              color: #adadad;
+              font-size: 22px;
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -moz-box;
+              display: -ms-flexbox;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: absolute;
+              height: calc(100% - 20px);
+              bottom: 0;
+              left: 0;
+              padding-left: 13px;
+              padding-top: 3px;
+            }
+
+            ::before {
+              content: "";
+              display: block;
+              position: absolute;
+              bottom: -2px;
+              left: 0;
+              width: 0;
+              height: 2px;
+              background: #7f7f7f;
+              -webkit-transition: all 0.4s;
+              -o-transition: all 0.4s;
+              -moz-transition: all 0.4s;
+              transition: all 0.4s;
+            }
+          }
+
         }
+      }
+
+
+    }
+
+    .logo {
+      img {
+        width: 500px;
+        height: 100px;
       }
     }
+  }
 }
-.input100:focus + .focus-input100::before {
+
+.input100:focus+.focus-input100::before {
   width: 100%;
 }
 
-.has-val.input100 + .focus-input100::before {
+.has-val.input100+.focus-input100::before {
   width: 100%;
 }
 
-.input100:focus + .focus-input100::after {
+.input100:focus+.focus-input100::after {
   color: #a64bf4;
 }
 
-.has-val.input100 + .focus-input100::after {
+.has-val.input100+.focus-input100::after {
   color: #a64bf4;
 }
 
@@ -299,6 +384,7 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   .wrap-login100-form-btn {
     width: 100%;
     display: block;
@@ -312,9 +398,11 @@ iframe {
     -webkit-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
     -o-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
     -ms-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+
     &:hover .login100-form-bgbtn {
       left: 0;
     }
+
     .login100-form-bgbtn {
       position: absolute;
       z-index: -1;
@@ -328,6 +416,7 @@ iframe {
       -moz-transition: all 0.4s;
       transition: all 0.4s;
     }
+
     .login100-form-btn {
       @include font($fontSegoeUI);
       font-size: 16px;
@@ -353,6 +442,7 @@ iframe {
 .validate-input {
   position: relative;
 }
+
 .alert-validate::before {
   content: attr(data-validate);
   position: absolute;
@@ -429,7 +519,8 @@ iframe {
   height: 50px;
   border-radius: 50%;
   margin: 5px;
-  &:hover{
+
+  &:hover {
     color: #fff;
     background-color: #333333;
   }
@@ -437,10 +528,51 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ Responsive ]*/
+@media (max-width: 1300px) {
+  @keyframes messagesshow1200 {
+    0% {
+      opacity: 0;
+      left: -100px;
+    }
 
+    100% {
+      opacity: 1;
+      left: 50px;
+    }
+  }
+
+  .messages-show {
+    left: 50px;
+    bottom: 50px;
+    animation: messagesshow1200 .7s;
+  }
+}
+@media (max-width: 1050px) {
+  @keyframes messagesshow1050 {
+    0% {
+      opacity: 0;
+      left: 0;
+    }
+
+    100% {
+      opacity: 1;
+      left: 50%;
+    }
+  }
+
+  .messages-show {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,0);
+    animation: messagesshow1050 .7s;
+    .messages-show-body{
+      background-color: lightgray;
+    }
+  }
+}
 @media (max-width: 991px) {
-  .limiter{
-    .container-login100{
+  .limiter {
+    .container-login100 {
       padding-top: 50px;
       flex-wrap: wrap;
       flex-direction: row;
@@ -448,13 +580,14 @@ iframe {
       column-gap: 500px;
     }
   }
+
 }
 
 @media (max-width: 700px) {
-  .limiter{
-    .container-login100{
-      .logo{
-        img{
+  .limiter {
+    .container-login100 {
+      .logo {
+        img {
           width: 400px;
           height: 80px;
         }
@@ -468,30 +601,56 @@ iframe {
     padding-left: 15px;
     padding-right: 15px;
   }
-} 
+}
 
 
 @media (max-width: 450px) {
-  .limiter{
-    .container-login100{
-      .logo{
-        img{
+  .limiter {
+    .container-login100 {
+      .logo {
+        img {
           width: 300px;
           height: 60px;
         }
       }
     }
   }
+  .messages-show{
+    width: 300px;
+    .messages-show-body{
+      p{
+        font-size: 13px;
+      }
+    }
+  }
 }
 
 @media (max-width: 350px) {
-  .limiter{
-    .container-login100{
-      .logo{
-        img{
+  .limiter {
+    .container-login100 {
+      .logo {
+        img {
           width: 270px;
           height: 50px;
         }
+      }
+    }
+  }
+  .messages-show{
+    width: 280px;
+    .messages-show-body{
+      p{
+        font-size: 13px;
+      }
+    }
+  }
+}
+@media (max-width: 310px) {
+  .messages-show{
+    width: 250px;
+    .messages-show-body{
+      p{
+        font-size: 12px;
       }
     }
   }
