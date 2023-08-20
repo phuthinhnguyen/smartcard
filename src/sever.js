@@ -1,9 +1,7 @@
-// const express =require("express")
 import express from "express";
 import configViewEngine from "./configs/viewEngine";
 import initWebroute from "./route/web";
 import initAPIRoute from "./route/api"
-// import connection from "./configs/connectDB";
 var session = require('express-session')
 const flash = require('connect-flash')
 require("dotenv").config();

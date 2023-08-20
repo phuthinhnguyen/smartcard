@@ -113,19 +113,7 @@
 
 	AvatarUpload.prototype.displayUpload = function(event) {
 		var img = event.target.result;
-		this.uiUploadStart(img);
-
-	
-		// const fileInput = document.getElementById("profile_pic");
-		// fileInput.value=img;
-		// let file = new File([img], "img.png",{type:"image/png", lastModified:new Date().getTime()});
-		// let dataTransfer  = new DataTransfer();
-		// dataTransfer.items.add(file);
-		// fileInput.files = dataTransfer.files;
-
-	
-	
-		
+		this.uiUploadStart(img);	
 	};
 
 	AvatarUpload.prototype.upload = function(file) {

@@ -6,11 +6,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon" />
-	<title>Document</title>
+	<title>SMARTCARD</title>
 	<link rel="stylesheet" type="text/css" href="css/util.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/usershow.css" />
-	<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="/font/font-awesome-4.7.0/css/font-awesome.min.css" />
 	<script src="/js/jquery-3.6.4.js"></script>
 </head>
@@ -40,18 +39,7 @@
 				const phoneNumber = "<%= datauser.phone %>";
 				window.location.href = `tel:${phoneNumber}`;
 			}
-			// function redirectToNewContact() {
-			//     const newContact = {
-			//         name: "Thinh",
-			//         phone: "0937439340",
-			//         email: "phuthinhnguyen1101@gmail.com",
-			//     };
-
-			//     const queryString = Object.keys(newContact).map(key => `${key}=${encodeURIComponent(newContact[key])}`).join('&');
-			//     const uri = `contacts:new?${queryString}`;
-
-			// 	window.location.href="tel:new";
-			// }
+			
 			function email() {
 				const email = "<%= datauser.email %>";
 				window.location.href = `mailto:${email}`;

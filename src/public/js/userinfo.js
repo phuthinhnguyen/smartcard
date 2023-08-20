@@ -131,7 +131,6 @@ window.addEventListener('load', function () {
         else showlinkname.style.marginLeft = "45px";
     }
 
-    // showanimation()
 })
 
 let flagshowanimation = true;
@@ -237,18 +236,15 @@ function addlinkfunction(a) {
             return frag;
         }
         var fragment = create(`<div id="container-showlink"><input name="linktype" type="hidden" value="${a.innerText}"></input><div class="link"><div class="linklogo"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" name="inputtitle" class="inputtitle" readonly="true" value="${(name.value == yournametext) ? yourtitletext : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" name="inputlink" readonly="true" value="http://${a.innerText.toLowerCase()}.com/${yourlinktext}" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
-        // linkarea.insertBefore(fragment, linkarea.childNodes[linkarea.childElementCount]);
         linkarea.appendChild(fragment)
         $(".yesno").hide();
 
         // for showarea
         let showLinkcontainer = document.getElementById("link-container");
         var showFragment = create(`<a class="link" href='#' target="_blank"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png" alt=""><p>${name.value != yournametext ? name.value : yourtitletext}</p></a>`);
-        // showLinkcontainer.insertBefore(showFragment, showLinkcontainer.childNodes[showLinkcontainer.childElementCount]);
         showLinkcontainer.appendChild(showFragment)
 
         // align tag p center depend on length of @yourtitle
-        // let showlinkname = showLinkcontainer.childNodes[showLinkcontainer.childElementCount - 1].childNodes[1];
         let showlinkname = showLinkcontainer.children[showLinkcontainer.childElementCount - 1].children[1];
         if (name.value.length < 10) {
             showlinkname.style.marginLeft = "15px";
@@ -279,9 +275,6 @@ function addlinkfunction(a) {
     }
 }
 
-// function linkoptionfocusout() {
-//     console.log("sdf")
-// }
 
 // click on trash icon
 function clicktrash(a) {
@@ -298,7 +291,6 @@ function removelink(a) {
     // for linkarea
     let linkarea = document.getElementById("link-area");
     const index = Array.from(linkarea.children).indexOf(a.parentElement.parentElement.parentElement);
-    // linkarea.removeChild(linkarea.childNodes[index]);
     linkarea.removeChild(linkarea.children[index]);
 
     // for showarea
@@ -316,7 +308,6 @@ function clickno(a) {
 
 // click on edit icon for title
 function editinputtitle(a) {
-    // let z =a.previousElementSibling.childNodes[1];
     let z = a.previousElementSibling.children[1];
     z.readOnly = "";
     if (z.value == yourtitletext) {
@@ -403,7 +394,6 @@ function inputtitlefocusout(a) {
     let linkarea = document.getElementById("link-area");
     let showLinkcontainer = document.getElementById("link-container");
     const index = Array.from(linkarea.children).indexOf(a.parentElement.parentElement.parentElement.parentElement);
-    // let showlinkname = showLinkcontainer.childNodes[index].childNodes[1];
     let showlinkname = showLinkcontainer.children[index].children[1];
     showlinkname.innerText = a.value;
 
@@ -420,7 +410,6 @@ function inputtitlefocusout(a) {
 // when user focus out input for link
 function inputlinkfocusout(a) {
     let z = a.nextElementSibling;
-    // let linknametitle = a.previousElementSibling.previousElementSibling.childNodes[0];
     let linknametitle = a.previousElementSibling.previousElementSibling.children[0];
 
     a.readOnly = "true";
@@ -441,7 +430,6 @@ function inputlinkfocusout(a) {
     let linkarea = document.getElementById("link-area");
     let showLinkcontainer = document.getElementById("link-container");
     const index = Array.from(linkarea.children).indexOf(a.parentElement.parentElement.parentElement);
-    // let showlinkname = showLinkcontainer.childNodes[index];
     let showlinkname = showLinkcontainer.children[index];
     showlinkname.setAttribute("href", `${a.value}`);
 
@@ -520,8 +508,6 @@ function changepassword(){
 }
 
 function animatein(a, b, marginleft) {
-    // let logo = document.getElementById("logo");
-    // logo.style.marginLeft="250px";
     a.animate([
         { marginLeft: `${marginleft / 10}px` },
         { marginLeft: `${marginleft / 1}px` },
@@ -647,8 +633,6 @@ function skip() {
     }
     else if (window.innerWidth <= 991 && window.innerWidth > 700) {
         limiter.animate([
-            // { marginLeft: "30%"},
-            // { marginLeft: "70%"},
             { marginLeft: "25%" },
             { marginLeft: "20%" },
             { marginLeft: "15%" },
@@ -659,10 +643,6 @@ function skip() {
     }
     else {
         limiter.animate([
-            // { marginLeft: "30%"},
-            // { marginLeft: "70%"},
-            // { marginLeft: "25%"},
-            // { marginLeft: "20%"},
             { marginLeft: "5%" },
             { marginLeft: "3%" },
             { marginLeft: "1%" },
@@ -874,13 +854,5 @@ function done() {
 
 function submit_form(event, form) {
     event.preventDefault();
-   
-    // window.location.href="/upload-profile-pic";
-    // const data = document.getElementById("profile_pic").value
-    // let file = new File([data], "img.jpg", { type: "image/jpeg", lastModified: new Date().getTime() });
-    // let dataTransfer = new DataTransfer();
-    // dataTransfer.items.add(file);
-    // fileInput.files = dataTransfer.files;
-    // document.getElementById("profile_pic").files = dataTransfer.files;
 }
 

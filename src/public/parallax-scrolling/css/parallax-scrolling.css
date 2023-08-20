@@ -8,19 +8,9 @@
 	--text: #e7e7e0;
 	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
 }
-/* @font-face {
-	font-family: raleway_f;
-	src: url(../fonts/raleway-regular.woff2);
-}
-@font-face {
-	font-family: raleway_f;
-	src: url(../fonts/raleway-black.woff2);
-	font-weight: 900;
-} */
+
 body {
 	background-color: #010101;
-	/* font-family: raleway_f, sans-serif; */
-	/* background: url(/parallax-scrolling/img/dungeon2.jpg); */
 	line-height: 1.55;
 }
 .main-header-responsive {
@@ -31,13 +21,10 @@ body {
 	position: absolute;
 	z-index: 100;
 	width: 100%;
-	/* height: calc(var(--index) * 10); */
 	height: calc(var(--index) * 4);
-	/* background-image: url(/parallax-scrolling/img/ground2.png); */
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	/* bottom: calc(var(--index) * -4.5); */
 	bottom: calc(var(--index) * -1.5);
 }
 .layers {

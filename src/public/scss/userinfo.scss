@@ -18,7 +18,7 @@
 
 body,
 html {
- @include font($fontSegoeUI);
+  @include font($fontSegoeUI);
   @include scrollbar(5px, transparent, black, black);
   background-position: center;
   background-repeat: no-repeat;
@@ -75,14 +75,7 @@ button {
   }
 
   .center {
-    // position: relative;
-    // text-align: center;
     width: 33%;
-    // z-index: -1;
-    // img{
-    //   width:200px;
-    //   height: 70px;
-    // }
   }
 
   .right {
@@ -115,7 +108,7 @@ button {
 
       .tooltiptext {
         visibility: hidden;
-       @include font($fontSegoeUI);
+        @include font($fontSegoeUI);
         font-size: 13px;
         width: 60px;
         background-color: black;
@@ -142,7 +135,6 @@ button {
 
       i {
         margin: auto;
-        // margin-right: 50px;
         margin-top: 30px;
         display: inline-block;
         font-size: 30px;
@@ -171,30 +163,28 @@ button {
   display: none;
   margin-top: 30px;
   width: 100%;
-  // animation: shownavicon 1s;
-  // min-height: 100px;
   text-align: center;
   padding: 0 30px;
 
 }
-.showcardid-wrap{
+
+.showcardid-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  // column-gap: 20px;
-  .showcardid-item{
+
+  .showcardid-item {
     height: 90px;
-    // display: flex;
-    // justify-content: center;
-    // flex-direction: column;
-    input{
+
+    input {
       background-color: transparent;
       text-align: center;
     }
   }
- 
+
 }
+
 #show-change-theme {
   .item-bottom {
     @include item-bottom;
@@ -209,6 +199,7 @@ button {
   text-align: center;
   margin-top: 100px;
   margin-bottom: 50px;
+
   img {
     width: 200px;
     height: 50px;
@@ -223,9 +214,6 @@ button {
   .limiter {
     margin: auto;
 
-    // margin-left: 250px;
-    // margin-top: 150px;
-    // margin-bottom: 200px;
     .container-login100 {
       width: 100%;
       min-height: 75vh;
@@ -259,12 +247,11 @@ button {
             img {
               width: 150px;
               height: 150px;
-              // max-width: 150px;
-              // max-height: 150px;
             }
           }
 
-          .name,.bio {
+          .name,
+          .bio {
             margin-top: 30px;
             width: 100%;
             display: flex;
@@ -272,8 +259,6 @@ button {
             align-items: center;
 
             input {
-              // font-size: 22px;
-              // font-weight: 500;
               text-align: center;
               margin-left: 20px;
               width: 100%;
@@ -332,7 +317,7 @@ button {
               }
 
               .login100-form-btn {
-               @include font($fontSegoeUI);
+                @include font($fontSegoeUI);
                 font-size: 16px;
                 color: #fff;
                 line-height: 1.2;
@@ -350,7 +335,7 @@ button {
                 cursor: pointer;
 
                 i {
-                 @include font($fontSegoeUI);
+                  @include font($fontSegoeUI);
                   font-size: 25px;
                   margin-right: 15px;
                   margin-top: -5px;
@@ -372,14 +357,13 @@ button {
               display: block;
               padding: 10px;
               text-align: center;
-             @include font($fontSegoeUI);
+              @include font($fontSegoeUI);
               font-size: 15px;
               user-select: none;
               cursor: pointer;
               transition: .5s;
 
               &:hover {
-                // color: #a64bf4;
                 font-size: xx-large;
                 font-weight: 500;
               }
@@ -402,10 +386,8 @@ button {
     left: 15%;
     border-radius: 50px;
     border: 10px solid black;
-    // transform: translate(0,-50%);
-   @include font($fontSegoeUI);
+    @include font($fontSegoeUI);
     overflow: hidden;
-    // animation: fadein 3s;
 
     .wrap {
       overflow-y: scroll;
@@ -441,7 +423,6 @@ button {
         margin-top: 5px;
 
         p {
-          // font-size: 20px;
           overflow-x: hidden;
           @include font($fontSegoeUI);
           color: black;
@@ -449,13 +430,15 @@ button {
           font-size: 20px;
         }
       }
-      .showbio{
+
+      .showbio {
         font-size: 14px;
         margin: auto;
         text-align: center;
         margin-top: -15px;
         font-style: italic;
       }
+
       .action {
         margin: auto;
         margin-top: 15px;
@@ -466,6 +449,7 @@ button {
         align-items: center;
         column-gap: 10px;
         color: inherit;
+
         button {
           width: 200px;
           max-width: 160px;
@@ -476,9 +460,11 @@ button {
           border: 1px solid white;
           font-size: 14px;
           transition: .5s;
+
           &:hover {
             background-color: white;
-            i{
+
+            i {
               color: black;
             }
           }
@@ -551,7 +537,7 @@ button {
 
 #container-showlink {
   width: 100%;
- @include font($fontSegoeUI);
+  @include font($fontSegoeUI);
   margin-top: 33px;
   border: 1px solid lightgray;
   padding: 20px;
@@ -946,21 +932,14 @@ button {
 
 
 // Responsive
-
-// @media (min-height: 650px) {
-//   .content {
-//     .show {
-//       top:20%;
-//     }
-//   }
-// }
 @media (min-height: 820px) {
   .content {
     .show {
-      top:290px;
+      top: 290px;
     }
   }
 }
+
 @media (max-height: 819px) {
   .content {
     .show {
@@ -968,13 +947,7 @@ button {
     }
   }
 }
-// @media (max-height: 649px) {
-//   .content {
-//     .show {
-//       top:70px;
-//     }
-//   }
-// }
+
 
 @media (max-width: 1500px) {
   .content {
@@ -1008,9 +981,6 @@ button {
       left: 5%;
     }
 
-    .limiter {
-      // margin-left: 320px;
-    }
   }
 }
 
@@ -1020,6 +990,7 @@ button {
     flex-direction: column;
     row-gap: 30px;
     margin-top: 50px;
+
     .show {
       position: relative;
       max-width: 300px;
@@ -1169,7 +1140,9 @@ button {
       .container-login100 {
         .wrap-login100 {
           .login100-form {
-            .name,.bio {
+
+            .name,
+            .bio {
               display: flex;
               column-gap: 10px;
             }

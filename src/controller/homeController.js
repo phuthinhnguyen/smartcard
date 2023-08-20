@@ -14,6 +14,28 @@ var transporter = nodemailer.createTransport({
   },
 });
 
+const generatePassword = (length, chars) => {
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return password;
+};
+const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const integers = "123456789";
+const exCharacters = "!@#$%&*";
+const createPassword = (length, hasNumbers, hasSymbols) => {
+  let chars = alpha;
+  if (hasNumbers) {
+    chars += integers;
+  }
+  if (hasSymbols) {
+    chars += exCharacters;
+  }
+  return generatePassword(length, chars);
+};
+
+
 let getHomepage = async (req, res) => {
   const [rows, fields] = await pool.execute("SELECT * FROM `smartcard`");
   return res.render("index.ejs", { datacardid: rows });
@@ -65,32 +87,6 @@ let cardId = async (req, res) => {
   }
 };
 
-// let createNewUser = async (req,res) => {
-//     let {username, password, name} = req.body;
-//     await pool.execute("insert into smartcard(username, password, name) values(?,?,?)",[username, password, name]);
-//     return res.redirect("/:cardid/userinfo");
-// }
-
-// let deleteUser = async (req,res) => {
-//     let userId = req.body.userId;
-//     await pool.execute("delete from users where id = ?",[userId]);
-//     return res.redirect("/");
-// }
-
-// let getEditPage = async (req,res) => {
-//     let id = req.params.id;
-//     let [user] = await pool.execute("select * from users where id = ?",[id]);
-//     return res.render("update.ejs", {dataUser : user[0]});
-// }
-
-// let signUp = async (req,res) => {
-//     let cardid =req.params.cardid;
-//     let {username, password, name} = req.body;
-//     const hash = bcrypt.hashSync(password, 10);
-//     await pool.execute("update smartcard set username = ?, password = ?, name = ? where cardid = ?",[username,hash,name,cardid]);
-//     return res.render("signin.ejs");
-// }
-
 let processSignUp = async (req, res) => {
   let cardid = req.params.cardid;
   let { username, password, name } = req.body;
@@ -128,13 +124,6 @@ let handleUploadFile = async (req, res) => {
     link = "";
   }
 
-  // if (req.fileValidationError) {
-  //   return res.send(req.fileValidationError);
-  // }
-  // else if (!req.file) {
-  //   // return res.send("Please select an image to upload");
-  //   pass
-  // }
   if (req.file) {
     const avatarsrc = `/image/${req.file.filename}`;
     await pool.execute("update smartcard set avatar = ? where cardid = ?", [
@@ -154,12 +143,12 @@ let handleUploadFile = async (req, res) => {
     [link, name2, colortheme, train, bio, phone, email, cardid]
   );
   res.redirect(`/${cardid}/userinfo`);
-  // res.send(`You have uploaded this image: <hr/><img src="/image/${req.file.filename}" width="500"><hr /><a href="/upload">Upload another image</a>`);
 };
 
 let signIn = async (req, res) => {
   return res.render("signin.ejs", { messages: req.flash("messages") });
 };
+
 let forgotPassword = async (req, res) => {
   return res.render("forgotpassword.ejs", { messages: req.flash("messages") });
 };
@@ -240,26 +229,7 @@ let processLogin = async (req, res) => {
     return res.redirect("/signin");
   }
 };
-const generatePassword = (length, chars) => {
-  let password = "";
-  for (let i = 0; i < length; i++) {
-    password += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return password;
-};
-const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const integers = "123456789";
-const exCharacters = "!@#$%&*";
-const createPassword = (length, hasNumbers, hasSymbols) => {
-  let chars = alpha;
-  if (hasNumbers) {
-    chars += integers;
-  }
-  if (hasSymbols) {
-    chars += exCharacters;
-  }
-  return generatePassword(length, chars);
-};
+
 let processForgotPassword = async (req, res) => {
   let cardidinput = req.body.cardid.filter((item) => item != "")[0];
   let emailinput = req.body.email.filter((item) => item != "")[0];
@@ -281,10 +251,7 @@ let processForgotPassword = async (req, res) => {
       };
       transporter.sendMail(mailOptions, async (error, info) => {
         if (error) {
-          req.flash("messages", [
-            `${error}`,
-            `${error}`,
-          ]);
+          req.flash("messages", [`${error}`, `${error}`]);
         } else {
           req.flash("messages", [
             `Reset password has been sent to email ${email}`,
@@ -312,14 +279,7 @@ let processForgotPassword = async (req, res) => {
     return res.redirect("/forgotPassword");
   }
 };
-// let userinfosave = async (req, res) => {
-//   let cardid = req.params.cardid;
-//   let profile_pic = req.body.profile_pic;
-//   await pool.execute("update smartcard set avatar = ? where cardid = ?", [
-//     profile_pic,
-//     cardid,
-//   ]);
-// };
+
 let logout = async (req, res) => {
   req.session.user = null;
   req.session.save(function (err) {

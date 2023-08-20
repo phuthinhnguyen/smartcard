@@ -194,23 +194,6 @@ iframe {
 }
 
 
-// CSS language
-// .language{
-//   height: 100px;
-//   .btn-language{
-//     width: 100px;
-//     height: 50px;
-//     padding: 10px;
-//     border: 1px solid black;
-//     margin-right: 30px;
-//     &:hover{
-//       background-color: black;
-//       color: white;
-//     }
-//   }
-// }
-
-
 // CSS messages
 .messages-show {
   @include messages-show;
