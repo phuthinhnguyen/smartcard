@@ -116,12 +116,14 @@ let handleUploadFile = async (req, res) => {
   let bio = req.body.bio;
   let phone = req.body.phone;
   let email = req.body.email;
+  let password = req.body.password;
   delete req.body.name2;
   delete req.body.colortheme;
   delete req.body.train;
   delete req.body.bio;
   delete req.body.phone;
   delete req.body.email;
+  delete req.body.password;
   let link = JSON.stringify(req.body);
   if (link == "{}") {
     link = "";
@@ -141,7 +143,13 @@ let handleUploadFile = async (req, res) => {
       cardid,
     ]);
   }
-
+  if (password!=""){
+    const hash = bcrypt.hashSync(password, 10);
+    await pool.execute(
+      "update smartcard set password = ? where cardid = ?",
+      [hash, cardid]
+    );
+  }
   await pool.execute(
     "update smartcard set link = ?, name2 = ?, theme = ?, train = ?, bio = ?, phone = ?, email = ? where cardid = ?",
     [link, name2, colortheme, train, bio, phone, email, cardid]
@@ -269,6 +277,7 @@ let processForgotPassword = async (req, res) => {
     let email = user[0]["email"];
     if (email==emailinput){
       const passwordresult= createPassword(8, 123456789, "!@#$%&*");
+      const hash = bcrypt.hashSync(passwordresult, 10);
       var mailOptions = {
         from: 'phuthinhnguyen1101@gmail.com',
         to: emailinput,
@@ -284,7 +293,7 @@ let processForgotPassword = async (req, res) => {
           console.log('Email sent: ' + info.response);
           await pool.execute(
             "update smartcard set password = ? where cardid = ?",
-            [passwordresult, cardidinput]
+            [hash, cardidinput]
           );
           res.redirect("/signin")
           

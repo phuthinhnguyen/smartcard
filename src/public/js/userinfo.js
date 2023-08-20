@@ -6,6 +6,7 @@ if (localStorage["language"] == "en") {
     yourbiotext = "@yourbio"
     yourphonetext = "@yourphone"
     youremailtext = "@youremail"
+    yourpasswordtext = "@yourpassword"
 }
 else if (localStorage["language"] == "vi") {
     yournametext = "@tencuaban"
@@ -14,6 +15,7 @@ else if (localStorage["language"] == "vi") {
     yourbiotext = "@mota"
     yourphonetext = "@sodienthoai"
     youremailtext = "@email"
+    yourpasswordtext = "@matkhau"
 }
 
 
@@ -23,6 +25,7 @@ window.addEventListener('load', function () {
     let bio = document.getElementById("bio");
     let phone = document.getElementById("showcardid-phone");
     let email = document.getElementById("showcardid-email");
+    let password = document.getElementById("showcardid-password");
     let inputtitle = this.document.getElementsByClassName("inputtitle");
     let inputlinkcontainer = this.document.getElementsByClassName("linkinput");
     let showLinkcontainer = document.getElementById("link-container");
@@ -35,6 +38,8 @@ window.addEventListener('load', function () {
     else if (train=="notyet"){
         guides();
     }
+
+    password.value = yourpasswordtext;
     if (localStorage["language"] == "en") {
         if (name.value == "@tencuaban") {
             name.value = "@yourname"
@@ -500,6 +505,18 @@ function changeemail(){
         showcardidemail.value = youremailtext;
     }
     email.value=showcardidemail.value;
+}
+
+function changepassword(){
+    let password = document.getElementById("password");
+    let showcardidpassword =document.getElementById("showcardid-password");
+    if (showcardidpassword.value == ""){
+        showcardidpassword.value = yourpasswordtext;
+    }
+    if (showcardidpassword.value == "@yourpassword" || showcardidpassword.value == "@matkhau"){
+        password.value="";
+    }
+    else  password.value=showcardidpassword.value;
 }
 
 function animatein(a, b, marginleft) {
