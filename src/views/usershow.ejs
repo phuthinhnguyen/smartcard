@@ -24,7 +24,9 @@
 				<%= datauser.name2 %>
 			</p>
 		</div>
-		<p class="bio"><%= datauser.bio %></p>
+		<p class="bio">
+			<%= datauser.bio %>
+		</p>
 		<div class="action">
 			<button onclick="call()">
 				<i class="fa fa-phone fa-2x"></i>
@@ -39,7 +41,7 @@
 				const phoneNumber = "<%= datauser.phone %>";
 				window.location.href = `tel:${phoneNumber}`;
 			}
-			
+
 			function email() {
 				const email = "<%= datauser.email %>";
 				window.location.href = `mailto:${email}`;
@@ -59,16 +61,27 @@
 						<% } %>
 							<script>
 								function openlink(link) {
-									if (link.indexOf("gmail")>-1){
+									if (link.indexOf("gmail") > -1) {
 										// window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${link}`);
-										window.location.href=`mailto:${link}`
+										window.location.href = `mailto:${link}`
 									}
-									else if (link.indexOf("zalo")>-1){
-										window.location.href='zalo://chat'
+									else if (link.indexOf("zalo") > -1) {
+										// window.location.href='zalo://chat'
 										// window.location.href= "intent://instagram.com/#Intent;scheme=http;package=com.instagram.android;end"; 
+										// Check if the Zalo app is installed
+										if (window.navigator.userAgent.match(/Zalo/i)) {
+											// Create an intent URL to open Zalo
+											var intentUrl = "zalo://app";
+											var playStoreUrl = "market://details?id=" + "com.zing.zalo";
+											// Attempt to open the app
+											window.location.href = intentUrl;
+										} else {
+											// window.location.href = playStoreUrl;
+											console.log("sdf")
+										}
 									}
 									else window.open(link);
-								
+
 								}
 							</script>
 		</div>
