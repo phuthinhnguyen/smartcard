@@ -7,6 +7,9 @@ if (localStorage["language"] == "en") {
     yourphonetext = "@yourphone"
     youremailtext = "@youremail"
     yourpasswordtext = "@yourpassword"
+    yourgmailtext = "@yourgmail"
+    yourmomotext = "@yourmomophone"
+    yourzalotext = "@yourzalophone"
 }
 else if (localStorage["language"] == "vi") {
     yournametext = "@tencuaban"
@@ -16,6 +19,9 @@ else if (localStorage["language"] == "vi") {
     yourphonetext = "@sodienthoai"
     youremailtext = "@email"
     yourpasswordtext = "@matkhau"
+    yourgmailtext = "@diachigmail"
+    yourmomotext = "@sodienthoaimomo"
+    yourzalotext = "@sodienthoaizalo"
 }
 
 
@@ -60,7 +66,9 @@ window.addEventListener('load', function () {
         }
         for (let item of inputlinkcontainer) {
             item.children[2].value = item.children[2].value.replace("@link", "@yourlink")
-
+            item.children[2].value = item.children[2].value.replace("@diachigmail", "@yourgmail")
+            item.children[2].value = item.children[2].value.replace("@sodienthoaimomo", "@yourmomophone")
+            item.children[2].value = item.children[2].value.replace("@sodienthoaizalo", "@yourzalophone")
         }
         for (let item of showlink) {
             if (item.children[1].innerText == "@tieude") {
@@ -88,6 +96,9 @@ window.addEventListener('load', function () {
         }
         for (let item of inputlinkcontainer) {
             item.children[2].value = item.children[2].value.replace("@yourlink", "@link")
+            item.children[2].value = item.children[2].value.replace("@yourgmail", "@diachigmail")
+            item.children[2].value = item.children[2].value.replace("@yourmomophone", "@sodienthoaimomo")
+            item.children[2].value = item.children[2].value.replace("@yourzalophone", "@sodienthoaizalo")
 
         }
         for (let item of showlink) {
@@ -98,7 +109,7 @@ window.addEventListener('load', function () {
     }
    
     function focusoutfirstloading(input) {
-        if (input.value == yournametext || input.value == yourbiotext || input.value == yourtitletext || input.value.includes(yourlinktext)) {
+        if (input.value == yournametext || input.value == yourbiotext || input.value == yourtitletext || input.value.includes(yourlinktext) || input.value.includes(yourgmailtext) || input.value.includes(yourmomotext) || input.value.includes(yourzalotext)) {
             input.style.fontStyle = "italic";
             input.style.color = "lightgray";
         }
@@ -238,6 +249,16 @@ function addlinkfunction(a) {
         var fragment = create(`<div id="container-showlink"><input name="linktype" type="hidden" value="${a.innerText}"></input><div class="link"><div class="linklogo"><img src="/image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" name="inputtitle" class="inputtitle" readonly="true" value="${(name.value == yournametext) ? yourtitletext : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" name="inputlink" readonly="true" value="http://${a.innerText.toLowerCase()}.com/${yourlinktext}" maxlength="100" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)" onkeypress="return event.keyCode != 13;"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
         linkarea.appendChild(fragment)
         $(".yesno").hide();
+        let link = document.querySelectorAll("#link")[document.querySelectorAll("#link").length-1]
+        if (link.value.indexOf("gmail")>-1){
+            link.value = yourgmailtext
+        }
+        else if (link.value.indexOf("momo")>-1){
+            link.value = yourmomotext
+        }
+        else if (link.value.indexOf("zalo")>-1){
+            link.value = yourzalotext
+        }
 
         // for showarea
         let showLinkcontainer = document.getElementById("link-container");
@@ -322,7 +343,7 @@ function editinputtitle(a) {
 function editinputlink(a) {
     let z = a.previousElementSibling;
     z.readOnly = "";
-    if (z.value.indexOf(yourlinktext) > 0) {
+    if ((z.value.indexOf(yourlinktext) > 0) || (z.value.indexOf(yourgmailtext) > -1) || (z.value.indexOf(yourmomotext) > -1) || (z.value.indexOf(yourzalotext) > -1)) {
         z.value = "";
     }
     z.setSelectionRange(z.value.length, z.value.length);
@@ -416,10 +437,22 @@ function inputlinkfocusout(a) {
     z.style.display = "inline";
     // for link
     if (a.value == "") {
-        a.value = `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/${yourlinktext}`;
+        if (linknametitle.innerText.indexOf("Gmail")>-1){
+            a.value=yourgmailtext
+        }
+        else if (linknametitle.innerText.indexOf("Momo")>-1){
+            a.value=yourmomotext
+        }
+        else if (linknametitle.innerText.indexOf("Zalo")>-1){
+            a.value=yourzalotext
+        }
+        else
+        {
+            a.value = `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/${yourlinktext}`;
+        }
     }
 
-    if (a.value == `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/${yourlinktext}`) {
+    if (a.value == `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/${yourlinktext}` || (a.value==yourgmailtext) || (a.value==yourmomotext) || (a.value==yourzalotext)) {
         a.style.color = "rgb(185, 185, 185)";
         a.style.fontStyle = "italic";
     }

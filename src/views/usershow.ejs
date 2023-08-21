@@ -59,8 +59,16 @@
 						<% } %>
 							<script>
 								function openlink(link) {
-									console.log(link)
-									window.open(link);
+									if (link.indexOf("gmail")>-1){
+										// window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${link}`);
+										window.location.href=`mailto:${link}`
+									}
+									else if (link.indexOf("zalo")>-1){
+										window.location.href='zalo://chat/0937439340'
+										// window.location.href= "intent://instagram.com/#Intent;scheme=http;package=com.instagram.android;end"; 
+									}
+									else window.open(link);
+								
 								}
 							</script>
 		</div>
