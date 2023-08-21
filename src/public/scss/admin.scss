@@ -1,0 +1,43 @@
+@import "variable";
+@import "font";
+@import "mixin";
+
+body{
+    background-color: black;
+}
+.generate-cardid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    width: 100%;
+    padding-top: 50px;
+    flex-direction: column;
+    row-gap: 50px;
+    h2{
+        font-family: $fontAdamGorry;
+        font-weight: 900;
+        @include title;
+        font-size: 25px;
+    }
+    #cardid{
+        @include text;
+        font-size: 20px;
+    }
+    button{
+        @include button;
+        border: 1px solid white;
+        font-size: 15px;
+    }
+}
+
+
+// CSS messages
+.messages-show {
+    @include messages-show;
+  }
+  
+  .messages-hide {
+    @include messages-hide;
+  }
+  

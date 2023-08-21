@@ -192,6 +192,30 @@ function isAuthenticated(req, res, next) {
   else res.redirect("/signin");
 }
 
+let admin = async (req, res) => {
+  return res.render("admin.ejs",{ messages: req.flash("messages") });
+};
+
+let addcardidtodatabase = async (req, res) => {
+  let cardidgenerated = req.body.cardidgenerated
+  if (cardidgenerated!=""){
+    await pool.execute("insert into smartcard(cardid) values(?)",[cardidgenerated]);
+    req.flash("messages", [
+      "Add CardID to database successfully",
+      "Thêm CardID vào database thành công",
+    ]);
+    return res.redirect("/admin")
+  }
+  else {
+    req.flash("messages", [
+      "Error of empty CardID",
+      "Lỗi do CardID trống",
+    ]);
+    return res.redirect("/admin")
+  }
+};
+
+
 let processLogin = async (req, res) => {
   let username = req.body.username.filter((item) => item != "")[0];
   let password = req.body.pass.filter((item) => item != "")[0];
@@ -200,34 +224,50 @@ let processLogin = async (req, res) => {
     `select * from smartcard where username = ?`,
     [username]
   );
-  if (typeof user[0] != "undefined") {
-    let cardid = user[0]["cardid"];
-    if (bcrypt.compareSync(password, user[0]["password"])) {
-      req.session.regenerate(function (err) {
-        if (err) next(err);
-        // store user information in session, typically a user id
-        req.session.user = cardid;
-        // save the session before redirection to ensure page
-        // load does not happen before session is saved
-        req.session.save(function (err) {
-          if (err) return next(err);
-          res.redirect(`/${cardid}/userinfo`);
-        });
+  if (username=="phuthinhnguyen1101" && password=="Mainhi14071101"){
+    req.session.regenerate(function (err) {
+      if (err) next(err);
+      // store user information in session, typically a user id
+      req.session.user = "admin";
+      // save the session before redirection to ensure page
+      // load does not happen before session is saved
+      req.session.save(function (err) {
+        if (err) return next(err);
+        res.redirect(`/admin`);
       });
+    });
+  }
+  else{
+    if (typeof user[0] != "undefined") {
+      let cardid = user[0]["cardid"];
+      if (bcrypt.compareSync(password, user[0]["password"])) {
+        req.session.regenerate(function (err) {
+          if (err) next(err);
+          // store user information in session, typically a user id
+          req.session.user = cardid;
+          // save the session before redirection to ensure page
+          // load does not happen before session is saved
+          req.session.save(function (err) {
+            if (err) return next(err);
+            res.redirect(`/${cardid}/userinfo`);
+          });
+        });
+      } else {
+        req.flash("messages", [
+          "Username and password do not match",
+          "Tên đăng nhập hoặc mật khẩu không đúng",
+        ]);
+        return res.redirect("/signin");
+      }
     } else {
       req.flash("messages", [
-        "Username and password do not match",
-        "Tên đăng nhập hoặc mật khẩu không đúng",
+        "Username does not exist",
+        "Tên đăng nhập không tồn tại",
       ]);
       return res.redirect("/signin");
     }
-  } else {
-    req.flash("messages", [
-      "Username does not exist",
-      "Tên đăng nhập không tồn tại",
-    ]);
-    return res.redirect("/signin");
   }
+ 
 };
 
 let processForgotPassword = async (req, res) => {
@@ -292,6 +332,7 @@ let logout = async (req, res) => {
     });
   });
 };
+
 module.exports = {
   getHomepage,
   cardId,
@@ -304,4 +345,6 @@ module.exports = {
   logout,
   forgotPassword,
   processForgotPassword,
+  admin,
+  addcardidtodatabase,
 };

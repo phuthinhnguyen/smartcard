@@ -28,6 +28,7 @@ const imageFilter = function(req, file, cb) {
 let upload = multer({storage: storage, fileFilter:imageFilter});
 
 const initWebroute = (app) =>{
+    route.get("/admin",homeController.isAuthenticated,homeController.admin)
     route.get("/forgotpassword",homeController.forgotPassword);
     route.get("/logout",homeController.logout);
     route.get("/", homeController.getHomepage);
@@ -38,6 +39,8 @@ const initWebroute = (app) =>{
     route.post("/processLogin",homeController.processLogin);
     route.post("/:cardid/userinfo",upload.single("profile_pic"),homeController.handleUploadFile)
     route.post("/processForgotPassword",homeController.processForgotPassword)
+    route.post("/addcardidtodatabase",homeController.addcardidtodatabase)
+   
     return app.use("/",route)
 }
 export default initWebroute;

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Admin</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+	<script src="/css/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/font/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/font/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/css/admin.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+	<!-- toast -->
+	<% if (messages!="") { %>
+		<div class="messages-show">
+			<div class="messages-show-header">
+				<div>
+					<img src="/image/favicon.ico" class="rounded mr-2" alt="..."
+						style="width:20px;height: 20px;margin-right: 5px;">
+					<strong class="mr-auto" style="color: black;font-weight: 700;">SMARTCARD</strong>
+				</div>
+				<button type="button" class="btn-close ml-2 mb-1" data-bs-dismiss="toast" onclick="closepopup()"></button>
+			</div>
+			<div class="messages-show-body">
+				<p lang="en"><%= messages[0] %></p>
+				<p lang="vi"><%= messages[1] %></p>
+			</div>
+		</div>
+	
+		<% } else{ %> 	
+		<div class="messages-hide"></div>
+	<% } %>
+	<script>
+		function closepopup(){
+			document.getElementsByClassName("messages-show")[0].classList.add('messages-hide');
+		}
+	</script>
+
+	<!-- content -->
+	<div class="generate-cardid">
+		<h2>GENERATE-CARDID</h2>
+		<p id="cardid">Result</p>
+		<button onclick="generate()">Create</button>
+		
+		<button onclick="window.location.href='/logout'">Logout</button>
+		<form action="/addcardidtodatabase" method="post">
+			<input type="hidden" id="cardidinput" name="cardidgenerated" value="">
+			<button type="submit">Add to Database</button>
+		</form>
+	</div>
+	<script>
+		function generate() {
+			const generatecardid = (length, chars) => {
+				let cardid = "";
+				for (let i = 0; i < length; i++) {
+					cardid += chars.charAt(Math.floor(Math.random() * chars.length));
+				}
+				return cardid;
+			};
+			const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			const integers = "123456789";
+			const exCharacters = "!@#$%&*";
+			const createcardid = (length, hasNumbers, hasSymbols) => {
+				let chars = alpha;
+				if (hasNumbers) {
+					chars += integers;
+				}
+				if (hasSymbols) {
+					chars += exCharacters;
+				}
+				return generatecardid(length, chars);
+			};
+			const cardid = createcardid(10, 123456789);
+			let showcardid = document.getElementById("cardid");
+			showcardid.innerHTML = cardid;	
+			let cardidinput = document.getElementById("cardidinput");
+			cardidinput.value=cardid;
+			
+		}
+		
+	</script>
+	<script src="/js/jquery-3.6.4.js"></script>
+	<script src="/js/signin.js"></script>
+	<script src="/js/language.js"></script>
+	<script src="/js/index.js"></script>
+
+</body>
+
+</html>
