@@ -51,7 +51,7 @@
 		<div class="link">
 			<% if (datauser.link!="" ) { %>
 				<% for(let i=0; i < datauser.link.linktype.length; i++) { %>
-					<div class="wrap" onclick="openlink('<%= datauser.link.inputlink[i] %>')">
+					<div class="wrap" onclick="openlink('<%= datauser.link.linktype[i] %>','<%= datauser.link.inputlink[i] %>')">
 						<img src="image/userinfo/<%= datauser.link.linktype[i].toLowerCase() %>.png" alt="" />
 						<p id="link">
 							<%= datauser.link.inputtitle[i] %>
@@ -60,12 +60,12 @@
 					<% } %>
 						<% } %>
 							<script>
-								function openlink(link) {
-									if (link.indexOf("gmail") > -1) {
+								function openlink(linktype,link) {
+									if (linktype=="Gmail") {
 										// window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${link}`);
 										window.location.href = `mailto:${link}`
 									}
-									else if (link.indexOf("zalo") > -1) {
+									else if (linktype=="Zalo") {
 										window.location.href = `http://zalo.me/${link}`
 										// window.location.href='zalo://chat'
 										// window.location.href= "intent://instagram.com/#Intent;scheme=http;package=com.instagram.android;end"; 		
