@@ -10,6 +10,7 @@ if (localStorage["language"] == "en") {
     yourgmailtext = "@yourgmail"
     yourmomotext = "@yourmomophone"
     yourzalotext = "@yourzalophone"
+    yourwhatsapptext = "@yourwhatsappphone"
 }
 else if (localStorage["language"] == "vi") {
     yournametext = "@tencuaban"
@@ -22,6 +23,7 @@ else if (localStorage["language"] == "vi") {
     yourgmailtext = "@diachigmail"
     yourmomotext = "@sodienthoaimomo"
     yourzalotext = "@sodienthoaizalo"
+    yourwhatsapptext = "@sodienthoaiwhatsapp"
 }
 
 
@@ -69,6 +71,7 @@ window.addEventListener('load', function () {
             item.children[2].value = item.children[2].value.replace("@diachigmail", "@yourgmail")
             item.children[2].value = item.children[2].value.replace("@sodienthoaimomo", "@yourmomophone")
             item.children[2].value = item.children[2].value.replace("@sodienthoaizalo", "@yourzalophone")
+            item.children[2].value = item.children[2].value.replace("@sodienthoaiwhatsapp", "@yourwhatsappphone")
         }
         for (let item of showlink) {
             if (item.children[1].innerText == "@tieude") {
@@ -99,7 +102,7 @@ window.addEventListener('load', function () {
             item.children[2].value = item.children[2].value.replace("@yourgmail", "@diachigmail")
             item.children[2].value = item.children[2].value.replace("@yourmomophone", "@sodienthoaimomo")
             item.children[2].value = item.children[2].value.replace("@yourzalophone", "@sodienthoaizalo")
-
+            item.children[2].value = item.children[2].value.replace("@yourwhatsappphone", "@sodienthoaiwhatsapp")
         }
         for (let item of showlink) {
             if (item.children[1].innerText == "@yourtitle") {
@@ -109,7 +112,7 @@ window.addEventListener('load', function () {
     }
    
     function focusoutfirstloading(input) {
-        if (input.value == yournametext || input.value == yourbiotext || input.value == yourtitletext || input.value.includes(yourlinktext) || input.value.includes(yourgmailtext) || input.value.includes(yourmomotext) || input.value.includes(yourzalotext)) {
+        if (input.value == yournametext || input.value == yourbiotext || input.value == yourtitletext || input.value.includes(yourlinktext) || input.value.includes(yourgmailtext) || input.value.includes(yourmomotext) || input.value.includes(yourzalotext) || input.value.includes(yourwhatsapptext)) {
             input.style.fontStyle = "italic";
             input.style.color = "lightgray";
         }
@@ -259,6 +262,9 @@ function addlinkfunction(a) {
         else if (link.value.indexOf("zalo")>-1){
             link.value = yourzalotext
         }
+        else if (link.value.indexOf("whatsapp")>-1){
+            link.value = yourwhatsapptext
+        }
 
         // for showarea
         let showLinkcontainer = document.getElementById("link-container");
@@ -343,7 +349,7 @@ function editinputtitle(a) {
 function editinputlink(a) {
     let z = a.previousElementSibling;
     z.readOnly = "";
-    if ((z.value.indexOf(yourlinktext) > 0) || (z.value.indexOf(yourgmailtext) > -1) || (z.value.indexOf(yourmomotext) > -1) || (z.value.indexOf(yourzalotext) > -1)) {
+    if ((z.value.indexOf(yourlinktext) > 0) || (z.value.indexOf(yourgmailtext) > -1) || (z.value.indexOf(yourmomotext) > -1) || (z.value.indexOf(yourzalotext) > -1) || (z.value.indexOf(yourwhatsapptext) > -1)) {
         z.value = "";
     }
     z.setSelectionRange(z.value.length, z.value.length);
@@ -446,13 +452,16 @@ function inputlinkfocusout(a) {
         else if (linknametitle.innerText.indexOf("Zalo")>-1){
             a.value=yourzalotext
         }
+        else if (linknametitle.innerText.indexOf("WhatsApp")>-1){
+            a.value=yourwhatsapptext
+        }
         else
         {
             a.value = `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/${yourlinktext}`;
         }
     }
 
-    if (a.value == `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/${yourlinktext}` || (a.value==yourgmailtext) || (a.value==yourmomotext) || (a.value==yourzalotext)) {
+    if (a.value == `http://${linknametitle.innerText.replace(/\s/g, "").replace("-", "").toLowerCase()}.com/${yourlinktext}` || (a.value==yourgmailtext) || (a.value==yourmomotext) || (a.value==yourzalotext) || (a.value==yourwhatsapptext)) {
         a.style.color = "rgb(185, 185, 185)";
         a.style.fontStyle = "italic";
     }

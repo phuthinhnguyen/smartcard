@@ -66,9 +66,12 @@
 										window.location.href = `mailto:${link}`
 									}
 									else if (linktype=="Zalo") {
-										window.location.href = `http://zalo.me/${link}`
+										window.open(`http://zalo.me/${link}`)
 										// window.location.href='zalo://chat'
 										// window.location.href= "intent://instagram.com/#Intent;scheme=http;package=com.instagram.android;end"; 		
+									}
+									else if (linktype=="WhatsApp") {
+										window.open(`https://wa.me/${link}`)
 									}
 									else window.open(link);
 
