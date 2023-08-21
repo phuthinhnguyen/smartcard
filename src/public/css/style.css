@@ -615,7 +615,7 @@ nav .nav-wrap .right img {
   pointer-events: none;
 }
 .product .filters-container .filters-content .row .all .single-menu .project-date {
-  font-size: 17px;
+  font-size: 16px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
   z-index: -500;
@@ -1041,7 +1041,7 @@ nav .nav-wrap .right img {
 .nav-responsive .left .offcanvas .offcanvas-body .menu-responsive-wrap li {
   display: block;
   color: rgb(228, 227, 227);
-  font-size: calc(var(--index) * 1.2);
+  font-size: calc(var(--index) * 0.9);
   font-weight: 900;
   color: rgb(231, 229, 229);
   font-family: "AdamGorry";
@@ -1068,7 +1068,7 @@ nav .nav-wrap .right img {
   height: 40px;
 }
 .nav-responsive .right a {
-  font-size: calc(var(--index) * 1.2);
+  font-size: calc(var(--index) * 0.9);
   font-weight: 900;
   color: rgb(231, 229, 229);
   font-family: "AdamGorry";
@@ -1098,12 +1098,11 @@ nav .nav-wrap .right img {
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
+.main-article__content .home-item h2 {
+  font-size: 22px;
+}
 .main-article__content .home-item p {
-  line-height: 1.75;
-  font-size: calc(var(--index) * 0.72);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  color: rgb(228, 227, 227);
+  font-size: 16px;
 }
 .main-article__content .about-item {
   width: 50%;
@@ -1117,11 +1116,7 @@ nav .nav-wrap .right img {
   height: auto;
 }
 .main-article__content .about-item p {
-  line-height: 1.75;
-  font-size: calc(var(--index) * 0.72);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  color: rgb(228, 227, 227);
+  font-size: 16px;
 }
 .main-article__content .userguides-item {
   width: 100%;
@@ -1135,12 +1130,8 @@ nav .nav-wrap .right img {
   margin-top: 10px;
 }
 .main-article__content .userguides-item p {
-  line-height: 1.75;
-  font-size: calc(var(--index) * 0.72);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  color: rgb(228, 227, 227);
   text-align: left;
+  font-size: 16px;
 }
 .main-article__content .products-item {
   width: 100%;
@@ -1182,14 +1173,10 @@ nav .nav-wrap .right img {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
 }
 .main-article__content .products-item .item .project-title-settings {
-  line-height: 1.75;
-  font-size: calc(var(--index) * 0.72);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  color: rgb(228, 227, 227);
+  font-size: 16px;
   margin-top: 5%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: white;
@@ -1197,14 +1184,13 @@ nav .nav-wrap .right img {
   pointer-events: none;
 }
 .main-article__content .products-item .item .project-date {
-  font-size: 17px;
+  font-size: 14px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
   z-index: -500;
   padding: 10px 30px 8px 30px;
   border-radius: 0 0 5px 5px;
   color: rgb(228, 227, 227);
-  font-size: calc(var(--index) * 0.8);
 }
 .main-article__content .product-item-show {
   display: none;
@@ -1303,6 +1289,7 @@ nav .nav-wrap .right img {
   font-weight: 600;
   letter-spacing: 2px;
   color: rgb(231, 229, 229);
+  font-size: 22px;
   text-align: left;
 }
 .main-article__content .product-item-show .product-item-show-wrap .product-item-show-right .product-detail {
@@ -1315,11 +1302,7 @@ nav .nav-wrap .right img {
 .main-article__content .product-item-show .product-item-show-wrap .product-item-show-right .product-detail p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: left;
-  line-height: 1.75;
-  font-size: calc(var(--index) * 0.72);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  color: rgb(228, 227, 227);
+  font-size: 16px;
 }
 .main-article__content .product-item-show .product-item-show-wrap .product-close-res {
   position: absolute;
@@ -1351,11 +1334,7 @@ nav .nav-wrap .right img {
   height: 100px;
 }
 .main-article__content .reviews-item .carousel-item-wrap .item p {
-  line-height: 1.75;
-  font-size: calc(var(--index) * 0.72);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  color: rgb(228, 227, 227);
+  font-size: 16px;
 }
 .main-article__content .contact-item {
   width: 50%;
@@ -1367,12 +1346,13 @@ nav .nav-wrap .right img {
   font-weight: 600;
   letter-spacing: 2px;
   color: rgb(231, 229, 229);
-  font-size: calc(var(--index) * 0.8);
+  font-size: 20px;
   margin-bottom: 20px;
 }
 .main-article__content .contact-item p {
   margin-bottom: 10px;
   text-align: left;
+  font-size: 16px;
 }
 .main-article__content .contact-item p a {
   color: white;
@@ -1426,6 +1406,7 @@ nav .nav-wrap .right img {
   padding-left: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   outline: none;
+  font-size: 12px;
 }
 .main-article__content .contact-item input:focus {
   border: 3px solid black;
@@ -1439,7 +1420,7 @@ nav .nav-wrap .right img {
   border: 1px solid lightgray;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   outline: none;
-  font-size: calc(var(--index) * 0.55);
+  font-size: 12px;
 }
 .main-article__content .contact-item textarea:focus {
   border: 3px solid black;
@@ -1450,11 +1431,11 @@ nav .nav-wrap .right img {
 }
 .main-article__content .contact-item .input-name-mail input {
   width: 48%;
-  font-size: calc(var(--index) * 0.55);
+  font-size: 12px;
 }
 .main-article__content .contact-item > input {
   margin-top: 20px;
-  font-size: calc(var(--index) * 0.55);
+  font-size: 12px;
 }
 
 .contact-res {
@@ -1496,77 +1477,7 @@ nav .nav-wrap .right img {
 }
 @media screen and (max-width: 1100px) {
   .title-header-responsive {
-    font-family: "AdamGorry";
-    font-size: calc(var(--index) * 1.6);
-    line-height: 1.75;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: rgb(231, 229, 229);
-  }
-  .main-article__content .home-item p {
-    line-height: 1.75;
-    font-size: calc(var(--index) * 1);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    color: rgb(228, 227, 227);
-  }
-  .main-article__content .about-item p {
-    line-height: 1.75;
-    font-size: calc(var(--index) * 1);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    color: rgb(228, 227, 227);
-  }
-  .main-article__content .products-item .item .project-title-settings {
-    line-height: 1.75;
-    font-size: calc(var(--index) * 1);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    color: rgb(228, 227, 227);
-    font-weight: 700;
-  }
-  .main-article__content .products-item .item .project-date {
-    font-size: calc(var(--index) * 0.9);
-  }
-  .main-article__content .product-item-show .product-item-show-wrap .product-item-show-right .product-detail p {
-    line-height: 1.75;
-    font-size: calc(var(--index) * 1);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    color: rgb(228, 227, 227);
-  }
-  .main-article__content .userguides-item p {
-    line-height: 1.75;
-    font-size: calc(var(--index) * 1);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    color: rgb(228, 227, 227);
-  }
-  .main-article__content .reviews-item .carousel-item-wrap .item p {
-    line-height: 1.75;
-    font-size: calc(var(--index) * 1);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    color: rgb(228, 227, 227);
-  }
-  .main-article__content .contact-item h2 {
-    font-size: calc(var(--index) * 1.2);
-  }
-  .main-article__content .contact-item p {
-    line-height: 1.75;
-    font-size: calc(var(--index) * 1);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    color: rgb(228, 227, 227);
-  }
-  .main-article__content .contact-item input {
-    font-size: calc(var(--index) * 0.7);
-  }
-  .main-article__content .contact-item textarea {
-    font-size: calc(var(--index) * 0.7);
-  }
-  .main-article__content .contact-item .input-name-mail input {
-    font-size: calc(var(--index) * 0.7);
+    font-size: 25px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -1577,6 +1488,46 @@ nav .nav-wrap .right img {
 @media screen and (max-width: 991px) {
   .main-article__content .products-item {
     grid-template-columns: auto auto;
+  }
+  .nav-responsive .left .offcanvas .offcanvas-body .menu-responsive-wrap ul li a {
+    font-size: 16px;
+  }
+  .nav-responsive .right a {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .main-article__content-home {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .main-article__content-home .home-item .gallery__item-first-img {
+    margin-bottom: 30px;
+  }
+  .main-article__content-home .order1 {
+    order: 1;
+  }
+  .main-article__content-home .order2 {
+    order: 0;
+    margin-top: 60px;
+  }
+  .main-article__content-home .order2 img {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .main-article__content-about {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: 50px;
+  }
+  .main-article__content-about .about-item {
+    width: 100%;
+  }
+  .main-article__content-about .about-item img {
+    width: 80%;
   }
 }
 @media screen and (max-width: 650px) {
@@ -1602,9 +1553,6 @@ nav .nav-wrap .right img {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-  }
-  .main-article__content .about-item {
-    width: 100%;
   }
   .main-article__content .product-item-show .product-item-show-wrap .product-item-show-right {
     padding-left: 30px;
@@ -1659,6 +1607,11 @@ nav .nav-wrap .right img {
     font-size: 26px;
   }
 }
+@media screen and (max-width: 370px) {
+  .nav-responsive .right a {
+    font-size: 13px;
+  }
+}
 @media screen and (max-width: 350px) {
   .nav-responsive {
     padding: 20px;
@@ -1666,6 +1619,11 @@ nav .nav-wrap .right img {
   .nav-responsive .center img {
     width: 100px;
     height: 20px;
+  }
+}
+@media screen and (max-width: 311px) {
+  .nav-responsive .right a {
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 280px) {

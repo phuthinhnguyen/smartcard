@@ -615,7 +615,7 @@ nav {
                         }
 
                         .project-date {
-                            font-size: 17px;
+                            font-size: 16px;
                             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                             position: relative;
                             z-index: -500;
@@ -1112,7 +1112,7 @@ nav {
                     li {
                         display: block;
                         color: $text-color;
-                        font-size: calc(var(--index) * 1.2);
+                        font-size: calc(var(--index) * 0.9);
                         font-weight: 900;
                         color: $title-color;
                         font-family: $fontAdamGorry;
@@ -1151,7 +1151,7 @@ nav {
 
     .right {
         a {
-            font-size: calc(var(--index) * 1.2);
+            font-size: calc(var(--index) * 0.9);
             font-weight: 900;
             color: $title-color;
             font-family: $fontAdamGorry;
@@ -1179,8 +1179,12 @@ nav {
     column-gap: 30px;
 
     .home-item {
+        h2 {
+            font-size: 22px;
+        }
+
         p {
-            @include text;
+            font-size: 16px;
         }
     }
 
@@ -1198,7 +1202,7 @@ nav {
         }
 
         p {
-            @include text;
+            font-size: 16px;
         }
     }
 
@@ -1216,8 +1220,8 @@ nav {
         }
 
         p {
-            @include text;
             text-align: left;
+            font-size: 16px;
         }
     }
 
@@ -1275,10 +1279,10 @@ nav {
             }
 
             .project-title-settings {
-                @include text;
+                font-size: 16px;
                 margin-top: 5%;
                 font-family: $fontSegoeUI;
-                font-weight: 600;
+                font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 3px;
                 color: white;
@@ -1288,14 +1292,13 @@ nav {
             }
 
             .project-date {
-                font-size: 17px;
+                font-size: 14px;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 position: relative;
                 z-index: -500;
                 padding: 10px 30px 8px 30px;
                 border-radius: 0 0 5px 5px;
                 color: $text-color;
-                font-size: calc(var(--index) * 0.8);
             }
         }
 
@@ -1414,6 +1417,7 @@ nav {
 
                 h2 {
                     @include title;
+                    font-size: 22px;
                     text-align: left;
                 }
 
@@ -1427,7 +1431,7 @@ nav {
                     p {
                         font-family: $fontSegoeUI;
                         text-align: left;
-                        @include text;
+                        font-size: 16px;
                     }
                 }
 
@@ -1471,7 +1475,7 @@ nav {
                 }
 
                 p {
-                    @include text;
+                    font-size: 16px;
                 }
             }
         }
@@ -1483,13 +1487,14 @@ nav {
 
         h2 {
             @include title;
-            font-size: calc(var(--index) * 0.8);
+            font-size: 20px;
             margin-bottom: 20px;
         }
 
         p {
             margin-bottom: 10px;
             text-align: left;
+            font-size: 16px;
 
             a {
                 color: white;
@@ -1533,6 +1538,7 @@ nav {
             padding-left: 20px;
             font-family: $fontSegoeUI;
             outline: none;
+            font-size: 12px;
 
             &:focus {
                 border: 3px solid black;
@@ -1548,7 +1554,7 @@ nav {
             border: 1px solid lightgray;
             font-family: $fontSegoeUI;
             outline: none;
-            font-size: calc(var(--index) * 0.55);
+            font-size: 12px;
 
             &:focus {
                 border: 3px solid black;
@@ -1561,13 +1567,13 @@ nav {
 
             input {
                 width: 48%;
-                font-size: calc(var(--index) * 0.55);
+                font-size: 12px;
             }
         }
 
         >input {
             margin-top: 20px;
-            font-size: calc(var(--index) * 0.55);
+            font-size: 12px;
         }
 
     }
@@ -1632,87 +1638,7 @@ nav {
 
 @media screen and (max-width:1100px) {
     .title-header-responsive {
-        @include title-responsive;
-    }
-
-    .main-article__content {
-        .home-item {
-            p {
-                @include text-responsive;
-            }
-        }
-
-        .about-item {
-            p {
-                @include text-responsive;
-            }
-        }
-
-        .products-item {
-            .item {
-                .project-title-settings {
-                    @include text-responsive;
-                    font-weight: 700;
-                }
-
-                .project-date {
-                    font-size: calc(var(--index) * 0.9);
-                }
-            }
-        }
-
-        .product-item-show {
-            .product-item-show-wrap {
-                .product-item-show-right {
-                    .product-detail {
-                        p {
-                            @include text-responsive;
-                        }
-                    }
-                }
-            }
-        }
-
-
-        .userguides-item {
-            p {
-                @include text-responsive;
-            }
-        }
-
-        .reviews-item {
-            .carousel-item-wrap {
-                .item {
-                    p {
-                        @include text-responsive;
-                    }
-                }
-            }
-        }
-
-        .contact-item {
-            h2 {
-                font-size: calc(var(--index) * 1.2);
-            }
-
-            p {
-                @include text-responsive;
-            }
-
-            input {
-                font-size: calc(var(--index) * 0.7);
-            }
-
-            textarea {
-                font-size: calc(var(--index) * 0.7);
-            }
-
-            .input-name-mail {
-                input {
-                    font-size: calc(var(--index) * 0.7);
-                }
-            }
-        }
+        font-size: 25px;
     }
 }
 
@@ -1727,6 +1653,75 @@ nav {
         .products-item {
             grid-template-columns: auto auto;
         }
+    }
+
+    .nav-responsive {
+        .left {
+            .offcanvas {
+                .offcanvas-body {
+                    .menu-responsive-wrap {
+                        ul {
+                            li {
+                                a {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    .main-article__content-home {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        .home-item {
+            .gallery__item-first-img {
+                margin-bottom: 30px;
+            }
+        }
+
+        .order1 {
+            order: 1;
+        }
+
+        .order2 {
+            order: 0;
+            margin-top: 60px;
+
+            img {
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .main-article__content-about {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        row-gap: 50px;
+
+        .about-item {
+            width: 100%;
+
+            img {
+                width: 80%;
+            }
+        }
+
     }
 }
 
@@ -1768,10 +1763,6 @@ nav {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-
-        .about-item {
-            width: 100%;
-        }
 
 
         .product-item-show {
@@ -1871,6 +1862,16 @@ nav {
     }
 }
 
+@media screen and (max-width:370px) {
+    .nav-responsive {
+        .right {
+            a {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width:350px) {
     .nav-responsive {
         padding: 20px;
@@ -1879,6 +1880,16 @@ nav {
             img {
                 width: 100px;
                 height: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:311px) {
+    .nav-responsive {
+        .right {
+            a {
+                font-size: 10px;
             }
         }
     }

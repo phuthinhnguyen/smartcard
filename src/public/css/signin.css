@@ -504,7 +504,7 @@ iframe {
     animation: messagesshow1050 0.7s;
   }
   .messages-show .messages-show-body {
-    background-color: lightgray;
+    background-color: rgb(236, 236, 236);
   }
 }
 @media (max-width: 991px) {

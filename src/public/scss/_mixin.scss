@@ -89,7 +89,6 @@
     color: white;
     border-radius: 20px;
     padding: 40px 0;
-    // border: 2px solid rgb(58, 57, 57);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -99,7 +98,6 @@
 
 @mixin title{
     font-family: $fontAdamGorry;
-    // font-size: 30px;
     font-size: calc(var(--index) * 1.2);
 	line-height: 1.75;
 	font-weight: 600;
@@ -109,29 +107,12 @@
 
 @mixin text{
     line-height: 1.75;
-    // font-size: 20px;
     font-size: calc(var(--index) * 0.72);
     font-family: $fontSegoeUI;
     font-weight: 400;
     color: $text-color;
 }
-@mixin title-responsive{
-    font-family: $fontAdamGorry;
-    // font-size: 30px;
-    font-size: calc(var(--index) * 1.6);
-	line-height: 1.75;
-	font-weight: 600;
-	letter-spacing: 2px;
-    color: $title-color;
-}
-@mixin text-responsive{
-    line-height: 1.75;
-    // font-size: 20px;
-    font-size: calc(var(--index) * 1);
-    font-family: $fontSegoeUI;
-    font-weight: 400;
-    color: $text-color;
-}
+
 @mixin button{
     height: 50px;
     width: 200px;
@@ -157,11 +138,6 @@
     position: absolute;
     right: 7%;
     top: 70vh;
-    // text-transform: uppercase;
-    // font-family: 'Source Serif 4', serif;
-    // font-style: italic;
-    // font-size: 25px;
-    // font-weight: 400;
     font-family: $fontSourceSerif4;
     text-transform: capitalize;
     font-size: 20px;
@@ -170,7 +146,6 @@
 @mixin  typing-text{
     overflow: hidden;
     white-space: nowrap;
-    // border-right: 2px solid;
     width: 0;
 }
 @keyframes messagesshow {
