@@ -66,19 +66,9 @@
 										window.location.href = `mailto:${link}`
 									}
 									else if (link.indexOf("zalo") > -1) {
+										window.location.href = `http://zalo.me/${link}`
 										// window.location.href='zalo://chat'
-										// window.location.href= "intent://instagram.com/#Intent;scheme=http;package=com.instagram.android;end"; 
-										// Check if the Zalo app is installed
-										if (window.navigator.userAgent.match(/Zalo/i)) {
-											// Create an intent URL to open Zalo
-											var intentUrl = "zalo://app";
-											var playStoreUrl = "market://details?id=" + "com.zing.zalo";
-											// Attempt to open the app
-											window.location.href = intentUrl;
-										} else {
-											// window.location.href = playStoreUrl;
-											console.log("sdf")
-										}
+										// window.location.href= "intent://instagram.com/#Intent;scheme=http;package=com.instagram.android;end"; 		
 									}
 									else window.open(link);
 
