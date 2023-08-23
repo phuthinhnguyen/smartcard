@@ -68,10 +68,10 @@
     "vary": "^1.1.2"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/sever.js",
+    "dev": "nodemon --exec babel-node sever.js",
   
-    "start": "babel-node src/sever.js",
-      "start": "node src/server.js",
+    "start": "babel-node sever.js",
+      "start": "node sever.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
